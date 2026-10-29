@@ -2,8 +2,8 @@ name: 장마감 신호 수집
 
 on:
   schedule:
-    # 평일 15:50 (한국시간) = 06:50 (UTC)
-    - cron: "50 6 * * 1-5"
+    # 평일 20:20 (한국시간) = 11:20 (UTC) — NXT 애프터마켓 마감(20:00) 후, 통합 일봉 확정 기준
+    - cron: "20 11 * * 1-5"
   workflow_dispatch:
     inputs:
       date:

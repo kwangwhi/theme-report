@@ -171,7 +171,8 @@ def build(d):
                       table(bb, ["상단선"], lambda s: num_td((s.get("bollinger_break") or {}).get("upper")))))
 
     errors = d.get("errors", [])
-    notice = "조건에 걸린 종목 목록일 뿐 매수·매도 추천이 아닙니다. 대상: 거래대금 상위 50 + 등락률 ±10% 종목."
+    notice = ("조건에 걸린 종목 목록일 뿐 매수·매도 추천이 아닙니다. 대상: 거래대금 상위 50 + 등락률 ±10% 종목(정규장 기준 선정). "
+              "가격·신호는 통합(KRX+NXT) 일봉 기준, NXT 마감 후 계산.")
     inv_fail = [e for e in errors if "순매수" in e.get("where", "")]
     if inv_fail:
         notice += " · 투자자별 수급은 수집 실패(KRX 회원 로그인 필요)로 빠져 있습니다."

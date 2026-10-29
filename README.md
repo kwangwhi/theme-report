@@ -14,8 +14,8 @@
 |---|---|---|
 | 08:30 | GitHub Actions | KRX Open API로 전 영업일 확정 데이터 → **아침 준비 리포트**(`morning.html`) |
 | 15:45 | GitHub Actions | 지수·환율·해외지수 숫자를 거래소 데이터로 받아 `data/`에 저장 |
-| 15:50 | GitHub Actions | pykrx로 당일 시세·신호(박스·골든크로스·볼린저·장기저항·첫 상한가) → `data/signals/`, **장마감 신호**(`signals.html`) |
 | 16:21 | Claude 예약 작업 | `data/`의 숫자 + 뉴스(수급·테마·일정)로 리포트 작성 후 올림 |
+| 20:20 | GitHub Actions | NXT 마감 후 통합 일봉으로 당일 신호(박스·골든크로스·볼린저·장기저항·첫 상한가) → `data/signals/`, **장마감 신호**(`signals.html`) |
 
 ## 폴더 설명
 
@@ -25,7 +25,8 @@
 | `archive.html`, `archive/` | 지난 리포트 보관함 |
 | `morning.html` | 아침 준비 리포트 (전 영업일 상승률·거래대금 상위, 업종 강약) |
 | `data/` | 매일 자동 수집한 숫자 (`latest.json` = 가장 최근), `data/krx/` = KRX 요약 |
-| `signals.html`, `data/signals/` | 장마감 신호 페이지와 원본 결과 |
+| `signals.html`, `data/signals/` | 장마감 신호 페이지와 원본 결과 (통합 KRX+NXT 기준) |
+| `backtest.html`, `data/backtest/` | 신호 성적표 (매주 토요일 갱신) |
 | `scripts/collect_market.py` | 숫자를 받아오는 프로그램 |
 | `.github/workflows/collect-market.yml` | 15:45 자동 실행 설정 |
 

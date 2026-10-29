@@ -346,6 +346,7 @@ def main():
         "date": day_iso,
         "generated_at_kst": now.strftime("%Y-%m-%d %H:%M"),
         "rules": {
+            "price_basis": "신호·표시 가격은 통합(KRX+NXT) 일봉 기준, NXT 마감(20:00) 후 계산. 후보 선정(movers·top_value_50)은 KRX 정규장 기준",
             "movers": f"등락률 ±{MOVER_PCT}% 이상",
             "top_value": f"거래대금 상위 {TOP_VALUE_N}",
             "box_breakout": "직전 60일 (고가최고-저가최저)/저가최저 ≤ 25% + 종가 > 직전 60일 최고가 + 거래량 ≥ 직전 20일 평균×2",
@@ -399,9 +400,14 @@ def main():
                     "rate": f2(r.rate), "value": i0(r.value),
                     "selected_by": [x for x, ok in (("top_value_50", r.code in top_codes),
                                                     ("movers_10pct", r.code in mover_codes)) if ok]}
+            # 표시 가격은 통합(KRX+NXT) 일봉 기준. KRX 정규장 값은 krx_close / krx_rate 로 따로 남긴다.
+            item["krx_close"], item["krx_rate"] = item["close"], item["rate"]
             try:
                 df, dsrc = load_daily(r.code, d)
                 daily_src_count[dsrc] = daily_src_count.get(dsrc, 0) + 1
+                item["close"] = i0(df["Close"].iloc[-1])
+                if len(df) >= 2 and df["Close"].iloc[-2]:
+                    item["rate"] = f2((df["Close"].iloc[-1] / df["Close"].iloc[-2] - 1) * 100)
                 item.update(calc_signals(df))
             except Exception as e:
                 item["error"] = f"{type(e).__name__}: {str(e)[:200]}"

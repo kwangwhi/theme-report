@@ -239,7 +239,8 @@ def main():
         "period": {"from": first, "to": last, "days": len(days)},
         "generated_at_kst": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
         "events_total": len(events),
-        "notes": ["수수료·세금·슬리피지 미반영", "종가 진입 기준(다음날 시가갭·종가·5일 뒤 종가), 시가진입→5일은 다음날 시가 매수 기준",
+        "notes": ["가격은 통합(KRX+NXT) 일봉 기준: 종가 = NXT 마감가, 시가 = 통합 시가", "후보 선정은 KRX 정규장 기준(KRX Open API)",
+                  "수수료·세금·슬리피지 미반영", "종가 진입 기준(다음날 시가갭·종가·5일 뒤 종가), 시가진입→5일은 다음날 시가 매수 기준",
                   "수정주가 일봉", "표본 30건 미만은 신뢰도 낮음"],
         "groups": [{"key": k, "label": label, "stats": group_stats(ev)} for k, label, ev in groups],
         "recent_events": {k: [{kk: e[kk] for kk in ("date", "name", "market", "rate", "flags", "fwd")}
@@ -356,7 +357,7 @@ footer {{ color:var(--muted); font-size:.8rem; text-align:center; margin-top:22p
 <main>
   <h1>신호 성적표</h1>
   <div class="stamp">검증 기간 {f(p['from'])} ~ {f(p['to'])} ({p['days']}영업일) · 평가 {r['events_total']:,}건 · 생성 {esc(r['generated_at_kst'])}</div>
-  <div class="notice">과거 성적이 미래를 보장하지 않습니다. 수수료·세금·슬리피지 미반영, 상한가 종목은 종가에 못 사는 경우가 많습니다. 괄호 안 숫자는 <b>후보 전체 기준선 대비 차이(%p)</b>입니다.</div>
+  <div class="notice">과거 성적이 미래를 보장하지 않습니다. 가격은 <b>통합(KRX+NXT) 일봉</b> 기준이라 "종가"는 NXT 마감(20:00) 가격, "시가"는 통합 시가입니다. 수수료·세금·슬리피지 미반영, 상한가 종목은 종가에 못 사는 경우가 많습니다. 괄호 안 숫자는 <b>후보 전체 기준선 대비 차이(%p)</b>입니다.</div>
 
   <section class="card">
     <h2>신호별 성적 (종가 진입 기준)</h2>
