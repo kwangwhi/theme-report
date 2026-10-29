@@ -1,0 +1,59 @@
+name: 장마감 신호 수집
+
+on:
+  schedule:
+    # 평일 15:50 (한국시간) = 06:50 (UTC)
+    - cron: "50 6 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "기준일 YYYYMMDD (비우면 오늘)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
+jobs:
+  signals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 도구 설치
+        run: pip install pykrx finance-datareader
+
+      - name: 신호 수집
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+          SIGNAL_DATE: ${{ github.event.inputs.date }}
+        run: python scripts/collect_signals.py
+
+      - name: 결과 저장(커밋)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/signals/ || true
+          if git diff --cached --quiet; then
+            echo "바뀐 내용 없음 (휴장일이면 정상)"
+            exit 0
+          fi
+          git commit -m "장마감 신호 수집 $(TZ=Asia/Seoul date +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && exit 0
+            sleep 5
+          done
+          exit 1
