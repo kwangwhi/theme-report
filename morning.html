@@ -27,7 +27,7 @@ th { color:var(--muted); font-weight:600; font-size:.82rem; }
 td.num, th.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
 .up { color:var(--up); font-weight:600; } .down { color:var(--down); font-weight:600; }
 .tag { display:inline-block; font-size:.72rem; color:var(--muted); border:1px solid var(--line);
-  border-radius:999px; padding:0 7px; margin-left:3px; }
+  border-radius:999px; padding:0 7px; margin-left:3px; white-space:nowrap; }
 .muted { color:var(--muted); font-size:.9rem; }
 .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 @media (max-width:640px) { .grid { grid-template-columns:1fr; } }
@@ -39,7 +39,7 @@ footer a { color:inherit; }
 <body>
 <main>
   <h1>아침 준비 리포트</h1>
-  <div class="stamp">2026년 10월 28일(수) 종가 기준 · 생성 2026-10-29 15:53</div>
+  <div class="stamp">2026년 10월 28일(수) 종가 기준 · 생성 2026-10-29 15:59</div>
   <div class="notice">전 영업일 거래소 확정 데이터입니다. 매수·매도 추천이 아닙니다.</div>
 
   <section>
@@ -48,45 +48,61 @@ footer a { color:inherit; }
     <p class="muted" style="margin:10px 0 0">상승 1,708종목 · 하락 784종목 (코스피+코스닥, 스팩 제외)</p>
   </section>
 
+  <section>
+    <h2>② 주도 업종 흐름</h2>
+    <p class="muted" style="margin:0 0 8px">5일 수익률 순. "상위5 횟수" = 최근 10영업일 중 그날 업종 등락률 상위 5위 안에 든 날 수</p>
+    
+    <table><tr><th>업종</th><th class="num">1일</th><th class="num">5일</th><th class="num">20일</th><th class="num">연속↑</th><th class="num">상위5 횟수</th><th>판정</th></tr><tr><td>전기전자 <span class="tag">KOSPI</span></td><td class="num up">+9.02%</td><td class="num up">+9.07%</td><td class="num down">-12.83%</td><td class="num">2일</td><td class="num">4/10</td><td><span class="tag">주도 진입</span></td></tr><tr><td>보험 <span class="tag">KOSPI</span></td><td class="num up">+6.43%</td><td class="num up">+7.48%</td><td class="num down">-6.50%</td><td class="num">2일</td><td class="num">2/10</td><td><span class="tag">주도 진입</span></td></tr><tr><td>제조 <span class="tag">KOSPI</span></td><td class="num up">+7.41%</td><td class="num up">+5.80%</td><td class="num down">-13.15%</td><td class="num">2일</td><td class="num">3/10</td><td><span class="tag">주도 진입</span></td></tr><tr><td>유통 <span class="tag">KOSPI</span></td><td class="num up">+4.62%</td><td class="num up">+3.53%</td><td class="num down">-7.15%</td><td class="num">2일</td><td class="num">1/10</td><td></td></tr><tr><td>금융 <span class="tag">KOSPI</span></td><td class="num up">+5.05%</td><td class="num up">+2.47%</td><td class="num down">-13.63%</td><td class="num">2일</td><td class="num">0/10</td><td></td></tr><tr><td>IT 서비스 <span class="tag">KOSDAQ</span></td><td class="num up">+3.35%</td><td class="num up">+2.41%</td><td class="num down">-3.76%</td><td class="num">2일</td><td class="num">0/10</td><td></td></tr><tr><td>일반서비스 <span class="tag">KOSPI</span></td><td class="num up">+1.15%</td><td class="num up">+1.89%</td><td class="num down">-2.78%</td><td class="num">2일</td><td class="num">2/10</td><td><span class="tag">주도 진입</span></td></tr><tr><td>운송장비·부품 <span class="tag">KOSDAQ</span></td><td class="num up">+2.74%</td><td class="num up">+1.63%</td><td class="num down">-10.30%</td><td class="num">2일</td><td class="num">1/10</td><td></td></tr></table>
+    <h2 style="margin-top:16px">약세 지속 업종</h2>
+    <table><tr><th>업종</th><th class="num">1일</th><th class="num">5일</th><th class="num">20일</th><th class="num">연속↑</th><th class="num">상위5 횟수</th><th>판정</th></tr><tr><td>출판·매체복제 <span class="tag">KOSDAQ</span></td><td class="num down">-1.33%</td><td class="num down">-10.55%</td><td class="num up">+11.01%</td><td class="num">0일</td><td class="num">3/10</td><td></td></tr><tr><td>화학 <span class="tag">KOSPI</span></td><td class="num up">+1.46%</td><td class="num down">-8.18%</td><td class="num down">-14.30%</td><td class="num">2일</td><td class="num">0/10</td><td><span class="tag">하루 반등</span></td></tr><tr><td>제약 <span class="tag">KOSDAQ</span></td><td class="num up">+0.99%</td><td class="num down">-7.65%</td><td class="num down">-7.52%</td><td class="num">1일</td><td class="num">1/10</td><td><span class="tag">하루 반등</span></td></tr><tr><td>금융 <span class="tag">KOSDAQ</span></td><td class="num up">+2.73%</td><td class="num down">-6.13%</td><td class="num down">-7.77%</td><td class="num">2일</td><td class="num">1/10</td><td><span class="tag">하루 반등</span></td></tr><tr><td>금속 <span class="tag">KOSPI</span></td><td class="num up">+2.18%</td><td class="num down">-6.08%</td><td class="num down">-18.55%</td><td class="num">2일</td><td class="num">1/10</td><td><span class="tag">하루 반등</span></td></tr></table>
+    <p class="muted" style="margin:10px 0 0">
+      <b>지속 주도</b>: 최근 상위권 4회 이상 + 5일·20일 모두 플러스 ·
+      <b>주도 진입</b>: 상위권 2회 이상 + 5일 플러스 ·
+      <b>하루 반등</b>: 어제만 올랐고 흐름은 약함 · <b>연속 약세</b>: 3일 이상 연속 하락
+    </p>
+  </section>
+
   <div class="grid">
     <section>
-      <h2>② 강한 업종</h2>
+      <h2>③ 어제 강한 업종</h2>
       <table><tr><th>지수</th><th class="num">종가</th><th class="num">등락률</th></tr><tr><td>전기전자 <span class="tag">KOSPI</span></td><td class="num">98,437.94</td><td class="num up">+9.02%</td></tr><tr><td>제조 <span class="tag">KOSPI</span></td><td class="num">17,763.19</td><td class="num up">+7.41%</td></tr><tr><td>기계·장비 <span class="tag">KOSDAQ</span></td><td class="num">773.84</td><td class="num up">+6.58%</td></tr><tr><td>보험 <span class="tag">KOSPI</span></td><td class="num">45,090.62</td><td class="num up">+6.43%</td></tr><tr><td>증권 <span class="tag">KOSPI</span></td><td class="num">4,314.35</td><td class="num up">+5.46%</td></tr><tr><td>의료·정밀기기 <span class="tag">KOSPI</span></td><td class="num">1,977.69</td><td class="num up">+5.30%</td></tr><tr><td>금융 <span class="tag">KOSPI</span></td><td class="num">972.33</td><td class="num up">+5.05%</td></tr></table>
     </section>
     <section>
-      <h2>③ 약한 업종</h2>
+      <h2>④ 어제 약한 업종</h2>
       <table><tr><th>지수</th><th class="num">종가</th><th class="num">등락률</th></tr><tr><td>출판·매체복제 <span class="tag">KOSDAQ</span></td><td class="num">1,461.85</td><td class="num down">-1.33%</td></tr><tr><td>비금속 <span class="tag">KOSPI</span></td><td class="num">3,320.34</td><td class="num down">-0.33%</td></tr><tr><td>종이·목재 <span class="tag">KOSDAQ</span></td><td class="num">5,781.53</td><td class="num down">-0.23%</td></tr><tr><td>종이·목재 <span class="tag">KOSPI</span></td><td class="num">185.49</td><td class="num down">-0.12%</td></tr><tr><td>오락·문화 <span class="tag">KOSPI</span></td><td class="num">810.44</td><td class="num down">-0.11%</td></tr><tr><td>통신 <span class="tag">KOSDAQ</span></td><td class="num">1,043.88</td><td class="num down">-0.01%</td></tr><tr><td>섬유·의류 <span class="tag">KOSDAQ</span></td><td class="num">26.33</td><td class="num up">+0.04%</td></tr></table>
     </section>
   </div>
   <div style="height:14px"></div>
 
   <section>
-    <h2>④ 상한가 (6종목)</h2>
+    <h2>⑤ 상한가 (6종목)</h2>
     <table><tr><th>#</th><th>종목</th><th>시장</th><th class="num">종가</th><th class="num">등락률</th><th class="num">거래대금</th></tr><tr><td>1</td><td>빛과전자</td><td>코스닥</td><td class="num">4,195</td><td class="num up">+29.88%</td><td class="num">1,519억</td></tr><tr><td>2</td><td>지니언스</td><td>코스닥</td><td class="num">27,300</td><td class="num up">+30.00%</td><td class="num">376억</td></tr><tr><td>3</td><td>에스피소프트</td><td>코스닥</td><td class="num">4,840</td><td class="num up">+29.93%</td><td class="num">67억</td></tr><tr><td>4</td><td>피앤에스로보틱스</td><td>코스닥</td><td class="num">5,120</td><td class="num up">+29.95%</td><td class="num">38억</td></tr><tr><td>5</td><td>케이아이엔엑스</td><td>코스닥</td><td class="num">156,600</td><td class="num up">+29.96%</td><td class="num">8억</td></tr><tr><td>6</td><td>한울앤제주</td><td>코스닥</td><td class="num">757</td><td class="num up">+29.85%</td><td class="num">3억</td></tr></table>
   </section>
 
   <section>
-    <h2>⑤ 상승률 상위 20</h2>
+    <h2>⑥ 상승률 상위 20</h2>
     <p class="muted" style="margin:0 0 8px">거래대금 10억 원 이상, 스팩 제외</p>
     <table><tr><th>#</th><th>종목</th><th>시장</th><th class="num">종가</th><th class="num">등락률</th><th class="num">거래대금</th></tr><tr><td>1</td><td>지니언스</td><td>코스닥</td><td class="num">27,300</td><td class="num up">+30.00%</td><td class="num">376억</td></tr><tr><td>2</td><td>피앤에스로보틱스</td><td>코스닥</td><td class="num">5,120</td><td class="num up">+29.95%</td><td class="num">38억</td></tr><tr><td>3</td><td>에스피소프트</td><td>코스닥</td><td class="num">4,840</td><td class="num up">+29.93%</td><td class="num">67억</td></tr><tr><td>4</td><td>빛과전자</td><td>코스닥</td><td class="num">4,195</td><td class="num up">+29.88%</td><td class="num">1,519억</td></tr><tr><td>5</td><td>가비아</td><td>코스닥</td><td class="num">50,500</td><td class="num up">+25.94%</td><td class="num">84억</td></tr><tr><td>6</td><td>엘티씨</td><td>코스닥</td><td class="num">40,850</td><td class="num up">+21.58%</td><td class="num">116억</td></tr><tr><td>7</td><td>멜콘</td><td>코스닥</td><td class="num">19,210</td><td class="num up">+21.35%</td><td class="num">4,359억</td></tr><tr><td>8</td><td>해성디에스</td><td>유가증권</td><td class="num">53,500</td><td class="num up">+19.82%</td><td class="num">220억</td></tr><tr><td>9</td><td>안랩</td><td>코스닥</td><td class="num">110,900</td><td class="num up">+19.63%</td><td class="num">1,367억</td></tr><tr><td>10</td><td>아이크래프트</td><td>코스닥</td><td class="num">7,210</td><td class="num up">+19.17%</td><td class="num">38억</td></tr><tr><td>11</td><td>빛샘전자</td><td>코스닥</td><td class="num">15,650</td><td class="num up">+19.10%</td><td class="num">969억</td></tr><tr><td>12</td><td>제닉스로보틱스</td><td>코스닥</td><td class="num">5,620</td><td class="num up">+18.19%</td><td class="num">69억</td></tr><tr><td>13</td><td>원익홀딩스</td><td>코스닥</td><td class="num">28,000</td><td class="num up">+17.89%</td><td class="num">1,878억</td></tr><tr><td>14</td><td>휴림에이텍</td><td>코스닥</td><td class="num">2,780</td><td class="num up">+17.80%</td><td class="num">71억</td></tr><tr><td>15</td><td>리브스메드</td><td>코스닥</td><td class="num">43,650</td><td class="num up">+17.65%</td><td class="num">344억</td></tr><tr><td>16</td><td>아이씨티케이</td><td>코스닥</td><td class="num">20,200</td><td class="num up">+16.76%</td><td class="num">190억</td></tr><tr><td>17</td><td>미코</td><td>코스닥</td><td class="num">25,600</td><td class="num up">+16.63%</td><td class="num">291억</td></tr><tr><td>18</td><td>한라캐스트</td><td>코스닥</td><td class="num">11,440</td><td class="num up">+16.62%</td><td class="num">432억</td></tr><tr><td>19</td><td>아모텍</td><td>코스닥</td><td class="num">18,120</td><td class="num up">+16.45%</td><td class="num">154억</td></tr><tr><td>20</td><td>더코디</td><td>코스닥</td><td class="num">3,225</td><td class="num up">+16.22%</td><td class="num">11억</td></tr></table>
   </section>
 
   <section>
-    <h2>⑥ 거래대금 상위 20</h2>
+    <h2>⑦ 거래대금 상위 20</h2>
     <p class="muted" style="margin:0 0 8px">돈이 가장 많이 몰린 종목 — 시장 관심의 중심</p>
     <table><tr><th>#</th><th>종목</th><th>시장</th><th class="num">종가</th><th class="num">등락률</th><th class="num">거래대금</th></tr><tr><td>1</td><td>SK하이닉스</td><td>유가증권</td><td class="num">1,487,000</td><td class="num up">+10.89%</td><td class="num">61,130억</td></tr><tr><td>2</td><td>삼성전자</td><td>유가증권</td><td class="num">242,000</td><td class="num up">+9.01%</td><td class="num">42,686억</td></tr><tr><td>3</td><td>삼성전기</td><td>유가증권</td><td class="num">1,306,000</td><td class="num up">+8.74%</td><td class="num">11,991억</td></tr><tr><td>4</td><td>SK스퀘어</td><td>유가증권</td><td class="num">921,000</td><td class="num up">+11.23%</td><td class="num">11,375억</td></tr><tr><td>5</td><td>삼성전자우 <span class="tag">우선주</span></td><td>유가증권</td><td class="num">190,100</td><td class="num up">+11.10%</td><td class="num">9,179억</td></tr><tr><td>6</td><td>멜콘</td><td>코스닥</td><td class="num">19,210</td><td class="num up">+21.35%</td><td class="num">4,359억</td></tr><tr><td>7</td><td>삼성E&amp;A</td><td>유가증권</td><td class="num">64,200</td><td class="num up">+3.22%</td><td class="num">2,705억</td></tr><tr><td>8</td><td>주성엔지니어링</td><td>코스닥</td><td class="num">185,500</td><td class="num up">+6.12%</td><td class="num">2,570억</td></tr><tr><td>9</td><td>삼성SDI</td><td>유가증권</td><td class="num">534,000</td><td class="num up">+5.12%</td><td class="num">2,402억</td></tr><tr><td>10</td><td>NAVER</td><td>유가증권</td><td class="num">178,000</td><td class="num up">+2.12%</td><td class="num">2,047억</td></tr><tr><td>11</td><td>대한광통신</td><td>코스닥</td><td class="num">14,980</td><td class="num up">+9.34%</td><td class="num">1,931억</td></tr><tr><td>12</td><td>원익홀딩스</td><td>코스닥</td><td class="num">28,000</td><td class="num up">+17.89%</td><td class="num">1,878억</td></tr><tr><td>13</td><td>HD현대중공업</td><td>유가증권</td><td class="num">285,500</td><td class="num down">-2.06%</td><td class="num">1,807억</td></tr><tr><td>14</td><td>LG이노텍</td><td>유가증권</td><td class="num">368,000</td><td class="num down">-1.74%</td><td class="num">1,757억</td></tr><tr><td>15</td><td>빅웨이브로보틱스</td><td>코스닥</td><td class="num">29,450</td><td class="num up">+2.79%</td><td class="num">1,663억</td></tr><tr><td>16</td><td>LG에너지솔루션</td><td>유가증권</td><td class="num">389,500</td><td class="num up">+1.83%</td><td class="num">1,649억</td></tr><tr><td>17</td><td>대덕전자</td><td>유가증권</td><td class="num">138,000</td><td class="num up">+8.07%</td><td class="num">1,613억</td></tr><tr><td>18</td><td>빛과전자</td><td>코스닥</td><td class="num">4,195</td><td class="num up">+29.88%</td><td class="num">1,519억</td></tr><tr><td>19</td><td>KB금융</td><td>유가증권</td><td class="num">154,000</td><td class="num up">+4.34%</td><td class="num">1,513억</td></tr><tr><td>20</td><td>LG전자</td><td>유가증권</td><td class="num">161,700</td><td class="num up">+2.67%</td><td class="num">1,458억</td></tr></table>
   </section>
 
   <section>
-    <h2>⑦ 하락률 상위 10</h2>
+    <h2>⑧ 하락률 상위 10</h2>
     <table><tr><th>#</th><th>종목</th><th>시장</th><th class="num">종가</th><th class="num">등락률</th><th class="num">거래대금</th></tr><tr><td>1</td><td>다보링크</td><td>코스닥</td><td class="num">442</td><td class="num down">-29.95%</td><td class="num">76억</td></tr><tr><td>2</td><td>모아라이프플러스</td><td>코스닥</td><td class="num">257</td><td class="num down">-29.78%</td><td class="num">12억</td></tr><tr><td>3</td><td>지씨셀</td><td>코스닥</td><td class="num">10,470</td><td class="num down">-19.15%</td><td class="num">37억</td></tr><tr><td>4</td><td>프레스티지바이오파마</td><td>유가증권</td><td class="num">4,220</td><td class="num down">-16.44%</td><td class="num">30억</td></tr><tr><td>5</td><td>알멕</td><td>코스닥</td><td class="num">52,200</td><td class="num down">-16.21%</td><td class="num">365억</td></tr><tr><td>6</td><td>이지트로닉스</td><td>코스닥</td><td class="num">2,970</td><td class="num down">-15.50%</td><td class="num">52억</td></tr><tr><td>7</td><td>알루코</td><td>유가증권</td><td class="num">1,625</td><td class="num down">-13.24%</td><td class="num">60억</td></tr><tr><td>8</td><td>노을</td><td>코스닥</td><td class="num">1,756</td><td class="num down">-12.85%</td><td class="num">53억</td></tr><tr><td>9</td><td>SKAI</td><td>코스닥</td><td class="num">1,798</td><td class="num down">-10.01%</td><td class="num">86억</td></tr><tr><td>10</td><td>에이전트AI</td><td>코스닥</td><td class="num">2,425</td><td class="num down">-9.68%</td><td class="num">25억</td></tr></table>
   </section>
 
   <section>
     <h2>보는 법</h2>
     <ul style="margin:0;padding-left:20px">
+      <li><b>지속 주도 업종 + 거래대금 상위</b>에 함께 있는 종목이 시장의 중심입니다.</li>
       <li><b>상승률 상위와 거래대금 상위에 동시에 있는 종목</b>이 전날 시장의 진짜 주인공입니다.</li>
       <li>같은 업종 종목이 상위에 여러 개면 <b>테마 확산</b>, 한 종목만 튀었으면 <b>개별 이슈</b>일 가능성이 큽니다.</li>
+      <li>"하루 반등" 업종은 추세 전환이 확인되기 전까지 추격을 조심하세요.</li>
       <li>전날 급등주는 다음 날 변동성이 큽니다. 시초가 흐름을 먼저 보고 판단하세요.</li>
     </ul>
   </section>
