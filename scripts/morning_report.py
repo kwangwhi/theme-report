@@ -4,9 +4,11 @@
 하는 일
 - 가장 최근 영업일 데이터를 KRX Open API 에서 받아 morning.html 을 만든다.
   (KRX Open API 는 전날 데이터를 다음 영업일 오전 8시에 제공)
-- 내용: 지수 요약, 업종지수 강약, 상승률 상위, 상한가, 거래대금 상위, 하락률 상위
+- 내용: 지수 요약, 주도 업종 흐름(지속일수), 업종지수 강약, 상승률 상위, 상한가,
+  거래대금 상위, 하락률 상위
 - 약관(제3자 제공 금지)을 고려해 전 종목 원자료는 저장하지 않고,
   상위 목록 요약과 업종지수만 data/krx/ 에 남긴다.
+- 업종지수 기록(data/krx/sector_history.json)이 부족하면 과거 영업일을 자동으로 채운다.
 
 규칙
 - 인증키(KRX_API_KEY)는 환경변수에서만 읽고 출력하지 않는다.
@@ -37,6 +39,13 @@ NON_SECTOR_KEYWORDS = [
 
 MIN_TRADE_VALUE = 1_000_000_000  # 상승률·하락률 순위에 넣을 최소 거래대금(10억 원)
 TOP_N = 20
+
+HISTORY_PATH = os.path.join("data", "krx", "sector_history.json")
+HISTORY_KEEP_DAYS = 60      # 기록 보관 영업일 수
+HISTORY_TARGET_DAYS = 22    # 최소 이만큼은 채워 둔다 (20일 수익률 계산용)
+BACKFILL_MAX_CALENDAR_DAYS = 45
+TOP_RANK = 5                # "상위권" 기준 순위
+RECENT_WINDOW = 10          # 최근 며칠 중 상위권 횟수를 셀지
 
 
 def num(value):
@@ -116,12 +125,13 @@ def load_stocks(bas_dd, first_rows, key):
     return stocks
 
 
-def load_indices(bas_dd, key):
+def load_indices(bas_dd, key, quiet=False):
     out = {"main": [], "sectors": []}
     for market, path in INDEX_APIS:
         rows = call(path, bas_dd, key)
         if not rows:
-            print(f"[경고] {market} 지수 데이터 없음")
+            if not quiet:
+                print(f"[경고] {market} 지수 데이터 없음")
             continue
         for r in rows:
             name = str(r.get("IDX_NM", "")).strip()
@@ -144,6 +154,118 @@ def load_indices(bas_dd, key):
             elif not any(k in name for k in NON_SECTOR_KEYWORDS):
                 out["sectors"].append(item)
     return out
+
+
+# ---------- 업종지수 기록과 주도 업종 계산 ----------
+
+def load_history():
+    try:
+        with open(HISTORY_PATH, encoding="utf-8") as f:
+            h = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        h = {}
+    h.setdefault("days", {})
+    h.setdefault("no_data_days", [])
+    return h
+
+
+def save_history(h):
+    keep = sorted(h["days"].keys())[-HISTORY_KEEP_DAYS:]
+    h["days"] = {d: h["days"][d] for d in keep}
+    oldest = keep[0] if keep else "00000000"
+    h["no_data_days"] = sorted(d for d in set(h["no_data_days"]) if d >= oldest)
+    os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
+    with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(h, f, ensure_ascii=False, indent=1)
+
+
+def slim_sectors(sectors):
+    return [{"market": s["market"], "name": s["name"], "close": s["close"], "rate": s["rate"]} for s in sectors]
+
+
+def backfill_history(h, bas_dd, key):
+    """기록이 HISTORY_TARGET_DAYS 보다 적으면 bas_dd 이전 영업일을 거꾸로 채운다."""
+    have = [d for d in h["days"] if d <= bas_dd]
+    if len(have) >= HISTORY_TARGET_DAYS:
+        return 0
+    added = 0
+    base = datetime.strptime(bas_dd, "%Y%m%d").date()
+    for back in range(1, BACKFILL_MAX_CALENDAR_DAYS + 1):
+        if len([d for d in h["days"] if d <= bas_dd]) >= HISTORY_TARGET_DAYS:
+            break
+        d = base - timedelta(days=back)
+        if d.weekday() >= 5:
+            continue
+        dd = d.strftime("%Y%m%d")
+        if dd in h["days"] or dd in h["no_data_days"]:
+            continue
+        idx = load_indices(dd, key, quiet=True)
+        if idx["sectors"]:
+            h["days"][dd] = slim_sectors(idx["sectors"])
+            added += 1
+        else:
+            h["no_data_days"].append(dd)  # 휴장일 등 — 다음에 다시 부르지 않도록 기록
+    print(f"업종 기록 채움: {added}일 추가 (보유 {len(h['days'])}일)")
+    return added
+
+
+def compute_leaders(h, bas_dd):
+    """업종별 1일·5일·20일 수익률, 연속 상승일, 최근 상위권 횟수."""
+    dates = sorted(d for d in h["days"] if d <= bas_dd)
+    if not dates or dates[-1] != bas_dd:
+        return [], 0
+
+    # 날짜별 상위권(등락률 순위) 집합
+    top_sets = {}
+    for d in dates[-RECENT_WINDOW:]:
+        ranked = sorted(h["days"][d], key=lambda s: s["rate"], reverse=True)
+        top_sets[d] = {(s["market"], s["name"]) for s in ranked[:TOP_RANK]}
+
+    series = {}
+    for d in dates:
+        for s in h["days"][d]:
+            series.setdefault((s["market"], s["name"]), {})[d] = s
+
+    def ret(closes_by_date, n):
+        if len(dates) <= n:
+            return None
+        then = closes_by_date.get(dates[-1 - n])
+        now = closes_by_date.get(dates[-1])
+        if not then or not now or not then["close"]:
+            return None
+        return (now["close"] / then["close"] - 1) * 100
+
+    out = []
+    for (market, name), by_date in series.items():
+        today = by_date.get(bas_dd)
+        if not today:
+            continue
+        streak = 0
+        for d in reversed(dates):
+            s = by_date.get(d)
+            if s and s["rate"] > 0:
+                streak += 1
+            else:
+                break
+        down_streak = 0
+        for d in reversed(dates):
+            s = by_date.get(d)
+            if s and s["rate"] < 0:
+                down_streak += 1
+            else:
+                break
+        top_count = sum(1 for d in top_sets if (market, name) in top_sets[d])
+        out.append({
+            "market": market,
+            "name": name,
+            "r1": today["rate"],
+            "r5": ret(by_date, 5),
+            "r20": ret(by_date, 20),
+            "streak": streak,
+            "down_streak": down_streak,
+            "top_count": top_count,
+        })
+    return out, len(dates)
 
 
 # ---------- HTML ----------
@@ -207,6 +329,39 @@ def index_table(rows):
     return f"<table>{head}{body}</table>"
 
 
+def leader_label(r):
+    """업종 흐름을 한 단어로."""
+    r5, r20 = r["r5"], r["r20"]
+    if r["top_count"] >= 4 and (r5 or 0) > 0 and (r20 or 0) > 0:
+        return "지속 주도"
+    if r["top_count"] >= 2 and (r5 or 0) > 0:
+        return "주도 진입"
+    if r["r1"] > 0 and r["top_count"] <= 1 and (r5 is None or r5 <= 0):
+        return "하루 반등"
+    if r["down_streak"] >= 3:
+        return "연속 약세"
+    return ""
+
+
+def leader_table(rows, day_count):
+    if not rows:
+        return '<p class="muted">업종 기록이 아직 부족합니다.</p>'
+    head = ("<tr><th>업종</th><th class=\"num\">1일</th><th class=\"num\">5일</th><th class=\"num\">20일</th>"
+            f"<th class=\"num\">연속↑</th><th class=\"num\">상위{TOP_RANK} 횟수</th><th>판정</th></tr>")
+    body = []
+    for r in rows:
+        label = leader_label(r)
+        label_html = f'<span class="tag">{esc(label)}</span>' if label else ""
+        body.append(
+            f"<tr><td>{esc(r['name'])} <span class=\"tag\">{esc(r['market'])}</span></td>"
+            f"{fmt_rate(r['r1'])}{fmt_rate(r['r5'])}{fmt_rate(r['r20'])}"
+            f"<td class=\"num\">{r['streak']}일</td>"
+            f"<td class=\"num\">{r['top_count']}/{min(RECENT_WINDOW, day_count)}</td>"
+            f"<td>{label_html}</td></tr>"
+        )
+    return f"<table>{head}{''.join(body)}</table>"
+
+
 STYLE = """
 :root { --bg:#f6f7f9; --card:#ffffff; --text:#1a1d21; --muted:#6b7280; --line:#e5e7eb;
   --up:#d92d20; --down:#1d64d8; --warn-bg:#fff7e6; --warn:#8a5a00; }
@@ -230,7 +385,7 @@ th { color:var(--muted); font-weight:600; font-size:.82rem; }
 td.num, th.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
 .up { color:var(--up); font-weight:600; } .down { color:var(--down); font-weight:600; }
 .tag { display:inline-block; font-size:.72rem; color:var(--muted); border:1px solid var(--line);
-  border-radius:999px; padding:0 7px; margin-left:3px; }
+  border-radius:999px; padding:0 7px; margin-left:3px; white-space:nowrap; }
 .muted { color:var(--muted); font-size:.9rem; }
 .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 @media (max-width:640px) { .grid { grid-template-columns:1fr; } }
@@ -240,7 +395,7 @@ footer a { color:inherit; }
 """
 
 
-def build_html(bas_dd, idx, stocks, made_at, warnings):
+def build_html(bas_dd, idx, stocks, leaders, day_count, made_at, warnings):
     d = datetime.strptime(bas_dd, "%Y%m%d")
     weekday = "월화수목금토일"[d.weekday()]
     day_label = f"{d.year}년 {d.month}월 {d.day}일({weekday})"
@@ -260,6 +415,11 @@ def build_html(bas_dd, idx, stocks, made_at, warnings):
     strong = sectors[:7]
     weak = list(reversed(sectors[-7:])) if len(sectors) > 7 else []
 
+    # 주도 업종: 5일 수익률 상위 8 / 하위 5 (5일 값이 없으면 1일로 대체 정렬)
+    sort_key = lambda r: (r["r5"] if r["r5"] is not None else r["r1"])
+    lead_up = sorted(leaders, key=sort_key, reverse=True)[:8]
+    lead_down = sorted(leaders, key=sort_key)[:5]
+
     main_rows = ""
     for r in idx["main"]:
         main_rows += (f"<tr><td>{esc(r['name'])}</td><td class=\"num\">{fmt_idx(r['close'])}</td>"
@@ -272,6 +432,10 @@ def build_html(bas_dd, idx, stocks, made_at, warnings):
     notice = "전 영업일 거래소 확정 데이터입니다. 매수·매도 추천이 아닙니다."
     if warnings:
         notice += " · 일부 데이터 누락: " + esc(", ".join(warnings))
+
+    short_history = ""
+    if day_count < 21:
+        short_history = f'<p class="muted" style="margin:0 0 8px">업종 기록 {day_count}영업일 — 20일 값은 기록이 쌓이면 채워집니다.</p>'
 
     return f"""<!doctype html>
 <html lang="ko">
@@ -293,45 +457,61 @@ def build_html(bas_dd, idx, stocks, made_at, warnings):
     <p class="muted" style="margin:10px 0 0">상승 {up_count:,}종목 · 하락 {down_count:,}종목 (코스피+코스닥, 스팩 제외)</p>
   </section>
 
+  <section>
+    <h2>② 주도 업종 흐름</h2>
+    <p class="muted" style="margin:0 0 8px">5일 수익률 순. "상위{TOP_RANK} 횟수" = 최근 {RECENT_WINDOW}영업일 중 그날 업종 등락률 상위 {TOP_RANK}위 안에 든 날 수</p>
+    {short_history}
+    {leader_table(lead_up, day_count)}
+    <h2 style="margin-top:16px">약세 지속 업종</h2>
+    {leader_table(lead_down, day_count)}
+    <p class="muted" style="margin:10px 0 0">
+      <b>지속 주도</b>: 최근 상위권 4회 이상 + 5일·20일 모두 플러스 ·
+      <b>주도 진입</b>: 상위권 2회 이상 + 5일 플러스 ·
+      <b>하루 반등</b>: 어제만 올랐고 흐름은 약함 · <b>연속 약세</b>: 3일 이상 연속 하락
+    </p>
+  </section>
+
   <div class="grid">
     <section>
-      <h2>② 강한 업종</h2>
+      <h2>③ 어제 강한 업종</h2>
       {index_table(strong)}
     </section>
     <section>
-      <h2>③ 약한 업종</h2>
+      <h2>④ 어제 약한 업종</h2>
       {index_table(weak)}
     </section>
   </div>
   <div style="height:14px"></div>
 
   <section>
-    <h2>④ 상한가 ({len(limit_up)}종목)</h2>
+    <h2>⑤ 상한가 ({len(limit_up)}종목)</h2>
     {stock_table(limit_up) if limit_up else '<p class="muted">상한가 종목 없음</p>'}
   </section>
 
   <section>
-    <h2>⑤ 상승률 상위 {TOP_N}</h2>
+    <h2>⑥ 상승률 상위 {TOP_N}</h2>
     <p class="muted" style="margin:0 0 8px">거래대금 10억 원 이상, 스팩 제외</p>
     {stock_table(gainers)}
   </section>
 
   <section>
-    <h2>⑥ 거래대금 상위 {TOP_N}</h2>
+    <h2>⑦ 거래대금 상위 {TOP_N}</h2>
     <p class="muted" style="margin:0 0 8px">돈이 가장 많이 몰린 종목 — 시장 관심의 중심</p>
     {stock_table(by_value)}
   </section>
 
   <section>
-    <h2>⑦ 하락률 상위 10</h2>
+    <h2>⑧ 하락률 상위 10</h2>
     {stock_table(losers)}
   </section>
 
   <section>
     <h2>보는 법</h2>
     <ul style="margin:0;padding-left:20px">
+      <li><b>지속 주도 업종 + 거래대금 상위</b>에 함께 있는 종목이 시장의 중심입니다.</li>
       <li><b>상승률 상위와 거래대금 상위에 동시에 있는 종목</b>이 전날 시장의 진짜 주인공입니다.</li>
       <li>같은 업종 종목이 상위에 여러 개면 <b>테마 확산</b>, 한 종목만 튀었으면 <b>개별 이슈</b>일 가능성이 큽니다.</li>
+      <li>"하루 반등" 업종은 추세 전환이 확인되기 전까지 추격을 조심하세요.</li>
       <li>전날 급등주는 다음 날 변동성이 큽니다. 시초가 흐름을 먼저 보고 판단하세요.</li>
     </ul>
   </section>
@@ -366,8 +546,19 @@ def main():
         warnings.append("지수")
     print(f"종목 {len(stocks)}개, 업종지수 {len(idx['sectors'])}개")
 
+    # 업종 기록 갱신 → 부족하면 과거 채우기 → 주도 업종 계산
+    history = load_history()
+    if idx["sectors"]:
+        history["days"][bas_dd] = slim_sectors(idx["sectors"])
+    backfill_history(history, bas_dd, key)
+    save_history(history)
+    leaders, day_count = compute_leaders(history, bas_dd)
+    if not leaders:
+        warnings.append("주도 업종 계산")
+    print(f"주도 업종 계산: {len(leaders)}개 업종, 기록 {day_count}영업일")
+
     made_at = datetime.now(KST).strftime("%Y-%m-%d %H:%M")
-    page = build_html(bas_dd, idx, stocks, made_at, warnings)
+    page = build_html(bas_dd, idx, stocks, leaders, day_count, made_at, warnings)
     with open("morning.html", "w", encoding="utf-8") as f:
         f.write(page)
 
@@ -380,6 +571,7 @@ def main():
         "generated_at_kst": made_at,
         "indices_main": idx["main"],
         "sectors": idx["sectors"],
+        "leaders": leaders,
         "top_gainers": pick(sorted(liquid, key=lambda s: s["rate"], reverse=True)[:TOP_N]),
         "top_value": pick(sorted(pool, key=lambda s: s["value"], reverse=True)[:TOP_N]),
         "limit_up": pick([s for s in pool if s["rate"] >= 29.5]),
