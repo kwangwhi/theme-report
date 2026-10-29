@@ -1,0 +1,25 @@
+name: KRX API 연결 시험
+
+on:
+  workflow_dispatch: {}   # 수동 실행 전용
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: KRX API 시험 호출
+        env:
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+        run: python scripts/krx_api_test.py
