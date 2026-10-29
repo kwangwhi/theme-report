@@ -2,12 +2,15 @@
 
 휘휘의 장마감 시황 · 테마 리포트 저장소입니다.
 
-**보는 주소:** https://kwangwhi.github.io/theme-report/
+**장마감 시황:** https://kwangwhi.github.io/theme-report/
+
+**아침 준비 리포트:** https://kwangwhi.github.io/theme-report/morning.html
 
 ## 매일 자동으로 일어나는 일 (평일)
 
 | 시각 | 누가 | 하는 일 |
 |---|---|---|
+| 08:30 | GitHub Actions | KRX Open API로 전 영업일 확정 데이터 → **아침 준비 리포트**(`morning.html`) |
 | 15:45 | GitHub Actions | 지수·환율·해외지수 숫자를 거래소 데이터로 받아 `data/`에 저장 |
 | 16:21 | Claude 예약 작업 | `data/`의 숫자 + 뉴스(수급·테마·일정)로 리포트 작성 후 올림 |
 
@@ -17,7 +20,8 @@
 |---|---|
 | `index.html` | 최신 리포트 (위 주소로 열리는 페이지) |
 | `archive.html`, `archive/` | 지난 리포트 보관함 |
-| `data/` | 매일 자동 수집한 숫자 (`latest.json` = 가장 최근) |
+| `morning.html` | 아침 준비 리포트 (전 영업일 상승률·거래대금 상위, 업종 강약) |
+| `data/` | 매일 자동 수집한 숫자 (`latest.json` = 가장 최근), `data/krx/` = KRX 요약 |
 | `scripts/collect_market.py` | 숫자를 받아오는 프로그램 |
 | `.github/workflows/collect-market.yml` | 15:45 자동 실행 설정 |
 
