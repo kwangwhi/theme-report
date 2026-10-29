@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at_kst": "2026-10-29 17:07",
+ "generated_at_kst": "2026-10-29 17:17",
  "rules": {
   "movers": "등락률 ±10.0% 이상",
   "top_value": "거래대금 상위 50",
@@ -1103,15 +1103,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 225300.0,
-    "ma20": 238300.0,
+    "ma5": 225200.0,
+    "ma20": 238275.0,
     "prev_ma5": 222300.0,
     "prev_ma20": 240575.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 286155.41,
+    "upper": 286149.29,
     "prev_upper": 290807.73,
     "prev_close_inside": true
    },
@@ -1148,15 +1148,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1387800.0,
-    "ma20": 1479100.0,
+    "ma5": 1388400.0,
+    "ma20": 1479250.0,
     "prev_ma5": 1333800.0,
     "prev_ma20": 1493400.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1918707.51,
+    "upper": 1918893.44,
     "prev_upper": 1953448.43,
     "prev_close_inside": true
    },
@@ -1193,15 +1193,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 175940.0,
-    "ma20": 180440.0,
+    "ma5": 175980.0,
+    "ma20": 180450.0,
     "prev_ma5": 172880.0,
     "prev_ma20": 181595.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 208796.76,
+    "upper": 208808.95,
     "prev_upper": 211909.71,
     "prev_close_inside": true
    },
@@ -1234,19 +1234,19 @@
     "range60_pct": 75.94,
     "high60": 1265000,
     "low60": 719000,
-    "vol_ratio20": 1.3
+    "vol_ratio20": 1.31
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 854600.0,
-    "ma20": 917600.0,
+    "ma5": 855000.0,
+    "ma20": 917700.0,
     "prev_ma5": 816200.0,
     "prev_ma20": 926850.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1230993.94,
+    "upper": 1231125.01,
     "prev_upper": 1253116.93,
     "prev_close_inside": true
    },
@@ -1279,19 +1279,19 @@
     "range60_pct": 96.42,
     "high60": 1699000,
     "low60": 865000,
-    "vol_ratio20": 1.28
+    "vol_ratio20": 1.29
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1208600.0,
-    "ma20": 1338500.0,
+    "ma5": 1209000.0,
+    "ma20": 1338600.0,
     "prev_ma5": 1183200.0,
     "prev_ma20": 1352350.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1715470.29,
+    "upper": 1715501.79,
     "prev_upper": 1738908.81,
     "prev_close_inside": true
    },
@@ -1324,19 +1324,19 @@
     "range60_pct": 45.3,
     "high60": 433000,
     "low60": 298000,
-    "vol_ratio20": 2.06
+    "vol_ratio20": 2.07
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 374300.0,
-    "ma20": 390200.0,
+    "ma5": 374200.0,
+    "ma20": 390175.0,
     "prev_ma5": 381700.0,
     "prev_ma20": 390150.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 431698.67,
+    "upper": 431760.18,
     "prev_upper": 431822.65,
     "prev_close_inside": true
    },
@@ -1418,15 +1418,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 151660.0,
-    "ma20": 160335.0,
+    "ma5": 151740.0,
+    "ma20": 160355.0,
     "prev_ma5": 152160.0,
     "prev_ma20": 161225.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 172686.4,
+    "upper": 172675.63,
     "prev_upper": 174552.4,
     "prev_close_inside": true
    },
@@ -1508,15 +1508,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 305800.0,
-    "ma20": 307300.0,
+    "ma5": 306000.0,
+    "ma20": 307350.0,
     "prev_ma5": 299500.0,
     "prev_ma20": 308725.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 357814.75,
+    "upper": 357912.93,
     "prev_upper": 362011.47,
     "prev_close_inside": true
    },
@@ -1553,15 +1553,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 509900.0,
-    "ma20": 540225.0,
+    "ma5": 510100.0,
+    "ma20": 540275.0,
     "prev_ma5": 505900.0,
     "prev_ma20": 539325.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 601952.2,
+    "upper": 601986.81,
     "prev_upper": 601850.41,
     "prev_close_inside": true
    },
@@ -1643,15 +1643,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 502100.0,
-    "ma20": 510900.0,
+    "ma5": 503100.0,
+    "ma20": 511150.0,
     "prev_ma5": 489100.0,
     "prev_ma20": 514000.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 619203.55,
+    "upper": 619605.57,
     "prev_upper": 627179.95,
     "prev_close_inside": true
    },
@@ -1730,19 +1730,19 @@
     "range60_pct": 65.03,
     "high60": 94400,
     "low60": 57200,
-    "vol_ratio20": 3.55
+    "vol_ratio20": 3.56
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 58780.0,
-    "ma20": 68355.0,
+    "ma5": 58800.0,
+    "ma20": 68360.0,
     "prev_ma5": 59880.0,
     "prev_ma20": 69590.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 86227.04,
+    "upper": 86218.04,
     "prev_upper": 87233.23,
     "prev_close_inside": true
    },
@@ -1779,15 +1779,15 @@
    },
    "golden_cross": {
     "hit": true,
-    "ma5": 615400.0,
-    "ma20": 611300.0,
+    "ma5": 614800.0,
+    "ma20": 611150.0,
     "prev_ma5": 607000.0,
     "prev_ma20": 611450.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
-    "hit": true,
-    "upper": 647797.12,
+    "hit": false,
+    "upper": 647045.82,
     "prev_upper": 648584.75,
     "prev_close_inside": true
    },
@@ -1824,15 +1824,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 288700.0,
-    "ma20": 351275.0,
+    "ma5": 288500.0,
+    "ma20": 351225.0,
     "prev_ma5": 295400.0,
     "prev_ma20": 359200.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 454084.76,
+    "upper": 454189.79,
     "prev_upper": 460772.83,
     "prev_close_inside": true
    },
@@ -1869,15 +1869,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 176180.0,
-    "ma20": 181210.0,
+    "ma5": 176200.0,
+    "ma20": 181215.0,
     "prev_ma5": 176460.0,
     "prev_ma20": 182250.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 194684.55,
+    "upper": 194679.07,
     "prev_upper": 196554.2,
     "prev_close_inside": true
    },
@@ -1910,7 +1910,7 @@
     "range60_pct": 65.05,
     "high60": 238000,
     "low60": 144200,
-    "vol_ratio20": 1.34
+    "vol_ratio20": 1.35
    },
    "golden_cross": {
     "hit": false,
@@ -1959,15 +1959,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 158020.0,
-    "ma20": 176165.0,
+    "ma5": 158060.0,
+    "ma20": 176175.0,
     "prev_ma5": 158780.0,
     "prev_ma20": 178675.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 219908.63,
+    "upper": 219900.55,
     "prev_upper": 223322.77,
     "prev_close_inside": true
    },
@@ -2000,19 +2000,19 @@
     "range60_pct": 59.5,
     "high60": 165400,
     "low60": 103700,
-    "vol_ratio20": 1.33
+    "vol_ratio20": 1.34
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 136560.0,
-    "ma20": 149235.0,
+    "ma5": 136580.0,
+    "ma20": 149240.0,
     "prev_ma5": 138840.0,
     "prev_ma20": 150115.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 168131.06,
+    "upper": 168115.32,
     "prev_upper": 166778.89,
     "prev_close_inside": true
    },
@@ -2049,15 +2049,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 193200.0,
-    "ma20": 223470.0,
+    "ma5": 193220.0,
+    "ma20": 223475.0,
     "prev_ma5": 192700.0,
     "prev_ma20": 226385.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 288447.69,
+    "upper": 288443.54,
     "prev_upper": 290988.82,
     "prev_close_inside": true
    },
@@ -2094,15 +2094,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1909400.0,
-    "ma20": 2191850.0,
+    "ma5": 1910200.0,
+    "ma20": 2192050.0,
     "prev_ma5": 1913000.0,
     "prev_ma20": 2238150.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 2926838.78,
+    "upper": 2926715.5,
     "prev_upper": 3007847.93,
     "prev_close_inside": true
    },
@@ -2139,15 +2139,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 231700.0,
-    "ma20": 253450.0,
+    "ma5": 231800.0,
+    "ma20": 253475.0,
     "prev_ma5": 233100.0,
     "prev_ma20": 254500.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 286074.99,
+    "upper": 286033.37,
     "prev_upper": 285545.13,
     "prev_close_inside": true
    },
@@ -2274,15 +2274,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 61540.0,
-    "ma20": 50470.0,
+    "ma5": 61500.0,
+    "ma20": 50460.0,
     "prev_ma5": 60300.0,
     "prev_ma20": 49742.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 64508.85,
+    "upper": 64465.38,
     "prev_upper": 62721.8,
     "prev_close_inside": false
    },
@@ -2319,15 +2319,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 91800.0,
-    "ma20": 99415.0,
+    "ma5": 91840.0,
+    "ma20": 99425.0,
     "prev_ma5": 92440.0,
     "prev_ma20": 100825.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 118991.03,
+    "upper": 118981.57,
     "prev_upper": 121461.36,
     "prev_close_inside": true
    },
@@ -2364,15 +2364,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 365800.0,
-    "ma20": 458350.0,
+    "ma5": 365900.0,
+    "ma20": 458375.0,
     "prev_ma5": 375700.0,
     "prev_ma20": 470650.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 643384.89,
+    "upper": 643347.67,
     "prev_upper": 656083.3,
     "prev_close_inside": true
    },
@@ -2405,7 +2405,7 @@
     "range60_pct": 45.58,
     "high60": 84000,
     "low60": 57700,
-    "vol_ratio20": 2.06
+    "vol_ratio20": 2.07
    },
    "golden_cross": {
     "hit": false,
@@ -2454,15 +2454,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 129480.0,
-    "ma20": 137840.0,
+    "ma5": 129520.0,
+    "ma20": 137850.0,
     "prev_ma5": 127860.0,
     "prev_ma20": 137685.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 160437.65,
+    "upper": 160443.49,
     "prev_upper": 160389.74,
     "prev_close_inside": true
    },
@@ -2496,7 +2496,7 @@
     "range60_pct": 98.1,
     "high60": 21950,
     "low60": 11080,
-    "vol_ratio20": 8.31
+    "vol_ratio20": 8.33
    },
    "golden_cross": {
     "hit": false,
@@ -2541,19 +2541,19 @@
     "range60_pct": 82.08,
     "high60": 113800,
     "low60": 62500,
-    "vol_ratio20": 1.7
+    "vol_ratio20": 1.71
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 80480.0,
-    "ma20": 94550.0,
+    "ma5": 80500.0,
+    "ma20": 94555.0,
     "prev_ma5": 83100.0,
     "prev_ma20": 95565.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 115658.24,
+    "upper": 115642.86,
     "prev_upper": 114243.04,
     "prev_close_inside": true
    },
@@ -2586,19 +2586,19 @@
     "range60_pct": 79.46,
     "high60": 56800,
     "low60": 31650,
-    "vol_ratio20": 13.73
+    "vol_ratio20": 13.76
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 40600.0,
-    "ma20": 43682.5,
+    "ma5": 40630.0,
+    "ma20": 43690.0,
     "prev_ma5": 38650.0,
     "prev_ma20": 43730.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 54353.92,
+    "upper": 54374.18,
     "prev_upper": 54488.64,
     "prev_close_inside": true
    },
@@ -2635,15 +2635,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 36700.0,
-    "ma20": 41312.5,
+    "ma5": 36690.0,
+    "ma20": 41310.0,
     "prev_ma5": 36890.0,
     "prev_ma20": 41880.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 50071.43,
+    "upper": 50074.74,
     "prev_upper": 50723.72,
     "prev_close_inside": true
    },
@@ -2680,15 +2680,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 328000.0,
-    "ma20": 382300.0,
+    "ma5": 327800.0,
+    "ma20": 382250.0,
     "prev_ma5": 330800.0,
     "prev_ma20": 389800.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 494675.0,
+    "upper": 494726.0,
     "prev_upper": 506097.64,
     "prev_close_inside": true
    },
@@ -2722,19 +2722,19 @@
     "range60_pct": 186.82,
     "high60": 12190,
     "low60": 4250,
-    "vol_ratio20": 11.85
+    "vol_ratio20": 11.87
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 7850.0,
-    "ma20": 8733.0,
+    "ma5": 7860.0,
+    "ma20": 8735.5,
     "prev_ma5": 7462.0,
     "prev_ma20": 8736.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 10977.02,
+    "upper": 10982.55,
     "prev_upper": 10983.68,
     "prev_close_inside": true
    },
@@ -2767,19 +2767,19 @@
     "range60_pct": 165.33,
     "high60": 17910,
     "low60": 6750,
-    "vol_ratio20": 1.26
+    "vol_ratio20": 1.27
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 14380.0,
-    "ma20": 15154.5,
+    "ma5": 14378.0,
+    "ma20": 15154.0,
     "prev_ma5": 14788.0,
     "prev_ma20": 15277.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 16773.05,
+    "upper": 16775.46,
     "prev_upper": 16482.31,
     "prev_close_inside": true
    },
@@ -2816,15 +2816,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 25290.0,
-    "ma20": 22832.5,
+    "ma5": 25260.0,
+    "ma20": 22825.0,
     "prev_ma5": 25730.0,
     "prev_ma20": 22742.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 26783.48,
+    "upper": 26769.55,
     "prev_upper": 26687.79,
     "prev_close_inside": true
    },
@@ -2857,19 +2857,19 @@
     "range60_pct": 73.12,
     "high60": 4155,
     "low60": 2400,
-    "vol_ratio20": 7.9
+    "vol_ratio20": 7.91
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 3767.0,
-    "ma20": 3703.25,
+    "ma5": 3769.0,
+    "ma20": 3703.75,
     "prev_ma5": 3880.0,
     "prev_ma20": 3714.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 4162.12,
+    "upper": 4160.27,
     "prev_upper": 4128.37,
     "prev_close_inside": true
    },
@@ -2906,15 +2906,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 2259.0,
-    "ma20": 1826.95,
+    "ma5": 2256.0,
+    "ma20": 1826.2,
     "prev_ma5": 2125.0,
     "prev_ma20": 1794.2,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": true,
-    "upper": 2380.62,
+    "upper": 2376.42,
     "prev_upper": 2262.8,
     "prev_close_inside": true
    },
@@ -2953,15 +2953,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 3130.0,
-    "ma20": 3509.75,
+    "ma5": 3132.0,
+    "ma20": 3510.25,
     "prev_ma5": 3088.0,
     "prev_ma20": 3529.25,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 4274.85,
+    "upper": 4274.11,
     "prev_upper": 4263.72,
     "prev_close_inside": true
    },
@@ -3317,15 +3317,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 177680.0,
-    "ma20": 218230.0,
+    "ma5": 177520.0,
+    "ma20": 218190.0,
     "prev_ma5": 180000.0,
     "prev_ma20": 220590.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 285852.66,
+    "upper": 285912.7,
     "prev_upper": 285431.93,
     "prev_close_inside": true
    },
@@ -3407,15 +3407,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 14186.0,
-    "ma20": 15064.5,
+    "ma5": 14182.0,
+    "ma20": 15063.5,
     "prev_ma5": 13900.0,
     "prev_ma20": 15168.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 18730.8,
+    "upper": 18730.01,
     "prev_upper": 18924.86,
     "prev_close_inside": true
    },
@@ -3448,19 +3448,19 @@
     "range60_pct": 206.19,
     "high60": 36100,
     "low60": 11790,
-    "vol_ratio20": 1.2
+    "vol_ratio20": 1.21
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 27790.0,
-    "ma20": 28890.0,
+    "ma5": 27810.0,
+    "ma20": 28895.0,
     "prev_ma5": 27390.0,
     "prev_ma20": 28700.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 33227.93,
+    "upper": 33232.73,
     "prev_upper": 33358.11,
     "prev_close_inside": true
    },
@@ -3493,19 +3493,19 @@
     "range60_pct": 140.75,
     "high60": 31900,
     "low60": 13250,
-    "vol_ratio20": 1.94
+    "vol_ratio20": 1.95
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 25280.0,
-    "ma20": 25632.5,
+    "ma5": 25270.0,
+    "ma20": 25630.0,
     "prev_ma5": 24210.0,
     "prev_ma20": 25577.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 31047.78,
+    "upper": 31041.04,
     "prev_upper": 30919.36,
     "prev_close_inside": true
    },
@@ -3542,15 +3542,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 14124.0,
-    "ma20": 12116.5,
+    "ma5": 14134.0,
+    "ma20": 12119.0,
     "prev_ma5": 13360.0,
     "prev_ma20": 11964.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 15091.15,
+    "upper": 15102.94,
     "prev_upper": 14660.49,
     "prev_close_inside": false
    },
@@ -3589,15 +3589,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 142680.0,
-    "ma20": 133630.0,
+    "ma5": 142640.0,
+    "ma20": 133620.0,
     "prev_ma5": 134680.0,
     "prev_ma20": 131460.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 158435.65,
+    "upper": 158356.74,
     "prev_upper": 146649.13,
     "prev_close_inside": false
    },
@@ -3670,7 +3670,7 @@
     "range60_pct": 176.14,
     "high60": 121500,
     "low60": 44000,
-    "vol_ratio20": 1.08
+    "vol_ratio20": 1.09
    },
    "golden_cross": {
     "hit": false,
@@ -3719,15 +3719,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 36650.0,
-    "ma20": 45515.0,
+    "ma5": 36660.0,
+    "ma20": 45517.5,
     "prev_ma5": 37540.0,
     "prev_ma20": 46110.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 59225.51,
+    "upper": 59222.14,
     "prev_upper": 59395.13,
     "prev_close_inside": true
    },
@@ -3809,15 +3809,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 3655.0,
-    "ma20": 4092.5,
+    "ma5": 3658.0,
+    "ma20": 4093.25,
     "prev_ma5": 3559.0,
     "prev_ma20": 4093.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 5135.78,
+    "upper": 5136.32,
     "prev_upper": 5136.14,
     "prev_close_inside": true
    },
@@ -3895,19 +3895,19 @@
     "range60_pct": 150.81,
     "high60": 38700,
     "low60": 15430,
-    "vol_ratio20": 8.93
+    "vol_ratio20": 8.95
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 16846.0,
-    "ma20": 22281.5,
+    "ma5": 16854.0,
+    "ma20": 22283.5,
     "prev_ma5": 16522.0,
     "prev_ma20": 22718.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 30984.12,
+    "upper": 30983.09,
     "prev_upper": 31586.61,
     "prev_close_inside": true
    },
@@ -3944,15 +3944,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 56930.0,
-    "ma20": 54660.0,
+    "ma5": 56950.0,
+    "ma20": 54665.0,
     "prev_ma5": 61780.0,
     "prev_ma20": 54287.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 71290.08,
+    "upper": 71285.38,
     "prev_upper": 71930.43,
     "prev_close_inside": true
    },
@@ -4056,15 +4056,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 26150.0,
-    "ma20": 23656.0,
+    "ma5": 26190.0,
+    "ma20": 23666.0,
     "prev_ma5": 26300.0,
     "prev_ma20": 23921.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 36884.6,
+    "upper": 36889.12,
     "prev_upper": 37198.51,
     "prev_close_inside": true
    },
@@ -4214,15 +4214,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 10084.0,
-    "ma20": 8015.0,
+    "ma5": 10102.0,
+    "ma20": 8019.5,
     "prev_ma5": 9136.0,
     "prev_ma20": 7874.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
-    "hit": false,
-    "upper": 11020.5,
+    "hit": true,
+    "upper": 11043.02,
     "prev_upper": 10555.08,
     "prev_close_inside": true
    },
@@ -4258,7 +4258,7 @@
     "range60_pct": 255.22,
     "high60": 22450,
     "low60": 6320,
-    "vol_ratio20": 0.25
+    "vol_ratio20": 0.26
    },
    "golden_cross": {
     "hit": false,
@@ -4307,15 +4307,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 7058.0,
-    "ma20": 7676.0,
+    "ma5": 7056.0,
+    "ma20": 7675.5,
     "prev_ma5": 7422.0,
     "prev_ma20": 7715.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 9483.01,
+    "upper": 9483.93,
     "prev_upper": 9442.07,
     "prev_close_inside": true
    },
@@ -4352,15 +4352,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 8212.0,
-    "ma20": 10191.0,
+    "ma5": 8226.0,
+    "ma20": 10194.5,
     "prev_ma5": 8452.0,
     "prev_ma20": 10381.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 13470.08,
+    "upper": 13463.33,
     "prev_upper": 13512.89,
     "prev_close_inside": true
    },
@@ -4393,19 +4393,19 @@
     "range60_pct": 104.88,
     "high60": 2475,
     "low60": 1208,
-    "vol_ratio20": 0.93
+    "vol_ratio20": 0.94
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 2032.6,
-    "ma20": 1552.2,
+    "ma5": 2032.4,
+    "ma20": 1552.15,
     "prev_ma5": 1974.2,
     "prev_ma20": 1534.6,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 2162.0,
+    "upper": 2161.84,
     "prev_upper": 2121.75,
     "prev_close_inside": false
    },
@@ -4442,15 +4442,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 7410.0,
-    "ma20": 6898.0,
+    "ma5": 7414.0,
+    "ma20": 6899.0,
     "prev_ma5": 7266.0,
     "prev_ma20": 6814.0,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 8903.14,
+    "upper": 8905.94,
     "prev_upper": 8803.33,
     "prev_close_inside": true
    },
@@ -4524,15 +4524,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 5054.0,
-    "ma20": 6109.0,
+    "ma5": 5056.0,
+    "ma20": 6109.5,
     "prev_ma5": 5216.0,
     "prev_ma20": 6278.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 8276.98,
+    "upper": 8276.04,
     "prev_upper": 8462.44,
     "prev_close_inside": true
    },
@@ -4569,15 +4569,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 8636.0,
-    "ma20": 8109.0,
+    "ma5": 8642.0,
+    "ma20": 8110.5,
     "prev_ma5": 8248.0,
     "prev_ma20": 8114.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 9965.22,
+    "upper": 9969.23,
     "prev_upper": 9978.91,
     "prev_close_inside": true
    },
@@ -4614,15 +4614,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 6886.0,
-    "ma20": 6508.5,
+    "ma5": 6872.0,
+    "ma20": 6505.0,
     "prev_ma5": 6970.0,
     "prev_ma20": 6498.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 7461.48,
+    "upper": 7462.26,
     "prev_upper": 7466.2,
     "prev_close_inside": true
    },
@@ -4659,15 +4659,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 14166.0,
-    "ma20": 15138.5,
+    "ma5": 14146.0,
+    "ma20": 15133.5,
     "prev_ma5": 13722.0,
     "prev_ma20": 15036.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 17670.21,
+    "upper": 17659.24,
     "prev_upper": 17595.06,
     "prev_close_inside": true
    },
@@ -4749,8 +4749,8 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 2332.0,
-    "ma20": 2200.9,
+    "ma5": 2331.0,
+    "ma20": 2200.65,
     "prev_ma5": 2381.0,
     "prev_ma20": 2186.45,
     "low_above_ma20": false
@@ -4792,19 +4792,19 @@
     "range60_pct": 229.85,
     "high60": 9780,
     "low60": 2965,
-    "vol_ratio20": 0.52
+    "vol_ratio20": 0.53
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 7574.0,
-    "ma20": 7175.0,
+    "ma5": 7572.0,
+    "ma20": 7174.5,
     "prev_ma5": 7262.0,
     "prev_ma20": 7110.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 8847.62,
+    "upper": 8846.26,
     "prev_upper": 8765.72,
     "prev_close_inside": true
    },
@@ -4843,15 +4843,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 10594.0,
-    "ma20": 13026.0,
+    "ma5": 10596.0,
+    "ma20": 13026.5,
     "prev_ma5": 10718.0,
     "prev_ma20": 13316.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 17680.42,
+    "upper": 17679.66,
     "prev_upper": 17924.19,
     "prev_close_inside": true
    },
@@ -4884,19 +4884,19 @@
     "range60_pct": 80.52,
     "high60": 7230,
     "low60": 4005,
-    "vol_ratio20": 4.15
+    "vol_ratio20": 4.16
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 6012.0,
-    "ma20": 5480.25,
+    "ma5": 6010.0,
+    "ma20": 5479.75,
     "prev_ma5": 5912.0,
     "prev_ma20": 5384.75,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 7036.13,
+    "upper": 7034.03,
     "prev_upper": 6854.13,
     "prev_close_inside": true
    },
@@ -4932,19 +4932,19 @@
     "range60_pct": 115.38,
     "high60": 14840,
     "low60": 6890,
-    "vol_ratio20": 13.79
+    "vol_ratio20": 13.82
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 9252.0,
-    "ma20": 9812.0,
+    "ma5": 9224.0,
+    "ma20": 9805.0,
     "prev_ma5": 8672.0,
     "prev_ma20": 9835.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 12527.58,
+    "upper": 12507.03,
     "prev_upper": 12605.95,
     "prev_close_inside": true
    },
@@ -5027,15 +5027,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 13176.0,
-    "ma20": 15945.5,
+    "ma5": 13172.0,
+    "ma20": 15944.5,
     "prev_ma5": 13526.0,
     "prev_ma20": 16326.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 20521.2,
+    "upper": 20523.38,
     "prev_upper": 20900.2,
     "prev_close_inside": true
    },
@@ -5067,19 +5067,19 @@
     "range60_pct": 68.09,
     "high60": 2355,
     "low60": 1401,
-    "vol_ratio20": 0.82
+    "vol_ratio20": 0.83
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1814.6,
-    "ma20": 1696.65,
+    "ma5": 1814.2,
+    "ma20": 1696.55,
     "prev_ma5": 1865.6,
     "prev_ma20": 1707.8,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 2013.23,
+    "upper": 2013.26,
     "prev_upper": 2025.12,
     "prev_close_inside": true
    },
@@ -5112,19 +5112,19 @@
     "range60_pct": 69.4,
     "high60": 13840,
     "low60": 8170,
-    "vol_ratio20": 56.3
+    "vol_ratio20": 56.86
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 9204.0,
-    "ma20": 9483.0,
+    "ma5": 9176.0,
+    "ma20": 9476.0,
     "prev_ma5": 9000.0,
     "prev_ma20": 9461.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 10393.96,
+    "upper": 10365.17,
     "prev_upper": 10317.68,
     "prev_close_inside": true
    },
@@ -5157,19 +5157,19 @@
     "range60_pct": 180.29,
     "high60": 4765,
     "low60": 1700,
-    "vol_ratio20": 0.41
+    "vol_ratio20": 0.42
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 2560.0,
-    "ma20": 3463.5,
+    "ma5": 2566.0,
+    "ma20": 3465.0,
     "prev_ma5": 2725.0,
     "prev_ma20": 3570.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 4781.62,
+    "upper": 4777.49,
     "prev_upper": 4811.01,
     "prev_close_inside": true
    },
@@ -5207,15 +5207,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 7996.0,
-    "ma20": 8811.5,
+    "ma5": 8022.0,
+    "ma20": 8818.0,
     "prev_ma5": 8228.0,
     "prev_ma20": 8972.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 10625.82,
+    "upper": 10608.96,
     "prev_upper": 10732.04,
     "prev_close_inside": true
    },
@@ -5248,19 +5248,19 @@
     "range60_pct": 80.58,
     "high60": 6510,
     "low60": 3605,
-    "vol_ratio20": 24.19
+    "vol_ratio20": 24.2
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 4338.0,
-    "ma20": 4539.25,
+    "ma5": 4342.0,
+    "ma20": 4540.25,
     "prev_ma5": 4189.0,
     "prev_ma20": 4555.25,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 5554.86,
+    "upper": 5556.53,
     "prev_upper": 5590.39,
     "prev_close_inside": true
    },
@@ -5297,15 +5297,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 11654.0,
-    "ma20": 14203.5,
+    "ma5": 11668.0,
+    "ma20": 14207.0,
     "prev_ma5": 12278.0,
     "prev_ma20": 14523.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 18782.02,
+    "upper": 18773.8,
     "prev_upper": 18864.18,
     "prev_close_inside": true
    },
@@ -5344,15 +5344,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 3817.0,
-    "ma20": 3472.5,
+    "ma5": 3816.0,
+    "ma20": 3472.25,
     "prev_ma5": 3939.0,
     "prev_ma20": 3486.5,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 4125.3,
+    "upper": 4125.25,
     "prev_upper": 4139.34,
     "prev_close_inside": true
    },
@@ -5386,15 +5386,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 9048.0,
-    "ma20": 9642.5,
+    "ma5": 9052.0,
+    "ma20": 9643.5,
     "prev_ma5": 8970.0,
     "prev_ma20": 9814.0,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 12616.37,
+    "upper": 12616.06,
     "prev_upper": 12933.49,
     "prev_close_inside": true
    },
@@ -5426,7 +5426,7 @@
     "range60_pct": 168.44,
     "high60": 7570,
     "low60": 2820,
-    "vol_ratio20": 0.97
+    "vol_ratio20": 0.98
    },
    "golden_cross": {
     "hit": false,
@@ -5472,7 +5472,7 @@
     "range60_pct": 51.09,
     "high60": 6950,
     "low60": 4600,
-    "vol_ratio20": 80.46
+    "vol_ratio20": 80.57
    },
    "golden_cross": {
     "hit": false,
@@ -5521,15 +5521,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 3129.0,
-    "ma20": 2882.75,
+    "ma5": 3125.0,
+    "ma20": 2881.75,
     "prev_ma5": 3079.0,
     "prev_ma20": 2871.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 3319.96,
+    "upper": 3317.98,
     "prev_upper": 3307.64,
     "prev_close_inside": false
    },
@@ -5611,15 +5611,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1208.6,
-    "ma20": 1292.95,
+    "ma5": 1208.8,
+    "ma20": 1293.0,
     "prev_ma5": 1200.4,
     "prev_ma20": 1301.65,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1457.03,
+    "upper": 1457.06,
     "prev_upper": 1478.73,
     "prev_close_inside": true
    },
@@ -5656,15 +5656,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1337.0,
-    "ma20": 1093.4,
+    "ma5": 1337.4,
+    "ma20": 1093.5,
     "prev_ma5": 1397.6,
     "prev_ma20": 1078.95,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1552.88,
+    "upper": 1553.06,
     "prev_upper": 1543.52,
     "prev_close_inside": true
    },
@@ -5701,15 +5701,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 1500.0,
-    "ma20": 1562.3,
+    "ma5": 1499.8,
+    "ma20": 1562.25,
     "prev_ma5": 1495.6,
     "prev_ma20": 1565.05,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1687.75,
+    "upper": 1687.81,
     "prev_upper": 1686.84,
     "prev_close_inside": true
    },
@@ -5746,15 +5746,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 4879.0,
-    "ma20": 4776.5,
+    "ma5": 4861.0,
+    "ma20": 4772.0,
     "prev_ma5": 4813.0,
     "prev_ma20": 4788.25,
     "low_above_ma20": false
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 5340.28,
+    "upper": 5344.47,
     "prev_upper": 5341.95,
     "prev_close_inside": true
    },
@@ -5840,15 +5840,15 @@
    },
    "golden_cross": {
     "hit": false,
-    "ma5": 987.2,
-    "ma20": 953.45,
+    "ma5": 982.0,
+    "ma20": 952.15,
     "prev_ma5": 974.4,
     "prev_ma20": 949.5,
     "low_above_ma20": true
    },
    "bollinger_break": {
     "hit": false,
-    "upper": 1012.94,
+    "upper": 1006.79,
     "prev_upper": 1001.01,
     "prev_close_inside": false
    },
@@ -6619,9 +6619,9 @@
    "삼성화재"
   ],
   "bollinger_break": [
-   "삼성화재",
    "진양화학",
    "진양폴리",
+   "컨텍",
    "상지건설",
    "파이온엑스"
   ],
