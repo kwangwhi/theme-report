@@ -1,0 +1,46 @@
+name: 장마감 데이터 수집
+
+on:
+  schedule:
+    # 평일 15:45 (한국시간) = 06:45 (UTC)
+    - cron: "45 6 * * 1-5"
+  workflow_dispatch: {}   # Actions 탭에서 "Run workflow" 버튼으로 수동 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-market
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 도구 설치
+        run: pip install finance-datareader
+
+      - name: 데이터 수집
+        run: python scripts/collect_market.py
+
+      - name: 결과 저장(커밋)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "바뀐 내용 없음"
+            exit 0
+          fi
+          git commit -m "장마감 데이터 수집 $(TZ=Asia/Seoul date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push origin main
