@@ -68,7 +68,7 @@ def main():
             status, body = call(path, bas_dd, key)
             rows = rows_of(body) if status == 200 else None
             if rows:
-                print(f"[성공] {name}: {bas_dd} 기준 {len(rows)}건, 항목: {', '.join(list(rows[0].keys())[:8])} ...")
+                print(f"::notice title=성공 {name}::[성공] {name}: {bas_dd} 기준 {len(rows)}건, 항목: {', '.join(list(rows[0].keys())[:8])} ...")
                 ok_count += 1
                 found = True
                 break
@@ -80,9 +80,9 @@ def main():
             else:
                 last_msg = f"{bas_dd} 데이터 없음"
         if not found:
-            print(f"[실패] {name}: {last_msg}")
+            print(f"::warning title=실패 {name}::[실패] {name}: {last_msg}")
 
-    print(f"\n결과: {ok_count}/{len(APIS)} 성공")
+    print(f"::notice title=결과::결과 {ok_count}/{len(APIS)} 성공")
     if ok_count == 0:
         sys.exit(1)
 
