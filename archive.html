@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지난 리포트</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#ffffff; --text:#1a1d21; --muted:#6b7280; --line:#e5e7eb; --link:#1d64d8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1115; --card:#181b21; --text:#e8eaed; --muted:#9aa0a6; --line:#2a2e36; --link:#5b9bff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); line-height:1.6;
+    font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:20px 16px 48px; }
+  h1 { font-size:1.5rem; margin:0 0 16px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  ul { margin:0; padding-left:20px; }
+  li { margin-bottom:8px; }
+  a { color:var(--link); }
+  .muted { color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>지난 리포트</h1>
+  <p class="muted"><a href="index.html">← 최신 리포트로</a> · 최신이 위에 있습니다</p>
+  <section>
+    <ul id="list">
+      <!-- 새 항목은 이 줄 바로 아래에 추가 -->
+      <li><a href="archive/2026-10-29-pm.html">2026-10-29 (목) 오후장</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
