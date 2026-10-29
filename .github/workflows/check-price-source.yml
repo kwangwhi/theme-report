@@ -1,0 +1,19 @@
+name: 일봉 출처 점검
+
+on:
+  workflow_dispatch: {}   # 진단용, 수동 실행 전용
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pykrx finance-datareader
+      - run: python scripts/check_price_source.py
