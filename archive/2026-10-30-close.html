@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장마감 시황 · 테마 리포트</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1a1d21; --muted: #6b7280;
+    --line: #e5e7eb; --up: #d92d20; --down: #1d64d8; --warn-bg: #fff7e6; --warn: #8a5a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --card: #181b21; --text: #e8eaed; --muted: #9aa0a6;
+      --line: #2a2e36; --up: #ff6b5e; --down: #5b9bff; --warn-bg: #2a2212; --warn: #f2c46d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    line-height: 1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .stamp { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+  .notice { background: var(--warn-bg); color: var(--warn); border-radius: 10px;
+    padding: 10px 14px; font-size: .9rem; margin-bottom: 16px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px; margin-bottom: 14px; }
+  h2 { font-size: 1.1rem; margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { text-align: left; padding: 7px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+  td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
+  .tag { display: inline-block; font-size: .75rem; color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 0 8px; margin-left: 4px; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .src a { color: var(--muted); word-break: break-all; }
+  footer { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>장마감 시황 · 테마 리포트</h1>
+  <div class="stamp">2026년 10월 30일(금) · 종가 기준</div>
+
+  <div class="notice">
+    일부 숫자는 데이터 수집 실패로 기사 기준입니다. (오늘 15:45 자동 수집이 돌지 않아 16:29까지 data/2026-10-30.json 이 없었습니다. 그래서 지수·환율·해외 숫자를 모두 마감 기사로 채웠습니다.) 매수·매도 추천이 아닙니다.
+  </div>
+
+  <section>
+    <h2>① 오늘 시장 한 줄 요약</h2>
+    <p style="margin:0">
+      코스피는 <b>-2.99% 급락 출발</b>(5,760.35) 뒤 10시 5분께 <b>매도 사이드카</b>가 걸렸고, 장중 5,599.42까지 밀렸다가 낙폭을 조금 줄여 <b>5,730.74(<span class="down">-3.48%</span>)</b>로 마감했습니다. 코스닥도 <span class="down">-3.83%</span>.
+      핵심 원인은 ① 간밤 <b>알파벳(-12.6%)·아마존·인텔 실적 실망</b>으로 "AI 투자가 돈이 되나" 우려가 커져 반도체가 크게 빠진 것, ② <b>외국인이 코스피에서 1.6조 원 넘게 판 것</b>입니다. 제약·바이오, 음식료 같은 방어 업종만 올랐습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2>② 지수·환율</h2>
+    <table>
+      <tr><th>항목</th><th class="num">종가</th><th class="num">전일 대비</th><th class="num">등락률</th><th class="num">장중 고점/저점</th><th class="num">거래대금</th></tr>
+      <tr><td>코스피 <span class="tag">기사 기준</span></td><td class="num">5,730.74</td><td class="num down">-206.92</td><td class="num down">-3.48%</td><td class="num">5,784.98 / 5,599.42</td><td class="num">19.27조</td></tr>
+      <tr><td>코스닥 <span class="tag">기사 기준</span></td><td class="num">724.38</td><td class="num down">-28.85</td><td class="num down">-3.83%</td><td class="num">739.79 / 717.27</td><td class="num">5.74조</td></tr>
+      <tr><td>원/달러 <span class="tag">기사 기준</span></td><td class="num">1,334.3</td><td class="num down">-2.5</td><td class="num down">약 -0.19%</td><td class="num">시가 1,337.8 · 고/저 확인 필요</td><td class="num">—</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      숫자: 거래소 데이터 자동 수집(15:45) — <b>오늘은 수집 실패</b>로 위 숫자 모두 마감 기사 기준입니다. 환율은 주간거래(15:30) 종가이고, 등락률은 기사 숫자로 계산한 값입니다. 코스피 상승 234 · 하락 656 종목.
+    </p>
+  </section>
+
+  <section>
+    <h2>③ 해외 증시</h2>
+    <table>
+      <tr><th>지수</th><th class="num">종가</th><th class="num">등락률</th><th class="num">기준일</th></tr>
+      <tr><td>다우 <span class="tag">기사 기준</span></td><td class="num">52,342.56</td><td class="num down">-0.25%</td><td class="num">10/29 (미국)</td></tr>
+      <tr><td>S&amp;P500 <span class="tag">기사 기준</span></td><td class="num">7,720.39</td><td class="num down">-0.30%</td><td class="num">10/29 (미국)</td></tr>
+      <tr><td>나스닥 <span class="tag">기사 기준</span></td><td class="num">26,184.72</td><td class="num down">-1.38%</td><td class="num">10/29 (미국)</td></tr>
+      <tr><td>필라델피아 반도체 <span class="tag">기사 기준</span></td><td class="num">확인 필요</td><td class="num down">-1.42%</td><td class="num">10/29 (미국)</td></tr>
+      <tr><td>닛케이225 <span class="tag">기사 기준</span></td><td class="num">63,290.11</td><td class="num down">-2.12%</td><td class="num">10/30</td></tr>
+      <tr><td>상해종합</td><td class="num">확인 필요</td><td class="num">확인 필요</td><td class="num">10/30</td></tr>
+      <tr><td>대만 가권</td><td class="num">확인 필요</td><td class="num">확인 필요</td><td class="num">10/30</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      미국은 알파벳이 매출 부진·AI 투자로 현금이 빨리 빠진다는 발표에 12.64% 급락해 기술주를 끌어내렸습니다. 장 마감 후엔 아마존(현금흐름 적자 확대)·인텔(4분기 전망 실망)도 실망스러웠습니다. 일본은행은 오늘 금리를 1.25%로 동결했고, 닛케이는 반도체주 매도로 2% 넘게 빠졌습니다. 상해·대만 마감 숫자는 기사로 확인하지 못했습니다(TSMC 장중 -1.8%).
+    </p>
+  </section>
+
+  <section>
+    <h2>④ 수급 (종가 기준, 순매수 +/순매도 −) <span class="tag">기사 기준</span></h2>
+    <table>
+      <tr><th>시장</th><th class="num">개인</th><th class="num">외국인</th><th class="num">기관</th></tr>
+      <tr><td>코스피</td><td class="num up">+6,270억</td><td class="num down">−1조6,230억</td><td class="num up">+7,420억</td></tr>
+      <tr><td>코스닥</td><td class="num up">+1,640억</td><td class="num down">−260억</td><td class="num down">−1,360억</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      코스피는 외국인이 크게 팔고 개인·기관이 받아낸 날입니다. 코스닥은 외국인·기관이 함께 팔았습니다. (기사마다 수십억 원씩 차이 있음 · 외국인·기관 순매수 상위 종목은 확인 필요)
+    </p>
+  </section>
+
+  <section>
+    <h2>⑤ 강한 쪽 (상승 테마·종목)</h2>
+    <table>
+      <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
+      <tr><td>제약·바이오 (방어)</td><td>삼성바이오로직스</td><td class="num up">+8.86%</td><td>3분기 호실적, 올해 매출 성장 전망 20%로 상향, 인수 추진 공개매수 순항. 코스피 제약 업종 +4.90%</td></tr>
+      <tr><td></td><td>셀트리온</td><td class="num up">+1.22%</td><td>제약 업종 동반 강세</td></tr>
+      <tr><td>신규상장 (AI 영상분석)</td><td>인텔리빅스</td><td class="num up">+244.44%</td><td>코스닥 상장 첫날, 31,000원 마감</td></tr>
+      <tr><td>로봇</td><td>라온로보틱스</td><td class="num up">+24.19%</td><td>이유 확인 필요</td></tr>
+      <tr><td>보안 SW</td><td>안랩</td><td class="num up">+17.98%</td><td>이유 확인 필요</td></tr>
+      <tr><td>개별 상한가</td><td>진양화학 · 형지엘리트</td><td class="num up">+30.00% · +29.94%</td><td>이유 확인 필요</td></tr>
+      <tr><td>방어 업종</td><td>운송창고·음식료·섬유의류·전기가스</td><td class="num up">+0.7~1.3%</td><td>급락장 속 경기 덜 타는 업종으로 이동</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>⑥ 약한 쪽 (하락 테마·종목)</h2>
+    <table>
+      <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
+      <tr><td>반도체·부품</td><td>SK하이닉스 / 삼성전자</td><td class="num down">-7.08% / -3.02%</td><td>미국 빅테크 AI 투자 수익성 우려, 외국인 대량 매도</td></tr>
+      <tr><td></td><td>삼성전기 / SK스퀘어</td><td class="num down">-7.50% / -5.88%</td><td>반도체·AI 부품 동반 약세</td></tr>
+      <tr><td>반도체 장비·소부장 (코스닥)</td><td>티에스이 / 리노공업 / 원익IPS</td><td class="num down">-14.78% / -9.08% / -7.72%</td><td>대형 반도체 급락이 장비·부품주로 번짐 (심텍 -8.02%, 주성엔지니어링 -6.78%)</td></tr>
+      <tr><td>자동차</td><td>기아 / 현대차</td><td class="num down">-11.73% / -3.59%</td><td>기아는 3분기 실적 발표 날, 회사가 "중동 영향이 연말까지 간다"고 밝힘. 급락의 직접 원인은 기사로 확인 못 함</td></tr>
+      <tr><td>방산</td><td>한화에어로스페이스</td><td class="num down">-8.42%</td><td>3분기 영업이익 4,520억 원으로 예상보다 61% 낮은 '어닝 쇼크', 증권사 목표가 줄하향</td></tr>
+      <tr><td>신규상장 둘째 날</td><td>티앤이코리아</td><td class="num down">-22.93%</td><td>상장 첫날 급등 뒤 되돌림</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      코스피 업종 하락폭 큰 곳: 운송장비 -4.88%, 전기전자 -4.67%, 기계장비 -4.01%.
+    </p>
+  </section>
+
+  <section>
+    <h2>⑦ 일정·이벤트</h2>
+    <p style="margin:0 0 4px"><b>오늘 장중·장 마감 후</b></p>
+    <ul>
+      <li>일본은행 기준금리 1.25% 동결, 2027년 1월부터 보유 ETF 매각 속도 높이기로 (시장 영향은 제한적이라는 평가)</li>
+      <li>기아 3분기 실적 컨퍼런스콜 — 연간 판매 목표는 유지, 중동 영향은 연말까지 이어진다고 언급</li>
+      <li>그 밖의 장후 주요 공시는 확인 필요</li>
+    </ul>
+    <p style="margin:10px 0 4px"><b>오늘 밤 해외 (한국시간)</b></p>
+    <ul>
+      <li>미국 증시가 아마존·인텔 실적 실망을 얼마나 반영하는지 (오후 나스닥100 선물 -1.5% 수준) — 오늘 밤 구체 지표 일정은 확인 필요</li>
+    </ul>
+    <p style="margin:10px 0 4px"><b>다음 거래일(11월 2일, 월) 전후</b></p>
+    <ul>
+      <li>주말: 10월 수출입 동향 발표 예정(보통 매월 1일 · 날짜 확인 필요) — 반도체 수출 숫자 주목</li>
+      <li>월요일 밤: 미국 서머타임 종료로 뉴욕장 23:30 개장, 10월 ISM 제조업지수, 애플·팔란티어 실적</li>
+      <li>화요일: 미국 중간선거, 한국 10월 소비자물가, AMD 실적 / 금요일: 미국 10월 고용보고서</li>
+      <li>인텔리빅스 상장 둘째 날</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⑧ 내일 체크포인트 <span class="tag">다음 거래일 11/2(월)</span></h2>
+    <ul>
+      <li><b>외국인 매도가 멈추는지</b> — 오늘 현물 1.6조 매도. 이틀 연속 대량 매도면 반등 시도가 약해질 수 있음</li>
+      <li><b>코스피 5,600선</b> — 오늘 장중 저점(5,599). 이 아래로 다시 내려가는지가 위험 신호</li>
+      <li><b>금요일 밤 나스닥·반도체지수</b> — 아마존·인텔 실적 반영 결과가 월요일 반도체(하이닉스·삼성전기·소부장) 출발을 좌우</li>
+      <li><b>제약·바이오 강세가 이어지는지</b> — 하루짜리 피난처인지, 자금이 실제로 옮겨가는지 거래대금으로 확인</li>
+      <li><b>급등락 신규상장주</b> — 인텔리빅스(첫날 +244%)는 티앤이코리아처럼 둘째 날 크게 흔들릴 수 있음. 시초가와 거래량부터 확인</li>
+    </ul>
+  </section>
+
+  <section class="src">
+    <h2>⑨ 출처</h2>
+    <ul>
+      <li><a href="https://www.etoday.co.kr/news/view/2642400">이투데이 마감 (16:06)</a> — 코스피·코스닥 종가, 수급, 사이드카, 업종·종목 (수급 숫자 기준)</li>
+      <li><a href="https://www.seoul.co.kr/news/economy/securities/2026/10/30/20261030500268">서울신문 코스피 마감 (15:49)</a> — 고점·저점, 거래대금, 상·하위 종목 · <a href="https://www.seoul.co.kr/news/economy/securities/2026/10/30/20261030500270">서울신문 코스닥 마감 (15:49)</a></li>
+      <li><a href="https://view.asiae.co.kr/article/2026103016084854064">아시아경제 마감 (16:08)</a> — 선물 수급(외국인 선물 +1조1,470억). 일부 종목 등락률이 다른 기사와 달라(삼성바이오 +5.78% 등) 이투데이·서울신문 숫자 사용</li>
+      <li><a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=280063">비즈니스코리아 개장 시황</a> · <a href="https://alphabiz.co.kr/news/articleView.html?idxno=195418">알파경제 (10:04)</a> — 시가, 장 초반 흐름</li>
+      <li><a href="https://m.news.nate.com/view/20261030n23962">원/달러 1,334.3원 마감 (네이트 뉴스)</a> — 아시아경제는 1,334.2원으로 보도</li>
+      <li><a href="https://www.newspim.com/news/view/20261030000303">뉴스핌 글로벌 마켓 리포트 10월 30일</a> — 미국 증시 · <a href="https://www.newspim.com/news/view/20261030001132">뉴스핌 일본 증시 (16:17)</a></li>
+      <li><a href="https://www.newspim.com/news/view/20261030000268">뉴스핌 한화에어로 (09:56)</a> · <a href="https://news.jkn.co.kr/post/1059006">재경일보 기아 마감 (15:51)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=235612">잡포스트 삼성바이오 (14:35)</a> · <a href="https://m.news.nate.com/view/20261030n24744">기아 컨콜 종합</a></li>
+      <li><a href="https://kr.investing.com/news/stock-market-news/article-2150464">인베스팅닷컴 아시아 기술주 (13:18)</a> · <a href="https://view.asiae.co.kr/article/2026103014401607097">아시아경제 일본은행 동결</a> · <a href="https://supple.kr/news/cmvud6zi61wcy13paa79bdmyb">다음 주 경제일정 (서플)</a> · <a href="https://byline.network/2026/10/23-636/">인텔리빅스 30일 상장</a></li>
+      <li>data/2026-10-30.json — 오늘은 파일이 생성되지 않아 사용하지 못함 (16:29까지 4번 확인)</li>
+    </ul>
+  </section>
+
+  <footer><a href="../index.html" style="color:inherit">최신 리포트</a> · <a href="../archive.html" style="color:inherit">지난 리포트 보기</a> · theme-report · 투자 판단과 책임은 본인에게 있습니다</footer>
+</main>
+</body>
+</html>
