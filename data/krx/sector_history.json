@@ -8061,6 +8061,284 @@
     "close": 1017.25,
     "rate": -2.22
    }
+  ],
+  "20261109": [
+   {
+    "market": "KOSPI",
+    "name": "음식료·담배",
+    "close": 4706.48,
+    "rate": -3.18
+   },
+   {
+    "market": "KOSPI",
+    "name": "섬유·의류",
+    "close": 208.27,
+    "rate": -1.28
+   },
+   {
+    "market": "KOSPI",
+    "name": "종이·목재",
+    "close": 185.82,
+    "rate": 2.07
+   },
+   {
+    "market": "KOSPI",
+    "name": "화학",
+    "close": 3718.55,
+    "rate": -2.69
+   },
+   {
+    "market": "KOSPI",
+    "name": "제약",
+    "close": 16460.5,
+    "rate": -0.28
+   },
+   {
+    "market": "KOSPI",
+    "name": "비금속",
+    "close": 3266.63,
+    "rate": -0.83
+   },
+   {
+    "market": "KOSPI",
+    "name": "금속",
+    "close": 4995.75,
+    "rate": -2.77
+   },
+   {
+    "market": "KOSPI",
+    "name": "기계·장비",
+    "close": 1930.15,
+    "rate": -1.69
+   },
+   {
+    "market": "KOSPI",
+    "name": "전기전자",
+    "close": 75930.97,
+    "rate": -0.2
+   },
+   {
+    "market": "KOSPI",
+    "name": "의료·정밀기기",
+    "close": 1422.21,
+    "rate": 1.99
+   },
+   {
+    "market": "KOSPI",
+    "name": "운송장비·부품",
+    "close": 3258.72,
+    "rate": -3.27
+   },
+   {
+    "market": "KOSPI",
+    "name": "유통",
+    "close": 497.28,
+    "rate": -1.44
+   },
+   {
+    "market": "KOSPI",
+    "name": "전기·가스",
+    "close": 955.2,
+    "rate": -1.09
+   },
+   {
+    "market": "KOSPI",
+    "name": "건설",
+    "close": 114.76,
+    "rate": -1.93
+   },
+   {
+    "market": "KOSPI",
+    "name": "운송·창고",
+    "close": 1955.61,
+    "rate": -3.56
+   },
+   {
+    "market": "KOSPI",
+    "name": "통신",
+    "close": 573.62,
+    "rate": -1.81
+   },
+   {
+    "market": "KOSPI",
+    "name": "금융",
+    "close": 896.8,
+    "rate": -0.78
+   },
+   {
+    "market": "KOSPI",
+    "name": "증권",
+    "close": 3667.01,
+    "rate": -3.99
+   },
+   {
+    "market": "KOSPI",
+    "name": "보험",
+    "close": 40843.26,
+    "rate": 0.42
+   },
+   {
+    "market": "KOSPI",
+    "name": "일반서비스",
+    "close": 1340.87,
+    "rate": -1.68
+   },
+   {
+    "market": "KOSPI",
+    "name": "제조",
+    "close": 14282.28,
+    "rate": -0.71
+   },
+   {
+    "market": "KOSPI",
+    "name": "오락·문화",
+    "close": 748.34,
+    "rate": -1.9
+   },
+   {
+    "market": "KOSPI",
+    "name": "IT 서비스",
+    "close": 1083.64,
+    "rate": -0.58
+   },
+   {
+    "market": "KOSPI",
+    "name": "부동산",
+    "close": 781.05,
+    "rate": -0.55
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "일반서비스",
+    "close": 3029.8,
+    "rate": -4.66
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "제조",
+    "close": 2144.65,
+    "rate": -0.07
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "건설",
+    "close": 63.36,
+    "rate": 1.04
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "유통",
+    "close": 371.51,
+    "rate": 0.72
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "운송·창고",
+    "close": 2827.64,
+    "rate": -1.4
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "금융",
+    "close": 1098.17,
+    "rate": -4.81
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "오락·문화",
+    "close": 280.69,
+    "rate": -0.84
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "음식료·담배",
+    "close": 3623.92,
+    "rate": 0.19
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "섬유·의류",
+    "close": 24.67,
+    "rate": -0.2
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "종이·목재",
+    "close": 5590.15,
+    "rate": -1.3
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "출판·매체복제",
+    "close": 1434.09,
+    "rate": -0.2
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "화학",
+    "close": 1771.61,
+    "rate": -1.65
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "제약",
+    "close": 7001.16,
+    "rate": -1.67
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "비금속",
+    "close": 46717.71,
+    "rate": 3.94
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "금속",
+    "close": 1435.94,
+    "rate": -0.11
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "기계·장비",
+    "close": 571.68,
+    "rate": 0.65
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "전기전자",
+    "close": 1231.93,
+    "rate": 0.3
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "의료·정밀기기",
+    "close": 1377.6,
+    "rate": 0.7
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "운송장비·부품",
+    "close": 3297.96,
+    "rate": 0.03
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "기타제조",
+    "close": 460.65,
+    "rate": 0.68
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "IT 서비스",
+    "close": 587.12,
+    "rate": -0.09
+   },
+   {
+    "market": "KOSDAQ",
+    "name": "통신",
+    "close": 1011.84,
+    "rate": -0.53
+   }
   ]
  },
  "no_data_days": [
