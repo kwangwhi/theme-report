@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장마감 시황 · 테마 리포트</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1a1d21; --muted: #6b7280;
+    --line: #e5e7eb; --up: #d92d20; --down: #1d64d8; --warn-bg: #fff7e6; --warn: #8a5a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --card: #181b21; --text: #e8eaed; --muted: #9aa0a6;
+      --line: #2a2e36; --up: #ff6b5e; --down: #5b9bff; --warn-bg: #2a2212; --warn: #f2c46d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    line-height: 1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .stamp { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+  .notice { background: var(--warn-bg); color: var(--warn); border-radius: 10px;
+    padding: 10px 14px; font-size: .9rem; margin-bottom: 16px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px; margin-bottom: 14px; }
+  h2 { font-size: 1.1rem; margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { text-align: left; padding: 7px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+  td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
+  .tag { display: inline-block; font-size: .75rem; color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 0 8px; margin-left: 4px; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .src a { color: var(--muted); word-break: break-all; }
+  footer { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>장마감 시황 · 테마 리포트</h1>
+  <div class="stamp">2026년 11월 09일(월) · 종가 기준</div>
+
+  <div class="notice">
+    일부 숫자는 데이터 수집 실패로 기사 기준입니다. (오늘 15:45 자동 수집 파일 data/2026-11-09.json 이 16:39까지 올라오지 않아 지수·환율·해외 숫자를 모두 기사로 채웠습니다.) 매수·매도 추천이 아닙니다.
+  </div>
+
+  <section>
+    <h2>① 오늘 시장 한 줄 요약</h2>
+    <p style="margin:0">
+      코스피는 <b>5,034로 약하게 출발</b>해 한때 5,000선 아래(저점 4,990.66)로 밀렸다가, 간밤 미국 반도체 반등을 타고 장중 5,172선까지 올랐습니다. 하지만 오후에 힘이 빠지며 <b>5,018.85(<span class="down">-0.81%</span>)</b>로 마감, 5,000선은 지켰습니다. 코스닥도 장중 +2%대에서 밀려 <span class="down">-0.82%</span>.
+      원인은 ① <b>외국인 7거래일 연속 순매도</b>(코스피 약 -6,900억), ② 반도체는 버텼지만 <b>2차전지·바이오(알테오젠 -16%)·방산</b>이 크게 빠진 것. 미국 고용 호조로 <b>12월 금리 인상 걱정</b>도 남았습니다. 원/달러는 9.5원 내린 1,347.1원.
+    </p>
+  </section>
+
+  <section>
+    <h2>② 지수·환율</h2>
+    <table>
+      <tr><th>항목</th><th class="num">종가</th><th class="num">전일 대비</th><th class="num">등락률</th><th class="num">장중 고점/저점</th><th class="num">거래대금</th></tr>
+      <tr><td>코스피 <span class="tag">기사 기준</span></td><td class="num">5,018.85</td><td class="num down">-40.84</td><td class="num down">-0.81%</td><td class="num">5,172.94 / 4,990.66</td><td class="num">확인 필요</td></tr>
+      <tr><td>코스닥 <span class="tag">기사 기준</span></td><td class="num">638.97</td><td class="num down">-5.30</td><td class="num down">-0.82%</td><td class="num">658.66 / 632.70</td><td class="num">4.26조</td></tr>
+      <tr><td>원/달러 <span class="tag">기사 기준</span></td><td class="num">1,347.1</td><td class="num down">-9.5</td><td class="num down">-0.70%</td><td class="num">확인 필요</td><td class="num">—</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      숫자: 거래소 데이터 자동 수집(15:45) — <b>오늘은 수집 실패</b>로 위 숫자 모두 마감 기사 기준입니다. 시가: 코스피 5,034.20(-0.50%), 코스닥 638.82(-0.85%). 코스피 고점은 아시아경제 1곳만 보도, 고점·저점 시각은 기사에 없음. 환율 등락률은 1,356.6원 기준으로 계산했고, 09시 무렵 1,360원이었습니다. 코스피 상승 340·하락 530(상한가 7), 코스닥 상한가 8·하한가 1.
+    </p>
+  </section>
+
+  <section>
+    <h2>③ 해외 증시</h2>
+    <table>
+      <tr><th>지수</th><th class="num">종가</th><th class="num">등락률</th><th class="num">기준일</th></tr>
+      <tr><td>다우 <span class="tag">기사 기준</span></td><td class="num">51,285.7</td><td class="num down">-0.46%</td><td class="num">11/6 (미국)</td></tr>
+      <tr><td>S&amp;P500 <span class="tag">기사 기준</span></td><td class="num">7,376.86</td><td class="num up">+0.31%</td><td class="num">11/6 (미국)</td></tr>
+      <tr><td>나스닥 <span class="tag">기사 기준</span></td><td class="num">24,579.4</td><td class="num up">+1.09%</td><td class="num">11/6 (미국)</td></tr>
+      <tr><td>필라델피아 반도체 <span class="tag">기사 기준</span></td><td class="num">확인 필요</td><td class="num up">+4.20%</td><td class="num">11/6 (미국)</td></tr>
+      <tr><td>닛케이225 <span class="tag">장중</span></td><td class="num">확인 필요</td><td class="num up">+2.3~3.5% (장중)</td><td class="num">11/9 · 종가 확인 필요</td></tr>
+      <tr><td>상해종합 <span class="tag">기사 기준</span></td><td class="num">3,660.79</td><td class="num up">+0.32%</td><td class="num">11/9</td></tr>
+      <tr><td>대만 가권 <span class="tag">장중</span></td><td class="num">확인 필요</td><td class="num up">+4.9% 안팎 (장중 최대 +6.7%)</td><td class="num">11/9 · 종가 확인 필요</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      지난 금요일(11/6) 미국은 전날 폭락 뒤 기술주가 되돌림: AMD +11.04%, 인텔 +7.71%, 마이크론 +5.12%, 엔비디아 +2.78%. 다만 10월 비농업 고용이 +16.5만 명으로 예상의 두 배를 넘어 <b>12월 금리 인상 전망(약 80%)</b>이 커졌습니다. 대만은 당국이 공매도 제한·안정기금 투입 가능성을 밝히며 7일 연속 하락을 멈췄고(TSMC·미디어텍 +6%대), 중국은 혼조(선전 -0.27%).
+    </p>
+  </section>
+
+  <section>
+    <h2>④ 수급 (순매수 +/순매도 −) <span class="tag">기사 기준</span></h2>
+    <table>
+      <tr><th>시장</th><th class="num">개인</th><th class="num">외국인</th><th class="num">기관</th></tr>
+      <tr><td>코스피</td><td class="num down">−4,887억</td><td class="num down">−6,930억</td><td class="num up">+7,204억</td></tr>
+      <tr><td>코스닥</td><td class="num down">−397억</td><td class="num down">−748억</td><td class="num up">+1,075억</td></tr>
+    </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
+      외국인이 <b>7거래일 연속</b> 팔았고(5일 -3.4조, 6일 -2.8조에 비하면 규모는 크게 줄음), 기관(금융투자 +1.1조)이 받아냈습니다. 매체마다 숫자가 조금씩 달라(코스피 외국인 −6,470억~−8,647억) 두 매체가 일치한 숫자를 썼습니다. 외국인·기관 순매수 상위 종목은 확인 필요.
+    </p>
+  </section>
+
+  <section>
+    <h2>⑤ 강한 쪽 (상승 테마·종목)</h2>
+    <table>
+      <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
+      <tr><td>반도체 장비·부품 (코스닥)</td><td>주성엔지니어링 / 심텍 / 이오테크닉스</td><td class="num up">+6.70% / +6.84% / +6.00%</td><td>미국 반도체지수 +4% 반등 + 지난주 폭락 뒤 저가 매수. 장중엔 주성 +10.9%, 심텍 +9.8%(13:13)로 더 강했음</td></tr>
+      <tr><td>반도체 대형주</td><td>삼성전자 / SK하이닉스</td><td class="num up">+0.64% / +0.35%</td><td>같은 이유로 반등했지만 오후에 상승폭 대부분 반납(13:13엔 +1.70% / +2.92%). 일부 시세표는 소폭 하락으로 표시돼 종가 확인 필요</td></tr>
+      <tr><td>항공 (저가항공)</td><td>트리니티항공 / 제주항공 / 한진칼</td><td class="num up">+8.76% / +7.05% / +5.81%</td><td>기사에 이유 없음 — 확인 필요 (국제유가가 98달러 선으로 내려간 영향 가능성)</td></tr>
+      <tr><td>바이오 개별 (상한가)</td><td>박셀바이오</td><td class="num up">+29.97% <span class="tag">13:15</span></td><td>학회(SITC)에서 고형암 CAR-T 동물실험 결과(간암 모델 완전관해 100%) 공개. 사람 임상 전 단계</td></tr>
+      <tr><td>코스닥 상한가</td><td>머큐리 / 노을 / 오가닉티코스메틱 / 썸에이지</td><td class="num up">상한가</td><td>오늘 이유 확인 필요. 노을은 오늘이 지구홀딩스 유상증자 납입 예정일(완료 시 최대주주 변경)</td></tr>
+      <tr><td>개별 이슈</td><td>한화M&amp;S / NHN / 래블업</td><td class="num up">+9%대 / +6% / +10%대 <span class="tag">장중</span></td><td>한화M&amp;S: 김동선 사장 270억 추가 공개매수, NHN: 미국 데이터센터 수혜·3분기 실적 기대, 래블업: 최대주주 등 지분 51.56% 소식 (기사 제목 기준, 종가 확인 필요)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>⑥ 약한 쪽 (하락 테마·종목)</h2>
+    <table>
+      <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
+      <tr><td>바이오 대형주 (코스닥)</td><td>알테오젠 / HLB</td><td class="num down">-16.01% / -3.52%</td><td>알테오젠은 코스닥 시총 상위주 중 최대 낙폭(168,500원). 하락 이유는 기사에 없음 — 확인 필요. 코스닥 제약 업종 -1.67%</td></tr>
+      <tr><td>2차전지</td><td>에코프로비엠 / 에코프로 / LG에너지솔루션</td><td class="num down">-8.66% / -8.46% / -5.78%</td><td>AI 데이터센터 투자 불확실성 + 차익 실현. 삼성SDI·엘앤에프·포스코퓨처엠도 약세</td></tr>
+      <tr><td>방산</td><td>LIG D&amp;A / 한화에어로스페이스 / 현대로템</td><td class="num down">-13% <span class="tag">장중</span> / 약세 / 약세</td><td>LIG는 3분기 실적 부진·목표가 하향. 나머지는 등락률 확인 필요</td></tr>
+      <tr><td>증권·자동차·로봇</td><td>증권 업종 / 현대차 / 레인보우로보틱스</td><td class="num down">-3.99% / -2.86% / -5.76%</td><td>증권은 신용 담보비율 의무 면제·반대매매 유예에 따른 부담. 코스피 업종 운송·창고 -3.56%, 운송장비 -3.27%, 음식료 -3.18%. 삼성전기 -3.10%</td></tr>
+      <tr><td>코스닥 하한가</td><td>애드바이오텍</td><td class="num down">하한가</td><td>이유 확인 필요</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>⑦ 일정·이벤트</h2>
+    <p style="margin:0 0 4px"><b>오늘 장중·장 마감 후</b></p>
+    <ul>
+      <li>증권사 신용융자 담보비율 140% 의무 <b>3개월 면제</b> 오늘부터 시행</li>
+      <li>원익IPS 3분기 영업이익 667억 원(+142%), 매출 3,378억 원(+25.8%) 공시</li>
+      <li>엔비디아 'AI 데이 서울 2026' (코엑스, 9~10일) · 중국 10월 CPI·PPI 발표(결과 확인 필요)</li>
+      <li>그 밖의 장후 주요 공시는 확인 필요</li>
+    </ul>
+    <p style="margin:10px 0 4px"><b>오늘 밤 해외 (한국시간)</b></p>
+    <ul>
+      <li>미국 주요 경제지표 발표 없음 · 연준 인사 발언·주요 실적 일정은 확인 필요</li>
+    </ul>
+    <p style="margin:10px 0 4px"><b>내일(11월 10일, 화) 국내·이번 주</b></p>
+    <ul>
+      <li>내일 국내 실적·신규 상장 일정은 확인 필요 · 중국 10월 수출입</li>
+      <li><b>10일(화) 22:30 미국 10월 CPI</b> (9월 전년비 +3.7%) — 이번 주 최대 변수</li>
+      <li>11일 코어위브 실적 · 12일 MSCI 정기 리뷰 발표 + 옵션 만기 · 13일 22:30 미국 PPI · 이번 주 어플라이드머티리얼즈 실적</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⑧ 내일 체크포인트 <span class="tag">11/10(화)</span></h2>
+    <ul>
+      <li><b>코스피 5,000선 · 오늘 저점 4,990선</b> — 이틀째 장중 5,000선을 깼다 회복. 종가로 무너지면 위험 신호</li>
+      <li><b>외국인 순매도 8일째 여부와 규모</b> — 오늘 -6,900억으로 줄었음. 순매수 전환이 나오면 진정 신호</li>
+      <li><b>반도체 장비주 반등 지속</b> — 오늘 강했던 주성·심텍·이오테크닉스가 이어가는지, 오후 반납 패턴이 반복되는지</li>
+      <li><b>알테오젠·2차전지 하락 이유 확인</b> — 개별 악재인지 수급 문제인지에 따라 코스닥 방향이 달라짐</li>
+      <li><b>내일 밤 미국 CPI</b> — 높게 나오면 12월 금리 인상 걱정이 커져 성장주 부담</li>
+    </ul>
+  </section>
+
+  <section class="src">
+    <h2>⑨ 출처</h2>
+    <ul>
+      <li><a href="https://www.newspim.com/news/view/20261109001082">뉴스핌 마감시황 (16:03)</a> · <a href="https://view.asiae.co.kr/article/2026110916013525615">아시아경제 마감 (16:01)</a> · <a href="https://www.m-i.kr/news/articleView.html?idxno=2016229">매일일보 마감 (15:45)</a> · <a href="https://www.ket.kr/news/article.html?no=41969">경제타임스 (16:10)</a> · <a href="https://www.lcnews.co.kr/news/articleView.html?idxno=211076">라이센스뉴스 마감 (15:55)</a> · <a href="https://www.seoul.co.kr/news/economy/securities/2026/11/09/20261109500284">서울신문 코스닥 마감 (16:09)</a> — 종가, 고점·저점, 수급, 업종, 시총 상위, 환율</li>
+      <li><a href="https://www.etoday.co.kr/news/view/2645772">이투데이 오후시황 (13:18)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=237124">잡포스트 (10:37)</a> — 장중 흐름, 특징주 제목</li>
+      <li><a href="https://www.namdonews.com/news/articleView.html?idxno=928595">남도일보 박셀바이오 (13:18)</a> · <a href="https://www.biotimes.co.kr/news/articleView.html?idxno=35545">바이오타임즈 노을 (10/23, 배경 참고)</a></li>
+      <li><a href="https://www.newspim.com/news/view/20261109001126">뉴스핌 중국증시 마감 (16:20)</a> · <a href="https://kr.investing.com/news/stock-market-news/article-2165305">인베스팅닷컴 아시아 (12:55)</a> · <a href="https://features.financialjuice.com/2026/11/09/asian-stocks-rebound-as-taiwan-leads-tech-recovery-asia-market-wrap/">FinancialJuice 아시아 (15:22 KST)</a> · <a href="https://hdfcsky.com/news/global-markets-today-november-9-2026-asia-rises-us-futures-higher-oil-slips-to-98-as-easing-iran-tensions-lift-sentiment">HDFC Sky (12:26 KST)</a> · <a href="https://wallmanac.com/calendar/2026-11">wallmanac 11월 일정·미국 종가</a></li>
+      <li><a href="https://www.newspim.com/news/view/20261106000826">뉴스핌 미리보는 증시재료 (11/9 06:00)</a> · <a href="https://biz.sbs.co.kr/article/20000345003">SBS Biz 주간경제일정 (06:51)</a></li>
+      <li>data/2026-11-09.json — 16:26~16:39 여러 번 확인했지만 파일이 생성되지 않아 사용하지 못함(지난 금요일도 16:52에 늦게 생성됨). 참고: 삼성전자·SK하이닉스 등 일부 종목은 기사 본문 등락률과 기사 옆 시세표 숫자가 서로 달라 본문 숫자를 썼음. 닛케이·대만 종가와 필라델피아 반도체 지수 수준은 오늘 기사에서 확인하지 못함</li>
+    </ul>
+  </section>
+
+  <footer><a href="../index.html" style="color:inherit">최신 리포트</a> · <a href="../archive.html" style="color:inherit">지난 리포트 목록</a> · theme-report · 투자 판단과 책임은 본인에게 있습니다</footer>
+</main>
+</body>
+</html>
