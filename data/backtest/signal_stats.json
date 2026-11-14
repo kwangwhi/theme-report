@@ -1,11 +1,11 @@
 {
  "period": {
-  "from": "20260810",
-  "to": "20261106",
+  "from": "20260818",
+  "to": "20261113",
   "days": 60
  },
- "generated_at_kst": "2026-11-07 10:22",
- "events_total": 6846,
+ "generated_at_kst": "2026-11-14 10:30",
+ "events_total": 6900,
  "notes": [
   "가격은 통합(KRX+NXT) 일봉 기준: 종가 = NXT 마감가, 시가 = 통합 시가",
   "후보 선정은 KRX 정규장 기준(KRX Open API)",
@@ -20,51 +20,51 @@
    "label": "기준선: 후보 전체",
    "stats": {
     "gap": {
-     "n": 6846,
-     "mean": 0.07,
+     "n": 6900,
+     "mean": 0.04,
      "median": 0.0,
-     "win": 44.4,
+     "win": 44.1,
      "worst": -50.0,
      "best": 51.1
     },
     "d1": {
-     "n": 6846,
-     "mean": -0.58,
-     "median": -0.82,
-     "win": 42.3,
+     "n": 6900,
+     "mean": -0.5,
+     "median": -0.81,
+     "win": 42.6,
      "worst": -75.0,
      "best": 140.0
     },
     "d5": {
-     "n": 6177,
-     "mean": -2.84,
-     "median": -3.25,
-     "win": 36.1,
-     "worst": -94.12,
+     "n": 6288,
+     "mean": -2.05,
+     "median": -2.88,
+     "win": 37.8,
+     "worst": -92.63,
      "best": 270.51
     },
     "open_d5": {
-     "n": 6177,
-     "mean": -3.3,
-     "median": -3.32,
-     "win": 35.8,
-     "worst": -92.86,
+     "n": 6288,
+     "mean": -1.9,
+     "median": -2.64,
+     "win": 39.1,
+     "worst": -91.97,
      "best": 285.69
     },
     "max5": {
-     "n": 6177,
-     "mean": 11.8,
-     "median": 7.39,
-     "win": 90.0,
+     "n": 6288,
+     "mean": 12.31,
+     "median": 7.42,
+     "win": 89.6,
      "worst": -29.97,
      "best": 270.51
     },
     "min5": {
-     "n": 6177,
-     "mean": -10.94,
-     "median": -8.68,
-     "win": 5.3,
-     "worst": -94.12,
+     "n": 6288,
+     "mean": -11.34,
+     "median": -9.2,
+     "win": 5.1,
+     "worst": -92.63,
      "best": 51.1
     }
    }
@@ -74,50 +74,50 @@
    "label": "기준선: 당일 +10% 이상 전체",
    "stats": {
     "gap": {
-     "n": 2587,
-     "mean": 1.41,
+     "n": 2539,
+     "mean": 1.51,
      "median": 0.0,
-     "win": 47.0,
+     "win": 48.4,
      "worst": -23.96,
      "best": 51.1
     },
     "d1": {
-     "n": 2587,
-     "mean": -0.03,
-     "median": -1.06,
-     "win": 41.4,
+     "n": 2539,
+     "mean": 0.12,
+     "median": -1.01,
+     "win": 42.1,
      "worst": -55.35,
      "best": 75.68
     },
     "d5": {
-     "n": 2423,
-     "mean": -1.99,
-     "median": -3.98,
-     "win": 37.2,
+     "n": 2215,
+     "mean": -1.11,
+     "median": -3.62,
+     "win": 37.6,
      "worst": -77.74,
      "best": 270.51
     },
     "open_d5": {
-     "n": 2423,
-     "mean": -3.3,
-     "median": -4.57,
-     "win": 35.4,
+     "n": 2215,
+     "mean": -2.58,
+     "median": -4.28,
+     "win": 36.0,
      "worst": -77.74,
      "best": 185.3
     },
     "max5": {
-     "n": 2423,
-     "mean": 15.52,
-     "median": 9.94,
-     "win": 92.6,
-     "worst": -11.72,
+     "n": 2215,
+     "mean": 16.54,
+     "median": 9.89,
+     "win": 92.4,
+     "worst": -13.3,
      "best": 270.51
     },
     "min5": {
-     "n": 2423,
-     "mean": -11.58,
-     "median": -10.36,
-     "win": 4.8,
+     "n": 2215,
+     "mean": -11.85,
+     "median": -10.64,
+     "win": 5.2,
      "worst": -77.74,
      "best": 51.1
     }
@@ -129,49 +129,49 @@
    "stats": {
     "gap": {
      "n": 2950,
-     "mean": -0.29,
-     "median": -0.15,
-     "win": 44.4,
+     "mean": -0.28,
+     "median": -0.18,
+     "win": 44.1,
      "worst": -16.75,
      "best": 17.23
     },
     "d1": {
      "n": 2950,
-     "mean": -0.73,
-     "median": -0.56,
-     "win": 43.7,
+     "mean": -0.69,
+     "median": -0.54,
+     "win": 43.9,
      "worst": -32.1,
      "best": 43.62
     },
     "d5": {
      "n": 2750,
-     "mean": -3.12,
-     "median": -2.84,
-     "win": 35.1,
+     "mean": -3.37,
+     "median": -2.96,
+     "win": 34.4,
      "worst": -62.88,
      "best": 57.81
     },
     "open_d5": {
      "n": 2750,
-     "mean": -2.99,
-     "median": -2.62,
-     "win": 36.2,
+     "mean": -2.93,
+     "median": -2.56,
+     "win": 37.1,
      "worst": -63.63,
      "best": 61.84
     },
     "max5": {
      "n": 2750,
-     "mean": 7.28,
-     "median": 5.08,
-     "win": 88.1,
+     "mean": 7.0,
+     "median": 4.8,
+     "win": 86.8,
      "worst": -9.24,
      "best": 67.45
     },
     "min5": {
      "n": 2750,
-     "mean": -9.16,
-     "median": -7.33,
-     "win": 4.3,
+     "mean": -9.74,
+     "median": -7.6,
+     "win": 4.0,
      "worst": -64.08,
      "best": 12.66
     }
@@ -182,51 +182,51 @@
    "label": "박스권 돌파",
    "stats": {
     "gap": {
-     "n": 13,
-     "mean": 1.1,
-     "median": -0.11,
-     "win": 46.2,
+     "n": 14,
+     "mean": 0.77,
+     "median": -0.26,
+     "win": 42.9,
      "worst": -10.19,
      "best": 29.98
     },
     "d1": {
-     "n": 13,
-     "mean": 0.23,
-     "median": -0.93,
-     "win": 46.2,
+     "n": 14,
+     "mean": -0.36,
+     "median": -1.01,
+     "win": 42.9,
      "worst": -13.05,
      "best": 21.85
     },
     "d5": {
-     "n": 9,
-     "mean": -2.05,
-     "median": -2.89,
-     "win": 44.4,
+     "n": 12,
+     "mean": 5.27,
+     "median": -0.5,
+     "win": 50.0,
      "worst": -11.85,
-     "best": 12.34
+     "best": 70.58
     },
     "open_d5": {
-     "n": 9,
-     "mean": -4.73,
-     "median": -1.12,
-     "win": 44.4,
+     "n": 12,
+     "mean": 5.35,
+     "median": 1.57,
+     "win": 58.3,
      "worst": -32.18,
-     "best": 11.14
+     "best": 79.81
     },
     "max5": {
-     "n": 9,
-     "mean": 11.85,
-     "median": 8.31,
+     "n": 12,
+     "mean": 18.57,
+     "median": 10.21,
      "win": 100.0,
-     "worst": 0.58,
-     "best": 33.16
+     "worst": 0.47,
+     "best": 81.24
     },
     "min5": {
-     "n": 9,
-     "mean": -6.97,
-     "median": -7.58,
+     "n": 12,
+     "mean": -8.44,
+     "median": -7.88,
      "win": 0.0,
-     "worst": -12.66,
+     "worst": -24.03,
      "best": -0.84
     }
    }
@@ -236,51 +236,51 @@
    "label": "골든크로스(하방경직)",
    "stats": {
     "gap": {
-     "n": 258,
-     "mean": 2.88,
-     "median": 0.38,
-     "win": 55.0,
+     "n": 223,
+     "mean": 2.97,
+     "median": 0.4,
+     "win": 55.6,
      "worst": -9.98,
      "best": 31.52
     },
     "d1": {
-     "n": 258,
-     "mean": 0.29,
-     "median": -0.56,
-     "win": 44.6,
+     "n": 223,
+     "mean": 0.63,
+     "median": -0.69,
+     "win": 43.5,
      "worst": -21.75,
      "best": 30.25
     },
     "d5": {
-     "n": 244,
-     "mean": -2.73,
-     "median": -3.27,
-     "win": 42.2,
-     "worst": -58.28,
-     "best": 57.48
+     "n": 210,
+     "mean": -0.8,
+     "median": -2.34,
+     "win": 44.3,
+     "worst": -47.23,
+     "best": 168.46
     },
     "open_d5": {
-     "n": 244,
-     "mean": -5.36,
-     "median": -4.11,
-     "win": 36.9,
-     "worst": -59.8,
-     "best": 32.41
+     "n": 210,
+     "mean": -3.48,
+     "median": -3.3,
+     "win": 40.0,
+     "worst": -50.0,
+     "best": 144.91
     },
     "max5": {
-     "n": 244,
-     "mean": 14.42,
-     "median": 10.6,
-     "win": 92.2,
+     "n": 210,
+     "mean": 16.33,
+     "median": 10.82,
+     "win": 90.5,
      "worst": -9.98,
-     "best": 119.49
+     "best": 168.46
     },
     "min5": {
-     "n": 244,
-     "mean": -11.08,
-     "median": -8.75,
-     "win": 6.1,
-     "worst": -58.28,
+     "n": 210,
+     "mean": -10.33,
+     "median": -8.8,
+     "win": 7.6,
+     "worst": -50.4,
      "best": 29.99
     }
    }
@@ -290,50 +290,50 @@
    "label": "볼린저 상단 돌파",
    "stats": {
     "gap": {
-     "n": 1132,
-     "mean": 1.7,
+     "n": 995,
+     "mean": 1.72,
      "median": 0.0,
-     "win": 48.3,
+     "win": 48.7,
      "worst": -15.78,
      "best": 31.52
     },
     "d1": {
-     "n": 1132,
-     "mean": -0.08,
-     "median": -1.31,
-     "win": 40.9,
-     "worst": -26.33,
+     "n": 995,
+     "mean": -0.02,
+     "median": -1.16,
+     "win": 41.5,
+     "worst": -29.84,
      "best": 34.11
     },
     "d5": {
-     "n": 1086,
-     "mean": -1.88,
-     "median": -3.5,
-     "win": 36.9,
+     "n": 942,
+     "mean": -1.13,
+     "median": -2.99,
+     "win": 38.7,
      "worst": -47.23,
-     "best": 107.41
+     "best": 206.59
     },
     "open_d5": {
-     "n": 1086,
-     "mean": -3.45,
-     "median": -4.39,
-     "win": 34.0,
+     "n": 942,
+     "mean": -2.7,
+     "median": -3.68,
+     "win": 35.9,
      "worst": -52.29,
-     "best": 73.87
+     "best": 168.46
     },
     "max5": {
-     "n": 1086,
-     "mean": 13.79,
-     "median": 8.78,
-     "win": 91.4,
-     "worst": -9.98,
-     "best": 182.71
+     "n": 942,
+     "mean": 14.55,
+     "median": 9.09,
+     "win": 91.3,
+     "worst": -13.3,
+     "best": 206.59
     },
     "min5": {
-     "n": 1086,
-     "mean": -10.54,
-     "median": -9.7,
-     "win": 5.2,
+     "n": 942,
+     "mean": -10.59,
+     "median": -9.62,
+     "win": 5.4,
      "worst": -50.4,
      "best": 29.99
     }
@@ -344,51 +344,51 @@
    "label": "장기 저항선 돌파",
    "stats": {
     "gap": {
-     "n": 95,
-     "mean": 1.0,
-     "median": -0.08,
-     "win": 41.1,
+     "n": 93,
+     "mean": 1.7,
+     "median": 0.0,
+     "win": 41.9,
      "worst": -7.08,
      "best": 29.99
     },
     "d1": {
-     "n": 95,
-     "mean": 0.6,
+     "n": 93,
+     "mean": 0.69,
      "median": -0.34,
-     "win": 42.1,
-     "worst": -18.05,
+     "win": 39.8,
+     "worst": -27.13,
      "best": 30.0
     },
     "d5": {
-     "n": 92,
-     "mean": -3.58,
-     "median": -5.88,
-     "win": 31.5,
-     "worst": -27.79,
-     "best": 52.19
+     "n": 82,
+     "mean": -1.41,
+     "median": -5.04,
+     "win": 30.5,
+     "worst": -27.62,
+     "best": 113.55
     },
     "open_d5": {
-     "n": 92,
-     "mean": -4.44,
-     "median": -4.56,
-     "win": 30.4,
+     "n": 82,
+     "mean": -2.64,
+     "median": -4.2,
+     "win": 29.3,
      "worst": -38.59,
-     "best": 34.81
+     "best": 100.91
     },
     "max5": {
-     "n": 92,
-     "mean": 13.0,
-     "median": 8.33,
-     "win": 90.2,
+     "n": 82,
+     "mean": 15.24,
+     "median": 8.06,
+     "win": 87.8,
      "worst": -7.08,
-     "best": 89.91
+     "best": 119.52
     },
     "min5": {
-     "n": 92,
-     "mean": -12.79,
-     "median": -12.03,
-     "win": 3.3,
-     "worst": -42.8,
+     "n": 82,
+     "mean": -11.78,
+     "median": -11.87,
+     "win": 4.9,
+     "worst": -33.97,
      "best": 22.84
     }
    }
@@ -398,51 +398,51 @@
    "label": "장기 저항선 시도",
    "stats": {
     "gap": {
-     "n": 148,
-     "mean": -0.04,
+     "n": 152,
+     "mean": 0.1,
      "median": 0.0,
-     "win": 47.3,
+     "win": 47.4,
      "worst": -8.02,
-     "best": 5.98
+     "best": 10.65
     },
     "d1": {
-     "n": 148,
-     "mean": -0.32,
-     "median": -0.62,
-     "win": 41.9,
+     "n": 152,
+     "mean": 0.24,
+     "median": -0.34,
+     "win": 45.4,
      "worst": -18.74,
-     "best": 29.9
+     "best": 29.93
     },
     "d5": {
-     "n": 138,
-     "mean": -1.69,
-     "median": -2.92,
-     "win": 33.3,
+     "n": 136,
+     "mean": -1.26,
+     "median": -2.34,
+     "win": 35.3,
      "worst": -34.66,
      "best": 58.92
     },
     "open_d5": {
-     "n": 138,
-     "mean": -1.88,
-     "median": -2.76,
-     "win": 31.9,
+     "n": 136,
+     "mean": -1.24,
+     "median": -2.32,
+     "win": 35.3,
      "worst": -32.77,
      "best": 61.84
     },
     "max5": {
-     "n": 138,
-     "mean": 10.88,
-     "median": 5.69,
-     "win": 91.3,
+     "n": 136,
+     "mean": 10.8,
+     "median": 5.56,
+     "win": 91.9,
      "worst": -2.82,
      "best": 75.5
     },
     "min5": {
-     "n": 138,
-     "mean": -10.09,
-     "median": -7.96,
+     "n": 136,
+     "mean": -9.97,
+     "median": -7.78,
      "win": 2.2,
-     "worst": -39.02,
+     "worst": -37.21,
      "best": 2.62
     }
    }
@@ -452,51 +452,51 @@
    "label": "첫 상한가",
    "stats": {
     "gap": {
-     "n": 227,
-     "mean": 7.31,
-     "median": 5.42,
-     "win": 75.8,
+     "n": 224,
+     "mean": 7.36,
+     "median": 5.6,
+     "win": 75.4,
      "worst": -11.72,
      "best": 29.99
     },
     "d1": {
-     "n": 227,
-     "mean": 1.31,
-     "median": -1.06,
-     "win": 46.3,
+     "n": 224,
+     "mean": 0.98,
+     "median": -1.87,
+     "win": 44.6,
      "worst": -55.35,
      "best": 30.0
     },
     "d5": {
-     "n": 210,
-     "mean": -0.68,
-     "median": -6.94,
-     "win": 37.1,
-     "worst": -47.08,
-     "best": 185.16
+     "n": 201,
+     "mean": 2.52,
+     "median": -6.56,
+     "win": 37.8,
+     "worst": -42.49,
+     "best": 269.83
     },
     "open_d5": {
-     "n": 210,
-     "mean": -7.33,
-     "median": -10.42,
-     "win": 26.7,
-     "worst": -49.59,
-     "best": 119.52
+     "n": 201,
+     "mean": -4.76,
+     "median": -9.95,
+     "win": 27.9,
+     "worst": -49.57,
+     "best": 184.7
     },
     "max5": {
-     "n": 210,
-     "mean": 28.09,
-     "median": 19.95,
-     "win": 96.2,
+     "n": 201,
+     "mean": 30.63,
+     "median": 20.1,
+     "win": 95.0,
      "worst": -11.72,
      "best": 270.45
     },
     "min5": {
-     "n": 210,
-     "mean": -12.87,
-     "median": -13.3,
-     "win": 15.7,
-     "worst": -51.22,
+     "n": 201,
+     "mean": -12.69,
+     "median": -13.83,
+     "win": 16.9,
+     "worst": -44.96,
      "best": 29.99
     }
    }
@@ -506,52 +506,52 @@
    "label": "재상한가",
    "stats": {
     "gap": {
-     "n": 146,
-     "mean": 10.53,
-     "median": 8.4,
-     "win": 84.2,
+     "n": 138,
+     "mean": 10.83,
+     "median": 8.84,
+     "win": 84.8,
      "worst": -23.96,
      "best": 30.0
     },
     "d1": {
-     "n": 146,
-     "mean": 3.51,
-     "median": 0.46,
-     "win": 51.4,
+     "n": 138,
+     "mean": 3.26,
+     "median": 0.08,
+     "win": 50.0,
      "worst": -44.79,
      "best": 30.0
     },
     "d5": {
-     "n": 136,
-     "mean": -3.78,
-     "median": -7.64,
-     "win": 38.2,
+     "n": 120,
+     "mean": 1.52,
+     "median": -4.58,
+     "win": 41.7,
      "worst": -66.67,
-     "best": 119.52
+     "best": 269.81
     },
     "open_d5": {
-     "n": 136,
-     "mean": -12.4,
-     "median": -12.7,
-     "win": 23.5,
+     "n": 120,
+     "mean": -8.98,
+     "median": -11.68,
+     "win": 25.8,
      "worst": -67.74,
-     "best": 83.69
+     "best": 184.52
     },
     "max5": {
-     "n": 136,
-     "mean": 33.88,
-     "median": 27.05,
-     "win": 99.3,
+     "n": 120,
+     "mean": 44.77,
+     "median": 28.02,
+     "win": 99.2,
      "worst": -4.12,
-     "best": 185.17
+     "best": 269.81
     },
     "min5": {
-     "n": 136,
-     "mean": -15.9,
-     "median": -15.86,
-     "win": 14.7,
+     "n": 120,
+     "mean": -14.49,
+     "median": -14.05,
+     "win": 18.3,
      "worst": -68.23,
-     "best": 29.99
+     "best": 30.0
     }
    }
   },
@@ -560,50 +560,50 @@
    "label": "겹친 신호(2개 이상)",
    "stats": {
     "gap": {
-     "n": 389,
-     "mean": 4.67,
-     "median": 1.48,
-     "win": 63.2,
+     "n": 362,
+     "mean": 4.49,
+     "median": 1.35,
+     "win": 61.6,
      "worst": -10.19,
      "best": 31.52
     },
     "d1": {
-     "n": 389,
-     "mean": 0.77,
-     "median": -0.97,
-     "win": 44.5,
-     "worst": -25.51,
+     "n": 362,
+     "mean": 0.74,
+     "median": -0.95,
+     "win": 43.9,
+     "worst": -29.84,
      "best": 30.25
     },
     "d5": {
-     "n": 367,
-     "mean": -1.69,
-     "median": -3.93,
-     "win": 41.7,
+     "n": 335,
+     "mean": -0.29,
+     "median": -2.97,
+     "win": 42.7,
      "worst": -47.23,
-     "best": 86.35
+     "best": 206.59
     },
     "open_d5": {
-     "n": 367,
-     "mean": -6.03,
-     "median": -6.55,
-     "win": 33.0,
+     "n": 335,
+     "mean": -4.36,
+     "median": -5.34,
+     "win": 34.9,
      "worst": -52.29,
-     "best": 73.87
+     "best": 168.46
     },
     "max5": {
-     "n": 367,
-     "mean": 19.22,
-     "median": 14.37,
-     "win": 92.9,
+     "n": 335,
+     "mean": 20.28,
+     "median": 14.87,
+     "win": 91.3,
      "worst": -9.98,
-     "best": 182.71
+     "best": 206.59
     },
     "min5": {
-     "n": 367,
-     "mean": -11.81,
-     "median": -11.1,
-     "win": 10.1,
+     "n": 335,
+     "mean": -11.33,
+     "median": -10.86,
+     "win": 10.7,
      "worst": -50.4,
      "best": 29.99
     }
@@ -612,6 +612,34 @@
  ],
  "recent_events": {
   "box_breakout": [
+   {
+    "date": "20261112",
+    "name": "JYP Ent.",
+    "market": "KOSDAQ",
+    "rate": 16.54,
+    "flags": [
+     "box_breakout",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -1.89,
+     "d1": -1.33
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "동부건설우",
+    "market": "KOSPI",
+    "rate": 18.18,
+    "flags": [
+     "box_breakout",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -3.46,
+     "d1": -8.24
+    }
+   },
    {
     "date": "20261105",
     "name": "셀트리온",
@@ -623,7 +651,11 @@
     ],
     "fwd": {
      "gap": -4.65,
-     "d1": -3.02
+     "d1": -3.02,
+     "d5": -2.09,
+     "open_d5": 2.68,
+     "max5": 0.47,
+     "min5": -6.28
     }
    },
    {
@@ -637,7 +669,11 @@
     ],
     "fwd": {
      "gap": -0.11,
-     "d1": 5.95
+     "d1": 5.95,
+     "d5": -1.57,
+     "open_d5": -1.46,
+     "max5": 23.46,
+     "min5": -7.97
     }
    },
    {
@@ -651,7 +687,11 @@
     ],
     "fwd": {
      "gap": -5.13,
-     "d1": -4.24
+     "d1": -4.24,
+     "d5": 70.58,
+     "open_d5": 79.81,
+     "max5": 81.24,
+     "min5": -7.9
     }
    },
    {
@@ -665,7 +705,11 @@
     ],
     "fwd": {
      "gap": -10.19,
-     "d1": -13.05
+     "d1": -13.05,
+     "d5": 11.89,
+     "open_d5": 24.58,
+     "max5": 11.89,
+     "min5": -24.03
     }
    },
    {
@@ -812,27 +856,208 @@
      "max5": 3.58,
      "min5": -0.84
     }
-   },
-   {
-    "date": "20260814",
-    "name": "엠에스씨",
-    "market": "KOSDAQ",
-    "rate": 12.21,
-    "flags": [
-     "box_breakout",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -1.79,
-     "d1": -1.52,
-     "d5": -2.89,
-     "open_d5": -1.12,
-     "max5": 0.83,
-     "min5": -7.58
-    }
    }
   ],
   "golden_cross": [
+   {
+    "date": "20261112",
+    "name": "코리아써키트",
+    "market": "KOSPI",
+    "rate": 2.55,
+    "flags": [
+     "golden_cross"
+    ],
+    "fwd": {
+     "gap": 10.65,
+     "d1": 4.7
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "메타랩스",
+    "market": "KOSPI",
+    "rate": 29.95,
+    "flags": [
+     "golden_cross"
+    ],
+    "fwd": {
+     "gap": -5.28,
+     "d1": -6.77
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "노랑풍선",
+    "market": "KOSDAQ",
+    "rate": 10.44,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -0.15,
+     "d1": -5.87
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "노을",
+    "market": "KOSDAQ",
+    "rate": 29.92,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 9.47,
+     "d1": -9.68
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "심텍홀딩스",
+    "market": "KOSDAQ",
+    "rate": 29.82,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 13.27
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "쎄트렉아이",
+    "market": "KOSDAQ",
+    "rate": 12.39,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -1.67,
+     "d1": -5.78
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "에코캡",
+    "market": "KOSDAQ",
+    "rate": 29.91,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 12.69,
+     "d1": -0.42
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "엔젠바이오",
+    "market": "KOSDAQ",
+    "rate": 14.67,
+    "flags": [
+     "golden_cross"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": -10.75
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "이노스페이스",
+    "market": "KOSDAQ",
+    "rate": 11.72,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 0.16,
+     "d1": -2.94
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "덕성우",
+    "market": "KOSPI",
+    "rate": -15.31,
+    "flags": [
+     "golden_cross"
+    ],
+    "fwd": {
+     "gap": -0.7,
+     "d1": 1.22
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "쓰리빌리언",
+    "market": "KOSDAQ",
+    "rate": 10.65,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -1.85,
+     "d1": 1.55
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "카카오",
+    "market": "KOSPI",
+    "rate": -0.62,
+    "flags": [
+     "golden_cross"
+    ],
+    "fwd": {
+     "gap": 2.36,
+     "d1": 0.0
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "동양2우B",
+    "market": "KOSPI",
+    "rate": 30.0,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 0.59,
+     "d1": 29.88
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "깨끗한나라우",
+    "market": "KOSPI",
+    "rate": 29.78,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 11.66,
+     "d1": 29.83,
+     "d5": 20.46,
+     "open_d5": 7.88,
+     "max5": 119.12,
+     "min5": 11.66
+    }
+   },
    {
     "date": "20261105",
     "name": "대명에너지",
@@ -843,7 +1068,11 @@
     ],
     "fwd": {
      "gap": -1.7,
-     "d1": -3.26
+     "d1": -3.26,
+     "d5": -0.21,
+     "open_d5": 1.52,
+     "max5": 12.07,
+     "min5": -5.61
     }
    },
    {
@@ -856,7 +1085,11 @@
     ],
     "fwd": {
      "gap": -3.69,
-     "d1": 0.62
+     "d1": 0.62,
+     "d5": 6.77,
+     "open_d5": 10.86,
+     "max5": 17.23,
+     "min5": -6.15
     }
    },
    {
@@ -870,7 +1103,11 @@
     ],
     "fwd": {
      "gap": -6.16,
-     "d1": -4.1
+     "d1": -4.1,
+     "d5": -5.06,
+     "open_d5": 1.17,
+     "max5": -0.55,
+     "min5": -7.66
     }
    },
    {
@@ -885,7 +1122,11 @@
     ],
     "fwd": {
      "gap": -8.03,
-     "d1": -10.71
+     "d1": -10.71,
+     "d5": -13.86,
+     "open_d5": -6.34,
+     "max5": -3.31,
+     "min5": -18.74
     }
    },
    {
@@ -898,7 +1139,11 @@
     ],
     "fwd": {
      "gap": -1.73,
-     "d1": -10.62
+     "d1": -10.62,
+     "d5": 9.35,
+     "open_d5": 11.28,
+     "max5": 26.44,
+     "min5": -11.89
     }
    },
    {
@@ -913,7 +1158,11 @@
     ],
     "fwd": {
      "gap": -5.98,
-     "d1": 3.44
+     "d1": 3.44,
+     "d5": -9.42,
+     "open_d5": -3.66,
+     "max5": 37.52,
+     "min5": -12.41
     }
    },
    {
@@ -927,7 +1176,11 @@
     ],
     "fwd": {
      "gap": 0.18,
-     "d1": -3.41
+     "d1": -3.41,
+     "d5": 3.88,
+     "open_d5": 3.7,
+     "max5": 19.47,
+     "min5": -14.1
     }
    },
    {
@@ -941,7 +1194,11 @@
     ],
     "fwd": {
      "gap": 1.72,
-     "d1": 4.82
+     "d1": 4.82,
+     "d5": 15.27,
+     "open_d5": 13.32,
+     "max5": 17.11,
+     "min5": -13.89
     }
    },
    {
@@ -954,7 +1211,11 @@
     ],
     "fwd": {
      "gap": 9.62,
-     "d1": 30.0
+     "d1": 30.0,
+     "d5": 168.46,
+     "open_d5": 144.91,
+     "max5": 168.46,
+     "min5": -3.59
     }
    },
    {
@@ -968,7 +1229,11 @@
     ],
     "fwd": {
      "gap": 0.75,
-     "d1": 0.07
+     "d1": 0.07,
+     "d5": -23.81,
+     "open_d5": -24.37,
+     "max5": 5.07,
+     "min5": -29.03
     }
    },
    {
@@ -982,7 +1247,11 @@
     ],
     "fwd": {
      "gap": 0.0,
-     "d1": -16.19
+     "d1": -16.19,
+     "d5": -18.88,
+     "open_d5": -18.88,
+     "max5": 6.12,
+     "min5": -20.5
     }
    },
    {
@@ -997,7 +1266,11 @@
     ],
     "fwd": {
      "gap": -3.65,
-     "d1": -15.69
+     "d1": -15.69,
+     "d5": -17.34,
+     "open_d5": -14.2,
+     "max5": -1.82,
+     "min5": -19.53
     }
    },
    {
@@ -1011,7 +1284,11 @@
     ],
     "fwd": {
      "gap": -0.29,
-     "d1": -4.13
+     "d1": -4.13,
+     "d5": -11.8,
+     "open_d5": -11.54,
+     "max5": 12.09,
+     "min5": -12.68
     }
    },
    {
@@ -1024,7 +1301,11 @@
     ],
     "fwd": {
      "gap": -0.11,
-     "d1": 29.99
+     "d1": 29.99,
+     "d5": 8.32,
+     "open_d5": 8.45,
+     "max5": 64.2,
+     "min5": -7.18
     }
    },
    {
@@ -1060,668 +1341,604 @@
      "max5": 0.87,
      "min5": -27.19
     }
-   },
-   {
-    "date": "20261029",
-    "name": "삼성생명",
-    "market": "KOSPI",
-    "rate": 0.18,
-    "flags": [
-     "golden_cross"
-    ],
-    "fwd": {
-     "gap": -3.22,
-     "d1": -3.94,
-     "d5": -11.99,
-     "open_d5": -9.06,
-     "max5": -1.34,
-     "min5": -13.95
-    }
-   },
-   {
-    "date": "20261029",
-    "name": "삼성화재",
-    "market": "KOSPI",
-    "rate": 2.2,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 0.92,
-     "d1": 0.31,
-     "d5": 0.77,
-     "open_d5": -0.15,
-     "max5": 3.98,
-     "min5": -1.99
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "샌즈랩",
-    "market": "KOSDAQ",
-    "rate": 6.71,
-    "flags": [
-     "golden_cross",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -1.15,
-     "d1": -8.88,
-     "d5": -25.03,
-     "open_d5": -24.15,
-     "max5": -0.81,
-     "min5": -28.37
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "엑시콘",
-    "market": "KOSDAQ",
-    "rate": 15.52,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -1.47,
-     "d1": -4.85,
-     "d5": -19.41,
-     "open_d5": -18.21,
-     "max5": -0.29,
-     "min5": -27.72
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "엠씨넥스",
-    "market": "KOSPI",
-    "rate": 22.22,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 1.19,
-     "d1": -3.34,
-     "d5": -17.66,
-     "open_d5": -18.63,
-     "max5": 1.91,
-     "min5": -18.38
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "이지트로닉스",
-    "market": "KOSDAQ",
-    "rate": 29.94,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -8.25,
-     "d1": -13.09,
-     "d5": -36.27,
-     "open_d5": -30.54,
-     "max5": 5.26,
-     "min5": -38.12
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "티에프이",
-    "market": "KOSDAQ",
-    "rate": 23.9,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 3.02,
-     "d1": 11.29,
-     "d5": 3.81,
-     "open_d5": 0.76,
-     "max5": 20.47,
-     "min5": -2.1
-    }
-   },
-   {
-    "date": "20261026",
-    "name": "노을",
-    "market": "KOSDAQ",
-    "rate": 29.94,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 13.13,
-     "d1": -7.14,
-     "d5": -28.02,
-     "open_d5": -36.37,
-     "max5": 22.12,
-     "min5": -30.88
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "삼성E&A",
-    "market": "KOSPI",
-    "rate": 7.94,
-    "flags": [
-     "golden_cross"
-    ],
-    "fwd": {
-     "gap": 0.51,
-     "d1": 1.69,
-     "d5": 2.54,
-     "open_d5": 2.02,
-     "max5": 10.83,
-     "min5": -2.37
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "스페코",
-    "market": "KOSDAQ",
-    "rate": 29.98,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -9.98,
-     "d1": -21.75,
-     "d5": -32.75,
-     "open_d5": -25.3,
-     "max5": -9.98,
-     "min5": -32.85
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "에이전트AI",
-    "market": "KOSDAQ",
-    "rate": 29.91,
-    "flags": [
-     "golden_cross",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 8.63,
-     "d1": 3.96,
-     "d5": -22.48,
-     "open_d5": -28.64,
-     "max5": 29.68,
-     "min5": -28.56
-    }
-   },
-   {
-    "date": "20261022",
-    "name": "혜인",
-    "market": "KOSPI",
-    "rate": 3.92,
-    "flags": [
-     "golden_cross"
-    ],
-    "fwd": {
-     "gap": -5.56,
-     "d1": -9.17,
-     "d5": -25.0,
-     "open_d5": -20.59,
-     "max5": -4.17,
-     "min5": -29.54
-    }
-   },
-   {
-    "date": "20261022",
-    "name": "비나텍",
-    "market": "KOSDAQ",
-    "rate": 14.78,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -4.6,
-     "d1": 8.1,
-     "d5": -7.54,
-     "open_d5": -3.09,
-     "max5": 11.22,
-     "min5": -11.22
-    }
-   },
-   {
-    "date": "20261022",
-    "name": "LG씨엔에스",
-    "market": "KOSPI",
-    "rate": 0.83,
-    "flags": [
-     "golden_cross"
-    ],
-    "fwd": {
-     "gap": -1.38,
-     "d1": -0.69,
-     "d5": 7.02,
-     "open_d5": 8.51,
-     "max5": 10.45,
-     "min5": -2.06
-    }
    }
   ],
   "bollinger_break": [
    {
-    "date": "20261105",
-    "name": "셀트리온",
-    "market": "KOSPI",
-    "rate": 7.5,
-    "flags": [
-     "box_breakout",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -4.65,
-     "d1": -3.02
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "MH머트리얼즈",
-    "market": "KOSPI",
-    "rate": 12.03,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -3.14,
-     "d1": -6.75
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "깨끗한나라",
-    "market": "KOSPI",
-    "rate": 29.93,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 9.91,
-     "d1": -0.26
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "남선알미우",
-    "market": "KOSPI",
-    "rate": 26.38,
-    "flags": [
-     "box_breakout",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -0.11,
-     "d1": 5.95
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "동양우",
-    "market": "KOSPI",
-    "rate": 30.0,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 25.16,
-     "d1": -1.83
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "삼성에피스홀딩스",
-    "market": "KOSPI",
-    "rate": 14.33,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -6.16,
-     "d1": -4.1
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "성창기업지주",
-    "market": "KOSPI",
-    "rate": 29.86,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": -8.03,
-     "d1": -10.71
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "제주항공",
-    "market": "KOSPI",
-    "rate": 13.75,
-    "flags": [
-     "bollinger_break",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -6.25,
-     "d1": -4.76
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "대동금속",
+    "date": "20261112",
+    "name": "지니언스",
     "market": "KOSDAQ",
-    "rate": 29.9,
+    "rate": 21.04,
     "flags": [
-     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -1.8,
+     "d1": 2.55
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "JYP Ent.",
+    "market": "KOSDAQ",
+    "rate": 16.54,
+    "flags": [
+     "box_breakout",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -1.89,
+     "d1": -1.33
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "YG PLUS",
+    "market": "KOSPI",
+    "rate": 15.57,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 1.64,
+     "d1": -3.74
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "깨끗한나라우",
+    "market": "KOSPI",
+    "rate": 29.96,
+    "flags": [
      "bollinger_break",
      "repeat_lu"
     ],
     "fwd": {
-     "gap": -5.98,
-     "d1": 3.44
+     "gap": -4.12,
+     "d1": -29.84
     }
    },
    {
-    "date": "20261105",
-    "name": "멤레이비티",
-    "market": "KOSDAQ",
-    "rate": 11.18,
-    "flags": [
-     "golden_cross",
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 0.18,
-     "d1": -3.41
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "에스와이",
-    "market": "KOSDAQ",
-    "rate": 20.49,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -3.98,
-     "d1": -9.07
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "인바디",
-    "market": "KOSDAQ",
-    "rate": 23.89,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -15.78,
-     "d1": -26.33
-    }
-   },
-   {
-    "date": "20261105",
-    "name": "한울앤제주",
-    "market": "KOSDAQ",
-    "rate": 13.41,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -1.75,
-     "d1": -8.41
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "대동기어",
-    "market": "KOSDAQ",
-    "rate": 18.93,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 5.72,
-     "d1": 3.34
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "세아제강지주",
+    "date": "20261112",
+    "name": "대한항공우",
     "market": "KOSPI",
-    "rate": 13.32,
+    "rate": 19.16,
     "flags": [
      "bollinger_break"
     ],
     "fwd": {
-     "gap": -0.79,
-     "d1": -7.26
+     "gap": 6.04,
+     "d1": -16.01
     }
    },
    {
-    "date": "20261104",
-    "name": "크래프톤",
-    "market": "KOSPI",
-    "rate": 16.55,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -0.71,
-     "d1": 3.56
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "금양그린파워",
+    "date": "20261112",
+    "name": "바이브컴퍼니",
     "market": "KOSDAQ",
-    "rate": 19.91,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 5.75,
-     "d1": 10.74
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "나노신소재",
-    "market": "KOSDAQ",
-    "rate": 12.52,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 2.9,
-     "d1": -2.76
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "대명에너지",
-    "market": "KOSDAQ",
-    "rate": 29.96,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 7.93,
-     "d1": 2.47
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "상신이디피",
-    "market": "KOSDAQ",
-    "rate": 23.19,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -0.35,
-     "d1": -8.14
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "아리바이오홀딩스",
-    "market": "KOSDAQ",
-    "rate": 29.98,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 3.87,
-     "d1": 5.25
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "아미코젠",
-    "market": "KOSDAQ",
-    "rate": 15.13,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": 1.35,
-     "d1": -4.83
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "포메탈",
-    "market": "KOSDAQ",
-    "rate": 20.79,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -0.16,
-     "d1": -7.13
-    }
-   },
-   {
-    "date": "20261104",
-    "name": "한중엔시에스",
-    "market": "KOSDAQ",
-    "rate": 16.11,
-    "flags": [
-     "bollinger_break"
-    ],
-    "fwd": {
-     "gap": -1.51,
-     "d1": -9.53
-    }
-   },
-   {
-    "date": "20261103",
-    "name": "지니언스",
-    "market": "KOSDAQ",
-    "rate": 6.74,
-    "flags": [
-     "bollinger_break",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -2.23,
-     "d1": -12.5
-    }
-   },
-   {
-    "date": "20261103",
-    "name": "AP위성",
-    "market": "KOSDAQ",
-    "rate": 29.98,
+    "rate": 24.06,
     "flags": [
      "bollinger_break",
      "first_lu"
     ],
     "fwd": {
-     "gap": 5.26,
-     "d1": -1.91
+     "gap": 24.02,
+     "d1": 24.02
     }
    },
    {
-    "date": "20261103",
-    "name": "깨끗한나라",
-    "market": "KOSPI",
+    "date": "20261112",
+    "name": "와이제이링크",
+    "market": "KOSDAQ",
+    "rate": 29.85,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 7.28,
+     "d1": -5.36
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "코난테크놀로지",
+    "market": "KOSDAQ",
     "rate": 29.95,
     "flags": [
      "bollinger_break"
     ],
     "fwd": {
-     "gap": 2.15,
-     "d1": -16.25
+     "gap": 11.83,
+     "d1": 0.23
     }
    },
    {
-    "date": "20261103",
-    "name": "아시아나IDT",
+    "date": "20261111",
+    "name": "코리아써키트",
     "market": "KOSPI",
-    "rate": 17.67,
+    "rate": 25.58,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -2.04,
+     "d1": -1.02
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "계양전기우",
+    "market": "KOSPI",
+    "rate": 29.77,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": -8.33
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "금호건설우",
+    "market": "KOSPI",
+    "rate": 29.99,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 2.9,
+     "d1": -8.59
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "동부건설우",
+    "market": "KOSPI",
+    "rate": 18.18,
     "flags": [
      "box_breakout",
      "bollinger_break"
     ],
     "fwd": {
-     "gap": -5.13,
-     "d1": -4.24
+     "gap": -3.46,
+     "d1": -8.24
     }
    },
    {
-    "date": "20261103",
-    "name": "체시스",
+    "date": "20261111",
+    "name": "케이씨",
     "market": "KOSPI",
-    "rate": 10.3,
+    "rate": 13.04,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 1.23,
+     "d1": 0.49
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "코리아써키트2우B",
+    "market": "KOSPI",
+    "rate": 10.49,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -0.19,
+     "d1": 0.32
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "티와이홀딩스우",
+    "market": "KOSPI",
+    "rate": 29.87,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 29.97,
+     "d1": 29.97
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "나노신소재",
+    "market": "KOSDAQ",
+    "rate": 17.39,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -0.66,
+     "d1": -0.92
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "노랑풍선",
+    "market": "KOSDAQ",
+    "rate": 10.44,
     "flags": [
      "golden_cross",
      "bollinger_break"
     ],
     "fwd": {
-     "gap": 1.72,
-     "d1": 4.82
+     "gap": -0.15,
+     "d1": -5.87
     }
    },
    {
-    "date": "20261103",
-    "name": "한진",
-    "market": "KOSPI",
-    "rate": 23.08,
+    "date": "20261111",
+    "name": "노을",
+    "market": "KOSDAQ",
+    "rate": 29.92,
     "flags": [
-     "box_breakout",
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 9.47,
+     "d1": -9.68
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "디케이티",
+    "market": "KOSDAQ",
+    "rate": 19.44,
+    "flags": [
      "bollinger_break"
     ],
     "fwd": {
-     "gap": -10.19,
-     "d1": -13.05
+     "gap": -1.24,
+     "d1": -2.3
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "메드팩토",
+    "market": "KOSDAQ",
+    "rate": 29.99,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 7.3,
+     "d1": -5.69
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "심텍홀딩스",
+    "market": "KOSDAQ",
+    "rate": 29.82,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 13.27
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "쎄트렉아이",
+    "market": "KOSDAQ",
+    "rate": 12.39,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -1.67,
+     "d1": -5.78
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "에코캡",
+    "market": "KOSDAQ",
+    "rate": 29.91,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 12.69,
+     "d1": -0.42
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "에프엔씨엔터",
+    "market": "KOSDAQ",
+    "rate": 13.56,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -3.26,
+     "d1": -1.74
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "이노스페이스",
+    "market": "KOSDAQ",
+    "rate": 11.72,
+    "flags": [
+     "golden_cross",
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 0.16,
+     "d1": -2.94
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "타이거일렉",
+    "market": "KOSDAQ",
+    "rate": 18.34,
+    "flags": [
+     "bollinger_break",
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": 3.52,
+     "d1": 7.69
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "펌텍코리아",
+    "market": "KOSDAQ",
+    "rate": 10.53,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 3.22,
+     "d1": 3.62
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "대한항공",
+    "market": "KOSPI",
+    "rate": 11.51,
+    "flags": [
+     "bollinger_break",
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": -0.31,
+     "d1": -3.22
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "NAVER",
+    "market": "KOSPI",
+    "rate": 3.15,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": 0.99,
+     "d1": 1.66
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "SK텔레콤",
+    "market": "KOSPI",
+    "rate": 5.3,
+    "flags": [
+     "bollinger_break"
+    ],
+    "fwd": {
+     "gap": -0.98,
+     "d1": 1.47
     }
    }
   ],
   "lr_break": [
+   {
+    "date": "20261112",
+    "name": "에스텍",
+    "market": "KOSDAQ",
+    "rate": 19.83,
+    "flags": [
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 0.21
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "NHN",
+    "market": "KOSPI",
+    "rate": 3.75,
+    "flags": [
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": -2.62,
+     "d1": -14.57
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "에스텍",
+    "market": "KOSDAQ",
+    "rate": 29.97,
+    "flags": [
+     "lr_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 19.83,
+     "d1": 19.83
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "타이거일렉",
+    "market": "KOSDAQ",
+    "rate": 18.34,
+    "flags": [
+     "bollinger_break",
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": 3.52,
+     "d1": 7.69
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "한진칼",
+    "market": "KOSPI",
+    "rate": 15.18,
+    "flags": [
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": 1.06,
+     "d1": -17.04
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "대한항공",
+    "market": "KOSPI",
+    "rate": 11.51,
+    "flags": [
+     "bollinger_break",
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": -0.31,
+     "d1": -3.22
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "아시아나IDT",
+    "market": "KOSPI",
+    "rate": 26.47,
+    "flags": [
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": -1.62,
+     "d1": -19.79
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "대한항공우",
+    "market": "KOSPI",
+    "rate": 29.98,
+    "flags": [
+     "lr_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.92,
+     "d1": -27.13
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "대한항공우",
+    "market": "KOSPI",
+    "rate": 29.87,
+    "flags": [
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": 29.98,
+     "d1": 29.98
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "아시아나IDT",
+    "market": "KOSPI",
+    "rate": 29.99,
+    "flags": [
+     "lr_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 15.78,
+     "d1": 22.29
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": 29.9,
+    "flags": [
+     "lr_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 0.0
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "롯데렌탈",
+    "market": "KOSPI",
+    "rate": 10.4,
+    "flags": [
+     "bollinger_break",
+     "lr_break"
+    ],
+    "fwd": {
+     "gap": -0.17,
+     "d1": -0.17,
+     "d5": -0.17,
+     "open_d5": 0.0,
+     "max5": 0.0,
+     "min5": -0.17
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": 30.0,
+    "flags": [
+     "lr_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 17.87,
+     "d1": 29.9,
+     "d5": 38.96,
+     "open_d5": 17.89,
+     "max5": 91.07,
+     "min5": 7.57
+    }
+   },
    {
     "date": "20261105",
     "name": "한진칼우",
@@ -1732,7 +1949,11 @@
     ],
     "fwd": {
      "gap": 6.29,
-     "d1": 30.0
+     "d1": 30.0,
+     "d5": 113.55,
+     "open_d5": 100.91,
+     "max5": 119.52,
+     "min5": -4.03
     }
    },
    {
@@ -1745,7 +1966,11 @@
     ],
     "fwd": {
      "gap": 2.08,
-     "d1": -2.72
+     "d1": -2.72,
+     "d5": 4.47,
+     "open_d5": 2.35,
+     "max5": 30.46,
+     "min5": -5.54
     }
    },
    {
@@ -1758,7 +1983,11 @@
     ],
     "fwd": {
      "gap": -0.08,
-     "d1": -0.08
+     "d1": -0.08,
+     "d5": -0.08,
+     "open_d5": 0.0,
+     "max5": 0.39,
+     "min5": -0.31
     }
    },
    {
@@ -2008,237 +2237,253 @@
      "max5": 3.4,
      "min5": -15.93
     }
-   },
-   {
-    "date": "20261020",
-    "name": "HT로보틱스",
-    "market": "KOSDAQ",
-    "rate": 7.13,
-    "flags": [
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": 3.51,
-     "d1": 14.44,
-     "d5": -4.51,
-     "open_d5": -7.75,
-     "max5": 17.25,
-     "min5": -10.33
-    }
-   },
-   {
-    "date": "20261019",
-    "name": "삼기에너지솔루션즈",
-    "market": "KOSDAQ",
-    "rate": 25.64,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": 0.0,
-     "d1": -5.86,
-     "d5": -11.91,
-     "open_d5": -11.91,
-     "max5": 2.65,
-     "min5": -17.96
-    }
-   },
-   {
-    "date": "20261019",
-    "name": "에스엠벡셀",
-    "market": "KOSPI",
-    "rate": 29.9,
-    "flags": [
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": 0.12,
-     "d1": -4.58,
-     "d5": -24.01,
-     "open_d5": -24.1,
-     "max5": 2.72,
-     "min5": -25.99
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "HT로보틱스",
-    "market": "KOSDAQ",
-    "rate": 26.01,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -0.23,
-     "d1": 3.51,
-     "d5": 5.89,
-     "open_d5": 6.13,
-     "max5": 32.39,
-     "min5": -3.62
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "아이컴포넌트",
-    "market": "KOSDAQ",
-    "rate": 16.81,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -2.66,
-     "d1": -4.83,
-     "d5": -14.25,
-     "open_d5": -11.91,
-     "max5": -0.85,
-     "min5": -15.94
-    }
-   },
-   {
-    "date": "20261015",
-    "name": "라온시큐어",
-    "market": "KOSDAQ",
-    "rate": 14.01,
-    "flags": [
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": 1.99,
-     "d1": 3.48,
-     "d5": -8.96,
-     "open_d5": -10.73,
-     "max5": 8.71,
-     "min5": -16.17
-    }
-   },
-   {
-    "date": "20261014",
-    "name": "팬오션",
-    "market": "KOSPI",
-    "rate": 10.53,
-    "flags": [
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -3.18,
-     "d1": -6.92,
-     "d5": -9.82,
-     "open_d5": -6.86,
-     "max5": 8.3,
-     "min5": -14.11
-    }
-   },
-   {
-    "date": "20261008",
-    "name": "동국산업",
-    "market": "KOSDAQ",
-    "rate": 22.34,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": 1.51,
-     "d1": -3.99,
-     "d5": -6.36,
-     "open_d5": -7.76,
-     "max5": 4.85,
-     "min5": -15.1
-    }
-   },
-   {
-    "date": "20261008",
-    "name": "제너셈",
-    "market": "KOSDAQ",
-    "rate": 10.19,
-    "flags": [
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -1.96,
-     "d1": -3.92,
-     "d5": -12.94,
-     "open_d5": -11.2,
-     "max5": 3.92,
-     "min5": -19.02
-    }
-   },
-   {
-    "date": "20261006",
-    "name": "주성엔지니어링",
-    "market": "KOSDAQ",
-    "rate": 17.51,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -2.3,
-     "d1": -11.13,
-     "d5": -14.49,
-     "open_d5": -12.48,
-     "max5": 0.35,
-     "min5": -16.43
-    }
-   },
-   {
-    "date": "20261006",
-    "name": "심텍",
-    "market": "KOSDAQ",
-    "rate": 4.67,
-    "flags": [
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -1.73,
-     "d1": -2.7,
-     "d5": -19.49,
-     "open_d5": -18.08,
-     "max5": 1.73,
-     "min5": -20.93
-    }
-   },
-   {
-    "date": "20261006",
-    "name": "안랩",
-    "market": "KOSDAQ",
-    "rate": 15.58,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -5.21,
-     "d1": -14.86,
-     "d5": -2.0,
-     "open_d5": 3.39,
-     "max5": 3.1,
-     "min5": -19.62
-    }
-   },
-   {
-    "date": "20261006",
-    "name": "지씨지놈",
-    "market": "KOSDAQ",
-    "rate": 14.86,
-    "flags": [
-     "bollinger_break",
-     "lr_break"
-    ],
-    "fwd": {
-     "gap": -3.23,
-     "d1": -0.59,
-     "d5": -14.09,
-     "open_d5": -11.22,
-     "max5": 2.74,
-     "min5": -16.63
-    }
    }
   ],
   "lr_try": [
+   {
+    "date": "20261112",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": 29.93,
+    "flags": [
+     "lr_try",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 10.65,
+     "d1": -15.41
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "삼성E&A",
+    "market": "KOSPI",
+    "rate": -0.6,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 0.76,
+     "d1": 5.63
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "대한항공",
+    "market": "KOSPI",
+    "rate": 0.48,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -1.89,
+     "d1": -0.32
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "진양화학",
+    "market": "KOSPI",
+    "rate": 15.47,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -1.91,
+     "d1": 18.42
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "한진칼",
+    "market": "KOSPI",
+    "rate": -14.64,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 1.83,
+     "d1": 0.92
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "삼성E&A",
+    "market": "KOSPI",
+    "rate": 2.79,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -0.9,
+     "d1": -1.35
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": -2.67,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 6.97,
+     "d1": 29.93
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "대한항공",
+    "market": "KOSPI",
+    "rate": -2.93,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -0.95,
+     "d1": 0.48
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "대한항공우",
+    "market": "KOSPI",
+    "rate": -24.77,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 1.98,
+     "d1": 19.06
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "아시아나IDT",
+    "market": "KOSPI",
+    "rate": -21.71,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -0.94,
+     "d1": -1.73
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "유니퀘스트",
+    "market": "KOSPI",
+    "rate": 14.85,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -0.65,
+     "d1": 1.13
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "NHN",
+    "market": "KOSPI",
+    "rate": 29.87,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 7.11,
+     "d1": 3.75
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "아시아나항공",
+    "market": "KOSPI",
+    "rate": 11.68,
+    "flags": [
+     "bollinger_break",
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 2.51,
+     "d1": -4.1
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "디케이락",
+    "market": "KOSDAQ",
+    "rate": 24.44,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -1.11,
+     "d1": 1.11
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "한진칼",
+    "market": "KOSPI",
+    "rate": 5.81,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -0.93,
+     "d1": 9.49
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "진양화학",
+    "market": "KOSPI",
+    "rate": -14.22,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": -2.14,
+     "d1": 2.86
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "한진칼",
+    "market": "KOSPI",
+    "rate": 2.99,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 1.42,
+     "d1": 9.81,
+     "d5": 1.68,
+     "open_d5": 0.25,
+     "max5": 24.56,
+     "min5": -5.49
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "KT&G",
+    "market": "KOSPI",
+    "rate": -2.21,
+    "flags": [
+     "lr_try"
+    ],
+    "fwd": {
+     "gap": 0.52,
+     "d1": -2.83,
+     "d5": -7.45,
+     "open_d5": -7.93,
+     "max5": 0.58,
+     "min5": -10.59
+    }
+   },
    {
     "date": "20261105",
     "name": "한진칼",
@@ -2249,7 +2494,11 @@
     ],
     "fwd": {
      "gap": -0.27,
-     "d1": 7.66
+     "d1": 7.66,
+     "d5": 8.37,
+     "open_d5": 8.67,
+     "max5": 34.1,
+     "min5": -0.99
     }
    },
    {
@@ -2262,7 +2511,11 @@
     ],
     "fwd": {
      "gap": -8.02,
-     "d1": -5.4
+     "d1": -5.4,
+     "d5": 1.39,
+     "open_d5": 10.23,
+     "max5": 4.94,
+     "min5": -10.03
     }
    },
    {
@@ -2275,7 +2528,11 @@
     ],
     "fwd": {
      "gap": -5.94,
-     "d1": -2.64
+     "d1": -2.64,
+     "d5": 4.62,
+     "open_d5": 11.23,
+     "max5": 8.25,
+     "min5": -6.27
     }
    },
    {
@@ -2289,7 +2546,11 @@
     ],
     "fwd": {
      "gap": -6.25,
-     "d1": -4.76
+     "d1": -4.76,
+     "d5": 9.97,
+     "open_d5": 17.3,
+     "max5": 17.56,
+     "min5": -10.57
     }
    },
    {
@@ -2302,7 +2563,11 @@
     ],
     "fwd": {
      "gap": -1.94,
-     "d1": -3.14
+     "d1": -3.14,
+     "d5": -0.45,
+     "open_d5": 1.52,
+     "max5": 1.64,
+     "min5": -12.86
     }
    },
    {
@@ -2315,7 +2580,11 @@
     ],
     "fwd": {
      "gap": 2.23,
-     "d1": 7.19
+     "d1": 7.19,
+     "d5": 34.99,
+     "open_d5": 32.05,
+     "max5": 39.84,
+     "min5": -7.59
     }
    },
    {
@@ -2328,7 +2597,11 @@
     ],
     "fwd": {
      "gap": -5.53,
-     "d1": -11.68
+     "d1": -11.68,
+     "d5": 0.35,
+     "open_d5": 6.23,
+     "max5": 0.97,
+     "min5": -21.77
     }
    },
    {
@@ -2342,7 +2615,11 @@
     ],
     "fwd": {
      "gap": -2.23,
-     "d1": -12.5
+     "d1": -12.5,
+     "d5": -11.64,
+     "open_d5": -9.63,
+     "max5": 0.86,
+     "min5": -29.45
     }
    },
    {
@@ -2355,7 +2632,11 @@
     ],
     "fwd": {
      "gap": 0.97,
-     "d1": 1.78
+     "d1": 1.78,
+     "d5": 9.22,
+     "open_d5": 8.17,
+     "max5": 11.48,
+     "min5": -16.73
     }
    },
    {
@@ -2369,7 +2650,11 @@
     ],
     "fwd": {
      "gap": 0.0,
-     "d1": -1.8
+     "d1": -1.8,
+     "d5": -3.78,
+     "open_d5": -3.78,
+     "max5": 4.14,
+     "min5": -5.23
     }
    },
    {
@@ -2405,319 +2690,324 @@
      "max5": 9.42,
      "min5": -23.14
     }
-   },
-   {
-    "date": "20261029",
-    "name": "삼성E&A",
-    "market": "KOSPI",
-    "rate": -2.18,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -0.48,
-     "d1": -3.19,
-     "d5": 3.51,
-     "open_d5": 4.01,
-     "max5": 8.15,
-     "min5": -4.63
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "샌즈랩",
-    "market": "KOSDAQ",
-    "rate": 6.71,
-    "flags": [
-     "golden_cross",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -1.15,
-     "d1": -8.88,
-     "d5": -25.03,
-     "open_d5": -24.15,
-     "max5": -0.81,
-     "min5": -28.37
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "삼기에너지솔루션즈",
-    "market": "KOSDAQ",
-    "rate": 4.9,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -1.38,
-     "d1": -18.74,
-     "d5": -14.0,
-     "open_d5": -12.8,
-     "max5": 1.58,
-     "min5": -27.89
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "디아이",
-    "market": "KOSPI",
-    "rate": 14.55,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -2.59,
-     "d1": -1.57,
-     "d5": -20.36,
-     "open_d5": -18.24,
-     "max5": 2.25,
-     "min5": -25.2
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "디케이락",
-    "market": "KOSDAQ",
-    "rate": 11.92,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -2.92,
-     "d1": -3.23,
-     "d5": -0.79,
-     "open_d5": 2.19,
-     "max5": 6.54,
-     "min5": -12.53
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "오킨스전자",
-    "market": "KOSDAQ",
-    "rate": 10.41,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -2.83,
-     "d1": -5.67,
-     "d5": -16.0,
-     "open_d5": -13.55,
-     "max5": -2.33,
-     "min5": -27.33
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "한국알콜",
-    "market": "KOSDAQ",
-    "rate": 13.82,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -0.19,
-     "d1": -2.91,
-     "d5": 2.6,
-     "open_d5": 2.79,
-     "max5": 4.89,
-     "min5": -3.96
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "안랩",
-    "market": "KOSDAQ",
-    "rate": 15.59,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -1.37,
-     "d1": 17.85,
-     "d5": 20.27,
-     "open_d5": 21.95,
-     "max5": 44.98,
-     "min5": -5.81
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "엑시콘",
-    "market": "KOSDAQ",
-    "rate": 21.98,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 5.52,
-     "d1": 17.24,
-     "d5": -6.21,
-     "open_d5": -11.11,
-     "max5": 17.24,
-     "min5": -11.55
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "티에프이",
-    "market": "KOSDAQ",
-    "rate": 23.9,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 3.02,
-     "d1": 11.29,
-     "d5": 3.81,
-     "open_d5": 0.76,
-     "max5": 20.47,
-     "min5": -2.1
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "안랩",
-    "market": "KOSDAQ",
-    "rate": -10.09,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 4.99,
-     "d1": 6.17,
-     "d5": 58.92,
-     "open_d5": 51.37,
-     "max5": 67.19,
-     "min5": 2.62
-    }
-   },
-   {
-    "date": "20261020",
-    "name": "SK이노베이션",
-    "market": "KOSPI",
-    "rate": -9.14,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -0.07,
-     "d1": 3.16,
-     "d5": -6.25,
-     "open_d5": -6.19,
-     "max5": 5.44,
-     "min5": -9.07
-    }
-   },
-   {
-    "date": "20261020",
-    "name": "라온시큐어",
-    "market": "KOSDAQ",
-    "rate": -7.81,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 3.71,
-     "d1": 1.54,
-     "d5": 3.65,
-     "open_d5": -0.06,
-     "max5": 15.01,
-     "min5": -5.65
-    }
-   },
-   {
-    "date": "20261019",
-    "name": "HT로보틱스",
-    "market": "KOSDAQ",
-    "rate": 1.22,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 3.94,
-     "d1": 9.08,
-     "d5": 3.83,
-     "open_d5": -0.11,
-     "max5": 27.9,
-     "min5": -2.19
-    }
-   },
-   {
-    "date": "20261019",
-    "name": "SK이노베이션",
-    "market": "KOSPI",
-    "rate": 7.24,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -1.18,
-     "d1": -7.86,
-     "d5": -15.73,
-     "open_d5": -14.72,
-     "max5": 0.37,
-     "min5": -16.22
-    }
-   },
-   {
-    "date": "20261019",
-    "name": "동국산업",
-    "market": "KOSDAQ",
-    "rate": 10.07,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -0.11,
-     "d1": -4.49,
-     "d5": -23.74,
-     "open_d5": -23.66,
-     "max5": 8.24,
-     "min5": -25.13
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "KT&G",
-    "market": "KOSPI",
-    "rate": 0.79,
-    "flags": [
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": 0.31,
-     "d1": -0.37,
-     "d5": -1.04,
-     "open_d5": -1.35,
-     "max5": 2.61,
-     "min5": -1.67
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "에이텀",
-    "market": "KOSDAQ",
-    "rate": 18.76,
-    "flags": [
-     "bollinger_break",
-     "lr_try"
-    ],
-    "fwd": {
-     "gap": -1.25,
-     "d1": 0.38,
-     "d5": -19.05,
-     "open_d5": -18.02,
-     "max5": 2.51,
-     "min5": -21.8
-    }
    }
   ],
   "first_lu": [
+   {
+    "date": "20261112",
+    "name": "티와이홀딩스우",
+    "market": "KOSPI",
+    "rate": 29.97,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": -10.96,
+     "d1": -23.17
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "DGI",
+    "market": "KOSDAQ",
+    "rate": 29.87,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": -4.82
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "모아라이프플러스",
+    "market": "KOSDAQ",
+    "rate": 30.0,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 0.0
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "바이브컴퍼니",
+    "market": "KOSDAQ",
+    "rate": 24.06,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 24.02,
+     "d1": 24.02
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "베셀",
+    "market": "KOSDAQ",
+    "rate": 30.0,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 14.96,
+     "d1": -13.35
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "와이제이링크",
+    "market": "KOSDAQ",
+    "rate": 29.85,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 7.28,
+     "d1": -5.36
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "계양전기우",
+    "market": "KOSPI",
+    "rate": 29.77,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": -8.33
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "금호건설우",
+    "market": "KOSPI",
+    "rate": 29.99,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 2.9,
+     "d1": -8.59
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "태영건설우",
+    "market": "KOSPI",
+    "rate": 29.97,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 15.05,
+     "d1": -13.59
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "메드팩토",
+    "market": "KOSDAQ",
+    "rate": 29.99,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 7.3,
+     "d1": -5.69
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "심텍홀딩스",
+    "market": "KOSDAQ",
+    "rate": 29.82,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 13.27
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "에스텍",
+    "market": "KOSDAQ",
+    "rate": 29.97,
+    "flags": [
+     "lr_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 19.83,
+     "d1": 19.83
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "티엘비",
+    "market": "KOSDAQ",
+    "rate": 29.88,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 3.53,
+     "d1": 8.24
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "대한항공우",
+    "market": "KOSPI",
+    "rate": 29.98,
+    "flags": [
+     "lr_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.92,
+     "d1": -27.13
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "메타랩스",
+    "market": "KOSPI",
+    "rate": 29.96,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 18.51,
+     "d1": 19.97
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "코아스",
+    "market": "KOSPI",
+    "rate": 29.96,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 8.61,
+     "d1": -4.82
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "삼익제약",
+    "market": "KOSDAQ",
+    "rate": 29.95,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 7.68,
+     "d1": 1.2
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "티앤이코리아",
+    "market": "KOSDAQ",
+    "rate": 29.98,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 0.62,
+     "d1": 7.84
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "대원전선우",
+    "market": "KOSPI",
+    "rate": 29.9,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": -3.02,
+     "d1": -7.04
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "덕성우",
+    "market": "KOSPI",
+    "rate": 29.93,
+    "flags": [
+     "bollinger_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": -6.01,
+     "d1": -17.88
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "아시아나IDT",
+    "market": "KOSPI",
+    "rate": 29.99,
+    "flags": [
+     "lr_break",
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 15.78,
+     "d1": 22.29
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "썸에이지",
+    "market": "KOSDAQ",
+    "rate": 29.96,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 16.98,
+     "d1": 29.91
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "에코캡",
+    "market": "KOSDAQ",
+    "rate": 29.85,
+    "flags": [
+     "first_lu"
+    ],
+    "fwd": {
+     "gap": 19.22,
+     "d1": 29.9,
+     "d5": 56.66,
+     "open_d5": 31.4,
+     "max5": 77.14,
+     "min5": 5.53
+    }
+   },
    {
     "date": "20261105",
     "name": "깨끗한나라",
@@ -2729,7 +3019,11 @@
     ],
     "fwd": {
      "gap": 9.91,
-     "d1": -0.26
+     "d1": -0.26,
+     "d5": -14.99,
+     "open_d5": -22.66,
+     "max5": 37.71,
+     "min5": -18.98
     }
    },
    {
@@ -2743,7 +3037,11 @@
     ],
     "fwd": {
      "gap": 25.16,
-     "d1": -1.83
+     "d1": -1.83,
+     "d5": -6.13,
+     "open_d5": -25.0,
+     "max5": 29.99,
+     "min5": -17.21
     }
    },
    {
@@ -2758,7 +3056,11 @@
     ],
     "fwd": {
      "gap": -8.03,
-     "d1": -10.71
+     "d1": -10.71,
+     "d5": -13.86,
+     "open_d5": -6.34,
+     "max5": -3.31,
+     "min5": -18.74
     }
    },
    {
@@ -2771,7 +3073,11 @@
     ],
     "fwd": {
      "gap": 18.78,
-     "d1": 29.81
+     "d1": 29.81,
+     "d5": -4.86,
+     "open_d5": -19.9,
+     "max5": 41.4,
+     "min5": -9.5
     }
    },
    {
@@ -2784,7 +3090,11 @@
     ],
     "fwd": {
      "gap": 6.97,
-     "d1": -7.84
+     "d1": -7.84,
+     "d5": 3.23,
+     "open_d5": -3.49,
+     "max5": 30.85,
+     "min5": -17.04
     }
    },
    {
@@ -2797,7 +3107,11 @@
     ],
     "fwd": {
      "gap": 11.46,
-     "d1": 29.9
+     "d1": 29.9,
+     "d5": 24.27,
+     "open_d5": 11.5,
+     "max5": 78.64,
+     "min5": 5.24
     }
    },
    {
@@ -2811,372 +3125,337 @@
     ],
     "fwd": {
      "gap": 5.26,
-     "d1": -1.91
-    }
-   },
-   {
-    "date": "20261103",
-    "name": "벡트로보틱스",
-    "market": "KOSDAQ",
-    "rate": 28.33,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": -1.6,
-     "d1": 1.37
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "깨끗한나라우",
-    "market": "KOSPI",
-    "rate": 29.94,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 29.9,
-     "d1": 29.9
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "동양2우B",
-    "market": "KOSPI",
-    "rate": 29.93,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 0.0,
-     "d1": -9.21
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "샘표식품",
-    "market": "KOSPI",
-    "rate": 29.86,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": -3.65,
-     "d1": -15.69
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "한진칼우",
-    "market": "KOSPI",
-    "rate": 14.07,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 14.2,
-     "d1": 14.2
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "SGA솔루션즈",
-    "market": "KOSDAQ",
-    "rate": 29.9,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 4.93,
-     "d1": -10.01
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "디티에스",
-    "market": "KOSDAQ",
-    "rate": 29.77,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": -2.89,
-     "d1": -19.15
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "워트",
-    "market": "KOSDAQ",
-    "rate": 29.92,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 1.78,
-     "d1": -6.36
-    }
-   },
-   {
-    "date": "20261102",
-    "name": "피앤에스로보틱스",
-    "market": "KOSDAQ",
-    "rate": 29.86,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 5.84,
-     "d1": 5.84
-    }
-   },
-   {
-    "date": "20261029",
-    "name": "상지건설",
-    "market": "KOSDAQ",
-    "rate": 30.0,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 7.37,
-     "d1": 7.37,
-     "d5": -23.24,
-     "open_d5": -28.51,
-     "max5": 27.88,
-     "min5": -24.76
-    }
-   },
-   {
-    "date": "20261029",
-    "name": "서울바이오시스",
-    "market": "KOSDAQ",
-    "rate": 30.0,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 29.25,
-     "d1": -2.68,
-     "d5": -23.31,
-     "open_d5": -40.67,
-     "max5": 29.95,
-     "min5": -24.13
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "케이아이엔엑스",
-    "market": "KOSDAQ",
-    "rate": 29.96,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 14.62,
-     "d1": 12.58,
-     "d5": 12.2,
-     "open_d5": -2.12,
-     "max5": 15.13,
-     "min5": 11.05
-    }
-   },
-   {
-    "date": "20261028",
-    "name": "한울앤제주",
-    "market": "KOSDAQ",
-    "rate": 29.85,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 29.99,
-     "d1": 15.59,
-     "d5": 39.89,
-     "open_d5": 7.62,
-     "max5": 90.22,
-     "min5": 2.11
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "액스비스",
-    "market": "KOSDAQ",
-    "rate": 29.88,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 5.7,
-     "d1": 6.32,
-     "d5": 5.49,
-     "open_d5": -0.2,
-     "max5": 33.99,
-     "min5": 1.66
-    }
-   },
-   {
-    "date": "20261026",
-    "name": "루닛",
-    "market": "KOSDAQ",
-    "rate": 30.0,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": -1.36,
-     "d1": 2.59,
-     "d5": 8.92,
-     "open_d5": 10.42,
-     "max5": 10.89,
-     "min5": -5.92
-    }
-   },
-   {
-    "date": "20261026",
-    "name": "아이씨에이치",
-    "market": "KOSDAQ",
-    "rate": 29.98,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 16.04,
-     "d1": -6.49,
-     "d5": -23.06,
-     "open_d5": -33.7,
-     "max5": 25.95,
-     "min5": -26.49
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "진양화학",
-    "market": "KOSPI",
-    "rate": 29.81,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 9.75,
-     "d1": -7.84,
-     "d5": 34.96,
-     "open_d5": 22.97,
-     "max5": 34.96,
-     "min5": -13.14
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "노을",
-    "market": "KOSDAQ",
-    "rate": 29.96,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 29.94,
-     "d1": 29.94,
-     "d5": -0.78,
-     "open_d5": -23.64,
-     "max5": 58.68,
-     "min5": -5.09
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "소프트센우",
-    "market": "KOSDAQ",
-    "rate": 45.25,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 0.0,
-     "d1": -55.35
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "에이전트AI",
-    "market": "KOSDAQ",
-    "rate": 29.91,
-    "flags": [
-     "golden_cross",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 8.63,
-     "d1": 3.96,
-     "d5": -22.48,
-     "open_d5": -28.64,
-     "max5": 29.68,
-     "min5": -28.56
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "컨텍",
-    "market": "KOSDAQ",
-    "rate": 29.87,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 8.73,
-     "d1": 29.89,
-     "d5": 38.13,
-     "open_d5": 27.04,
-     "max5": 64.58,
-     "min5": 1.97
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "퓨쳐켐",
-    "market": "KOSDAQ",
-    "rate": 29.91,
-    "flags": [
-     "bollinger_break",
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 13.46,
-     "d1": 2.67,
-     "d5": -23.69,
-     "open_d5": -32.75,
-     "max5": 13.46,
-     "min5": -23.92
-    }
-   },
-   {
-    "date": "20261022",
-    "name": "윙스풋",
-    "market": "KOSDAQ",
-    "rate": 30.0,
-    "flags": [
-     "first_lu"
-    ],
-    "fwd": {
-     "gap": 7.96,
-     "d1": 29.96,
-     "d5": -21.46,
-     "open_d5": -27.25,
-     "max5": 53.31,
-     "min5": -24.16
+     "d1": -1.91,
+     "d5": -16.56,
+     "open_d5": -20.73,
+     "max5": 9.09,
+     "min5": -24.31
     }
    }
   ],
   "repeat_lu": [
+   {
+    "date": "20261112",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": 29.93,
+    "flags": [
+     "lr_try",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 10.65,
+     "d1": -15.41
+    }
+   },
+   {
+    "date": "20261112",
+    "name": "깨끗한나라우",
+    "market": "KOSPI",
+    "rate": 29.96,
+    "flags": [
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": -4.12,
+     "d1": -29.84
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "노을",
+    "market": "KOSDAQ",
+    "rate": 29.92,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 9.47,
+     "d1": -9.68
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "바이오인프라",
+    "market": "KOSDAQ",
+    "rate": 29.96,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 4.29,
+     "d1": -15.21
+    }
+   },
+   {
+    "date": "20261111",
+    "name": "예선테크",
+    "market": "KOSDAQ",
+    "rate": 30.0,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 29.98,
+     "d1": -9.6
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "깨끗한나라우",
+    "market": "KOSPI",
+    "rate": 29.9,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 29.93,
+     "d1": -21.66
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "동양2우B",
+    "market": "KOSPI",
+    "rate": 29.88,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 16.17,
+     "d1": -29.95
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "바이오인프라",
+    "market": "KOSDAQ",
+    "rate": 29.92,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": -1.56,
+     "d1": 29.96
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "썸에이지",
+    "market": "KOSDAQ",
+    "rate": 29.91,
+    "flags": [
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": -6.95,
+     "d1": -13.67
+    }
+   },
+   {
+    "date": "20261110",
+    "name": "예선테크",
+    "market": "KOSDAQ",
+    "rate": 30.0,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 16.24,
+     "d1": 30.0
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "깨끗한나라우",
+    "market": "KOSPI",
+    "rate": 29.83,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 17.82,
+     "d1": 29.9
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "동양2우B",
+    "market": "KOSPI",
+    "rate": 30.0,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 0.59,
+     "d1": 29.88
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": 29.9,
+    "flags": [
+     "lr_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 0.0,
+     "d1": 0.0
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "노을",
+    "market": "KOSDAQ",
+    "rate": 29.96,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 4.23,
+     "d1": 12.08
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "에코캡",
+    "market": "KOSDAQ",
+    "rate": 29.9,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 6.38,
+     "d1": -10.06
+    }
+   },
+   {
+    "date": "20261109",
+    "name": "파이온엑스",
+    "market": "KOSDAQ",
+    "rate": 29.94,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 13.8,
+     "d1": -9.67
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "깨끗한나라우",
+    "market": "KOSPI",
+    "rate": 29.78,
+    "flags": [
+     "golden_cross",
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 11.66,
+     "d1": 29.83,
+     "d5": 20.46,
+     "open_d5": 7.88,
+     "max5": 119.12,
+     "min5": 11.66
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "동양2우B",
+    "market": "KOSPI",
+    "rate": 30.0,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 30.0,
+     "d1": 30.0,
+     "d5": -20.96,
+     "open_d5": -39.2,
+     "max5": 119.42,
+     "min5": -20.96
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "한진칼우",
+    "market": "KOSPI",
+    "rate": 30.0,
+    "flags": [
+     "lr_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 17.87,
+     "d1": 29.9,
+     "d5": 38.96,
+     "open_d5": 17.89,
+     "max5": 91.07,
+     "min5": 7.57
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "대호특수강우",
+    "market": "KOSDAQ",
+    "rate": 29.81,
+    "flags": [
+     "bollinger_break",
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": -3.27,
+     "d1": -18.74,
+     "d5": -43.36,
+     "open_d5": -41.44,
+     "max5": 8.93,
+     "min5": -44.92
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "윙스풋",
+    "market": "KOSDAQ",
+    "rate": 29.97,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 6.54,
+     "d1": -9.25,
+     "d5": -10.97,
+     "open_d5": -16.44,
+     "max5": 28.24,
+     "min5": -32.06
+    }
+   },
+   {
+    "date": "20261106",
+    "name": "파이온엑스",
+    "market": "KOSDAQ",
+    "rate": 29.89,
+    "flags": [
+     "repeat_lu"
+    ],
+    "fwd": {
+     "gap": 15.53,
+     "d1": 29.94,
+     "d5": 7.21,
+     "open_d5": -7.2,
+     "max5": 68.85,
+     "min5": -2.03
+    }
+   },
    {
     "date": "20261105",
     "name": "깨끗한나라우",
@@ -3187,7 +3466,11 @@
     ],
     "fwd": {
      "gap": 29.78,
-     "d1": 29.78
+     "d1": 29.78,
+     "d5": 122.83,
+     "open_d5": 71.7,
+     "max5": 184.37,
+     "min5": 29.78
     }
    },
    {
@@ -3200,7 +3483,11 @@
     ],
     "fwd": {
      "gap": 30.0,
-     "d1": 30.0
+     "d1": 30.0,
+     "d5": 38.0,
+     "open_d5": 6.15,
+     "max5": 185.25,
+     "min5": 27.25
     }
    },
    {
@@ -3215,7 +3502,11 @@
     ],
     "fwd": {
      "gap": -5.98,
-     "d1": 3.44
+     "d1": 3.44,
+     "d5": -9.42,
+     "open_d5": -3.66,
+     "max5": 37.52,
+     "min5": -12.41
     }
    },
    {
@@ -3228,7 +3519,11 @@
     ],
     "fwd": {
      "gap": 18.59,
-     "d1": 29.97
+     "d1": 29.97,
+     "d5": -10.9,
+     "open_d5": -24.86,
+     "max5": 66.67,
+     "min5": -10.9
     }
    },
    {
@@ -3241,7 +3536,11 @@
     ],
     "fwd": {
      "gap": 30.0,
-     "d1": 30.0
+     "d1": 30.0,
+     "d5": 122.9,
+     "open_d5": 71.46,
+     "max5": 269.68,
+     "min5": 30.0
     }
    },
    {
@@ -3254,7 +3553,11 @@
     ],
     "fwd": {
      "gap": 7.5,
-     "d1": 22.29
+     "d1": 22.29,
+     "d5": 100.99,
+     "open_d5": 86.97,
+     "max5": 168.44,
+     "min5": 0.0
     }
    },
    {
@@ -3267,7 +3570,11 @@
     ],
     "fwd": {
      "gap": 29.98,
-     "d1": 29.98
+     "d1": 29.98,
+     "d5": 269.81,
+     "open_d5": 184.52,
+     "max5": 269.81,
+     "min5": 21.59
     }
    },
    {
@@ -3281,390 +3588,11 @@
     ],
     "fwd": {
      "gap": 0.0,
-     "d1": -7.11
-    }
-   },
-   {
-    "date": "20261030",
-    "name": "진양화학",
-    "market": "KOSPI",
-    "rate": 30.0,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 5.18,
-     "d1": 3.77,
-     "d5": 28.1,
-     "open_d5": 21.79,
-     "max5": 33.12,
-     "min5": -3.61
-    }
-   },
-   {
-    "date": "20261030",
-    "name": "형지엘리트",
-    "market": "KOSPI",
-    "rate": 29.94,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 8.7,
-     "d1": -17.72,
-     "d5": -27.23,
-     "open_d5": -33.05,
-     "max5": 13.32,
-     "min5": -29.35
-    }
-   },
-   {
-    "date": "20261030",
-    "name": "형지I&C",
-    "market": "KOSDAQ",
-    "rate": 29.91,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 1.37,
-     "d1": -10.54,
-     "d5": -15.12,
-     "open_d5": -16.27,
-     "max5": 13.06,
-     "min5": -17.98
-    }
-   },
-   {
-    "date": "20261029",
-    "name": "파이온엑스",
-    "market": "KOSDAQ",
-    "rate": 29.96,
-    "flags": [
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 16.32,
-     "d1": -6.6,
-     "d5": -44.5,
-     "open_d5": -52.29,
-     "max5": 23.98,
-     "min5": -44.57
-    }
-   },
-   {
-    "date": "20261027",
-    "name": "멜콘",
-    "market": "KOSDAQ",
-    "rate": 29.97,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 8.46,
-     "d1": 18.76,
-     "d5": -8.97,
-     "open_d5": -16.07,
-     "max5": 26.28,
-     "min5": -18.32
-    }
-   },
-   {
-    "date": "20261026",
-    "name": "빅웨이브로보틱스",
-    "market": "KOSDAQ",
-    "rate": 29.82,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 5.18,
-     "d1": -0.17,
-     "d5": -29.88,
-     "open_d5": -33.33,
-     "max5": 13.3,
-     "min5": -34.82
-    }
-   },
-   {
-    "date": "20261026",
-    "name": "컨텍",
-    "market": "KOSDAQ",
-    "rate": 29.89,
-    "flags": [
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 1.33,
-     "d1": -1.8,
-     "d5": 1.42,
-     "open_d5": 0.09,
-     "max5": 26.7,
-     "min5": -7.29
-    }
-   },
-   {
-    "date": "20261026",
-    "name": "노을",
-    "market": "KOSDAQ",
-    "rate": 29.94,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 13.13,
-     "d1": -7.14,
-     "d5": -28.02,
-     "open_d5": -36.37,
-     "max5": 22.12,
-     "min5": -30.88
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "윙스풋",
-    "market": "KOSDAQ",
-    "rate": 29.96,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 17.96,
-     "d1": -20.77,
-     "d5": -42.68,
-     "open_d5": -51.41,
-     "max5": 17.96,
-     "min5": -42.68
-    }
-   },
-   {
-    "date": "20261023",
-    "name": "파이온엑스",
-    "market": "KOSDAQ",
-    "rate": 29.93,
-    "flags": [
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": -8.64,
-     "d1": 8.22,
-     "d5": -1.54,
-     "open_d5": 7.76,
-     "max5": 30.69,
-     "min5": -21.91
-    }
-   },
-   {
-    "date": "20261020",
-    "name": "형지I&C",
-    "market": "KOSDAQ",
-    "rate": 29.99,
-    "flags": [
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 11.32,
-     "d1": -7.02,
-     "d5": -28.07,
-     "open_d5": -35.38,
-     "max5": 30.0,
-     "min5": -32.02
-    }
-   },
-   {
-    "date": "20261020",
-    "name": "형지글로벌",
-    "market": "KOSDAQ",
-    "rate": 29.83,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 20.1,
-     "d1": -6.53,
-     "d5": -21.41,
-     "open_d5": -34.57,
-     "max5": 29.77,
-     "min5": -21.67
-    }
-   },
-   {
-    "date": "20261019",
-    "name": "뉴인텍",
-    "market": "KOSDAQ",
-    "rate": 29.88,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 2.96,
-     "d1": 1.14,
-     "d5": -38.04,
-     "open_d5": -39.82,
-     "max5": 25.17,
-     "min5": -38.04
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "대양금속",
-    "market": "KOSPI",
-    "rate": 29.99,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 8.2,
-     "d1": -5.24,
-     "d5": -33.08,
-     "open_d5": -38.15,
-     "max5": 14.2,
-     "min5": -35.18
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "예선테크",
-    "market": "KOSDAQ",
-    "rate": 29.93,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 14.55,
-     "d1": -9.41,
-     "d5": -30.34,
-     "open_d5": -39.19,
-     "max5": 17.52,
-     "min5": -34.61
-    }
-   },
-   {
-    "date": "20261016",
-    "name": "프롬바이오",
-    "market": "KOSDAQ",
-    "rate": 29.98,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 8.98,
-     "d1": -6.51,
-     "d5": -20.6,
-     "open_d5": -27.14,
-     "max5": 29.93,
-     "min5": -25.53
-    }
-   },
-   {
-    "date": "20261015",
-    "name": "에이엔피",
-    "market": "KOSPI",
-    "rate": 29.79,
-    "flags": [
-     "golden_cross",
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 5.54,
-     "d1": 12.93,
-     "d5": -47.23,
-     "open_d5": -50.0,
-     "max5": 37.99,
-     "min5": -50.4
-    }
-   },
-   {
-    "date": "20261015",
-    "name": "뉴인텍",
-    "market": "KOSDAQ",
-    "rate": 30.0,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 21.79,
-     "d1": -13.33,
-     "d5": -30.26,
-     "open_d5": -42.74,
-     "max5": 40.9,
-     "min5": -30.26
-    }
-   },
-   {
-    "date": "20261015",
-    "name": "바이오인프라",
-    "market": "KOSDAQ",
-    "rate": 29.98,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 0.0,
-     "d1": 0.0,
-     "d5": -20.78,
-     "open_d5": -20.78,
-     "max5": 29.9,
-     "min5": -22.56
-    }
-   },
-   {
-    "date": "20261015",
-    "name": "하이퍼코퍼레이션",
-    "market": "KOSDAQ",
-    "rate": 29.82,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 3.06,
-     "d1": -24.66,
-     "d5": -40.25,
-     "open_d5": -42.02,
-     "max5": 6.89,
-     "min5": -41.5
-    }
-   },
-   {
-    "date": "20261014",
-    "name": "에이엔피",
-    "market": "KOSPI",
-    "rate": 29.78,
-    "flags": [
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 0.0,
-     "d1": 29.79,
-     "d5": -20.55,
-     "open_d5": -20.55,
-     "max5": 79.11,
-     "min5": -20.55
-    }
-   },
-   {
-    "date": "20261014",
-    "name": "천일고속",
-    "market": "KOSPI",
-    "rate": 29.78,
-    "flags": [
-     "bollinger_break",
-     "repeat_lu"
-    ],
-    "fwd": {
-     "gap": 2.68,
-     "d1": -1.79,
-     "d5": -10.71,
-     "open_d5": -13.04,
-     "max5": 20.09,
-     "min5": -11.61
+     "d1": -7.11,
+     "d5": -20.44,
+     "open_d5": -20.44,
+     "max5": 26.32,
+     "min5": -24.12
     }
    }
   ]
