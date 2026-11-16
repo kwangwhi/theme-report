@@ -39,6 +39,7 @@
   li { margin-bottom: 6px; }
   .src a { color: var(--muted); word-break: break-all; }
   footer { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 20px; }
+  section { overflow-x: auto; }  /* 휴대폰에서 넓은 표는 표 안에서만 옆으로 밀기 */
 </style>
 </head>
 <body>
@@ -47,14 +48,14 @@
   <div class="stamp">2026년 11월 16일(월) · 종가 기준</div>
 
   <div class="notice">
-    일부 숫자는 데이터 수집 실패로 기사 기준입니다. (15:45 자동 수집 파일 data/2026-11-16.json 이 16:38 무렵까지 올라오지 않아 지수·환율·해외 숫자를 모두 기사로 채웠습니다. 지난 13일 파일은 늦게 올라왔고 코스피 종가가 5,315.45로 기사(5,290.53)와 달랐습니다 — 자동 수집 점검 필요.) 매수·매도 추천이 아닙니다.
+    지수·해외 숫자는 자동 수집 데이터(오늘 고친 수집기로 20:45 재수집), 시황·수급·업종·공시는 인포스탁 [1116마감체크](17:07) 기준입니다. 일부 숫자(지수 거래대금, 원/달러)는 데이터 수집 한계로 기사 기준입니다. 매수·매도 추천이 아닙니다.
   </div>
 
   <section>
     <h2>① 오늘 시장 한 줄 요약</h2>
     <p style="margin:0">
-      코스피는 <b>+0.28% 출발 뒤 곧바로 하락 전환</b>, 오후 들어 낙폭을 키워 <b>5,100.50(<span class="down">-3.59%</span>)</b>으로 5,100선에 겨우 걸쳤습니다. 원인은 <b>외국인의 반도체 대형주 대량 매도(약 1.4조~1.7조)</b>. 지난 금요일 미국 필라델피아 반도체 -3.43%, 엔비디아 경영 공백, D램 담합 소송 기각 신청 불허·낸드 가격 하락 전망이 겹쳤습니다.
-      코스닥은 <b>665.65(<span class="down">-4.86%</span>)</b>로 더 크게 빠졌고, 반도체 장비주가 10%대 급락. 대만(-6.03%)·일본(-2.42%)도 같이 무너진 아시아 전체의 반도체 매도였습니다. 반대로 <b>보험·음식료·항공</b>과 수능 앞 <b>AI 부정행위 방지(보안) 테마</b>는 강했습니다.
+      코스피는 <b>+0.28% 출발 뒤 곧바로 하락 전환</b>해 오후에 낙폭을 키웠고, <b>5,100.50(<span class="down">-3.59%</span>)</b>으로 3거래일 연속 하락했습니다. 핵심 원인은 <b>외국인·기관의 반도체 대형주 매도</b>(외국인 −1.38조). 엔비디아 경영 공백과 AI 투자 우려, 금요일 미국 필라델피아 반도체 -3.43%, D램 담합 소송·낸드 가격 하락 전망에 이번 주 엔비디아 실적·앤트로픽 상장을 앞둔 경계감이 겹쳤습니다.
+      코스닥은 <b>665.65(<span class="down">-4.86%</span>)</b>로 전 업종이 하락. 반대로 <b>음식료·보험·운송</b> 같은 방어 업종과 수능 앞 <b>AI 부정행위 방지(보안)·AI안경 카메라</b> 테마로 돈이 몰렸습니다.
     </p>
   </section>
 
@@ -62,12 +63,12 @@
     <h2>② 지수·환율</h2>
     <table>
       <tr><th>항목</th><th class="num">종가</th><th class="num">전일 대비</th><th class="num">등락률</th><th class="num">장중 고점/저점</th><th class="num">거래대금</th></tr>
-      <tr><td>코스피 <span class="tag">기사 기준</span></td><td class="num">5,100.50</td><td class="num down">-190.03</td><td class="num down">-3.59%</td><td class="num">5,327.99 / 5,069.83</td><td class="num">확인 필요</td></tr>
-      <tr><td>코스닥 <span class="tag">기사 기준</span></td><td class="num">665.65</td><td class="num down">-34.01</td><td class="num down">-4.86%</td><td class="num">708.34 / 664.98</td><td class="num">확인 필요</td></tr>
-      <tr><td>원/달러 <span class="tag">기사 기준</span> <span class="tag">15:30</span></td><td class="num">1,335.7</td><td class="num down">-1.0</td><td class="num down">-0.07%</td><td class="num">1,338.6 / 1,332.9</td><td class="num">—</td></tr>
+      <tr><td>코스피</td><td class="num">5,100.50</td><td class="num down">-190.03</td><td class="num down">-3.59%</td><td class="num">5,327.99 / 5,069.83</td><td class="num">확인 필요</td></tr>
+      <tr><td>코스닥</td><td class="num">665.65</td><td class="num down">-34.01</td><td class="num down">-4.86%</td><td class="num">708.34 / 664.98</td><td class="num">확인 필요</td></tr>
+      <tr><td>원/달러 <span class="tag">15:30 기사</span></td><td class="num">1,335.7</td><td class="num down">-1.0</td><td class="num down">-0.07%</td><td class="num">1,338.6 / 1,332.9</td><td class="num">—</td></tr>
     </table>
     <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
-      숫자: 거래소 데이터 자동 수집(15:45) — <b>오늘은 수집 파일이 없어</b> 위 숫자 모두 마감 기사 기준입니다. 코스피 시가 5,305.40, 저점은 14:57께(장중 -4.17%). 코스닥 시가 705.88. 10:38 기준 코스피 상승 160 · 하락 723 종목으로 오전부터 대부분 하락. 환율은 수출업체 달러 매도와 엔화 강세 전환으로 소폭 내렸고 하루 변동폭(5.7원)은 작았습니다. 거래대금은 오늘 읽은 기사에 없었습니다.
+      숫자: 거래소 데이터 자동 수집(data/2026-11-16.json, 국내 지수는 네이버 일봉). 코스피 시가 5,305.40, 저점은 14:57께. 원/달러는 수집 값(1,334.98)이 15:30 주간 종가가 아니어서 기사 주간 종가를 썼습니다(장중 고저는 이투데이). 국고채 3년 3.743%(-1.6bp), 10년 3.981%(-2.0bp)로 금리는 내렸습니다. 지수 거래대금은 수집·기사 모두에서 확인하지 못했습니다.
     </p>
   </section>
 
@@ -75,28 +76,28 @@
     <h2>③ 해외 증시</h2>
     <table>
       <tr><th>지수</th><th class="num">종가</th><th class="num">등락률</th><th class="num">기준일</th></tr>
-      <tr><td>다우 <span class="tag">기사 기준</span></td><td class="num">52,347.60</td><td class="num up">+0.10%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>S&amp;P500 <span class="tag">기사 기준</span></td><td class="num">7,561.67</td><td class="num down">-0.40%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>나스닥 <span class="tag">기사 기준</span></td><td class="num">25,136.30</td><td class="num down">-0.91%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>필라델피아 반도체 <span class="tag">기사 기준</span></td><td class="num">확인 필요</td><td class="num down">-3.43%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>닛케이225 <span class="tag">기사 기준</span></td><td class="num">59,662.02</td><td class="num down">-2.42%</td><td class="num">11/16</td></tr>
-      <tr><td>상해종합 <span class="tag">기사 기준</span></td><td class="num">3,602.57</td><td class="num down">-0.87%</td><td class="num">11/16</td></tr>
-      <tr><td>대만 가권 <span class="tag">기사 기준</span></td><td class="num">41,040</td><td class="num down">-6.03%</td><td class="num">11/16</td></tr>
+      <tr><td>다우</td><td class="num">52,347.55</td><td class="num up">+0.10%</td><td class="num">11/13 (미국)</td></tr>
+      <tr><td>S&amp;P500</td><td class="num">7,561.67</td><td class="num down">-0.40%</td><td class="num">11/13 (미국)</td></tr>
+      <tr><td>나스닥</td><td class="num">25,136.27</td><td class="num down">-0.91%</td><td class="num">11/13 (미국)</td></tr>
+      <tr><td>필라델피아 반도체</td><td class="num">10,146.32</td><td class="num down">-3.43%</td><td class="num">11/13 (미국)</td></tr>
+      <tr><td>닛케이225</td><td class="num">59,662.02</td><td class="num down">-2.42%</td><td class="num">11/16</td></tr>
+      <tr><td>상해종합</td><td class="num">3,602.57</td><td class="num down">-0.87%</td><td class="num">11/16</td></tr>
+      <tr><td>대만 가권</td><td class="num">41,040.08</td><td class="num down">-6.03%</td><td class="num">11/16</td></tr>
     </table>
     <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
-      미국(13일): 엔비디아 -2.01%(전날 -4%대에 이어 이틀 연속, HSBC 투자의견 '보유'로 하향), <b>AMD -8.75%, 브로드컴 -4.76%</b>. 10월 PPI는 전월 대비 +0.3%로 예상(+0.4%)보다 낮았지만 전년 대비 +6.5%로 높아 금리 부담(미 10년물 5.1%대)이 이어졌습니다. 대만은 사상 두 번째로 큰 하락 폭(-2,635포인트), TSMC -5.74%. 일본은 3분기 GDP가 마이너스로 나왔고, 중국은 10월 소매판매(+0.4%)가 예상에 못 미쳐 약세.
+      미국(13일): 엔비디아 -2.01%(이틀 연속 하락, HSBC 투자의견 '보유'로 하향), AMD -8.75%, 브로드컴 -4.76%, 마이크론 -2.52%. 10월 PPI는 전월 대비 +0.3%로 예상보다 낮았지만 전년 대비 +6.5%로 높았습니다. 대만은 하루 하락 폭이 사상 두 번째(-2,635포인트, TSMC -5.74%). 일본은 3분기 GDP 마이너스, 중국은 10월 소매판매 +0.4%로 부진.
     </p>
   </section>
 
   <section>
-    <h2>④ 수급 (순매수 +/순매도 −) <span class="tag">기사 기준</span></h2>
+    <h2>④ 수급 (순매수 +/순매도 −)</h2>
     <table>
       <tr><th>시장</th><th class="num">개인</th><th class="num">외국인</th><th class="num">기관</th></tr>
-      <tr><td>코스피</td><td class="num up">+1조6,832억</td><td class="num down">−1조7,018억</td><td class="num down">−4,634억</td></tr>
-      <tr><td>코스닥</td><td class="num up">+4,608억</td><td class="num down">−2,903억</td><td class="num down">−1,582억</td></tr>
+      <tr><td>코스피</td><td class="num up">+1조3,472억</td><td class="num down">−1조3,771억</td><td class="num down">−4,647억</td></tr>
+      <tr><td>코스닥</td><td class="num up">+3,781억</td><td class="num down">−2,121억</td><td class="num down">−1,543억</td></tr>
     </table>
     <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
-      <b>외국인·기관이 함께 팔고 개인이 혼자 받아낸 하루</b>. 코스피 기타법인도 +4,700억대 순매수. 숫자는 늦게 나온 뉴스핌(15:59) 기준이며 서울경제TV(16:02)도 비슷(외국인 −1조6,998억). 반면 아시아경제(15:45)·라이센스뉴스(15:57)·스트레이트뉴스(16:16)는 코스피 외국인 −1조3,769억~−1조3,842억, 코스닥 외국인 −2,097억으로 적어 차이가 큽니다(확정치 확인 필요). 외국인·기관 순매수 상위 종목은 오늘 읽은 기사에 없었습니다.
+      <b>외국인·기관이 함께 팔고 개인이 받아낸 하루</b>. 매도는 반도체 대형주에 집중됐습니다. 코스피200 선물은 외국인 +1,991계약 순매수, 기관 −2,121계약으로 현물과 반대. 외국인 순매수 1위는 삼양식품(+252억, 남도일보). 숫자는 인포스탁 마감체크(17:07) 기준이며, 뉴스핌(15:59)·서울경제TV(16:02)는 외국인 −1조7,018억~−1조6,998억으로 적어 매체별 차이가 큽니다(확정치 확인 필요).
     </p>
   </section>
 
@@ -104,59 +105,61 @@
     <h2>⑤ 강한 쪽 (상승 테마·종목)</h2>
     <table>
       <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
-      <tr><td>보안·AI 부정행위 방지(수능)</td><td>지슨 / 카티스 / 시선AI / DGI <span class="tag">13:43</span></td><td class="num up">+29.97%(상한가) / +29.87%(상한가) / +26.23% / +26.10%</td><td>AI 스마트안경·초소형 카메라 시험 부정 논란. 교육부가 과기정통부와 시험장 전파 차단을 검토 중이며 <b>17일 대책 발표 예정</b>. 19일 수능</td></tr>
-      <tr><td>AI안경 카메라 부품</td><td>나무가 <span class="tag">14:38</span> / 세코닉스 <span class="tag">오전</span></td><td class="num up">+30.00%(상한가) / 상한가</td><td>AI 스마트안경 관심에 카메라 모듈주 동반 급등. 실제 사업 연관성은 따로 확인 필요. 마감 유지 여부 확인 필요</td></tr>
-      <tr><td>손해보험·생보</td><td>한화손보 / DB손보 / 현대해상 / 삼성화재 / 한화생명</td><td class="num up">+5.01% / +4.46% / +4.42% / +2.46% / +3.13%</td><td>급락장 속 방어주로 돈이 이동(순환매). 보험 업종 +1.78%. 개별 재료는 기사에 없음</td></tr>
-      <tr><td>음식료·담배</td><td>삼양식품 / KT&amp;G</td><td class="num up">+6.20% / +2.78%</td><td>업종 +2.73%로 오늘 가장 강한 업종. 방어주 순환매(개별 재료는 기사에 없음)</td></tr>
-      <tr><td>운송(해운·항공)</td><td>HMM / 한진칼 / 제주항공</td><td class="num up">+3.26% / +5.90% / +5.55%</td><td>HMM 3분기 영업이익 1조3,947억 발표. 항공주 이유는 기사에 없음. 운송·창고 업종 +1.67%</td></tr>
-      <tr><td>개별</td><td>미래에셋벤처투자 / LK삼양</td><td class="num up">+17.13% / +29.90%(상한가)</td><td>미래에셋벤처: 스페이스X 관련 투자 회수 기대로 주목. LK삼양: 기사상 확인된 재료 없음(주의)</td></tr>
-      <tr><td>은행</td><td>KB금융</td><td class="num up">+1.64%</td><td>코스피 시총 상위 중 거의 유일한 상승. 지난주에 이어 피난처 역할</td></tr>
+      <tr><td>보안·AI 부정행위 방지(수능)</td><td>지슨 / 카티스 / 시선AI / DGI</td><td class="num up">+29.97%(상) / +29.87%(상) / +26.23% / +14.83%</td><td>AI 스마트안경·초소형 카메라 시험 부정 논란. 교육부가 시험장 전파 차단을 검토 중이며 <b>17일 대책 발표 예정</b>, 19일 수능</td></tr>
+      <tr><td>AI안경 카메라 부품</td><td>나무가 / 세코닉스</td><td class="num up">+30.00%(상) / +29.83%(상)</td><td>AI 커닝 논란이 스마트안경 부품 관심으로 번짐. 회사 자체 공시·호재는 없음</td></tr>
+      <tr><td>음식료·담배 (업종 +2.73%, 오늘 1위)</td><td>삼양식품 / KT&amp;G / 롯데웰푸드·빙그레·하이트진로</td><td class="num up">+6.20% / +2.78% / 확인 필요</td><td>증권사(NH)가 내년 수익성 회복·원화 강세 수혜·저평가로 비중 확대 제시. 삼양식품은 외국인 순매수 1위·중국 신공장 기대</td></tr>
+      <tr><td>보험 (업종 +1.78%)</td><td>한화손보 / DB손보 / 현대해상 / 삼성화재</td><td class="num up">+5.01% / +4.46% / +4.42% / +2.46%</td><td>반도체에서 빠진 돈이 방어주로 이동(순환매). 개별 재료는 없음</td></tr>
+      <tr><td>운송·금융</td><td>HMM / 한진칼 / 제주항공 / 하나금융지주 / KB금융</td><td class="num up">+3.26% / +5.90% / +5.55% / +1.77% / +1.64%</td><td>HMM 3분기 영업이익 1조3,947억. 항공주 이유는 기사에 없음. 금융지주는 시총 상위 중 드문 상승</td></tr>
+      <tr><td>화장품 수출</td><td>파마리서치 / 브이티·코스메카코리아·한국콜마 등</td><td class="num up">+2.99% / 확인 필요</td><td>10월 누계 화장품 수출 성장, 증권사 내년 수출 전망 상향</td></tr>
+      <tr><td>공시·개별 상한가</td><td>M83 / 코아스템켐온 / 미래에셋벤처투자</td><td class="num up">상한가 / 상한가 / +17.13%</td><td>M83 3분기 흑자전환(매출 976억, 영업이익 88억). 코아스템켐온 FDA 회의록 수령. 미래에셋벤처는 스페이스X 투자 회수 기대(신규 공시 없음)</td></tr>
+      <tr><td>신고가</td><td>진양폴리 / 카스 / 지니언스</td><td class="num up">+10.04% / +8.72% / +0.29%</td><td>진양폴리: 오세훈 테마. 카스: 자사주 취득 결정. 지니언스: 사상 최대 실적 전망</td></tr>
     </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">사유 미확인 상한가: LK삼양(+29.90%), 지니틱스(상장폐지 절차 유예 상태라 위험도 높음). (상)=상한가.</p>
   </section>
 
   <section>
     <h2>⑥ 약한 쪽 (하락 테마·종목)</h2>
     <table>
       <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
-      <tr><td>반도체 대형주</td><td>SK하이닉스 / 삼성전자 / SK스퀘어 / 삼성전기 / 한미반도체</td><td class="num down">-7.89% / -4.47% / -9.71% / -8.19% / -6.60%</td><td>외국인 집중 매도. 미국 반도체 급락, D램 담합 집단소송 기각 신청 불허, BofA의 낸드 업황 전망 하향(10월 이후 낸드 현물가 약 20% 하락). 삼성전자 196,800원으로 20만 원 붕괴, 하이닉스 112만 원</td></tr>
-      <tr><td>반도체 장비·부품(코스닥)</td><td>하나마이크론 / 유진테크 / 피에스케이 / 심텍 / 주성엔지니어링 / 이오테크닉스</td><td class="num down">-15.72% / -15.38% / -14% / -13.38% / -11.88% / -9.79%</td><td>대형주 급락에 장비주 투매. 리노공업(-5.04%)은 3분기 '어닝쇼크' 평가·목표가 하향</td></tr>
-      <tr><td>바이오</td><td>HLB테라퓨틱스 / 삼천당제약 / 알테오젠</td><td class="num down">-29.98%(하한가) / -7.32% / -2.55%</td><td>HLB테라퓨틱스: 미국 임상 3상(SEER-2) 1차 평가지표 통계적 유의성 확보 실패</td></tr>
-      <tr><td>2차전지</td><td>삼성SDI / 에코프로비엠 / LG에너지솔루션</td><td class="num down">-3.24% / -5.29% / -1.85%</td><td>삼성SDI는 미국 법인 ESS 배터리 공급계약 소식에 장 초반 +5% 넘게 올랐다가 하락 전환</td></tr>
-      <tr><td>업종</td><td>기계·장비 / 의료·정밀 / 건설</td><td class="num down">-4.02% / -3.94% / -2.44%</td><td>두산에너빌리티 -4.16% 등 대형주 전반 약세</td></tr>
+      <tr><td>반도체 대형주 (전기/전자 -5.65%)</td><td>SK스퀘어 / 삼성전기 / SK하이닉스 / SK / 삼성전자</td><td class="num down">-9.71% / -8.19% / -7.89% / -5.65% / -4.47%</td><td>외국인 집중 매도. 엔비디아 경영 공백, D램 담합 집단소송 본안 진입, BofA의 낸드 업황 전망 하향(10월 이후 낸드 현물가 약 20% 하락). 삼성전자 196,800원으로 20만 원 아래</td></tr>
+      <tr><td>반도체 장비(코스닥 기계/장비 -7.61%)</td><td>하나마이크론 / 피에스케이 / 심텍 / 주성엔지니어링 / 티에스이 / 이오테크닉스</td><td class="num down">-15.72% / -14.01% / -13.38% / -11.88% / -9.98% / -9.79%</td><td>대형주 급락에 장비·부품주 투매. 리노공업(-5.04%)은 3분기 '어닝쇼크' 평가로 목표가 하향</td></tr>
+      <tr><td>바이오</td><td>HLB테라퓨틱스 / 삼천당제약</td><td class="num down">-29.98%(하한가) / -7.32%</td><td>HLB테라퓨틱스: 미국 자회사 신약 임상 3상에서 1차 평가지표 유의성 확보 실패</td></tr>
+      <tr><td>2차전지·에너지</td><td>삼성SDI / 두산에너빌리티 / 에코프로비엠</td><td class="num down">-3.24% / -4.16% / -5.29%</td><td>삼성SDI는 미국 ESS 공급계약 소식에 장 초반 +5% 넘게 올랐다가 하락 전환</td></tr>
     </table>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">코스닥은 전 업종 하락(기계/장비 -7.61%, 비금속 -7.37%, 전기/전자 -6.12% 순). 코스피 하락 업종: 전기/전자, 제조, 기계/장비(-4.02%), 의료/정밀(-3.94%), 건설(-2.44%), 증권(-2.32%) 등.</p>
   </section>
 
   <section>
     <h2>⑦ 오늘의 주도주 관찰 후보</h2>
     <table>
       <tr><th>종목</th><th>테마</th><th class="num">등락률(종가)</th><th class="num">거래대금(억 원)</th><th>대장/후속</th><th>내일 관찰할 가격</th></tr>
-      <tr><td>지슨</td><td>보안·AI 부정 방지</td><td class="num up">+29.97%(상한가)</td><td class="num">확인 필요</td><td>대장 후보 (거래대금 확인 필요)</td><td>종가 4,640원(상한가 = 고가)</td></tr>
-      <tr><td>카티스</td><td>보안·AI 부정 방지</td><td class="num up">+29.87%(상한가)</td><td class="num">확인 필요</td><td>후속</td><td>확인 필요</td></tr>
-      <tr><td>시선AI</td><td>보안·AI 부정 방지</td><td class="num up">+26.23%</td><td class="num">137.8</td><td>후속</td><td>고가 3,295원 · 종가 3,200원</td></tr>
-      <tr><td>나무가</td><td>AI안경 카메라 부품</td><td class="num up">+30.00% <span class="tag">14:38</span></td><td class="num">확인 필요</td><td>확인 필요</td><td>상한가 18,850원(마감 유지 확인 필요)</td></tr>
-      <tr><td>HMM</td><td>운송(해운)·실적</td><td class="num up">+3.26%</td><td class="num">확인 필요</td><td>확인 필요</td><td>22,150원 <span class="tag">15:26</span> (종가 확인 필요)</td></tr>
+      <tr><td>지슨</td><td>보안·AI 부정 방지</td><td class="num up">+29.97%(상)</td><td class="num">확인 필요</td><td>확인 필요</td><td>종가 4,640(=고가)</td></tr>
+      <tr><td>시선AI</td><td>보안·AI 부정 방지</td><td class="num up">+26.23%</td><td class="num">138</td><td>확인 필요</td><td>고가 3,295 · 종가 3,200</td></tr>
+      <tr><td>카티스</td><td>보안·AI 부정 방지</td><td class="num up">+29.87%(상)</td><td class="num">50</td><td>후속</td><td>종가 2,435(=고가)</td></tr>
+      <tr><td>나무가</td><td>AI안경 카메라</td><td class="num up">+30.00%(상)</td><td class="num">927 <span class="tag">09:41</span></td><td>대장</td><td>시가 14,990 · 종가 18,850(=고가)</td></tr>
+      <tr><td>삼양식품</td><td>음식료</td><td class="num up">+6.20%</td><td class="num">1,086 <span class="tag">16:36</span></td><td>대장</td><td>시가 1,216,000 · 고가 1,290,000 · 종가 1,285,000</td></tr>
     </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">관찰용 목록이며 매수 추천이 아닙니다 · 매매일지 '주도주 관찰' 탭 기록용. 보안 테마는 <b>17일 정부 대책 발표·19일 수능</b>이 지나면 재료가 사라질 수 있는 일정성 테마입니다(위험 신호: 대책 발표 후 상한가 종목이 시가 아래로 밀리는 경우). 보험·음식료는 상승 이유가 '방어 순환매'뿐이라 후보에서 뺐습니다.</p>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">관찰용 목록이며 매수 추천이 아닙니다 · 매매일지 '주도주 관찰' 탭 기록용. 보안 테마는 지슨의 거래대금을 확인하지 못해 대장을 정하지 못했습니다(시선AI 138억 > 카티스 50억). 보안·AI안경은 <b>17일 대책 발표·19일 수능</b>이 지나면 재료가 사라질 수 있는 일정 테마입니다 — 위험 신호: 발표 뒤 상한가 종목이 시가 아래로 밀리는 경우.</p>
   </section>
 
   <section>
     <h2>⑧ 일정·이벤트</h2>
-    <p style="margin:0 0 4px"><b>오늘 장중·장 마감 후</b></p>
+    <p style="margin:0 0 4px"><b>오늘 장 마감 후 주요 공시</b> (인포스탁 마감체크)</p>
     <ul>
-      <li>영광와이케이엠씨 코스닥 신규 상장(공모가 11,000원) · 제논·케이엠에프 수요예측 시작(~20일)</li>
-      <li>HLB테라퓨틱스 임상 3상 실패, HMM 3분기 실적, 삼성SDI 미국 ESS 공급계약 — 장후 주요 공시는 오늘 읽은 기사에서 따로 확인하지 못함</li>
-      <li>중국 10월 실물지표 부진(산업생산 +4.8%, 소매판매 +0.4%) · 일본 3분기 GDP 마이너스</li>
+      <li>수주: <b>삼성중공업</b> LNG운반선 1척 3,424억 · <b>대한전선</b> 싱가포르 400kV 전력케이블 2,718억 · <b>HD현대중공업</b> LPG운반선 4척 2,721억 · <b>기가비스</b> 중국 반도체 기판 검사·수리장비 447억 · <b>대우건설</b> 여의도 화랑아파트 재건축 2,750억</li>
+      <li>실적: <b>우양피앤엘</b> 3분기 매출 342억(+348%)·흑자전환 · <b>삼립</b> 3분기 영업이익 19억(-79%)·순손실 전환</li>
+      <li>주주환원: HDC랩스·피에스텍·TS인베스트먼트 자사주 소각, 인스웨이브·와이즈넛·동아지질 자사주 취득, 나우IB 기업가치 제고 계획</li>
+      <li>주의: 아이톡시·셀레스트라 매출액 미달(상장적격성 실질심사), 에이엔피 상장폐지 효력정지 가처분 신청, 코람코더원리츠 해산 사유 발생</li>
     </ul>
     <p style="margin:10px 0 4px"><b>오늘 밤 해외 (한국시간)</b></p>
     <ul>
-      <li>미국 뉴욕 엠파이어스테이트 제조업지수 <span class="tag">13일 일정 기사 기준</span> — 시각 확인 필요</li>
-      <li>미국 10년물 금리(5.1%대) 흐름, 엔비디아 실적 앞둔 반도체주 움직임</li>
+      <li>미국 뉴욕 엠파이어스테이트 제조업지수 <span class="tag">13일 일정 기사 기준</span> · 연준 인사 발언 · 미 10년물 금리(5.1%대) 흐름</li>
     </ul>
     <p style="margin:10px 0 4px"><b>내일(17일, 화) 국내와 이번 주</b></p>
     <ul>
       <li><b>17일 교육부·과기정통부 AI 부정행위 방지 대책 발표 예정</b> · 옵토닉스 코스닥 상장(공모가 12,000원)</li>
       <li>17일(미국) 10월 소매판매·산업생산 · <b>엔비디아 3분기 실적(한국시간 18일 06:20쯤)</b></li>
-      <li>18일 에이엘로봇 상장 · 에스에프씨·유캐스트 청약(~19일) · 19일 FOMC 의사록(한국시간) · <b>19일 수능(국내 증시 1시간 늦게 개장·폐장)</b> · 19일 앤트로픽 나스닥 상장 · 월마트 실적 · 20일 하나에어로다이내믹스 상장, 한국 10월 PPI</li>
+      <li>18일 에이엘로봇 상장 · 에스에프씨·유캐스트 청약(~19일) · 19일 FOMC 의사록 · <b>19일 수능(국내 증시 1시간 늦게 개장·폐장)</b> · 앤트로픽 나스닥 상장 · 20일 하나에어로다이내믹스 상장, 한국 10월 PPI</li>
     </ul>
   </section>
 
@@ -164,9 +167,9 @@
     <h2>⑨ 내일 체크포인트 <span class="tag">11/17(화)</span></h2>
     <ul>
       <li><b>외국인 반도체 매도가 멈추는지</b> — 삼성전자 20만 원, 하이닉스 112만 원 회복 여부. 이틀 연속 1조 원대 매도면 위험 신호</li>
-      <li><b>코스피 5,100선 지지</b> — 오늘 저점 5,069.83을 깨면 추가 하락 경계</li>
-      <li><b>17일 AI 부정 방지 대책 발표</b> — 보안 테마(지슨·카티스·시선AI)가 발표 뒤에도 버티는지, '재료 소멸'로 밀리는지</li>
-      <li><b>방어주 순환매 지속</b> — 보험·음식료·KB금융으로 돈이 계속 가는지</li>
+      <li><b>코스피 오늘 저점 5,069.83</b> — 깨지면 추가 하락 경계</li>
+      <li><b>17일 AI 부정 방지 대책 발표</b> — 지슨·카티스·나무가가 발표 뒤에도 시가를 지키는지('재료 소멸' 여부)</li>
+      <li><b>방어 업종 순환매 지속</b> — 음식료·보험·금융지주로 돈이 계속 가는지, 장후 수주 공시 종목(조선·전선) 반응</li>
       <li><b>엔비디아 실적(18일 새벽) 전 경계감</b> — 발표 전까지 반도체 변동성 큼(관찰만)</li>
     </ul>
   </section>
@@ -174,13 +177,11 @@
   <section class="src">
     <h2>⑩ 출처</h2>
     <ul>
-      <li><a href="https://www.newspim.com/news/view/20261116000988">뉴스핌 마감시황 (15:59)</a> · <a href="https://view.asiae.co.kr/article/2026111615454467528">아시아경제 마감 (15:45)</a> · <a href="https://www.sentv.co.kr/article/view/sentv202611160186">서울경제TV 마감 (16:02)</a> · <a href="https://www.lcnews.co.kr/news/articleView.html?idxno=211469">라이센스뉴스 마감 (15:57)</a> · <a href="https://www.straightnews.co.kr/news/articleView.html?idxno=315452">스트레이트뉴스 (16:16)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238519">잡포스트 장중 (10:40)</a> — 종가, 고저, 수급, 시총 상위, 업종, 원인</li>
-      <li><a href="https://www.etoday.co.kr/news/view/2648795">이투데이 환율마감 (15:56)</a> · <a href="https://www.seoulfn.com/news/articleView.html?idxno=642967">서울파이낸스 환율 (15:41)</a></li>
-      <li><a href="https://www.newspim.com/news/view/20261116000809">뉴스핌 보안주 특징주 (14:13)</a> · <a href="https://m.sedaily.com/article/20114867">서울경제 AI안경 테마 (13:59)</a> · <a href="https://www.ket.kr/news/article.html?no=42096">경제타임스 (09:58)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238713">잡포스트 시선AI (15:40)</a> · <a href="https://www.cbci.co.kr/news/articleView.html?idxno=627328">CBC뉴스 나무가 (14:40)</a> · <a href="https://news.jkn.co.kr/post/1098209">재경일보 LK삼양 (15:48)</a> · <a href="https://www.insjournal.co.kr/news/articleView.html?idxno=33935">보험저널 보험주 (15:50)</a></li>
-      <li><a href="https://www.blockmedia.co.kr/archives/1165790">블록미디어 뉴욕증시 (11/14 06:16)</a> · <a href="https://www.newstopkorea.com/news/articleView.html?idxno=49058">뉴스톱 (09:02)</a> · <a href="https://finance.ettoday.net/news/3273039">ETtoday 대만 증시 (13:35 대만시각)</a> · <a href="https://www.ajunews.com/view/20261116161317813">아주경제 중국 증시 (16:15)</a> · <a href="https://www.techflowpost.com/ko-KR/newsletter/144813">TechFlow 일본·한국 마감 (11/16)</a> · <a href="https://kbthink.com/news-list/view.html?newsId=20261116093441016">KB씽크 일본 증시·GDP (11/16)</a></li>
-      <li><a href="https://www.lcnews.co.kr/news/articleView.html?idxno=211438">라이센스뉴스 이번 주 IPO (14:14)</a> · <a href="https://www.fnnews.com/news/202611151911427765">파이낸셜뉴스 주간전망 (11/15 19:11)</a></li>
-      <li>참고: 코스피 수급은 매체별 차이가 큼(④ 참고). 필라델피아 반도체 종가는 기사에서 확인 못 함. 닛케이 종가는 국내 주요 매체가 아닌 뉴스레터 기준이라 재확인 권장. 보험저널은 코스피를 -3.66%(5,096)로 적었으나 다수 기사(-3.59%, 5,100.50)를 따름</li>
-      <li>data/2026-11-16.json — 16:22~16:38 여러 번 git pull·저장소 확인했지만 파일이 생성되지 않아 사용하지 못함</li>
+      <li><b><a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218945">인포스탁데일리 [1116마감체크] (17:07)</a></b> — 흐름, 수급, 선물, 환율·금리, 시총 상위, 업종, 섹터분석, 신고가, 주요공시 · <a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218940">[테마시황] (12:03)</a> · <a href="https://www.infostockdaily.co.kr/news/articleView.html?idxno=218941">[1116시황레이더] (12:23)</a></li>
+      <li><a href="https://www.newspim.com/news/view/20261116000988">뉴스핌 마감시황 (15:59)</a> · <a href="https://www.sentv.co.kr/article/view/sentv202611160186">서울경제TV (16:02)</a> · <a href="https://www.straightnews.co.kr/news/articleView.html?idxno=315452">스트레이트뉴스 (16:16)</a> · <a href="https://www.etoday.co.kr/news/view/2648795">이투데이 환율마감 (15:56)</a> · <a href="https://www.etoday.co.kr/news/view/2648897">이투데이 급등락주 (18:12)</a></li>
+      <li><a href="https://www.newspim.com/news/view/20261116000809">뉴스핌 보안주 (14:13)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238710">잡포스트 카티스 (15:39)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238713">시선AI (15:40)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238720">DGI (15:42)</a> · <a href="https://news.jkn.co.kr/post/1098208">재경일보 나무가 (15:48)</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=564015">중앙이코노미 나무가 (09:41)</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=564243">삼양식품 (16:42)</a> · <a href="https://www.namdonews.com/news/articleView.html?idxno=929378">남도일보 삼양식품 (15:34)</a> · <a href="https://www.insjournal.co.kr/news/articleView.html?idxno=33935">보험저널 (15:50)</a></li>
+      <li><a href="https://www.blockmedia.co.kr/archives/1165790">블록미디어 뉴욕증시 (11/14 06:16)</a> · <a href="https://www.newstopkorea.com/news/articleView.html?idxno=49058">뉴스톱 (09:02)</a> · <a href="https://finance.ettoday.net/news/3273039">ETtoday 대만 (13:35 대만시각)</a> · <a href="https://www.ajunews.com/view/20261116161317813">아주경제 중국 (16:15)</a> · <a href="https://www.lcnews.co.kr/news/articleView.html?idxno=211438">라이센스뉴스 IPO 일정 (14:14)</a></li>
+      <li>data/2026-11-16.json — 20:45 재수집본(국내 지수 네이버 일봉). 처음 자동 수집본(18:23)은 장중 값(코스피 5,132.94)이라 쓰지 않음. 수급은 매체별 차이 큼(④ 참고)</li>
     </ul>
   </section>
 
