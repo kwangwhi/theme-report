@@ -8,11 +8,13 @@
   :root {
     --bg: #f6f7f9; --card: #ffffff; --text: #1a1d21; --muted: #6b7280;
     --line: #e5e7eb; --up: #d92d20; --down: #1d64d8; --warn-bg: #fff7e6; --warn: #8a5a00;
+    --soft: #f3f5f8; --accent: #6d28d9; --accent-bg: #f3efff;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0f1115; --card: #181b21; --text: #e8eaed; --muted: #9aa0a6;
       --line: #2a2e36; --up: #ff6b5e; --down: #5b9bff; --warn-bg: #2a2212; --warn: #f2c46d;
+      --soft: #20242c; --accent: #b79cff; --accent-bg: #241d38;
     }
   }
   * { box-sizing: border-box; }
@@ -27,19 +29,45 @@
   section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
     padding: 16px; margin-bottom: 14px; }
   h2 { font-size: 1.1rem; margin: 0 0 10px; }
-  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
-  th, td { text-align: left; padding: 7px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { color: var(--muted); font-weight: 600; font-size: .85rem; }
-  td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; }
+  td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .up { color: var(--up); font-weight: 600; }
   .down { color: var(--down); font-weight: 600; }
-  .tag { display: inline-block; font-size: .75rem; color: var(--muted); border: 1px solid var(--line);
-    border-radius: 999px; padding: 0 8px; margin-left: 4px; }
+  .tag { display: inline-block; font-size: .72rem; color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 0 7px; margin-left: 3px; font-weight: 400; vertical-align: 1px; }
+  .small { color: var(--muted); font-size: .85rem; margin: 8px 0 0; }
   ul { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 6px; }
+  li { margin-bottom: 4px; }
+  .idx { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .idx div { background: var(--soft); border-radius: 10px; padding: 10px 12px; }
+  .idx b { display: block; font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+  .idx span { font-size: .8rem; color: var(--muted); }
+  /* 테마 딥 */
+  .deep-title { font-size: 1.15rem; margin: 22px 0 10px; }
+  .theme { padding: 0; overflow: hidden; }
+  .theme > h3 { margin: 0; padding: 10px 16px; font-size: 1rem; background: var(--accent-bg); color: var(--accent); }
+  .theme > h3 small { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: .8rem; }
+  .theme .body { padding: 12px 16px 14px; }
+  .stk { margin: 10px 0 2px; font-weight: 700; line-height: 1.5; }
+  .stk:first-child { margin-top: 0; }
+  .stk .n { font-weight: 400; color: var(--muted); font-size: .85rem; }
+  .lead { display: inline-block; font-size: .7rem; font-weight: 700; color: #fff; background: var(--up);
+    border-radius: 4px; padding: 0 5px; margin-right: 4px; vertical-align: 2px; }
+  .news { list-style: none; padding: 0; margin: 4px 0 0; font-size: .9rem; }
+  .news li { padding-left: 14px; position: relative; }
+  .news li:before { content: "▸"; position: absolute; left: 0; color: var(--muted); }
+  .news a { color: inherit; }
+  .bg { background: var(--soft); border-radius: 8px; padding: 8px 12px; font-size: .88rem; margin-top: 6px; }
+  .rel { font-size: .85rem; color: var(--muted); margin-top: 6px; }
+  .memo { font-size: .88rem; margin-top: 8px; border-left: 3px solid var(--accent); padding-left: 10px; }
+  .sched { font-size: .88rem; margin-top: 8px; }
+  .sched b { color: var(--accent); }
+  .weak h3 { background: var(--soft); color: var(--down); }
   .src a { color: var(--muted); word-break: break-all; }
+  section { overflow-x: auto; }
   footer { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 20px; }
-  section { overflow-x: auto; }  /* 휴대폰에서 넓은 표는 표 안에서만 옆으로 밀기 */
 </style>
 </head>
 <body>
@@ -48,140 +76,207 @@
   <div class="stamp">2026년 11월 16일(월) · 종가 기준</div>
 
   <div class="notice">
-    지수·해외 숫자는 자동 수집 데이터(오늘 고친 수집기로 20:45 재수집), 시황·수급·업종·공시는 인포스탁 [1116마감체크](17:07) 기준입니다. 일부 숫자(지수 거래대금, 원/달러)는 데이터 수집 한계로 기사 기준입니다. 매수·매도 추천이 아닙니다.
+    위: 시장 요약 / 아래: 테마별 주도 종목 딥. 종목 표기 <b>(등락률)(거래대금)(거래량, K=천 주)</b>. 지수·해외는 자동 수집 데이터, 시황·수급·업종·공시는 인포스탁 [1116마감체크](17:07) 기준. 일부 숫자(지수 거래대금, 원/달러)는 기사 기준이며, 확인 못 한 숫자는 "확인 필요", 장중 숫자는 시각 표시. 매수·매도 추천이 아닙니다.
   </div>
 
+  <!-- ===== 1부: 시장 요약 ===== -->
   <section>
-    <h2>① 오늘 시장 한 줄 요약</h2>
-    <p style="margin:0">
-      코스피는 <b>+0.28% 출발 뒤 곧바로 하락 전환</b>해 오후에 낙폭을 키웠고, <b>5,100.50(<span class="down">-3.59%</span>)</b>으로 3거래일 연속 하락했습니다. 핵심 원인은 <b>외국인·기관의 반도체 대형주 매도</b>(외국인 −1.38조). 엔비디아 경영 공백과 AI 투자 우려, 금요일 미국 필라델피아 반도체 -3.43%, D램 담합 소송·낸드 가격 하락 전망에 이번 주 엔비디아 실적·앤트로픽 상장을 앞둔 경계감이 겹쳤습니다.
-      코스닥은 <b>665.65(<span class="down">-4.86%</span>)</b>로 전 업종이 하락. 반대로 <b>음식료·보험·운송</b> 같은 방어 업종과 수능 앞 <b>AI 부정행위 방지(보안)·AI안경 카메라</b> 테마로 돈이 몰렸습니다.
+    <h2>오늘 시장 한 줄</h2>
+    <p style="margin:0 0 10px">
+      +0.28% 출발 뒤 곧바로 하락 전환, 외국인·기관이 반도체 대형주를 팔면서 <b>코스피 -3.59%(3거래일 연속 하락), 코스닥 -4.86%(전 업종 하락)</b>. 엔비디아 경영 공백과 AI 투자 우려, 금요일 미국 반도체(-3.43%)·오늘 대만(-6.03%) 급락, D램 담합 소송·낸드 가격 하락 전망에 이번 주 엔비디아 실적·앤트로픽 상장 경계감까지 겹쳤습니다. 돈은 <b>음식료·보험·운송</b> 같은 방어 업종과 수능 앞 <b>보안·AI안경 카메라</b> 테마로 이동.
     </p>
-  </section>
-
-  <section>
-    <h2>② 지수·환율</h2>
+    <div class="idx">
+      <div><span>코스피</span><b>5,100.50</b><span class="down">▼190.03 (-3.59%)</span><br><span>고 5,327.99 · 저 5,069.83</span></div>
+      <div><span>코스닥</span><b>665.65</b><span class="down">▼34.01 (-4.86%)</span><br><span>고 708.34 · 저 664.98</span></div>
+    </div>
     <table>
-      <tr><th>항목</th><th class="num">종가</th><th class="num">전일 대비</th><th class="num">등락률</th><th class="num">장중 고점/저점</th><th class="num">거래대금</th></tr>
-      <tr><td>코스피</td><td class="num">5,100.50</td><td class="num down">-190.03</td><td class="num down">-3.59%</td><td class="num">5,327.99 / 5,069.83</td><td class="num">확인 필요</td></tr>
-      <tr><td>코스닥</td><td class="num">665.65</td><td class="num down">-34.01</td><td class="num down">-4.86%</td><td class="num">708.34 / 664.98</td><td class="num">확인 필요</td></tr>
-      <tr><td>원/달러 <span class="tag">15:30 기사</span></td><td class="num">1,335.7</td><td class="num down">-1.0</td><td class="num down">-0.07%</td><td class="num">1,338.6 / 1,332.9</td><td class="num">—</td></tr>
+      <tr><th>환율·해외</th><th class="num">종가</th><th class="num">등락</th></tr>
+      <tr><td>원/달러 <span class="tag">15:30 기사</span></td><td class="num">1,335.7</td><td class="num down">-1.0원</td></tr>
+      <tr><td>필라델피아 반도체 <span class="tag">11/13</span></td><td class="num">10,146.32</td><td class="num down">-3.43%</td></tr>
+      <tr><td>나스닥 <span class="tag">11/13</span></td><td class="num">25,136.27</td><td class="num down">-0.91%</td></tr>
+      <tr><td>S&amp;P500 · 다우 <span class="tag">11/13</span></td><td class="num">7,561.67</td><td class="num"><span class="down">-0.40%</span> · <span class="up">+0.10%</span></td></tr>
+      <tr><td>대만 가권</td><td class="num">41,040.08</td><td class="num down">-6.03%</td></tr>
+      <tr><td>닛케이 · 상해</td><td class="num">59,662.02</td><td class="num down">-2.42% · -0.87%</td></tr>
     </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
-      숫자: 거래소 데이터 자동 수집(data/2026-11-16.json, 국내 지수는 네이버 일봉). 코스피 시가 5,305.40, 저점은 14:57께. 원/달러는 수집 값(1,334.98)이 15:30 주간 종가가 아니어서 기사 주간 종가를 썼습니다(장중 고저는 이투데이). 국고채 3년 3.743%(-1.6bp), 10년 3.981%(-2.0bp)로 금리는 내렸습니다. 지수 거래대금은 수집·기사 모두에서 확인하지 못했습니다.
-    </p>
+    <table style="margin-top:10px">
+      <tr><th>수급(억)</th><th class="num">개인</th><th class="num">외국인</th><th class="num">기관</th></tr>
+      <tr><td>코스피</td><td class="num up">+13,472</td><td class="num down">−13,771</td><td class="num down">−4,647</td></tr>
+      <tr><td>코스닥</td><td class="num up">+3,781</td><td class="num down">−2,121</td><td class="num down">−1,543</td></tr>
+    </table>
+    <p class="small">코스피200 선물: 외국인 +1,991계약, 기관 −2,121계약(현물과 반대). 국고채 3년 3.743%(−1.6bp), 10년 3.981%(−2.0bp). 업종: 코스피 음식료/담배 +2.73%, 보험 +1.78%, 운송/창고 +1.67% 상승 / 전기전자 −5.65%, 기계장비 −4.02% 하락. 코스닥은 기계장비 −7.61% 등 전 업종 하락.<br>
+    지수·해외: 자동 수집 data/2026-11-16.json(국내 지수 네이버 일봉). 수급은 인포스탁 마감체크 기준이며 뉴스핌(15:59)은 외국인 −1조7,018억으로 적어 매체별 차이가 큼(확정치 확인 필요). 시장 거래대금은 확인 필요.</p>
   </section>
 
-  <section>
-    <h2>③ 해외 증시</h2>
-    <table>
-      <tr><th>지수</th><th class="num">종가</th><th class="num">등락률</th><th class="num">기준일</th></tr>
-      <tr><td>다우</td><td class="num">52,347.55</td><td class="num up">+0.10%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>S&amp;P500</td><td class="num">7,561.67</td><td class="num down">-0.40%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>나스닥</td><td class="num">25,136.27</td><td class="num down">-0.91%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>필라델피아 반도체</td><td class="num">10,146.32</td><td class="num down">-3.43%</td><td class="num">11/13 (미국)</td></tr>
-      <tr><td>닛케이225</td><td class="num">59,662.02</td><td class="num down">-2.42%</td><td class="num">11/16</td></tr>
-      <tr><td>상해종합</td><td class="num">3,602.57</td><td class="num down">-0.87%</td><td class="num">11/16</td></tr>
-      <tr><td>대만 가권</td><td class="num">41,040.08</td><td class="num down">-6.03%</td><td class="num">11/16</td></tr>
-    </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
-      미국(13일): 엔비디아 -2.01%(이틀 연속 하락, HSBC 투자의견 '보유'로 하향), AMD -8.75%, 브로드컴 -4.76%, 마이크론 -2.52%. 10월 PPI는 전월 대비 +0.3%로 예상보다 낮았지만 전년 대비 +6.5%로 높았습니다. 대만은 하루 하락 폭이 사상 두 번째(-2,635포인트, TSMC -5.74%). 일본은 3분기 GDP 마이너스, 중국은 10월 소매판매 +0.4%로 부진.
-    </p>
+  <!-- ===== 2부: 테마 딥 ===== -->
+  <h2 class="deep-title">[ 11월 16일 (월) 시장 주도 종목 – to the DEEP ]</h2>
+
+  <section class="theme">
+    <h3>&lt; 보안 · AI 부정행위 방지 &gt;<small>수능(19일) 앞 정부 대책</small></h3>
+    <div class="body">
+      <div class="stk"><span class="lead">대장</span>지슨 <span class="up">(+29.97% 상한가)</span> <span class="n">(거래대금 확인 필요)(거래량 확인 필요) · 종가 4,640</span></div>
+      <ul class="news">
+        <li><a href="https://www.newspim.com/news/view/20261116000809">[특징주] AI 시험 부정 대책 소식에 보안주 급등, 지슨 상한가 — 뉴스핌 14:13</a></li>
+        <li><a href="https://www.fnnews.com/news/202611161826020945">AI 부정행위 자수 사건 뒤 정부 대응에 탐지·보안주 부각 — 파이낸셜뉴스 18:25</a></li>
+      </ul>
+      <div class="bg">지슨은 무선 도청·불법 촬영 같은 무선 보안 위협을 찾아내는 탐지 장비 회사(불법촬영 탐지기 '알파씨'). 교육부가 과기정통부와 <b>시험장 전파 차단</b>을 협의 중이라고 밝혀 탐지·차단 장비 수요 기대가 붙었습니다.</div>
+
+      <div class="stk">카티스 <span class="up">(+29.87% 상한가)</span> <span class="n">(50억)(2,112K) · 종가 2,435</span> / 시선AI <span class="up">(+26.23%)</span> <span class="n">(138억)(4,486K) · 고가 3,295 · 종가 3,200</span> / DGI <span class="up">(+14.83%)</span> <span class="n">(49억)(4,746K) · 고가 1,094 · 종가 968</span></div>
+      <ul class="news">
+        <li><a href="https://m.sedaily.com/article/20114867">수능 앞 'AI 안경' 비상…전파탐지 테마주 급등 — 서울경제 13:59</a></li>
+      </ul>
+      <div class="bg">카티스는 산업·국가 보안 통합시스템, 시선AI는 영상·문서 AI 솔루션 회사. DGI는 장중 +26%대까지 갔다가 +14.83%로 밀려 마감(고점 대비 약 -11%).</div>
+      <div class="sched"><b>▲ 일정 Check</b> · 17일(화) 교육부·과기정통부 AI 부정행위 방지 대책 발표 예정 · 19일(목) 수능(증시 1시간 늦게 개장)</div>
+      <div class="memo">관찰 메모: 날짜가 정해진 '일정 테마'. 대책 발표 당일 상한가 종목이 시가를 지키는지, 거래대금이 오늘보다 늘어나는지가 지속 여부의 신호. DGI처럼 고점 대비 크게 밀린 종목은 이미 매물이 나온 흔적.</div>
+    </div>
   </section>
 
-  <section>
-    <h2>④ 수급 (순매수 +/순매도 −)</h2>
-    <table>
-      <tr><th>시장</th><th class="num">개인</th><th class="num">외국인</th><th class="num">기관</th></tr>
-      <tr><td>코스피</td><td class="num up">+1조3,472억</td><td class="num down">−1조3,771억</td><td class="num down">−4,647억</td></tr>
-      <tr><td>코스닥</td><td class="num up">+3,781억</td><td class="num down">−2,121억</td><td class="num down">−1,543억</td></tr>
-    </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">
-      <b>외국인·기관이 함께 팔고 개인이 받아낸 하루</b>. 매도는 반도체 대형주에 집중됐습니다. 코스피200 선물은 외국인 +1,991계약 순매수, 기관 −2,121계약으로 현물과 반대. 외국인 순매수 1위는 삼양식품(+252억, 남도일보). 숫자는 인포스탁 마감체크(17:07) 기준이며, 뉴스핌(15:59)·서울경제TV(16:02)는 외국인 −1조7,018억~−1조6,998억으로 적어 매체별 차이가 큽니다(확정치 확인 필요).
-    </p>
+  <section class="theme">
+    <h3>&lt; AI 스마트안경 · 카메라 부품 &gt;</h3>
+    <div class="body">
+      <div class="stk"><span class="lead">대장</span>나무가 <span class="up">(+30.00% 상한가)</span> <span class="n">(927억 <span class="tag">09:41</span>)(5,273K <span class="tag">09:41</span>) · 시가 14,990 · 종가 18,850</span></div>
+      <ul class="news">
+        <li><a href="https://news.jkn.co.kr/post/1098208">[마감분석] 나무가 상한가 마감 — 재경일보 15:48 (공시·호재 없이 상승으로 기재)</a></li>
+        <li><a href="https://www.etoday.co.kr/news/view/2648897">[급등락주] AI 커닝 충격에 보안·카메라주 급등 — 이투데이 18:12</a></li>
+      </ul>
+      <div class="bg">AI 스마트안경·초소형 카메라가 시험 부정에 쓰였다는 논란이 오히려 '스마트안경 부품' 관심으로 번진 흐름. 나무가는 카메라 모듈 회사로, 오전 9시 41분에 이미 거래대금 927억이 몰렸습니다. 회사 자체 공시나 호재는 확인되지 않았습니다.</div>
+      <div class="stk">세코닉스 <span class="up">(+29.83% 상한가)</span> <span class="n">(55억)(1,630K) · 종가 3,460</span></div>
+      <div class="rel">관련: 라온텍 +10.11%, 사피엔반도체 +9.87% <span class="tag">오전</span></div>
+      <div class="memo">관찰 메모: 재료가 회사 실적이 아니라 '연상 테마'라 변동성이 큼. 나무가의 마감 거래대금(확인 필요)이 오전 927억보다 얼마나 늘었는지 확인할 것.</div>
+    </div>
   </section>
 
-  <section>
-    <h2>⑤ 강한 쪽 (상승 테마·종목)</h2>
-    <table>
-      <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
-      <tr><td>보안·AI 부정행위 방지(수능)</td><td>지슨 / 카티스 / 시선AI / DGI</td><td class="num up">+29.97%(상) / +29.87%(상) / +26.23% / +14.83%</td><td>AI 스마트안경·초소형 카메라 시험 부정 논란. 교육부가 시험장 전파 차단을 검토 중이며 <b>17일 대책 발표 예정</b>, 19일 수능</td></tr>
-      <tr><td>AI안경 카메라 부품</td><td>나무가 / 세코닉스</td><td class="num up">+30.00%(상) / +29.83%(상)</td><td>AI 커닝 논란이 스마트안경 부품 관심으로 번짐. 회사 자체 공시·호재는 없음</td></tr>
-      <tr><td>음식료·담배 (업종 +2.73%, 오늘 1위)</td><td>삼양식품 / KT&amp;G / 롯데웰푸드·빙그레·하이트진로</td><td class="num up">+6.20% / +2.78% / 확인 필요</td><td>증권사(NH)가 내년 수익성 회복·원화 강세 수혜·저평가로 비중 확대 제시. 삼양식품은 외국인 순매수 1위·중국 신공장 기대</td></tr>
-      <tr><td>보험 (업종 +1.78%)</td><td>한화손보 / DB손보 / 현대해상 / 삼성화재</td><td class="num up">+5.01% / +4.46% / +4.42% / +2.46%</td><td>반도체에서 빠진 돈이 방어주로 이동(순환매). 개별 재료는 없음</td></tr>
-      <tr><td>운송·금융</td><td>HMM / 한진칼 / 제주항공 / 하나금융지주 / KB금융</td><td class="num up">+3.26% / +5.90% / +5.55% / +1.77% / +1.64%</td><td>HMM 3분기 영업이익 1조3,947억. 항공주 이유는 기사에 없음. 금융지주는 시총 상위 중 드문 상승</td></tr>
-      <tr><td>화장품 수출</td><td>파마리서치 / 브이티·코스메카코리아·한국콜마 등</td><td class="num up">+2.99% / 확인 필요</td><td>10월 누계 화장품 수출 성장, 증권사 내년 수출 전망 상향</td></tr>
-      <tr><td>공시·개별 상한가</td><td>M83 / 코아스템켐온 / 미래에셋벤처투자</td><td class="num up">상한가 / 상한가 / +17.13%</td><td>M83 3분기 흑자전환(매출 976억, 영업이익 88억). 코아스템켐온 FDA 회의록 수령. 미래에셋벤처는 스페이스X 투자 회수 기대(신규 공시 없음)</td></tr>
-      <tr><td>신고가</td><td>진양폴리 / 카스 / 지니언스</td><td class="num up">+10.04% / +8.72% / +0.29%</td><td>진양폴리: 오세훈 테마. 카스: 자사주 취득 결정. 지니언스: 사상 최대 실적 전망</td></tr>
-    </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">사유 미확인 상한가: LK삼양(+29.90%), 지니틱스(상장폐지 절차 유예 상태라 위험도 높음). (상)=상한가.</p>
+  <section class="theme">
+    <h3>&lt; 보험 · 금융 &gt;<small>급락장 방어 순환매</small></h3>
+    <div class="body">
+      <div class="stk"><span class="lead">대장</span>한화손해보험 <span class="up">(+5.01%)</span> <span class="n">(거래대금·거래량 확인 필요) · 종가 6,290</span> / DB손해보험 <span class="up">(+4.46%)</span> <span class="n">· 170,900</span> / 현대해상 <span class="up">(+4.42%)</span> <span class="n">· 37,800</span> / 삼성화재 <span class="up">(+2.46%)</span> / 한화생명 <span class="up">(+3.13%)</span> / KB금융 <span class="up">(+1.64%)</span></div>
+      <ul class="news">
+        <li><a href="https://www.insjournal.co.kr/news/articleView.html?idxno=33935">[16일 마감시황] 급락장에도 손보주 강세 — 보험저널 15:50</a></li>
+        <li><a href="https://www.g-enews.com/article/Finance/2026/11/202611161631533131e30fcb1ba8_1">현대해상, 6거래일 하락 뒤 반등해 고가 마감 — 글로벌이코노믹 16:37</a></li>
+      </ul>
+      <div class="bg">보험 업종 지수 +1.78%. 보험 14개 종목 중 10개 상승. 개별 호재보다는 반도체에서 빠진 돈이 경기 영향이 적은 고배당·방어주로 옮겨 간 흐름(시황 기사 해석).</div>
+      <div class="memo">관찰 메모: '대장'은 등락률 기준(거래대금 미확인). 반도체가 반등하는 날 이 돈이 다시 빠지는지 확인.</div>
+    </div>
   </section>
 
-  <section>
-    <h2>⑥ 약한 쪽 (하락 테마·종목)</h2>
-    <table>
-      <tr><th>테마</th><th>종목</th><th class="num">등락률</th><th>이유</th></tr>
-      <tr><td>반도체 대형주 (전기/전자 -5.65%)</td><td>SK스퀘어 / 삼성전기 / SK하이닉스 / SK / 삼성전자</td><td class="num down">-9.71% / -8.19% / -7.89% / -5.65% / -4.47%</td><td>외국인 집중 매도. 엔비디아 경영 공백, D램 담합 집단소송 본안 진입, BofA의 낸드 업황 전망 하향(10월 이후 낸드 현물가 약 20% 하락). 삼성전자 196,800원으로 20만 원 아래</td></tr>
-      <tr><td>반도체 장비(코스닥 기계/장비 -7.61%)</td><td>하나마이크론 / 피에스케이 / 심텍 / 주성엔지니어링 / 티에스이 / 이오테크닉스</td><td class="num down">-15.72% / -14.01% / -13.38% / -11.88% / -9.98% / -9.79%</td><td>대형주 급락에 장비·부품주 투매. 리노공업(-5.04%)은 3분기 '어닝쇼크' 평가로 목표가 하향</td></tr>
-      <tr><td>바이오</td><td>HLB테라퓨틱스 / 삼천당제약</td><td class="num down">-29.98%(하한가) / -7.32%</td><td>HLB테라퓨틱스: 미국 자회사 신약 임상 3상에서 1차 평가지표 유의성 확보 실패</td></tr>
-      <tr><td>2차전지·에너지</td><td>삼성SDI / 두산에너빌리티 / 에코프로비엠</td><td class="num down">-3.24% / -4.16% / -5.29%</td><td>삼성SDI는 미국 ESS 공급계약 소식에 장 초반 +5% 넘게 올랐다가 하락 전환</td></tr>
-    </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">코스닥은 전 업종 하락(기계/장비 -7.61%, 비금속 -7.37%, 전기/전자 -6.12% 순). 코스피 하락 업종: 전기/전자, 제조, 기계/장비(-4.02%), 의료/정밀(-3.94%), 건설(-2.44%), 증권(-2.32%) 등.</p>
+  <section class="theme">
+    <h3>&lt; 음식료 · 소비 &gt;<small>업종 1위</small></h3>
+    <div class="body">
+      <div class="stk"><span class="lead">대장</span>삼양식품 <span class="up">(+6.20%)</span> <span class="n">(1,086억 <span class="tag">16:36</span>)(85K <span class="tag">16:36</span>) · 시가 1,216,000 · 고가 1,290,000 · 종가 1,285,000</span> / KT&amp;G <span class="up">(+2.78%)</span></div>
+      <ul class="news">
+        <li><a href="https://www.namdonews.com/news/articleView.html?idxno=929378">삼양식품, 중국 신공장 기대·외국인 순매수 1위 — 남도일보 15:34</a></li>
+      </ul>
+      <div class="bg">음식료·담배 업종 +2.73%로 오늘 가장 강한 업종. 증권사(NH)가 내년 수익성 회복·원화 강세 수혜·저평가를 근거로 음식료 비중 확대를 제시. 삼양식품은 외국인 순매수 252억(코스피 1위)이 들어왔고 중국 신공장 가동 기대가 거론됨.</div>
+      <div class="rel">관련: 롯데웰푸드, 빙그레, 하이트진로 (등락률 확인 필요) · 인포스탁 섹터분석</div>
+      <div class="memo">관찰 메모: 외국인이 시장 전체를 1.4조 이상 팔면서도 산 종목이라는 점이 포인트. 다음 날에도 외국인 매수가 이어지는지 확인.</div>
+    </div>
   </section>
 
-  <section>
-    <h2>⑦ 오늘의 주도주 관찰 후보</h2>
-    <table>
-      <tr><th>종목</th><th>테마</th><th class="num">등락률(종가)</th><th class="num">거래대금(억 원)</th><th>대장/후속</th><th>내일 관찰할 가격</th></tr>
-      <tr><td>지슨</td><td>보안·AI 부정 방지</td><td class="num up">+29.97%(상)</td><td class="num">확인 필요</td><td>확인 필요</td><td>종가 4,640(=고가)</td></tr>
-      <tr><td>시선AI</td><td>보안·AI 부정 방지</td><td class="num up">+26.23%</td><td class="num">138</td><td>확인 필요</td><td>고가 3,295 · 종가 3,200</td></tr>
-      <tr><td>카티스</td><td>보안·AI 부정 방지</td><td class="num up">+29.87%(상)</td><td class="num">50</td><td>후속</td><td>종가 2,435(=고가)</td></tr>
-      <tr><td>나무가</td><td>AI안경 카메라</td><td class="num up">+30.00%(상)</td><td class="num">927 <span class="tag">09:41</span></td><td>대장</td><td>시가 14,990 · 종가 18,850(=고가)</td></tr>
-      <tr><td>삼양식품</td><td>음식료</td><td class="num up">+6.20%</td><td class="num">1,086 <span class="tag">16:36</span></td><td>대장</td><td>시가 1,216,000 · 고가 1,290,000 · 종가 1,285,000</td></tr>
-    </table>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">관찰용 목록이며 매수 추천이 아닙니다 · 매매일지 '주도주 관찰' 탭 기록용. 보안 테마는 지슨의 거래대금을 확인하지 못해 대장을 정하지 못했습니다(시선AI 138억 > 카티스 50억). 보안·AI안경은 <b>17일 대책 발표·19일 수능</b>이 지나면 재료가 사라질 수 있는 일정 테마입니다 — 위험 신호: 발표 뒤 상한가 종목이 시가 아래로 밀리는 경우.</p>
+  <section class="theme">
+    <h3>&lt; 운송 (해운 · 항공) &gt;</h3>
+    <div class="body">
+      <div class="stk">HMM <span class="up">(+3.26%)</span> <span class="n">(209억 <span class="tag">14:40</span>)(955K <span class="tag">14:40</span>) · 고가 22,100 <span class="tag">14:40</span></span></div>
+      <div class="bg">3분기 영업이익 1조 3,947억 발표(실적 재료).</div>
+      <div class="stk">한진칼 <span class="up">(+5.90%)</span> <span class="n">(거래대금 확인 필요)(756K) · 시가 201,500 · 고가 218,500</span> / 제주항공 <span class="up">(+5.55%)</span> <span class="n">(거래대금 확인 필요)(982K) · 시가 6,850 · 고가 7,340</span></div>
+      <div class="bg">항공주 상승 이유는 오늘 읽은 기사에 없음(사유 미확인). 운송·창고 업종 +1.67%.</div>
+    </div>
   </section>
 
+  <section class="theme">
+    <h3>&lt; 벤처캐피탈 &gt;</h3>
+    <div class="body">
+      <div class="stk">미래에셋벤처투자 <span class="up">(+17.13%)</span> <span class="n">(942억)(6,369K) · 고가 15,780 · 종가 14,700</span></div>
+      <ul class="news">
+        <li><a href="https://www.sentv.co.kr/article/view/sentv202611160186">스페이스X 관련 투자 회수 기대로 주목 — 서울경제TV 16:02</a></li>
+      </ul>
+      <div class="bg">회사 신규 공시는 없음. 거래대금 942억으로 오늘 상승 종목 중 돈이 가장 많이 몰린 곳 중 하나.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 화장품 수출 &gt;</h3>
+    <div class="body">
+      <div class="stk">파마리서치 <span class="up">(+2.99%)</span> <span class="n">(거래대금·거래량 확인 필요)</span> / 브이티 · 세화피앤씨 · 펌텍코리아 · 코스메카코리아 · 한국콜마 <span class="n">(등락률 확인 필요)</span></div>
+      <ul class="news">
+        <li><a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218945">[1116마감체크] ▶섹터분석 화장품 — 인포스탁 17:07</a></li>
+      </ul>
+      <div class="bg">10월까지 누적 화장품 수출이 늘었고 하반기로 갈수록 빨라지는 중이라는 분석(교보증권), 내년 수출 전망치 상향(NH투자증권). 파마리서치는 코스닥 시총 상위가 대부분 빠진 날 몇 안 되는 상승 종목.</div>
+      <div class="memo">관찰 메모: 급락장에서 실적·수출 숫자로 버틴 업종. 11월 수출 잠정치 같은 숫자 발표 때 다시 부각되는지 확인.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 신고가 · 정치 테마 &gt;</h3>
+    <div class="body">
+      <div class="stk">진양폴리 <span class="up">(+10.04%)</span> <span class="n">· 4,225 신고가</span> / 진양화학 <span class="up">(+1.21%)</span> <span class="n">· 5,500 신고가</span></div>
+      <div class="bg">오세훈 서울시장이 대선주자 적합도 1위로 나온 여론조사에 이른바 '오세훈 테마'가 상승.</div>
+      <div class="stk">카스 <span class="up">(+8.72%)</span> <span class="n">· 1,225 신고가</span> / 지니언스 <span class="up">(+0.29%)</span> <span class="n">· 38,250 신고가</span></div>
+      <div class="bg">카스: 자사주 약 49만 주(약 5억) 취득 결정. 지니언스: 올해 사상 최대 실적 전망·내년 성장 기대.</div>
+      <div class="memo">관찰 메모: 정치 테마는 여론조사 숫자에 따라 하루 만에 꺼지기 쉬움(위험). 실적형 신고가(지니언스)와 구분해서 볼 것.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 공시 · 개별주 &gt;</h3>
+    <div class="body">
+      <div class="stk">코아스템켐온 <span class="up">(상한가)</span> <span class="n">· 종가 1,807</span></div>
+      <div class="bg">루게릭병 줄기세포치료제 관련 미국 FDA 'Type C 미팅' 공식 회의록 수령.</div>
+      <div class="stk">M83 <span class="up">(상한가)</span> <span class="n">· 종가 5,520</span></div>
+      <div class="bg">3분기 매출 976억(+196%), 영업이익 88억으로 흑자 전환.</div>
+      <div class="stk">지니틱스 <span class="up">(상한가)</span> <span class="n">· 종가 1,276</span></div>
+      <div class="bg">시가총액 미달 상장폐지 절차가 법원 가처분 인용으로 유예된 상태에서 급등. 위험도 높음.</div>
+      <div class="stk">LK삼양 <span class="up">(+29.90% 상한가)</span> <span class="n">(153억)(3,431K) · 종가 4,735</span></div>
+      <div class="bg">확인된 재료 없음(사유 미확인).</div>
+      <p class="small">거래대금·거래량 확인 필요(코아스템켐온·M83·지니틱스). 출처: 이투데이 급등락주 18:12, 잡포스트 15:39.</p>
+    </div>
+  </section>
+
+  <section class="theme weak">
+    <h3>&lt; 약한 쪽 · 반도체 / 바이오 &gt;</h3>
+    <div class="body">
+      <div class="stk">SK하이닉스 <span class="down">(-7.89%)</span> <span class="n">· 1,120,000</span> / 삼성전자 <span class="down">(-4.47%)</span> <span class="n">· 196,800</span> / SK스퀘어 <span class="down">(-9.71%)</span> / 삼성전기 <span class="down">(-8.19%)</span> / 한미반도체 <span class="down">(-6.60%)</span></div>
+      <div class="bg">외국인 집중 매도. 미국 법원의 D램 담합 집단소송 기각 신청 불허, BofA의 낸드 업황 전망 하향(10월 이후 낸드 현물가 약 20% 하락), 엔비디아 경영 공백이 겹침. 삼성전자 20만 원 아래로.</div>
+      <div class="stk">하나마이크론 <span class="down">(-14.34% <span class="tag">14:22</span>)</span> <span class="n">(514억 <span class="tag">14:22</span>)</span> / 유진테크 <span class="down">(-15.38%)</span> / 심텍 <span class="down">(-13.38%)</span> / 주성엔지니어링 <span class="down">(-11.88%)</span></div>
+      <div class="bg">대형주 급락에 코스닥 반도체 장비·부품주 투매. 리노공업(-5.04%)은 3분기 '어닝쇼크' 평가로 목표가 하향.</div>
+      <div class="stk">HLB테라퓨틱스 <span class="down">(하한가 -29.98%)</span> <span class="n">· 종가 확인 필요(기사별 1,635 / 1,701로 다름)</span></div>
+      <div class="bg">미국 자회사 신약(RGN-259) 임상 3상에서 1차 평가지표 통계적 유의성 확보 실패.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 장 마감 후 공시 Check &gt;<small>내일 반응 볼 종목</small></h3>
+    <div class="body">
+      <div class="stk">수주</div>
+      <div class="bg"><b>삼성중공업</b> LNG운반선 1척 3,424억 · <b>대한전선</b> 싱가포르 400kV 전력케이블 2,718억 · <b>HD현대중공업</b> LPG운반선 4척 2,721억 · <b>대우건설</b> 여의도 화랑아파트 재건축 2,750억 · <b>기가비스</b> 중국 반도체 기판 검사·수리장비 447억 · 원일티엔아이 한화파워 히터 44억</div>
+      <div class="stk">실적</div>
+      <div class="bg"><b>우양피앤엘</b> 3분기 매출 342억(+348%), 영업이익 35억·순이익 흑자전환 · <b>삼립</b> 3분기 영업이익 19억(−79%), 순손실 전환</div>
+      <div class="stk">주주환원</div>
+      <div class="bg">자사주 소각: HDC랩스·피에스텍·TS인베스트먼트·이구산업 · 자사주 취득: 인스웨이브(10억)·와이즈넛(신탁 50억)·동아지질(신탁 50억)·율촌 · 나우IB 기업가치 제고 계획 · 아세아시멘트 중간배당 50원</div>
+      <div class="stk">주의</div>
+      <div class="bg">아이톡시·셀레스트라 분기 매출 미달(상장적격성 실질심사 사유) · 에이엔피 상장폐지 효력정지 가처분 신청 · 삼부토건·코퍼스코리아 실질심사 관련 · 코람코더원리츠 해산 사유 발생 · 범양건영 회생계획안 제출기간 변경</div>
+      <p class="small">출처: 인포스탁 [1116마감체크] ▶주요공시(30건 중 요약)</p>
+    </div>
+  </section>
+
+  <!-- ===== 마무리 ===== -->
   <section>
-    <h2>⑧ 일정·이벤트</h2>
-    <p style="margin:0 0 4px"><b>오늘 장 마감 후 주요 공시</b> (인포스탁 마감체크)</p>
+    <h2>내일(11/17) 체크포인트</h2>
     <ul>
-      <li>수주: <b>삼성중공업</b> LNG운반선 1척 3,424억 · <b>대한전선</b> 싱가포르 400kV 전력케이블 2,718억 · <b>HD현대중공업</b> LPG운반선 4척 2,721억 · <b>기가비스</b> 중국 반도체 기판 검사·수리장비 447억 · <b>대우건설</b> 여의도 화랑아파트 재건축 2,750억</li>
-      <li>실적: <b>우양피앤엘</b> 3분기 매출 342억(+348%)·흑자전환 · <b>삼립</b> 3분기 영업이익 19억(-79%)·순손실 전환</li>
-      <li>주주환원: HDC랩스·피에스텍·TS인베스트먼트 자사주 소각, 인스웨이브·와이즈넛·동아지질 자사주 취득, 나우IB 기업가치 제고 계획</li>
-      <li>주의: 아이톡시·셀레스트라 매출액 미달(상장적격성 실질심사), 에이엔피 상장폐지 효력정지 가처분 신청, 코람코더원리츠 해산 사유 발생</li>
-    </ul>
-    <p style="margin:10px 0 4px"><b>오늘 밤 해외 (한국시간)</b></p>
-    <ul>
-      <li>미국 뉴욕 엠파이어스테이트 제조업지수 <span class="tag">13일 일정 기사 기준</span> · 연준 인사 발언 · 미 10년물 금리(5.1%대) 흐름</li>
-    </ul>
-    <p style="margin:10px 0 4px"><b>내일(17일, 화) 국내와 이번 주</b></p>
-    <ul>
-      <li><b>17일 교육부·과기정통부 AI 부정행위 방지 대책 발표 예정</b> · 옵토닉스 코스닥 상장(공모가 12,000원)</li>
-      <li>17일(미국) 10월 소매판매·산업생산 · <b>엔비디아 3분기 실적(한국시간 18일 06:20쯤)</b></li>
-      <li>18일 에이엘로봇 상장 · 에스에프씨·유캐스트 청약(~19일) · 19일 FOMC 의사록 · <b>19일 수능(국내 증시 1시간 늦게 개장·폐장)</b> · 앤트로픽 나스닥 상장 · 20일 하나에어로다이내믹스 상장, 한국 10월 PPI</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>⑨ 내일 체크포인트 <span class="tag">11/17(화)</span></h2>
-    <ul>
-      <li><b>외국인 반도체 매도가 멈추는지</b> — 삼성전자 20만 원, 하이닉스 112만 원 회복 여부. 이틀 연속 1조 원대 매도면 위험 신호</li>
+      <li><b>외국인 반도체 매도 지속 여부</b> — 삼성전자 20만 원·하이닉스 112만 원 회복 여부. 이틀 연속 1조 원대 매도면 위험 신호</li>
       <li><b>코스피 오늘 저점 5,069.83</b> — 깨지면 추가 하락 경계</li>
-      <li><b>17일 AI 부정 방지 대책 발표</b> — 지슨·카티스·나무가가 발표 뒤에도 시가를 지키는지('재료 소멸' 여부)</li>
-      <li><b>방어 업종 순환매 지속</b> — 음식료·보험·금융지주로 돈이 계속 가는지, 장후 수주 공시 종목(조선·전선) 반응</li>
-      <li><b>엔비디아 실적(18일 새벽) 전 경계감</b> — 발표 전까지 반도체 변동성 큼(관찰만)</li>
+      <li><b>17일 AI 부정행위 대책 발표</b> — 지슨·카티스·나무가가 발표 뒤에도 시가를 지키는지('재료 소멸' 여부)</li>
+      <li><b>엔비디아 실적(한국시간 18일 06:20쯤)</b> 전까지 반도체 변동성 큼</li>
+      <li><b>장후 수주 공시 종목 반응</b> — 삼성중공업·대한전선·HD현대중공업이 시가부터 강한지</li>
     </ul>
+    <p class="small"><b>일정</b> · 오늘 밤: 미국 뉴욕 엠파이어스테이트 지수(13일 일정 기사 기준), 연준 인사 발언 · 17일(화): AI 부정행위 대책 발표, 옵토닉스 상장, 미국 10월 소매판매·산업생산, 엔비디아 실적(한국시간 18일 06:20쯤) · 18일: 에이엘로봇 상장, 에스에프씨·유캐스트 청약 · 19일: 수능(증시 1시간 늦게 개장), FOMC 의사록, 앤트로픽 나스닥 상장 · 20일: 하나에어로다이내믹스 상장, 한국 10월 PPI</p>
   </section>
 
   <section class="src">
-    <h2>⑩ 출처</h2>
+    <h2>출처</h2>
     <ul>
-      <li><b><a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218945">인포스탁데일리 [1116마감체크] (17:07)</a></b> — 흐름, 수급, 선물, 환율·금리, 시총 상위, 업종, 섹터분석, 신고가, 주요공시 · <a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218940">[테마시황] (12:03)</a> · <a href="https://www.infostockdaily.co.kr/news/articleView.html?idxno=218941">[1116시황레이더] (12:23)</a></li>
-      <li><a href="https://www.newspim.com/news/view/20261116000988">뉴스핌 마감시황 (15:59)</a> · <a href="https://www.sentv.co.kr/article/view/sentv202611160186">서울경제TV (16:02)</a> · <a href="https://www.straightnews.co.kr/news/articleView.html?idxno=315452">스트레이트뉴스 (16:16)</a> · <a href="https://www.etoday.co.kr/news/view/2648795">이투데이 환율마감 (15:56)</a> · <a href="https://www.etoday.co.kr/news/view/2648897">이투데이 급등락주 (18:12)</a></li>
-      <li><a href="https://www.newspim.com/news/view/20261116000809">뉴스핌 보안주 (14:13)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238710">잡포스트 카티스 (15:39)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238713">시선AI (15:40)</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238720">DGI (15:42)</a> · <a href="https://news.jkn.co.kr/post/1098208">재경일보 나무가 (15:48)</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=564015">중앙이코노미 나무가 (09:41)</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=564243">삼양식품 (16:42)</a> · <a href="https://www.namdonews.com/news/articleView.html?idxno=929378">남도일보 삼양식품 (15:34)</a> · <a href="https://www.insjournal.co.kr/news/articleView.html?idxno=33935">보험저널 (15:50)</a></li>
-      <li><a href="https://www.blockmedia.co.kr/archives/1165790">블록미디어 뉴욕증시 (11/14 06:16)</a> · <a href="https://www.newstopkorea.com/news/articleView.html?idxno=49058">뉴스톱 (09:02)</a> · <a href="https://finance.ettoday.net/news/3273039">ETtoday 대만 (13:35 대만시각)</a> · <a href="https://www.ajunews.com/view/20261116161317813">아주경제 중국 (16:15)</a> · <a href="https://www.lcnews.co.kr/news/articleView.html?idxno=211438">라이센스뉴스 IPO 일정 (14:14)</a></li>
-      <li>data/2026-11-16.json — 20:45 재수집본(국내 지수 네이버 일봉). 처음 자동 수집본(18:23)은 장중 값(코스피 5,132.94)이라 쓰지 않음. 수급은 매체별 차이 큼(④ 참고)</li>
+      <li><b><a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218945">인포스탁데일리 [1116마감체크] 17:07</a></b> — 흐름·수급·선물·금리·업종·섹터분석·신고가·주요공시 · <a href="https://infostockdaily.co.kr/news/articleView.html?idxno=218940">[테마시황] 12:03</a> · <a href="https://www.infostockdaily.co.kr/news/articleView.html?idxno=218941">[1116시황레이더] 12:23</a></li>
+      <li>data/2026-11-16.json (지수·해외, 20:45 재수집. 18:23 첫 수집본은 장중 값이라 미사용) · <a href="https://www.newspim.com/news/view/20261116000988">뉴스핌 마감시황 15:59</a> · <a href="https://www.etoday.co.kr/news/view/2648795">이투데이 환율 15:56</a> · <a href="https://www.sentv.co.kr/article/view/sentv202611160186">서울경제TV 16:02</a></li>
+      <li><a href="https://www.etoday.co.kr/news/view/2648897">이투데이 급등락주 18:12</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238710">잡포스트 카티스 15:39</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238713">시선AI 15:40</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238720">DGI 15:42</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238711">세코닉스 15:39</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238707">LK삼양 15:39</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238718">미래에셋벤처투자 15:42</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238626">HMM 14:54</a> · <a href="https://www.job-post.co.kr/news/articleView.html?idxno=238604">하나마이크론 14:36</a></li>
+      <li><a href="https://www.joongangenews.com/news/articleView.html?idxno=564015">중앙이코노미 나무가 09:41</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=564243">삼양식품 16:42</a> · <a href="https://www.anewsa.com/detail.php?number=3218344">아시아뉴스통신 한진칼 15:49</a> · <a href="https://www.anewsa.com/detail.php?number=3218388">제주항공</a> · <a href="https://news.jkn.co.kr/post/1097924">재경일보 HLB테라퓨틱스 14:30</a> · <a href="https://www.namdonews.com/news/articleView.html?idxno=929378">남도일보 삼양식품 15:34</a> · <a href="https://www.insjournal.co.kr/news/articleView.html?idxno=33935">보험저널 15:50</a> · <a href="https://www.newspim.com/news/view/20261116000809">뉴스핌 보안주 14:13</a> · <a href="https://news.jkn.co.kr/post/1098208">재경일보 나무가 15:48</a></li>
     </ul>
   </section>
 
