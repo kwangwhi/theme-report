@@ -20,13 +20,18 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 import FinanceDataReader as fdr
+import requests
 
 KST = timezone(timedelta(hours=9))
 
+# 국내 지수는 출처를 바꿨다 (2026-11-16).
+# FDR 의 KS11/KQ11 은 'GitHub 캐시'를 읽는데, 이 캐시는 장중 한 시점의 값으로 멈춰 있어
+# 장 마감 후에도 종가가 틀렸다(11/16: 캐시 5,132.94 vs 실제 5,100.50).
+# 그래서 네이버 일봉(장 마감 직후 확정) → 야후 → FDR 캐시 순서로 시도한다.
 # (표시 이름, 구분, 시도할 심볼 목록) — 앞에서부터 시도해서 처음 성공한 것을 쓴다.
 TARGETS = [
-    ("코스피", "domestic", ["KS11"]),
-    ("코스닥", "domestic", ["KQ11"]),
+    ("코스피", "domestic", ["NAVER:KOSPI", "YAHOO:^KS11", "KS11"]),
+    ("코스닥", "domestic", ["NAVER:KOSDAQ", "YAHOO:^KQ11", "KQ11"]),
     ("원/달러", "fx", ["USD/KRW"]),
     ("다우", "us", ["DJI"]),
     ("S&P500", "us", ["US500"]),
@@ -101,13 +106,83 @@ def build_item(name, group, symbol, df):
     return item
 
 
+CACHE_SYMBOL = {"코스피": "KS11", "코스닥": "KQ11"}
+NAVER_INDEX = {"코스피": "KOSPI", "코스닥": "KOSDAQ"}
+
+
+def _num(text):
+    try:
+        return float(str(text).replace(",", "").strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def naver_amount_krw(name):
+    """네이버 실시간 지수 API에서 누적 거래대금(원)을 읽는다. 못 읽으면 None."""
+    code = NAVER_INDEX.get(name)
+    if not code:
+        return None, "대상 아님"
+    url = f"https://polling.finance.naver.com/api/realtime/domestic/index/{code}"
+    try:
+        r = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+        data = r.json()
+        row = (data.get("datas") or [{}])[0]
+    except Exception as e:
+        return None, f"네이버 거래대금 오류 {type(e).__name__}"
+    raw = row.get("accumulatedTradingValue")
+    unit = row.get("accumulatedTradingValueKorUnit") or row.get("accumulatedTradingValueUnit") or ""
+    print(f"[참고] {name} 네이버 거래대금 원문: {raw!r} 단위표시: {unit!r}")
+    val = _num(raw)
+    if val is None:
+        return None, "네이버 거래대금 없음"
+    # 네이버 지수 거래대금은 '백만 원' 단위로 온다. 상식 범위(0.5조~100조)에 들 때만 쓴다.
+    for mult in (1e6, 1):
+        krw = val * mult
+        if 0.5e12 <= krw <= 100e12:
+            return krw, None
+    return None, f"네이버 거래대금 값 이상({raw})"
+
+
+def fill_domestic_amount(item, result):
+    """국내 지수 거래대금 채우기. 캐시 값은 캐시 종가가 확정 종가와 같을 때만 믿는다."""
+    if item.get("amount_krw") is not None:
+        return
+    name = item["name"]
+    # 1) FDR 캐시: 같은 날짜 봉의 종가가 확정 종가와 0.05% 이내일 때만 (=캐시가 마감 후 갱신됨)
+    try:
+        cdf = fdr.DataReader(CACHE_SYMBOL[name], item["prev_bar_date"])
+        if cdf is not None and not cdf.empty and "Amount" in cdf.columns:
+            last_date = cdf.index[-1].strftime("%Y-%m-%d")
+            cclose = to_float(cdf.iloc[-1]["Close"])
+            if last_date == item["bar_date"] and cclose and item["close"] \
+                    and abs(cclose - item["close"]) / item["close"] < 0.0005:
+                amt = to_float(cdf.iloc[-1]["Amount"])
+                if amt:
+                    item["amount_krw"] = amt
+                    item["amount_jo"] = round(amt / 1e12, 2)
+                    item["amount_source"] = "FDR 캐시(종가 일치 확인)"
+                    return
+            else:
+                print(f"[참고] {name} FDR 캐시는 아직 확정 전: {last_date} 종가 {cclose} (확정 {item['close']})")
+    except Exception as e:
+        print(f"[참고] {name} FDR 캐시 오류 {type(e).__name__}")
+    # 2) 네이버 실시간 지수 API
+    amt, err = naver_amount_krw(name)
+    if amt:
+        item["amount_krw"] = amt
+        item["amount_jo"] = round(amt / 1e12, 2)
+        item["amount_source"] = "네이버 지수 시세"
+        return
+    result["errors"].append({"name": f"{name} 거래대금", "error": err or "확정 거래대금을 못 받음"})
+
+
 def main():
     now = datetime.now(KST)
     start = (now - timedelta(days=20)).strftime("%Y-%m-%d")
 
     result = {
         "generated_at_kst": now.strftime("%Y-%m-%d %H:%M"),
-        "source": "FinanceDataReader",
+        "source": "FinanceDataReader (국내 지수: 네이버 일봉 우선)",
         "note": "bar_date가 기대 날짜와 다르면 오래된 숫자다. change_pct는 직전 봉 종가 대비.",
         "items": [],
         "errors": [],
@@ -120,6 +195,11 @@ def main():
             print(f"[실패] {name}: {err}")
             continue
         item = build_item(name, group, symbol, df)
+        if group == "domestic":
+            if symbol in ("KS11", "KQ11"):
+                # 마지막 대안(FDR 캐시)까지 왔다면 장중 값일 수 있다 → 리포트에서 기사로 대체하도록 errors 에 남김
+                result["errors"].append({"name": name, "error": f"{symbol} 캐시 값만 받음(장중 값일 수 있어 확정치 아님)"})
+            fill_domestic_amount(item, result)
         result["items"].append(item)
         print(f"[성공] {name} ({symbol}) {item['bar_date']} 종가 {item['close']} ({item['change_pct']}%)")
 
