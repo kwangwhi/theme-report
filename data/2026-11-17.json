@@ -1,5 +1,5 @@
 {
-  "generated_at_kst": "2026-11-17 17:03",
+  "generated_at_kst": "2026-11-17 17:17",
   "source": "FinanceDataReader (국내 지수: 네이버 일봉 우선)",
   "note": "bar_date가 기대 날짜와 다르면 오래된 숫자다. change_pct는 직전 봉 종가 대비.",
   "items": [
@@ -39,10 +39,10 @@
       "group": "fx",
       "symbol": "USD/KRW",
       "bar_date": "2026-11-17",
-      "close": 1337.280029296875,
+      "close": 1337.25,
       "prev_close": 1333.25,
       "prev_bar_date": "2026-11-16",
-      "change": 4.03,
+      "change": 4.0,
       "change_pct": 0.3,
       "open": 1335.8299560546875,
       "high": 1342.47998046875,
@@ -136,15 +136,15 @@
       "name": "대만 가권",
       "group": "asia",
       "symbol": "^TWII",
-      "bar_date": "2026-11-17",
-      "close": 40092.109375,
-      "prev_close": 41040.078125,
-      "prev_bar_date": "2026-11-16",
-      "change": -947.9688,
-      "change_pct": -2.31,
-      "open": 40546.640625,
-      "high": 41533.83984375,
-      "low": 39786.44921875
+      "bar_date": "2026-11-16",
+      "close": 41040.078125,
+      "prev_close": 43675.12109375,
+      "prev_bar_date": "2026-11-13",
+      "change": -2635.043,
+      "change_pct": -6.03,
+      "open": 43512.421875,
+      "high": 43512.421875,
+      "low": 41040.078125
     }
   ],
   "errors": [
