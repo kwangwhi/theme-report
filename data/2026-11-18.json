@@ -1,5 +1,5 @@
 {
-  "generated_at_kst": "2026-11-18 16:54",
+  "generated_at_kst": "2026-11-18 17:00",
   "source": "FinanceDataReader (국내 지수: 네이버 일봉 우선)",
   "note": "bar_date가 기대 날짜와 다르면 오래된 숫자다. change_pct는 직전 봉 종가 대비.",
   "items": [
@@ -39,11 +39,11 @@
       "group": "fx",
       "symbol": "USD/KRW",
       "bar_date": "2026-11-18",
-      "close": 1330.780029296875,
+      "close": 1330.300048828125,
       "prev_close": 1335.6700439453125,
       "prev_bar_date": "2026-11-17",
-      "change": -4.89,
-      "change_pct": -0.37,
+      "change": -5.37,
+      "change_pct": -0.4,
       "open": 1334.8399658203125,
       "high": 1336.300048828125,
       "low": 1327.489990234375
