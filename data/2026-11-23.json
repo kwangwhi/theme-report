@@ -1,0 +1,157 @@
+{
+  "generated_at_kst": "2026-11-23 17:08",
+  "source": "FinanceDataReader (국내 지수: 네이버 일봉 우선)",
+  "note": "bar_date가 기대 날짜와 다르면 오래된 숫자다. change_pct는 직전 봉 종가 대비.",
+  "items": [
+    {
+      "name": "코스피",
+      "group": "domestic",
+      "symbol": "NAVER:KOSPI",
+      "bar_date": "2026-11-23",
+      "close": 4708.54,
+      "prev_close": 4869.96,
+      "prev_bar_date": "2026-11-20",
+      "change": -161.42,
+      "change_pct": -3.31,
+      "open": 4734.9,
+      "high": 4759.88,
+      "low": 4586.8
+    },
+    {
+      "name": "코스닥",
+      "group": "domestic",
+      "symbol": "NAVER:KOSDAQ",
+      "bar_date": "2026-11-23",
+      "close": 635.45,
+      "prev_close": 645.68,
+      "prev_bar_date": "2026-11-20",
+      "change": -10.23,
+      "change_pct": -1.58,
+      "open": 634.93,
+      "high": 645.93,
+      "low": 618.74
+    },
+    {
+      "name": "원/달러",
+      "group": "fx",
+      "symbol": "USD/KRW",
+      "bar_date": "2026-11-23",
+      "close": 1344.969970703125,
+      "prev_close": 1334.7900390625,
+      "prev_bar_date": "2026-11-20",
+      "change": 10.1799,
+      "change_pct": 0.76,
+      "open": 1337.800048828125,
+      "high": 1351.47998046875,
+      "low": 1337.800048828125
+    },
+    {
+      "name": "다우",
+      "group": "us",
+      "symbol": "DJI",
+      "bar_date": "2026-11-20",
+      "close": 48147.328125,
+      "prev_close": 49097.05859375,
+      "prev_bar_date": "2026-11-19",
+      "change": -949.7305,
+      "change_pct": -1.93,
+      "open": 49071.8203125,
+      "high": 49594.8984375,
+      "low": 47998.859375
+    },
+    {
+      "name": "S&P500",
+      "group": "us",
+      "symbol": "US500",
+      "bar_date": "2026-11-20",
+      "close": 6910.39013671875,
+      "prev_close": 7175.830078125,
+      "prev_bar_date": "2026-11-19",
+      "change": -265.4399,
+      "change_pct": -3.7,
+      "open": 7150.39013671875,
+      "high": 7198.669921875,
+      "low": 6882.66015625
+    },
+    {
+      "name": "나스닥",
+      "group": "us",
+      "symbol": "IXIC",
+      "bar_date": "2026-11-20",
+      "close": 22617.73046875,
+      "prev_close": 23879.19921875,
+      "prev_bar_date": "2026-11-19",
+      "change": -1261.4688,
+      "change_pct": -5.28,
+      "open": 23592.669921875,
+      "high": 23837.759765625,
+      "low": 22513.009765625
+    },
+    {
+      "name": "필라델피아 반도체",
+      "group": "us",
+      "symbol": "^SOX",
+      "bar_date": "2026-11-20",
+      "close": 8408.58984375,
+      "prev_close": 9419.7197265625,
+      "prev_bar_date": "2026-11-19",
+      "change": -1011.1299,
+      "change_pct": -10.73,
+      "open": 9160.7998046875,
+      "high": 9204.419921875,
+      "low": 8342.2099609375
+    },
+    {
+      "name": "닛케이225",
+      "group": "asia",
+      "symbol": "N225",
+      "bar_date": "2026-11-20",
+      "close": 56436.6484375,
+      "prev_close": 59444.2109375,
+      "prev_bar_date": "2026-11-19",
+      "change": -3007.5625,
+      "change_pct": -5.06,
+      "open": 58551.55859375,
+      "high": 58707.48046875,
+      "low": 56436.6484375
+    },
+    {
+      "name": "상해종합",
+      "group": "asia",
+      "symbol": "SSEC",
+      "bar_date": "2026-11-23",
+      "close": 3538.947998046875,
+      "prev_close": 3533.79296875,
+      "prev_bar_date": "2026-11-20",
+      "change": 5.155,
+      "change_pct": 0.15,
+      "open": 3503.522705078125,
+      "high": 3544.6005859375,
+      "low": 3476.650146484375
+    },
+    {
+      "name": "대만 가권",
+      "group": "asia",
+      "symbol": "^TWII",
+      "bar_date": "2026-11-23",
+      "close": 36811.890625,
+      "prev_close": 36033.2890625,
+      "prev_bar_date": "2026-11-20",
+      "change": 778.6016,
+      "change_pct": 2.16,
+      "open": 35899.48046875,
+      "high": 37108.19921875,
+      "low": 35442.41015625
+    }
+  ],
+  "errors": [
+    {
+      "name": "코스피 거래대금",
+      "error": "네이버 거래대금 없음"
+    },
+    {
+      "name": "코스닥 거래대금",
+      "error": "네이버 거래대금 없음"
+    }
+  ]
+}
