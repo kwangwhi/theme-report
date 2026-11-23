@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장마감 시황 · 테마 리포트</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1a1d21; --muted: #6b7280;
+    --line: #e5e7eb; --up: #d92d20; --down: #1d64d8; --warn-bg: #fff7e6; --warn: #8a5a00;
+    --soft: #f3f5f8; --accent: #6d28d9; --accent-bg: #f3efff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --card: #181b21; --text: #e8eaed; --muted: #9aa0a6;
+      --line: #2a2e36; --up: #ff6b5e; --down: #5b9bff; --warn-bg: #2a2212; --warn: #f2c46d;
+      --soft: #20242c; --accent: #b79cff; --accent-bg: #241d38;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    line-height: 1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .stamp { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+  .notice { background: var(--warn-bg); color: var(--warn); border-radius: 10px;
+    padding: 10px 14px; font-size: .9rem; margin-bottom: 16px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px; margin-bottom: 14px; }
+  h2 { font-size: 1.1rem; margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; }
+  td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
+  .tag { display: inline-block; font-size: .72rem; color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 0 7px; margin-left: 3px; font-weight: 400; vertical-align: 1px; }
+  .small { color: var(--muted); font-size: .85rem; margin: 8px 0 0; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  .idx { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .idx div { background: var(--soft); border-radius: 10px; padding: 10px 12px; }
+  .idx b { display: block; font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+  .idx span { font-size: .8rem; color: var(--muted); }
+  /* 테마 딥 */
+  .deep-title { font-size: 1.15rem; margin: 22px 0 10px; }
+  .theme { padding: 0; overflow: hidden; }
+  .theme > h3 { margin: 0; padding: 10px 16px; font-size: 1rem; background: var(--accent-bg); color: var(--accent); }
+  .theme > h3 small { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: .8rem; }
+  .theme .body { padding: 12px 16px 14px; }
+  .stk { margin: 10px 0 2px; font-weight: 700; line-height: 1.5; }
+  .stk:first-child { margin-top: 0; }
+  .stk .n { font-weight: 400; color: var(--muted); font-size: .85rem; }
+  .lead { display: inline-block; font-size: .7rem; font-weight: 700; color: #fff; background: var(--up);
+    border-radius: 4px; padding: 0 5px; margin-right: 4px; vertical-align: 2px; }
+  .news { list-style: none; padding: 0; margin: 4px 0 0; font-size: .9rem; }
+  .news li { padding-left: 14px; position: relative; }
+  .news li:before { content: "▸"; position: absolute; left: 0; color: var(--muted); }
+  .news a { color: inherit; }
+  .bg { background: var(--soft); border-radius: 8px; padding: 8px 12px; font-size: .88rem; margin-top: 6px; }
+  .rel { font-size: .85rem; color: var(--muted); margin-top: 6px; }
+  .memo { font-size: .88rem; margin-top: 8px; border-left: 3px solid var(--accent); padding-left: 10px; }
+  .sched { font-size: .88rem; margin-top: 8px; }
+  .sched b { color: var(--accent); }
+  .weak h3 { background: var(--soft); color: var(--down); }
+  .src a { color: var(--muted); word-break: break-all; }
+  section { overflow-x: auto; }
+  footer { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 20px; }
+  /* 종합판정 대시보드 */
+  .dash { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dash div { background: var(--soft); border-radius: 10px; padding: 10px 12px; font-size: .88rem; }
+  .dash div.wide { grid-column: 1 / -1; }
+  .dash span.k { display: block; font-size: .75rem; color: var(--muted); }
+  .badge { display: inline-block; font-weight: 700; font-size: .85rem; border-radius: 6px; padding: 1px 8px; color: #fff; }
+  .b-red { background: #d92d20; } .b-yel { background: #b7791f; } .b-grn { background: #15803d; } .b-gry { background: #6b7280; } .b-blu { background: #1d64d8; }
+  .grade { display: inline-block; font-size: .72rem; font-weight: 700; border-radius: 4px; padding: 0 6px; margin-right: 4px; color: #fff; vertical-align: 1px; }
+  .g-a { background: #15803d; } .g-b { background: #b7791f; } .g-x { background: #6b7280; }
+  .sc { margin-top: 8px; padding: 8px 12px; border-radius: 8px; background: var(--soft); font-size: .88rem; }
+  .sc b.t { display: block; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>장마감 종합 리포트</h1>
+  <div class="stamp">2026년 11월 23일(월) · 종가 기준 · 18:20 작성</div>
+  <div class="notice">지수·해외는 자동 수집 data/2026-11-23.json(17:29). <b>인포스탁 [1123마감체크]는 목록 페이지 접근 실패로 열지 못해 수급·업종·종목은 언론 마감 기사로 작성</b>했습니다. 기사로 채운 숫자에는 <span class="tag">기사</span>, 장중 숫자에는 시각 표시. 확인 못 한 값은 "확인 필요". <b>오늘 지수 거래대금은 자동 수집·기사 모두에서 확정값을 찾지 못함</b>. 분봉은 이 환경에서 받을 수 없어 <span class="tag">분봉 미확인</span>. 투자 판단 보조 자료이며 매매 권유가 아닙니다. 다음 거래일은 24일(화).</div>
+
+  <!-- ===== 종합판정 ===== -->
+  <section>
+    <h2>오늘의 종합판정</h2>
+    <div class="dash">
+      <div class="wide"><span class="k">① 오늘 시장 한 줄</span>주말 뉴욕 <b>나스닥 −5.28%·필라델피아 반도체 −10.73%</b>(엔비디아 −14%) 충격에 이틀 연속 매도 사이드카. 코스피 <b>4,708.54</b>(<span class="down">−3.31%</span>), 장중 4,586.80(−5.81%)까지 밀렸다가 기관 매수로 일부 회복. 코스닥 635.45(<span class="down">−1.58%</span>). 외국인 7거래일 연속 순매도, 다만 매도 규모는 크게 줄고 기관은 순매수 전환.</div>
+      <div><span class="k">② 장세 (MARKET REGIME)</span><span class="badge b-red">급락·고위험</span><br>2거래일 −8.4% · 종가 1월 이후 최저권 · VKOSPI 55.82 <span class="tag">기사</span></div>
+      <div><span class="k">③ 내일(24일) 매매 게이트</span><span class="badge b-red">STOP</span><br>신규매매 중단 · 반등 첫날 추격 금지</div>
+      <div><span class="k">④ 미수 사용</span><span class="badge b-red">NO</span><br>변동성 패닉권·하락 추세·손절선 불명확</div>
+      <div><span class="k">⑤ 권장 투입 · 허용 손실</span><b>기준 한도의 0%</b><br>Bull 조건 이틀 연속 확인 전까지 0% 유지</div>
+      <div class="wide"><span class="k">⑥ 상대강도 관찰 업종 TOP 3 (오늘 LEADER 없음)</span>1. 로봇(휴림로봇·코스모로보틱스 상한가, 로보티즈 +5.35%) <b>상향 보류(1일차)</b> &nbsp;2. 화장품(장중 코스피 유일 상승 업종, 에이피알·코스메카코리아) <b>상향 보류(2일차·수급 미확인)</b> &nbsp;3. 반도체 기판·부품(삼성전기 +0.52%, 심텍 +2.41%) <b>상향 보류(1일차)</b></div>
+    </div>
+    <p class="small"><b>판정 근거</b>: 코스피 2거래일 누적 약 −8.4%(5,137.89 → 4,708.54), 매도 사이드카 2거래일 연속(11:33), 코스피 상승:하락 71:824(1:11.6)로 시장 폭 더 악화, VKOSPI 55.82(+4.96%, 투데이신문 단독 — 40 이상은 패닉 구간), 원/달러 1,345.9원(+9.7원, 9일 이후 최고), 미국 SOX 6월 고점 대비 −40% 이상, 다우·S&amp;P500 조정 국면 진입. <b>반대 근거</b>: 외국인 순매도 −1조1,320억(20일) → −2,470억으로 축소, 기관 +1,872억 순매수 전환, 지수가 저가 대비 +2.65% 회복해 마감(장대 아래꼬리), 삼성전기·SK스퀘어·심텍 등 반도체 부품 일부는 SOX −10.7%에도 상승, 정부 증안펀드 준비·24일부터 자사주 매수 한도 완화. → <b>매도 강도 둔화 신호는 있으나 하락 추세를 뒤집은 근거는 아님</b>.</p>
+    <div class="sc"><b class="t">어제 예고 점검 (11/20 리포트 시나리오)</b>
+      ✘ <b>Bull 불충족</b>: 20일(현지) 미국 반등 대신 나스닥 −5.28%·SOX −10.73% / 코스피 4,971.31 회복 실패(고가 4,759.88) / 원/달러 1,336 아래 실패(1,345.9).<br>
+      ✔ <b>Bear 대부분 충족</b>: 미국 AI주 추가 급락 ✔ · 연준 매파 발언(리사 쿡 이사 "금리가 아직 충분히 높지 않다") ✔ · 저가 4,831.69 이탈 후 4,800 하회 ✔(저가 4,586.80) · 원/달러 1,340 돌파 ✔. 단 '외국인 매도 1조 원 이상 지속'은 ✘(−2,470억).<br>
+      ✘ <b>관심종목(B) 관찰 조건 불충족</b>: 알테오젠 174,400 위 유지 실패(168,500, −3.38%) / SK하이닉스 1,115,000 회복 실패(1,085,000, −2.52%) / LG에너지솔루션 291,500(−2.67%). → 결론: <b>Bear 경로, STOP 유지가 맞았음</b>. 바이오 대형 '상향 보류(2일차)'는 오늘 −3~5%로 상대강도가 끊겨 무효.</div>
+  </section>
+
+  <!-- ===== 1. 시장 종합 ===== -->
+  <section>
+    <h2>1. 시장 종합 현황 <span class="tag">KRX 정규장</span></h2>
+    <div class="idx">
+      <div><span>코스피</span><b>4,708.54</b><span class="down">▼161.42 (−3.31%)</span><br><span>시 4,734.90 · 고 4,759.88 · 저 4,586.80</span></div>
+      <div><span>코스닥</span><b>635.45</b><span class="down">▼10.23 (−1.58%)</span><br><span>시 634.93 · 고 645.93 · 저 618.74</span></div>
+    </div>
+    <table>
+      <tr><th>항목</th><th class="num">코스피</th><th class="num">코스닥</th></tr>
+      <tr><td>거래대금</td><td class="num">확인 필요</td><td class="num">확인 필요</td></tr>
+      <tr><td>상승 / 하락 <span class="tag">기사</span></td><td class="num">71 / 824</td><td class="num">확인 필요</td></tr>
+      <tr><td>상승:하락 비율</td><td class="num">1 : 11.6</td><td class="num">—</td></tr>
+      <tr><td>상한가 / 하한가 <span class="tag">기사</span></td><td class="num">0 / 0</td><td class="num">7 / 1</td></tr>
+      <tr><td>프로그램 <span class="tag">기사</span></td><td class="num">+821억(12:20) · 마감 확인 필요</td><td class="num">확인 필요</td></tr>
+      <tr><td>매도 사이드카 <span class="tag">기사</span></td><td class="num">11:33 (2일 연속)</td><td class="num">—</td></tr>
+      <tr><td>VKOSPI <span class="tag">기사</span></td><td class="num">55.82 (+4.96%)</td><td class="num">—</td></tr>
+    </table>
+    <p class="small"><b>거래대금 5영업일 추이 (KRX 확정, 조원)</b><br>
+    코스피 16.5(11/16) → 15.1 → 15.7 → 13.4 → <b>14.9(11/20)</b> → <b>오늘 확인 필요</b><br>
+    코스닥 4.87 → 5.11 → 6.07 → 4.78 → <b>4.55(11/20)</b> → <b>오늘 확인 필요</b><br>
+    해석: 20일(−5.21%)은 지수 급락 + 거래대금 +11%(13.4→14.9조) — 사이드카 수준 급락치고는 거래대금 급증이 크지 않아 <b>투매보다 매수 공백 성격</b>(해석). 오늘은 확정값이 없어 판단 보류. 참고로 12:20 기준 반도체 업종 거래대금 6조1,009억 원이 전체의 49.5%(중기이코노미) — 오전에만 약 12조 원대가 거래된 셈이라(계산·추정) 오늘은 20일보다 손바뀜이 컸을 가능성.</p>
+    <p class="small"><b>시장 폭</b>: 코스피 상승 71 vs 하락 824(20일 88:808) — 이틀 연속 극단적 약세, 오히려 더 나빠짐. 12:20 기준 78개 업종 중 화장품(+0.93%) 하나만 상승(중기이코노미). 마감 기준 코스피 전 업종 하락(시사저널e). 코스닥 상승·하락 수와 업종 내 상승 종목 수는 확인 필요.</p>
+    <table style="margin-top:10px">
+      <tr><th>변동성·환율·금리·해외</th><th class="num">값</th><th class="num">등락</th></tr>
+      <tr><td>원/달러 15:30 <span class="tag">기사</span></td><td class="num">1,345.9</td><td class="num up">+9.7원</td></tr>
+      <tr><td>미국 VIX (11/20)</td><td class="num">확인 필요</td><td class="num">—</td></tr>
+      <tr><td>국고채 3년 · 10년 / 미국 10년물</td><td class="num">확인 필요</td><td class="num">—</td></tr>
+      <tr><td>필라델피아 반도체 (11/20)</td><td class="num">8,408.59</td><td class="num down">−10.73%</td></tr>
+      <tr><td>나스닥 (11/20)</td><td class="num">22,617.73</td><td class="num down">−5.28%</td></tr>
+      <tr><td>S&amp;P500 · 다우 (11/20)</td><td class="num">6,910.39 · 48,147.33</td><td class="num down">−3.70% · −1.93%</td></tr>
+      <tr><td>엔비디아 · 마이크론 · AMD · 브로드컴 (11/20) <span class="tag">기사</span></td><td class="num">—</td><td class="num down">−14.0 · −13.9 · −13.3 · −12.2%</td></tr>
+      <tr><td>SK하이닉스 ADR · 앤트로픽 (11/20) <span class="tag">기사</span></td><td class="num">— · 88.3달러</td><td class="num down">−13.11% · −8.50%</td></tr>
+      <tr><td>대만 · 상해 (11/23)</td><td class="num">36,811.89 · 3,538.95</td><td class="num up">+2.16% · +0.15%</td></tr>
+      <tr><td>닛케이 (11/20, 23일 일본 휴장)</td><td class="num">56,436.65</td><td class="num down">−5.06%</td></tr>
+    </table>
+    <ul class="small">
+      <li>지수 종가: 자동 수집값과 시사저널e·핀포인트·경제타임스·매일일보·투데이신문 일치. EBN만 4,708.61/635.49로 달라 미사용. 시가·저가는 자동 수집과 기사 일치, 고가 4,759.88은 수집값·핀포인트 일치(중기이코노미 12:20 기준 4,759.65).</li>
+      <li>원/달러: 자동 수집 1,344.68(시각 불명) vs 기사 15:30 종가 1,345.9 → 지침대로 15:30 종가 사용. 장중 고점 1,351.6원.</li>
+      <li>VKOSPI는 투데이신문 한 곳에서만 확인 — 단일 출처.</li>
+      <li>대만 +2.16%는 자동 수집값(bar_date 11/23)으로, 미국 반도체 폭락 다음 날 상승이라 기사 교차확인 필요.</li>
+    </ul>
+  </section>
+
+  <!-- ===== 2. 원인 ===== -->
+  <section>
+    <h2>2. 시장 하락 원인 (3가지)</h2>
+    <ol>
+      <li><b>미국 AI·반도체주 폭락 전이</b> — 20일(현지) 나스닥 −5.28%로 올해 상승분 반납, SOX −10.73%(6월 고점 대비 −40% 이상), 엔비디아 −14.01%(52주 신저가). 엔비디아 고유 악재로 젠슨 황 CEO 사임 뒤 경영 공백, SEC 회계 처리 조사 보도, 대중국 수출규제 위반·반독점 조사 가능성이 거론(머니투데이). 골드만삭스는 대형 클라우드 설비투자 증가율이 올해 105% → 내년 58%로 둔화한다고 추산(이투데이). <i>(가격·보도는 사실, 'AI 투자 수익성 우려'라는 원인 해석은 언론 해석)</i></li>
+      <li><b>외국인 7거래일 연속 매도 + 선물 급락 → 사이드카</b> — 장 초반 선물 급락으로 11:33 매도 사이드카(올해 32번째 매도 사이드카, 투데이신문). 개인 반대매매 우려가 겹쳐 장중 −5.81%까지(경제타임스, 익명 업계 관계자). 개인(−3,670억)·외국인(−2,470억) 동반 매도. <i>(수급은 사실, 반대매매 영향은 추정)</i></li>
+      <li><b>달러 강세·금리 인상 경계</b> — 원/달러 1,345.9원(+9.7원), 리사 쿡 연준 이사의 매파 발언, 26일 한국은행 금통위 3.00 → 3.25% 인상 전망 우세(시사저널e). <i>(지표는 사실, 오늘 낙폭 기여도는 추정)</i></li>
+    </ol>
+    <p class="small"><b>반대 근거</b>: SOX −10.7%·SK하이닉스 ADR −13.1%에 비해 국내 반도체 대형주 낙폭은 −2.5~−3.1%로 작았고, 삼성전기(+0.52%)·SK스퀘어(+0.44%)는 상승 — 이미 20일에 상당 부분 선반영됐다는 해석 가능. 기관이 오후 순매수로 지수를 4,700 위로 되돌림. 하나증권 이재만 연구원은 "금리가 내려가면 이익 전망이 크게 나빠지지 않는 한 반등 계기"(파이낸셜뉴스), 기사에서는 12개월 예상 PBR이 1배 근처라는 점도 언급. 반면 키움증권 한지영 연구원은 "역사적 과매도 구간이지만 AI 이익 전망 불신이 이어지면 추가 하락 가능", PBR 0.8배인 4,200~4,300선을 제시(EBN). BNK투자증권 김성노 연구원은 미국 유동성 약화로 "한국 시장에서 당분간 매도가 지속될 수밖에 없다"고 봄(파이낸셜뉴스).</p>
+    <p class="small"><b>장중 흐름</b>: 09:00 4,734.90(−2.77%) 갭하락 → 장 초반 4,759.88 고점 → 선물 급락 → 11:33 매도 사이드카 → 4,586.80 저점(−5.81%, 장중 4,600 이탈은 1월 이후 처음) → 12:20 4,662.12 → 장 막판 기관 매수로 4,708.54 마감. 종가는 시가 아래(음봉)지만 하루 범위의 약 70% 위치 — <b>종가 기준 매도 우위 유지, 다만 저가에서 매수 시도 확인</b>. 가격(하락)과 수급(외국인·개인 매도)은 일치, 기관 매수는 반대 방향.</p>
+  </section>
+
+  <!-- ===== 3. 수급 ===== -->
+  <section>
+    <h2>3. 투자자별 수급 <span class="tag">KRX 정규장 · 기사</span></h2>
+    <table>
+      <tr><th>수급(억)</th><th class="num">개인</th><th class="num">외국인</th><th class="num">기관</th></tr>
+      <tr><td>코스피</td><td class="num down">−3,670</td><td class="num down">−2,470</td><td class="num up">+1,872</td></tr>
+      <tr><td>코스닥</td><td class="num down">−1,741</td><td class="num down">−354</td><td class="num up">+1,977</td></tr>
+      <tr><td>코스피200 선물</td><td class="num">확인 필요</td><td class="num">확인 필요</td><td class="num">확인 필요</td></tr>
+    </table>
+    <p class="small">시사저널e(15:30 마감 기준 명시)·핀포인트뉴스(KRX 기준)·경제타임스가 거의 일치 → 이 값을 사용. <b>불일치</b>: EBN·투데이신문은 코스피 개인 −3,954억·외국인 −2,636/−2,538억·기관 +2,322억, 매일일보는 외국인 −2,372억. 집계 시각 차이로 보이나 확인 못 함. 어느 값이든 '외국인·개인 매도, 기관 매수' 방향은 같음.</p>
+    <ul>
+      <li>외국인 7거래일 연속 순매도(13일부터, 투데이신문). 지난주(16~20일) 외국인 −4조5,159억, 그중 삼성전자 −1조7,905억·SK하이닉스 −9,401억(매일일보·파이낸셜뉴스).</li>
+      <li>지수선물 순매매·미결제약정·프로그램 마감값·종목별 외국인/기관 순매수 상위: 확인 필요.</li>
+    </ul>
+    <p class="small"><b>해석</b>: 20일은 외국인·기관 동반 2조 원대 매도에 개인 혼자 받는 구조였지만, 오늘은 <b>외국인 매도가 약 1/5로 줄고 기관이 받는 구조</b>로 바뀜. 개인이 매도로 돌아선 것은 반대매매·투매 가능성(추정). 하루 변화라 '수급 개선'으로 확정하지 않음 — 24일 외국인 매도 축소가 이어지는지가 첫 확인점.</p>
+  </section>
+
+  <!-- ===== 4. 업종 ===== -->
+  <section>
+    <h2>4. 업종별 자금흐름 <span class="tag">KRX 정규장</span></h2>
+    <p class="small" style="margin-top:0">코스피(마감, 시사저널e): 전 업종 하락 — IT서비스 −8.48%, 건설 −6.91%, 일반서비스 −5.47%, 보험 −5.12%, 제약 −4.89%, 통신 −4.89%<br>
+    12:20 기준(중기이코노미, 78개 업종): 화장품 +0.93%만 상승, 반도체·장비 −4.31%. EBN(15:37, 다른 업종 분류)은 은행 −4.79%, 제약 −4.63%, 조선 −4.47%, 반도체·장비 −2.58% — 분류 체계가 달라 직접 비교하지 않음.</p>
+    <table>
+      <tr><th>업종</th><th>분류</th><th>근거 / 반대 근거</th></tr>
+      <tr><td>로봇</td><td>AVOID → <b>상향 보류(1일차)</b></td><td>휴림로봇·코스모로보틱스·벡트로보틱스 상한가, 빅웨이브로보틱스 +20.28%, 로보티즈 +5.35%(246,000). 휴림로봇은 삼성전기 자동화 장비용 로봇 공급 본계약 보도. <i>반대</i>: 20일 −8%대 급락 다음 날 하루 반등, 시사저널e는 휴림로봇 계약금액 미공개·DART 공시 없음이라고 기재, 레인보우로보틱스 −1.47%로 대형은 하락, 업종 수급 미확인.</td></tr>
+      <tr><td>화장품</td><td>판단 보류 → <b>상향 보류(2일차)</b></td><td>12:20 기준 코스피 유일 상승 업종(+0.93%), 에이피알 +8.70%(12:20), 코스메카코리아 +8.02%(113,200), 뷰티스킨 +6.52%, 삐아 +4.61%. 한중 FTA 기대 연장(해석). <i>반대</i>: 마감 기준 업종 등락·수급·거래대금 확인 안 됨, [발언·정치] 성격 재료.</td></tr>
+      <tr><td>반도체 기판·부품</td><td>AVOID → <b>상향 보류(1일차)</b></td><td>삼성전기 +0.52%(778,000), 심텍 +2.41%(102,100), 이오테크닉스 +0.87%(290,500), SK스퀘어 +0.44% — SOX −10.7%에도 상승. 하나증권 삼성전기 목표가 200만 원 리포트(시사저널e). <i>반대</i>: 20일 −10~15% 급락분의 일부도 못 되돌림, 주성엔지니어링 −2.34%·리노공업 −1.43%로 장비 전체 반등은 아님.</td></tr>
+      <tr><td>반도체 대형</td><td>WEAKENING 유지</td><td>삼성전자 −3.06%(177,500), SK하이닉스 −2.52%(1,085,000). 12:20 업종 거래대금 비중 49.5%로 쏠림. 외국인 매도의 중심. <i>반대</i>: SOX·하이닉스 ADR 대비 낙폭이 작음(상대적 선방).</td></tr>
+      <tr><td>바이오 대형</td><td><b>WEAKENING</b><br><span class="small">어제 상향 보류 2일차 → 무효</span></td><td>삼성바이오로직스 −4.94%(1,288,000), 셀트리온 −5.16%(202,000), 알테오젠 −3.38%(168,500). 지수보다 더 빠져 상대강도 종료. <i>반대</i>: 큐로셀 상한가(급여 적용)처럼 개별 호재는 작동, HLB −1.11%로 선방.</td></tr>
+      <tr><td>금융(은행·보험)</td><td>AVOID</td><td>KB금융 −5.71%, 삼성생명 −5.86%, 신한지주 −4.52%, 보험 −5.12%, 삼성증권 −2.31%(개인정보 유출 여파). <i>반대</i>: 금리 인상 전망은 은행에 중장기 우호적, 개별 악재 외엔 시장 매도 영향(해석).</td></tr>
+      <tr><td>IT서비스·건설</td><td>AVOID</td><td>IT서비스 −8.48%, 건설 −6.91%로 마감 하위 1·2위. <i>반대</i>: 구체 악재·대표 종목 확인 안 됨.</td></tr>
+      <tr><td>2차전지</td><td>WEAKENING 유지</td><td>LG에너지솔루션 −2.67%(291,500), 에코프로 −3.07%(63,200), 에코프로비엠 −3.99%(79,400). <i>반대</i>: 지수 대비 낙폭은 비슷하거나 작음, 업종 재료 없음.</td></tr>
+    </table>
+    <p class="small"><b>오늘도 LEADER·EMERGING 없음.</b> 상승은 계약·급여 등 개별 재료와 로봇·화장품 테마에 국한. 규칙상 하루 반등은 '상향 보류(1일차)'.</p>
+    <p class="small"><b>거래대금 상위 <span class="tag">KRX 정규장</span></b>: 오늘 기사에서 거래대금 상위 10종목과 금액을 찾지 못함 — <b>확인 필요</b>(상위 2종목 쏠림 비율 계산 불가). 확인된 것은 12:20 기준 반도체·장비 업종 6조1,009억 원(전체의 49.5%)과 휴림로봇 554억 원(중기이코노미). 해설: 매매는 여전히 삼성전자·SK하이닉스 중심(하락), 상승 종목은 로봇·화장품 중소형 테마로 흩어져 업종 단위 자금 유입은 보이지 않음(해석).</p>
+  </section>
+
+  <h2 class="deep-title">[ 11월 23일 (월) 시장 주도 종목 – to the DEEP ]</h2>
+
+  <section class="theme">
+    <h3>&lt; 로봇 &gt; <small>급락장 속 유일한 테마 강세</small></h3>
+    <div class="body">
+      <div class="stk"><span class="lead">상한가</span>휴림로봇 <span class="up">(+30.00%)</span> <span class="n">· 5,720 · 코스닥 · 거래대금 554억(12:20)</span> <span class="tag">테마</span></div>
+      <div class="stk"><span class="lead">상한가</span>코스모로보틱스 <span class="up">(+29.97%)</span> <span class="n">· 4,640</span> <span class="tag">테마</span> / 벡트로보틱스 <span class="up">(+29.78%)</span> <span class="n">· 2,070</span> <span class="tag">테마</span> / 휴림에이텍 <span class="up">(+29.81%)</span> <span class="n">· 2,765 · 휴림로봇 최대주주 연동</span> <span class="tag">테마</span></div>
+      <div class="stk">빅웨이브로보틱스 <span class="up">(+20.28%)</span> <span class="n">· 21,650</span> / 아이로보틱스 <span class="up">(+9.31%)</span> <span class="n">· 1,585</span> / 로보티즈 <span class="up">(+5.35%)</span> <span class="n">· 246,000</span></div>
+      <ul class="news">
+        <li>[급등락주 짚어보기] 금양그린파워 '上'…휴림로봇·큐로셀도 급등 — 이투데이 17:06</li>
+        <li>[오전시황] 코스피 이틀 연속 매도 사이드카, 상한가는 코스닥 4종목 — 중기이코노미 13:46</li>
+      </ul>
+      <div class="bg">휴림로봇: 한화로보틱스·울트라이노베이션과 함께 삼성전기 EFEM 자동화 장비용 로봇 공급 본계약 체결 보도(투데이신문·중기이코노미). 시사저널e는 계약금액 미공개·DART 공시 없음이라고 기재 → 재료 신뢰도 '중간'으로 보고 [테마]로 분류. 코스모로보틱스: CES 2027을 앞둔 휴머노이드·피지컬 AI 기대(이투데이). 20일 로보티즈 −8.07%·기계장비 업종 최하위였던 업종의 하루 반등.</div>
+      <div class="memo">관찰 메모: 대장 판단 <b>보류</b> — 휴림로봇은 거래대금이 가장 크지만 공시 미확인, 대형 레인보우로보틱스는 −1.47%. 24일에도 로보티즈·빅웨이브로보틱스 등 후속주가 오르고 시장이 안정되면 'ROTATION' 검토. 상한가 다음 날 추격은 금지.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 공시·실적 개별 상한가 &gt; <small>시장과 무관한 개별 재료</small></h3>
+    <div class="body">
+      <div class="stk"><span class="lead">상한가</span>금양그린파워 <span class="up">(+30.00%)</span> <span class="n">· 9,620 · 코스닥</span> <span class="tag">공시·실적</span></div>
+      <div class="stk"><span class="lead">상한가</span>큐로셀 <span class="up">(+29.95%)</span> <span class="n">· 27,550 · 코스닥</span> <span class="tag">공시·실적</span></div>
+      <div class="stk"><span class="lead">상한가</span>애드바이오텍 <span class="up">(+29.81%)</span> <span class="n">· 627 · 코스닥</span> <span class="tag">공시·실적</span></div>
+      <div class="bg">금양그린파워: 메가데이타코리아와 2,300억 원 규모 원주 AI 데이터센터 전기·통신 공사 계약(최근 매출의 86.87%). 큐로셀: CAR-T 치료제 '림카토' 12월 1일부터 건강보험 급여 적용. 애드바이오텍: 드림인사이트 지분 80억 원 인수 결정(이상 이투데이).</div>
+      <div class="memo">관찰 메모: 재료는 확인되지만 매매 게이트 STOP + 상한가 다음 날 변동성이 커 손절선을 잡기 어려움 → 관찰만.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 화장품 · 반도체 부품 &gt; <small>상대강도(덜 빠지거나 오른 업종)</small></h3>
+    <div class="body">
+      <div class="stk">에이피알 <span class="up">(+8.70%, 12:20)</span> <span class="n">· 256,000(12:20) · 마감가 확인 필요</span> / 코스메카코리아 <span class="up">(+8.02%)</span> <span class="n">· 113,200</span> / 뷰티스킨 <span class="up">(+6.52%)</span> / 삐아 <span class="up">(+4.61%)</span> <span class="n">· 8,170</span></div>
+      <div class="stk">삼성전기 009150 <span class="up">(+0.52%)</span> <span class="n">· 778,000</span> / 심텍 <span class="up">(+2.41%)</span> <span class="n">· 102,100</span> / 이오테크닉스 <span class="up">(+0.87%)</span> <span class="n">· 290,500</span> / SK스퀘어 <span class="up">(+0.44%)</span> <span class="n">· 680,000</span></div>
+      <div class="bg">삼성전기: 하나증권 목표가 200만 원 리포트, 휴림로봇 로봇 공급 계약 상대방으로도 거론(해석: 설비투자 기대). 20일 −12.54%(774,000) 급락 후 SOX 폭락에도 보합권 — 매도 소진 여부는 하루로 판단 불가.</div>
+      <div class="memo">관찰 메모: 하락장에서 버틴 종목이 시장 반등 때 먼저 오르는지 확인. 업종 수급·고저가가 확인되지 않아 '자금 유입'으로 단정하지 않음.</div>
+    </div>
+  </section>
+
+  <!-- ===== 6. 약세 ===== -->
+  <section class="theme weak">
+    <h3>&lt; 6. 약세업종 · 위험 종목 &gt;</h3>
+    <div class="body">
+      <div class="stk">삼성전자 005930 <span class="down">(−3.06%)</span> <span class="n">· 177,500</span> / SK하이닉스 000660 <span class="down">(−2.52%)</span> <span class="n">· 1,085,000 · 12:20 1,061,000(−4.67%)</span></div>
+      <div class="stk">삼성바이오로직스 <span class="down">(−4.94%)</span> <span class="n">· 1,288,000</span> / 셀트리온 <span class="down">(−5.16%)</span> <span class="n">· 202,000</span> / 알테오젠 <span class="down">(−3.38%)</span> <span class="n">· 168,500</span></div>
+      <div class="stk">KB금융 <span class="down">(−5.71%)</span> <span class="n">· 143,700</span> / 삼성생명 <span class="down">(−5.86%)</span> / 신한지주 <span class="down">(−4.52%)</span> / 현대차 <span class="down">(−2.94%)</span> <span class="n">· 247,500</span></div>
+      <div class="stk">크라우드웍스 <span class="down">(하한가, −30.00%)</span> <span class="n">· 567 · 2일 연속 급락, 불성실공시법인 지정 예고(12/14까지 결정)</span> <span class="tag">공시·실적</span></div>
+      <div class="stk">삼성증권 <span class="down">(−2.31%)</span> <span class="n">· 개인정보 유출 여파(투데이신문)</span> / 한국전력 <span class="down">(−2.74%)</span></div>
+      <div class="memo">위험 메모: 금융주(은행·보험)가 새로 하위권 진입 — 방어주로 여겨지던 업종까지 매도. 반도체 대형은 거래대금의 절반을 차지하며 하락, 지수 방향을 계속 결정.</div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <h3>&lt; 장 마감 후 공시·정책 Check &gt; <small>다음 거래일 반응 볼 항목</small></h3>
+    <div class="body">
+      <div class="sched"><b>24일부터 3개월</b> 상장사 자사주 매수 주문 한도 완화 · 불법 공매도 집중 감시(22일 긴급 시장점검회의, 시사저널e·핀포인트·매일일보). <b>증안펀드</b> 가동 준비 — 규모 10조 원으로 알려짐(중기이코노미), 다른 매체는 '규모 미정' → 실제 집행 전 단계.</div>
+      <div class="sched"><b>확인 필요</b> 오늘 장 마감 후 개별 주요 공시는 인포스탁 마감체크를 열지 못해 정리하지 못함. 24일 아침 리포트에서 보완.</div>
+    </div>
+  </section>
+
+  <!-- ===== 7. 관심종목 ===== -->
+  <section>
+    <h2>7. 다음 날 관심종목</h2>
+    <p class="small" style="margin-top:0">매매 게이트 <b>STOP</b> → S·A등급 없음, 모든 후보는 '관찰만'. <span class="tag">분봉 미확인</span> 지지·저항은 오늘 일봉 가격만 사용. 왕복 비용 0.22% + 슬리피지 별도.</p>
+    <div class="stk"><span class="grade g-b">B</span>삼성전기 009150 · 반도체 기판·부품 · 778,000 (+0.52%) <span class="n">· SOX 폭락에도 상승</span></div>
+    <p class="small">관망. 관찰 조건: 시장 안정(코스피 4,586.80 위 유지) 속 778,000 위 유지 + 외국인 매도 축소. 무효화: 20일 종가 774,000 이탈. 오늘 고가·저가 미확인 + 1주 가격이 커 손절 폭이 거래당 허용 손실을 넘을 가능성 → <b>수량 계산 보류</b>.</p>
+    <div class="stk"><span class="grade g-b">B</span>SK하이닉스 000660 · 1,085,000 (−2.52%) <span class="n">· 대형 반도체, ADR 대비 선방</span></div>
+    <p class="small">관망. 반등 확인 기준: 20일 종가 1,113,000 회복. 1주 가격이 커서 손절 폭이 거래당 허용 손실을 넘음 → <b>수량 0주</b>.</p>
+    <div class="stk"><span class="grade g-b">B</span>로보티즈 · 로봇 · 246,000 (+5.35%) <span class="n">· 상한가 아닌 로봇 후속주</span></div>
+    <p class="small">관망. 관찰 조건: 24일에도 로봇 업종 상승 유지(상향 2일차) 및 246,000 위 안착. 고저가 미확인 → <b>수량 계산 보류</b>.</p>
+    <div class="stk"><span class="grade g-b">B</span>코스메카코리아 · 화장품 · 113,200 (+8.02%)</div>
+    <p class="small">관망. 화장품 업종 3일차 강세 + 수급 확인 시에만 등급 재검토. 고저가 미확인 → <b>수량 계산 보류</b>.</p>
+    <div class="stk"><span class="grade g-x">EXCLUDE</span>휴림로봇 · 휴림에이텍 · 코스모로보틱스 · 벡트로보틱스 · 금양그린파워 · 큐로셀 · 애드바이오텍 · 크라우드웍스 · 금융주(KB금융·삼성생명·삼성증권) · IT서비스·건설</div>
+    <p class="small">상한가 7종목: 게이트 STOP + 상한가 다음 날 추격 금지(휴림로봇은 공시 미확인). 크라우드웍스: 2일 연속 하한가권·불성실공시. 금융·IT서비스·건설: 오늘 업종 하위권 신규 진입.</p>
+  </section>
+
+  <!-- ===== 8. 위험 · 시나리오 ===== -->
+  <section>
+    <h2>8. 위험관리 및 시나리오 (24일 화요일)</h2>
+    <p class="small" style="margin-top:0"><b>기본: 매매 STOP · 미수 NO · 투입 기준 한도의 0%</b>. 이유: 장세 급락·고위험(2거래일 −8.4%, 사이드카 2일 연속), VKOSPI 55.82 패닉권, 외국인 7일 연속 매도, 시장 폭 1:11.6, 후보 종목 손절선 미확인. 외국인 매도 축소·기관 매수는 긍정 신호지만 하루치.</p>
+    <div class="sc"><b class="t">🟢 Bull — 기술적 반등</b>조건: 23일(현지) 미국 반등(나스닥·SOX) + 24일 외국인 매도 축소 지속 또는 순매수 + 코스피 오늘 고가 4,759.88 회복 + 원/달러 1,345 아래 + 자사주 매수 완화(24일 시행) 효과. 유리: 반도체 부품(삼성전기), 대형 반도체, 로봇 후속주. 판정: <b>STOP 유지(관찰)</b> — 같은 조건이 25일(수)에도 이어지면 LIMITED(투입 50%, 거래당 허용 손실 절반) 검토. 미수 NO. 무효화: 오늘 종가 4,708.54 이탈.</div>
+    <div class="sc"><b class="t">🟡 Base — 바닥 다지기</b>조건: 코스피 4,586.80~4,759.88 안에서 등락, 외국인 소폭 매도·기관 매수 유지. 판정: <b>STOP</b>, 현금 100%, 관찰만. 미수 NO.</div>
+    <div class="sc"><b class="t">🔴 Bear — 추가 하락</b>조건: 미국 AI주 추가 급락(엔비디아 악재 확대), 코스피 오늘 저가 4,586.80 이탈, 외국인 매도 다시 1조 원 이상, 원/달러 장중 고점 1,351.6 돌파. 참고: 키움증권은 4,200~4,300(PBR 0.8배) 가능성 제시. 판정: <b>STOP</b>, 현금 100%. 미수 NO. 저점 매수 시도 금지.</div>
+    <p class="small">공통 매매 중단 조건: 연속 손절 2회, 일일 누적 손실 한도 도달, 손절가 불명확. 상한가·테마 추격 금지. 확률은 부여하지 않음.</p>
+  </section>
+
+  <!-- ===== 9. 일정 ===== -->
+  <section>
+    <h2>9. 주요 일정 (KST)</h2>
+    <ul>
+      <li><b>23일(월) 밤</b> 미국장 — 엔비디아 악재 후속·AI주 흐름. 이날 미국 지표 일정은 확인 필요</li>
+      <li><b>24일(화)</b> 상장사 자사주 매수 주문 한도 완화 시행(3개월) · 엠비디 코스닥 상장(공모가 7,000원) <span class="tag">신규상장</span></li>
+      <li><b>25일(수) 22:30</b> 미국 3분기 GDP 잠정치 · 10월 PCE 물가 <span class="tag">11/20 리포트 확인값</span></li>
+      <li><b>26일(목)</b> 한국은행 금통위 기준금리 결정(3.00 → 3.25% 인상 전망 우세, 시사저널e · 발표 시각 확인 필요) · 미국 추수감사절 휴장</li>
+      <li><b>27일(금)</b> 미국 조기 마감(현지 13:00 = 28일 03:00 KST)</li>
+      <li><b>30일(월)</b> 삼성바이오로직스 유상증자 신주 상장 예정</li>
+      <li><b>12월 1일</b> 큐로셀 림카토 건강보험 급여 적용 · <b>12월 14일</b>까지 크라우드웍스 불성실공시법인 지정 여부 결정</li>
+    </ul>
+    <p class="small">차트 신호는 20:20 이후 <a href="../signals.html">장마감 신호</a> 페이지에서 확인(이 리포트에는 미반영. 조건 충족 사실일 뿐 매수 신호 아님).</p>
+  </section>
+
+  <!-- ===== 10. 출처 ===== -->
+  <section class="src">
+    <h2>10. 출처 및 데이터 검증</h2>
+    <ul>
+      <li><b>검증 결과</b>: 국내 지수·원/달러·상해·대만 bar_date=11/23 ✔ · 미국 bar_date=11/20 ✔ · 닛케이 11/20(23일 일본 휴장, 중기이코노미) ✔ · 지수 시가·고가·저가·종가 자동 수집과 기사 일치 ✔(EBN만 소수점 차이) · 지수 거래대금 수집 실패, 기사에서도 확정값 없음(확인 필요) · <b>인포스탁 [1123마감체크] 미사용</b>(목록 페이지 접근 실패) → 언론 마감 기사로 대체 · 투자자 수급 매체 간 차이(3절) · VKOSPI 단일 출처 · VIX·국고채·미국 10년물·지수선물·미결제약정·프로그램 마감값·거래대금 상위·코스닥 등락 종목 수 확인 못 함 · 대만 +2.16% 기사 미확인.</li>
+      <li>마감 시황: 시사저널e 16:46 · 핀포인트뉴스 16:07 · 경제타임스 16:20 · 투데이신문 16:21 · 매일일보 16:10 · EBN 15:37 · 중기이코노미 13:46(12:20 장중 기준)</li>
+      <li>종목: 이투데이 [급등락주 짚어보기] 17:06</li>
+      <li>해외: 머니투데이(11/21) · 이투데이(11/21) · 파이낸셜뉴스(11/22)</li>
+      <li>일정: 11/20 리포트(장전 캘린더·WALLMANAC) · 시사저널e(금통위 전망) · 이투데이(큐로셀·크라우드웍스)</li>
+      <li>KRX 확정 거래대금(11/16~11/20): data/krx/ 자동 수집</li>
+    </ul>
+  </section>
+
+  <footer><a href="../index.html" style="color:inherit">최신 리포트</a> · <a href="../archive.html" style="color:inherit">지난 리포트 목록</a> · theme-report · 투자 판단과 책임은 본인에게 있습니다</footer>
+</main>
+</body>
+</html>
