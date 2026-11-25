@@ -1,5 +1,5 @@
 {
-  "generated_at_kst": "2026-11-25 17:17",
+  "generated_at_kst": "2026-11-25 17:30",
   "source": "FinanceDataReader (국내 지수: 네이버 일봉 우선)",
   "note": "bar_date가 기대 날짜와 다르면 오래된 숫자다. change_pct는 직전 봉 종가 대비.",
   "items": [
@@ -139,15 +139,15 @@
       "name": "대만 가권",
       "group": "asia",
       "symbol": "^TWII",
-      "bar_date": "2026-11-24",
-      "close": 40122.3515625,
-      "prev_close": 36811.890625,
-      "prev_bar_date": "2026-11-23",
-      "change": 3310.4609,
-      "change_pct": 8.99,
-      "open": 39148.91015625,
-      "high": 40180.37890625,
-      "low": 39148.91015625
+      "bar_date": "2026-11-25",
+      "close": 38195.4296875,
+      "prev_close": 40122.3515625,
+      "prev_bar_date": "2026-11-24",
+      "change": -1926.9219,
+      "change_pct": -4.8,
+      "open": 39983.91015625,
+      "high": 39983.91015625,
+      "low": 36681.8984375
     }
   ],
   "errors": []
