@@ -1,0 +1,7403 @@
+{
+ "date": "2026-11-28",
+ "generated_at_kst": "2026-11-28 05:02",
+ "rules": {
+  "price_basis": "신호·표시 가격은 통합(KRX+NXT) 일봉 기준, NXT 마감(20:00) 후 계산. 후보 선정(movers·top_value_50)은 실행 시점 전 종목 시세(FinanceDataReader) 기준 — 20시 이후엔 NXT 가격이 반영되며, 거래대금에 NXT 포함 여부는 확인 필요",
+  "movers": "등락률 ±10.0% 이상",
+  "top_value": "거래대금 상위 50",
+  "box_breakout": "직전 60일 (고가최고-저가최저)/저가최저 ≤ 25% + 종가 > 직전 60일 최고가 + 거래량 ≥ 직전 20일 평균×2",
+  "golden_cross": "전일 MA5 ≤ MA20 → 당일 MA5 > MA20, 당일 저가 ≥ 당일 MA20",
+  "bollinger_break": "20일·2σ(모표준편차). 전일 종가 밴드 안 → 당일 종가 > 상단",
+  "long_resistance": "당일 고가 ≥ 직전 250일 최고가×0.97. 종가 ≥ 최고가 '돌파', 아니면 '시도'",
+  "limit_up": "일간 상승률 ≥ 29.5% 를 상한가로 판정, 직전 20거래일 상한가 횟수"
+ },
+ "sources": {
+  "market_today": "FinanceDataReader",
+  "investors": "pykrx",
+  "daily": {}
+ },
+ "movers": [
+  {
+   "code": "115180",
+   "name": "큐리언트",
+   "market": "KOSDAQ",
+   "close": 15730,
+   "rate": 30.0,
+   "value": 7547651440
+  },
+  {
+   "code": "439960",
+   "name": "코스모로보틱스",
+   "market": "KOSDAQ",
+   "close": 5720,
+   "rate": 30.0,
+   "value": 35136590874
+  },
+  {
+   "code": "381620",
+   "name": "제닉스로보틱스",
+   "market": "KOSDAQ",
+   "close": 8020,
+   "rate": 29.98,
+   "value": 17709431705
+  },
+  {
+   "code": "138360",
+   "name": "앤로보틱스",
+   "market": "KOSDAQ",
+   "close": 1483,
+   "rate": 29.97,
+   "value": 26846834502
+  },
+  {
+   "code": "224060",
+   "name": "더코디",
+   "market": "KOSDAQ",
+   "close": 1431,
+   "rate": 29.97,
+   "value": 377982160
+  },
+  {
+   "code": "088280",
+   "name": "쏘닉스",
+   "market": "KOSDAQ",
+   "close": 3645,
+   "rate": 29.95,
+   "value": 1407864029
+  },
+  {
+   "code": "078590",
+   "name": "휴림에이텍",
+   "market": "KOSDAQ",
+   "close": 4405,
+   "rate": 29.94,
+   "value": 23525900374
+  },
+  {
+   "code": "317830",
+   "name": "에스피시스템스",
+   "market": "KOSDAQ",
+   "close": 4580,
+   "rate": 29.93,
+   "value": 2813287240
+  },
+  {
+   "code": "355390",
+   "name": "크라우드웍스",
+   "market": "KOSDAQ",
+   "close": 760,
+   "rate": 29.91,
+   "value": 7282258599
+  },
+  {
+   "code": "129920",
+   "name": "대성하이텍",
+   "market": "KOSDAQ",
+   "close": 7950,
+   "rate": 29.9,
+   "value": 18777785905
+  },
+  {
+   "code": "466100",
+   "name": "클로봇",
+   "market": "KOSDAQ",
+   "close": 23650,
+   "rate": 29.87,
+   "value": 67929686440
+  },
+  {
+   "code": "070300",
+   "name": "퀀텀레일",
+   "market": "KOSDAQ",
+   "close": 235,
+   "rate": 29.83,
+   "value": 1252503618
+  },
+  {
+   "code": "348370",
+   "name": "엔켐",
+   "market": "KOSDAQ",
+   "close": 10630,
+   "rate": 26.85,
+   "value": 10663450040
+  },
+  {
+   "code": "012160",
+   "name": "영흥",
+   "market": "KOSPI",
+   "close": 1920,
+   "rate": 26.65,
+   "value": 950470452
+  },
+  {
+   "code": "298380",
+   "name": "에이비엘바이오",
+   "market": "KOSDAQ",
+   "close": 46750,
+   "rate": 26.52,
+   "value": 63277465900
+  },
+  {
+   "code": "009470",
+   "name": "삼화전기",
+   "market": "KOSPI",
+   "close": 28800,
+   "rate": 25.76,
+   "value": 7985376075
+  },
+  {
+   "code": "340450",
+   "name": "지씨지놈",
+   "market": "KOSDAQ",
+   "close": 10140,
+   "rate": 25.5,
+   "value": 20541563365
+  },
+  {
+   "code": "0147B0",
+   "name": "래블업",
+   "market": "KOSDAQ",
+   "close": 12350,
+   "rate": 24.75,
+   "value": 10861750240
+  },
+  {
+   "code": "174900",
+   "name": "앱클론",
+   "market": "KOSDAQ",
+   "close": 24850,
+   "rate": 24.25,
+   "value": 10738769400
+  },
+  {
+   "code": "208640",
+   "name": "썸에이지",
+   "market": "KOSDAQ",
+   "close": 1970,
+   "rate": 23.9,
+   "value": 1376200672
+  },
+  {
+   "code": "471800",
+   "name": "에이엘로봇",
+   "market": "KOSDAQ",
+   "close": 11330,
+   "rate": 23.69,
+   "value": 94122739790
+  },
+  {
+   "code": "032500",
+   "name": "케이엠더블유",
+   "market": "KOSDAQ",
+   "close": 25850,
+   "rate": 22.51,
+   "value": 27040793550
+  },
+  {
+   "code": "487400",
+   "name": "케이앤에스아이앤씨",
+   "market": "KOSDAQ",
+   "close": 3615,
+   "rate": 22.34,
+   "value": 749712628
+  },
+  {
+   "code": "419530",
+   "name": "SAMG엔터",
+   "market": "KOSDAQ",
+   "close": 15200,
+   "rate": 22.09,
+   "value": 5472329255
+  },
+  {
+   "code": "158430",
+   "name": "아톤",
+   "market": "KOSDAQ",
+   "close": 5210,
+   "rate": 21.87,
+   "value": 27657432174
+  },
+  {
+   "code": "0082N0",
+   "name": "카나프테라퓨틱스",
+   "market": "KOSDAQ",
+   "close": 9150,
+   "rate": 21.51,
+   "value": 1667491240
+  },
+  {
+   "code": "141080",
+   "name": "리가켐바이오",
+   "market": "KOSDAQ",
+   "close": 68800,
+   "rate": 21.34,
+   "value": 48535176450
+  },
+  {
+   "code": "232680",
+   "name": "라온로보틱스",
+   "market": "KOSDAQ",
+   "close": 15230,
+   "rate": 21.26,
+   "value": 69131522630
+  },
+  {
+   "code": "178320",
+   "name": "서진시스템",
+   "market": "KOSDAQ",
+   "close": 33600,
+   "rate": 21.08,
+   "value": 49075412275
+  },
+  {
+   "code": "389030",
+   "name": "지니너스",
+   "market": "KOSDAQ",
+   "close": 1403,
+   "rate": 21.05,
+   "value": 1060532695
+  },
+  {
+   "code": "212710",
+   "name": "아이에스티이",
+   "market": "KOSDAQ",
+   "close": 3720,
+   "rate": 20.98,
+   "value": 417183534
+  },
+  {
+   "code": "026910",
+   "name": "광진실업",
+   "market": "KOSDAQ",
+   "close": 1438,
+   "rate": 20.94,
+   "value": 423431854
+  },
+  {
+   "code": "475830",
+   "name": "오름테라퓨틱",
+   "market": "KOSDAQ",
+   "close": 15780,
+   "rate": 20.92,
+   "value": 5238706285
+  },
+  {
+   "code": "189300",
+   "name": "인텔리안테크",
+   "market": "KOSDAQ",
+   "close": 55600,
+   "rate": 20.61,
+   "value": 9954201375
+  },
+  {
+   "code": "047560",
+   "name": "이스트소프트",
+   "market": "KOSDAQ",
+   "close": 7030,
+   "rate": 20.17,
+   "value": 2367161310
+  },
+  {
+   "code": "042510",
+   "name": "라온시큐어",
+   "market": "KOSDAQ",
+   "close": 18820,
+   "rate": 20.03,
+   "value": 89884972215
+  },
+  {
+   "code": "115610",
+   "name": "이미지스",
+   "market": "KOSDAQ",
+   "close": 982,
+   "rate": 19.9,
+   "value": 94866276
+  },
+  {
+   "code": "281740",
+   "name": "레이크머티리얼즈",
+   "market": "KOSDAQ",
+   "close": 12220,
+   "rate": 19.69,
+   "value": 18563793120
+  },
+  {
+   "code": "0009K0",
+   "name": "에임드바이오",
+   "market": "KOSDAQ",
+   "close": 18870,
+   "rate": 19.66,
+   "value": 11999094500
+  },
+  {
+   "code": "424960",
+   "name": "스마트레이더시스템",
+   "market": "KOSDAQ",
+   "close": 2375,
+   "rate": 18.75,
+   "value": 1181110074
+  },
+  {
+   "code": "226590",
+   "name": "엠디바이스",
+   "market": "KOSDAQ",
+   "close": 8290,
+   "rate": 18.6,
+   "value": 604622975
+  },
+  {
+   "code": "493410",
+   "name": "넥스아이",
+   "market": "KOSDAQ",
+   "close": 3925,
+   "rate": 18.58,
+   "value": 10944745937
+  },
+  {
+   "code": "331920",
+   "name": "셀레믹스",
+   "market": "KOSDAQ",
+   "close": 5600,
+   "rate": 18.02,
+   "value": 657686340
+  },
+  {
+   "code": "338840",
+   "name": "와이바이오로직스",
+   "market": "KOSDAQ",
+   "close": 9060,
+   "rate": 17.97,
+   "value": 1047513965
+  },
+  {
+   "code": "226950",
+   "name": "올릭스",
+   "market": "KOSDAQ",
+   "close": 107900,
+   "rate": 17.79,
+   "value": 73527484900
+  },
+  {
+   "code": "061970",
+   "name": "LB세미콘",
+   "market": "KOSDAQ",
+   "close": 1835,
+   "rate": 17.55,
+   "value": 5125209181
+  },
+  {
+   "code": "191410",
+   "name": "육일씨엔에쓰",
+   "market": "KOSDAQ",
+   "close": 2885,
+   "rate": 17.52,
+   "value": 1295962389
+  },
+  {
+   "code": "124500",
+   "name": "아이티센글로벌",
+   "market": "KOSDAQ",
+   "close": 20600,
+   "rate": 17.45,
+   "value": 5465674270
+  },
+  {
+   "code": "323280",
+   "name": "태성",
+   "market": "KOSDAQ",
+   "close": 51600,
+   "rate": 17.27,
+   "value": 24662517800
+  },
+  {
+   "code": "076610",
+   "name": "해성옵틱스",
+   "market": "KOSDAQ",
+   "close": 810,
+   "rate": 17.22,
+   "value": 804796457
+  },
+  {
+   "code": "230240",
+   "name": "에치에프알",
+   "market": "KOSDAQ",
+   "close": 10770,
+   "rate": 17.19,
+   "value": 3747143755
+  },
+  {
+   "code": "006110",
+   "name": "삼아알미늄",
+   "market": "KOSPI",
+   "close": 43100,
+   "rate": 17.12,
+   "value": 18371876675
+  },
+  {
+   "code": "319400",
+   "name": "현대무벡스",
+   "market": "KOSDAQ",
+   "close": 19460,
+   "rate": 17.09,
+   "value": 65282680160
+  },
+  {
+   "code": "170920",
+   "name": "엘티씨",
+   "market": "KOSDAQ",
+   "close": 32150,
+   "rate": 16.91,
+   "value": 11013677425
+  },
+  {
+   "code": "091580",
+   "name": "상신이디피",
+   "market": "KOSDAQ",
+   "close": 19060,
+   "rate": 16.86,
+   "value": 9834933415
+  },
+  {
+   "code": "417030",
+   "name": "니어스랩",
+   "market": "KOSDAQ",
+   "close": 10300,
+   "rate": 16.78,
+   "value": 1586554355
+  },
+  {
+   "code": "001000",
+   "name": "신라섬유",
+   "market": "KOSDAQ",
+   "close": 1903,
+   "rate": 16.75,
+   "value": 100151654
+  },
+  {
+   "code": "222080",
+   "name": "SFA넥셀",
+   "market": "KOSDAQ",
+   "close": 7250,
+   "rate": 16.56,
+   "value": 5554004305
+  },
+  {
+   "code": "386380",
+   "name": "스카이랩스",
+   "market": "KOSDAQ",
+   "close": 7390,
+   "rate": 16.38,
+   "value": 2791319035
+  },
+  {
+   "code": "036810",
+   "name": "에프에스티",
+   "market": "KOSDAQ",
+   "close": 24000,
+   "rate": 16.22,
+   "value": 3203898775
+  },
+  {
+   "code": "087010",
+   "name": "펩트론",
+   "market": "KOSDAQ",
+   "close": 97900,
+   "rate": 16.13,
+   "value": 28038518350
+  },
+  {
+   "code": "138080",
+   "name": "오이솔루션",
+   "market": "KOSDAQ",
+   "close": 24400,
+   "rate": 15.91,
+   "value": 6907833525
+  },
+  {
+   "code": "181710",
+   "name": "NHN",
+   "market": "KOSPI",
+   "close": 60500,
+   "rate": 15.9,
+   "value": 36281556450
+  },
+  {
+   "code": "006800",
+   "name": "미래에셋증권",
+   "market": "KOSPI",
+   "close": 23150,
+   "rate": 15.87,
+   "value": 58306574000
+  },
+  {
+   "code": "348210",
+   "name": "넥스틴",
+   "market": "KOSDAQ",
+   "close": 23750,
+   "rate": 15.85,
+   "value": 1761090375
+  },
+  {
+   "code": "048410",
+   "name": "현대바이오",
+   "market": "KOSDAQ",
+   "close": 7060,
+   "rate": 15.74,
+   "value": 14047713855
+  },
+  {
+   "code": "287840",
+   "name": "인투셀",
+   "market": "KOSDAQ",
+   "close": 13700,
+   "rate": 15.71,
+   "value": 624553030
+  },
+  {
+   "code": "347850",
+   "name": "디앤디파마텍",
+   "market": "KOSDAQ",
+   "close": 42150,
+   "rate": 15.64,
+   "value": 71079939400
+  },
+  {
+   "code": "439270",
+   "name": "크리에이츠",
+   "market": "KOSDAQ",
+   "close": 4920,
+   "rate": 15.63,
+   "value": 656104687
+  },
+  {
+   "code": "092040",
+   "name": "아미코젠",
+   "market": "KOSDAQ",
+   "close": 1052,
+   "rate": 15.6,
+   "value": 1103285211
+  },
+  {
+   "code": "493280",
+   "name": "아이엠바이오로직스",
+   "market": "KOSDAQ",
+   "close": 16120,
+   "rate": 15.56,
+   "value": 4833116300
+  },
+  {
+   "code": "397030",
+   "name": "에이프릴바이오",
+   "market": "KOSDAQ",
+   "close": 15480,
+   "rate": 15.52,
+   "value": 6412109165
+  },
+  {
+   "code": "365270",
+   "name": "큐라클",
+   "market": "KOSDAQ",
+   "close": 7750,
+   "rate": 15.5,
+   "value": 653199080
+  },
+  {
+   "code": "079370",
+   "name": "제우스",
+   "market": "KOSDAQ",
+   "close": 10460,
+   "rate": 15.45,
+   "value": 3806858595
+  },
+  {
+   "code": "127120",
+   "name": "제이에스링크",
+   "market": "KOSDAQ",
+   "close": 17250,
+   "rate": 15.38,
+   "value": 4207125570
+  },
+  {
+   "code": "317690",
+   "name": "퀀타매트릭스",
+   "market": "KOSDAQ",
+   "close": 1718,
+   "rate": 15.38,
+   "value": 210046038
+  },
+  {
+   "code": "003010",
+   "name": "혜인",
+   "market": "KOSPI",
+   "close": 6560,
+   "rate": 15.09,
+   "value": 7271291165
+  },
+  {
+   "code": "051980",
+   "name": "중앙첨단소재",
+   "market": "KOSDAQ",
+   "close": 4555,
+   "rate": 15.03,
+   "value": 630225810
+  },
+  {
+   "code": "050890",
+   "name": "쏠리드",
+   "market": "KOSDAQ",
+   "close": 9340,
+   "rate": 15.02,
+   "value": 22524468240
+  },
+  {
+   "code": "141000",
+   "name": "비아트론",
+   "market": "KOSDAQ",
+   "close": 10430,
+   "rate": 14.99,
+   "value": 4114123465
+  },
+  {
+   "code": "477850",
+   "name": "마키나락스",
+   "market": "KOSDAQ",
+   "close": 12190,
+   "rate": 14.89,
+   "value": 3762250060
+  },
+  {
+   "code": "308430",
+   "name": "셀비온",
+   "market": "KOSDAQ",
+   "close": 14200,
+   "rate": 14.89,
+   "value": 2064238765
+  },
+  {
+   "code": "394420",
+   "name": "리센스메디컬",
+   "market": "KOSDAQ",
+   "close": 4320,
+   "rate": 14.89,
+   "value": 254966485
+  },
+  {
+   "code": "456160",
+   "name": "지투지바이오",
+   "market": "KOSDAQ",
+   "close": 50300,
+   "rate": 14.84,
+   "value": 25822438050
+  },
+  {
+   "code": "097800",
+   "name": "윈팩",
+   "market": "KOSDAQ",
+   "close": 1935,
+   "rate": 14.77,
+   "value": 161389919
+  },
+  {
+   "code": "456070",
+   "name": "이엔셀",
+   "market": "KOSDAQ",
+   "close": 4395,
+   "rate": 14.75,
+   "value": 409339155
+  },
+  {
+   "code": "094170",
+   "name": "동운아나텍",
+   "market": "KOSDAQ",
+   "close": 20850,
+   "rate": 14.75,
+   "value": 3566041680
+  },
+  {
+   "code": "039490",
+   "name": "키움증권",
+   "market": "KOSPI",
+   "close": 234000,
+   "rate": 14.71,
+   "value": 59589875500
+  },
+  {
+   "code": "355150",
+   "name": "코스텍시스",
+   "market": "KOSDAQ",
+   "close": 10480,
+   "rate": 14.66,
+   "value": 820462105
+  },
+  {
+   "code": "000250",
+   "name": "삼천당제약",
+   "market": "KOSDAQ",
+   "close": 190700,
+   "rate": 14.6,
+   "value": 39114221600
+  },
+  {
+   "code": "156100",
+   "name": "엘앤케이바이오",
+   "market": "KOSDAQ",
+   "close": 5380,
+   "rate": 14.59,
+   "value": 3292147165
+  },
+  {
+   "code": "475560",
+   "name": "더본코리아",
+   "market": "KOSPI",
+   "close": 14580,
+   "rate": 14.53,
+   "value": 3750549085
+  },
+  {
+   "code": "099320",
+   "name": "쎄트렉아이",
+   "market": "KOSDAQ",
+   "close": 82800,
+   "rate": 14.52,
+   "value": 12626108500
+  },
+  {
+   "code": "014285",
+   "name": "금강공업우",
+   "market": "KOSPI",
+   "close": 5380,
+   "rate": 14.47,
+   "value": 14494405
+  },
+  {
+   "code": "073490",
+   "name": "LIG아큐버",
+   "market": "KOSDAQ",
+   "close": 45100,
+   "rate": 14.47,
+   "value": 25883940025
+  },
+  {
+   "code": "475960",
+   "name": "토모큐브",
+   "market": "KOSDAQ",
+   "close": 23350,
+   "rate": 14.46,
+   "value": 1357731750
+  },
+  {
+   "code": "084850",
+   "name": "아이티엠반도체",
+   "market": "KOSDAQ",
+   "close": 6360,
+   "rate": 14.39,
+   "value": 2578345970
+  },
+  {
+   "code": "0120G0",
+   "name": "삼양바이오팜",
+   "market": "KOSPI",
+   "close": 46550,
+   "rate": 14.37,
+   "value": 2104366750
+  },
+  {
+   "code": "112290",
+   "name": "와이씨켐",
+   "market": "KOSDAQ",
+   "close": 7780,
+   "rate": 14.24,
+   "value": 719739530
+  },
+  {
+   "code": "082270",
+   "name": "젬백스",
+   "market": "KOSDAQ",
+   "close": 9900,
+   "rate": 14.19,
+   "value": 3065494820
+  },
+  {
+   "code": "024850",
+   "name": "HLB이노베이션",
+   "market": "KOSDAQ",
+   "close": 17780,
+   "rate": 14.12,
+   "value": 6456488400
+  },
+  {
+   "code": "056080",
+   "name": "유진로봇",
+   "market": "KOSDAQ",
+   "close": 10040,
+   "rate": 14.09,
+   "value": 30391969545
+  },
+  {
+   "code": "357880",
+   "name": "SKAI",
+   "market": "KOSDAQ",
+   "close": 1215,
+   "rate": 14.08,
+   "value": 1464023693
+  },
+  {
+   "code": "086520",
+   "name": "에코프로",
+   "market": "KOSDAQ",
+   "close": 73000,
+   "rate": 14.06,
+   "value": 79921987750
+  },
+  {
+   "code": "317400",
+   "name": "자이에스앤디",
+   "market": "KOSPI",
+   "close": 6370,
+   "rate": 13.95,
+   "value": 5722954750
+  },
+  {
+   "code": "445680",
+   "name": "큐리옥스바이오시스템즈",
+   "market": "KOSDAQ",
+   "close": 46200,
+   "rate": 13.93,
+   "value": 9226433450
+  },
+  {
+   "code": "031980",
+   "name": "피에스케이홀딩스",
+   "market": "KOSDAQ",
+   "close": 133500,
+   "rate": 13.91,
+   "value": 22628830200
+  },
+  {
+   "code": "950260",
+   "name": "인제니아테라퓨틱스(Reg.S)",
+   "market": "KOSDAQ",
+   "close": 31250,
+   "rate": 13.84,
+   "value": 28714767425
+  },
+  {
+   "code": "036930",
+   "name": "주성엔지니어링",
+   "market": "KOSDAQ",
+   "close": 156100,
+   "rate": 13.78,
+   "value": 301783655750
+  },
+  {
+   "code": "432470",
+   "name": "케이엔에스",
+   "market": "KOSDAQ",
+   "close": 8210,
+   "rate": 13.71,
+   "value": 609431290
+  },
+  {
+   "code": "001720",
+   "name": "신영증권",
+   "market": "KOSPI",
+   "close": 127800,
+   "rate": 13.7,
+   "value": 1928424350
+  },
+  {
+   "code": "432720",
+   "name": "퀄리타스반도체",
+   "market": "KOSDAQ",
+   "close": 8420,
+   "rate": 13.63,
+   "value": 586878195
+  },
+  {
+   "code": "272210",
+   "name": "한화시스템",
+   "market": "KOSPI",
+   "close": 55700,
+   "rate": 13.56,
+   "value": 45363050350
+  },
+  {
+   "code": "247540",
+   "name": "에코프로비엠",
+   "market": "KOSDAQ",
+   "close": 92100,
+   "rate": 13.56,
+   "value": 47603419550
+  },
+  {
+   "code": "348340",
+   "name": "뉴로메카",
+   "market": "KOSDAQ",
+   "close": 16960,
+   "rate": 13.44,
+   "value": 8510208865
+  },
+  {
+   "code": "052020",
+   "name": "에스티큐브",
+   "market": "KOSDAQ",
+   "close": 6330,
+   "rate": 13.44,
+   "value": 1528559470
+  },
+  {
+   "code": "317330",
+   "name": "덕산테코피아",
+   "market": "KOSDAQ",
+   "close": 8440,
+   "rate": 13.44,
+   "value": 348282865
+  },
+  {
+   "code": "071050",
+   "name": "한국금융지주",
+   "market": "KOSPI",
+   "close": 142900,
+   "rate": 13.41,
+   "value": 31674414200
+  },
+  {
+   "code": "474610",
+   "name": "RF시스템즈",
+   "market": "KOSDAQ",
+   "close": 7030,
+   "rate": 13.39,
+   "value": 487142570
+  },
+  {
+   "code": "354320",
+   "name": "알멕",
+   "market": "KOSDAQ",
+   "close": 38150,
+   "rate": 13.37,
+   "value": 8444265625
+  },
+  {
+   "code": "056190",
+   "name": "SFA",
+   "market": "KOSDAQ",
+   "close": 27200,
+   "rate": 13.33,
+   "value": 4336882650
+  },
+  {
+   "code": "277810",
+   "name": "레인보우로보틱스",
+   "market": "KOSDAQ",
+   "close": 529000,
+   "rate": 13.28,
+   "value": 207108321000
+  },
+  {
+   "code": "004710",
+   "name": "한솔테크닉스",
+   "market": "KOSPI",
+   "close": 5550,
+   "rate": 13.27,
+   "value": 3823646987
+  },
+  {
+   "code": "085660",
+   "name": "차바이오텍",
+   "market": "KOSDAQ",
+   "close": 8290,
+   "rate": 13.25,
+   "value": 4019849335
+  },
+  {
+   "code": "059270",
+   "name": "해성에어로보틱스",
+   "market": "KOSDAQ",
+   "close": 4210,
+   "rate": 13.17,
+   "value": 434619341
+  },
+  {
+   "code": "021050",
+   "name": "서원",
+   "market": "KOSPI",
+   "close": 748,
+   "rate": 13.16,
+   "value": 800910169
+  },
+  {
+   "code": "424980",
+   "name": "마이크로투나노",
+   "market": "KOSDAQ",
+   "close": 6290,
+   "rate": 13.13,
+   "value": 129037530
+  },
+  {
+   "code": "005420",
+   "name": "코스모화학",
+   "market": "KOSPI",
+   "close": 8280,
+   "rate": 13.11,
+   "value": 1032709305
+  },
+  {
+   "code": "137400",
+   "name": "피엔티",
+   "market": "KOSDAQ",
+   "close": 25450,
+   "rate": 13.11,
+   "value": 3482592075
+  },
+  {
+   "code": "153890",
+   "name": "져스텍",
+   "market": "KOSDAQ",
+   "close": 6160,
+   "rate": 13.03,
+   "value": 477421165
+  },
+  {
+   "code": "153460",
+   "name": "네이블",
+   "market": "KOSDAQ",
+   "close": 4690,
+   "rate": 13.01,
+   "value": 36873287
+  },
+  {
+   "code": "354200",
+   "name": "엔젠바이오",
+   "market": "KOSDAQ",
+   "close": 730,
+   "rate": 13.0,
+   "value": 358551923
+  },
+  {
+   "code": "272110",
+   "name": "케이엔제이",
+   "market": "KOSDAQ",
+   "close": 22500,
+   "rate": 12.95,
+   "value": 2031646920
+  },
+  {
+   "code": "476060",
+   "name": "온코닉테라퓨틱스",
+   "market": "KOSDAQ",
+   "close": 12040,
+   "rate": 12.95,
+   "value": 6159294565
+  },
+  {
+   "code": "347860",
+   "name": "알체라",
+   "market": "KOSDAQ",
+   "close": 1129,
+   "rate": 12.9,
+   "value": 243163046
+  },
+  {
+   "code": "299030",
+   "name": "하나기술",
+   "market": "KOSDAQ",
+   "close": 10200,
+   "rate": 12.83,
+   "value": 444908660
+  },
+  {
+   "code": "140670",
+   "name": "알에스오토메이션",
+   "market": "KOSDAQ",
+   "close": 8280,
+   "rate": 12.81,
+   "value": 831573275
+  },
+  {
+   "code": "077970",
+   "name": "STX엔진",
+   "market": "KOSPI",
+   "close": 14400,
+   "rate": 12.76,
+   "value": 2131628020
+  },
+  {
+   "code": "093370",
+   "name": "후성",
+   "market": "KOSPI",
+   "close": 8860,
+   "rate": 12.72,
+   "value": 16419319225
+  },
+  {
+   "code": "388210",
+   "name": "씨엠티엑스",
+   "market": "KOSDAQ",
+   "close": 38100,
+   "rate": 12.72,
+   "value": 3655312450
+  },
+  {
+   "code": "322000",
+   "name": "HD현대에너지솔루션",
+   "market": "KOSPI",
+   "close": 76300,
+   "rate": 12.7,
+   "value": 9412327000
+  },
+  {
+   "code": "007820",
+   "name": "엠엑스로보틱스",
+   "market": "KOSDAQ",
+   "close": 2975,
+   "rate": 12.69,
+   "value": 308126061
+  },
+  {
+   "code": "274090",
+   "name": "켄코아에어로스페이스",
+   "market": "KOSDAQ",
+   "close": 9150,
+   "rate": 12.68,
+   "value": 3404073730
+  },
+  {
+   "code": "389020",
+   "name": "자람테크놀로지",
+   "market": "KOSDAQ",
+   "close": 10070,
+   "rate": 12.64,
+   "value": 631428290
+  },
+  {
+   "code": "053030",
+   "name": "바이넥스",
+   "market": "KOSDAQ",
+   "close": 7780,
+   "rate": 12.59,
+   "value": 4962006285
+  },
+  {
+   "code": "012630",
+   "name": "HDC",
+   "market": "KOSPI",
+   "close": 21250,
+   "rate": 12.55,
+   "value": 1686782265
+  },
+  {
+   "code": "358570",
+   "name": "지아이이노베이션",
+   "market": "KOSDAQ",
+   "close": 9600,
+   "rate": 12.54,
+   "value": 14356926055
+  },
+  {
+   "code": "474650",
+   "name": "링크솔루션",
+   "market": "KOSDAQ",
+   "close": 15450,
+   "rate": 12.53,
+   "value": 496756930
+  },
+  {
+   "code": "491000",
+   "name": "리브스메드",
+   "market": "KOSDAQ",
+   "close": 48650,
+   "rate": 12.49,
+   "value": 24408667050
+  },
+  {
+   "code": "131970",
+   "name": "두산테스나",
+   "market": "KOSDAQ",
+   "close": 64000,
+   "rate": 12.28,
+   "value": 16281438700
+  },
+  {
+   "code": "371950",
+   "name": "풍원정밀",
+   "market": "KOSDAQ",
+   "close": 3120,
+   "rate": 12.23,
+   "value": 188058841
+  },
+  {
+   "code": "071970",
+   "name": "HD현대마린엔진",
+   "market": "KOSPI",
+   "close": 34400,
+   "rate": 12.23,
+   "value": 7082930900
+  },
+  {
+   "code": "484810",
+   "name": "티엑스알로보틱스",
+   "market": "KOSDAQ",
+   "close": 9180,
+   "rate": 12.22,
+   "value": 4041413225
+  },
+  {
+   "code": "033640",
+   "name": "네패스",
+   "market": "KOSDAQ",
+   "close": 17850,
+   "rate": 12.19,
+   "value": 3202903805
+  },
+  {
+   "code": "080220",
+   "name": "제주반도체",
+   "market": "KOSDAQ",
+   "close": 52000,
+   "rate": 12.19,
+   "value": 47534639975
+  },
+  {
+   "code": "365590",
+   "name": "하이딥",
+   "market": "KOSDAQ",
+   "close": 1349,
+   "rate": 12.14,
+   "value": 137364537
+  },
+  {
+   "code": "278280",
+   "name": "천보",
+   "market": "KOSDAQ",
+   "close": 30050,
+   "rate": 12.13,
+   "value": 1121645375
+  },
+  {
+   "code": "102940",
+   "name": "코오롱생명과학",
+   "market": "KOSDAQ",
+   "close": 13320,
+   "rate": 12.12,
+   "value": 1541982405
+  },
+  {
+   "code": "083650",
+   "name": "비에이치아이",
+   "market": "KOSDAQ",
+   "close": 36650,
+   "rate": 12.08,
+   "value": 7991026975
+  },
+  {
+   "code": "336260",
+   "name": "두산퓨얼셀",
+   "market": "KOSPI",
+   "close": 25100,
+   "rate": 12.05,
+   "value": 12210207550
+  },
+  {
+   "code": "307180",
+   "name": "아이엘",
+   "market": "KOSDAQ",
+   "close": 4280,
+   "rate": 12.04,
+   "value": 4124472874
+  },
+  {
+   "code": "220100",
+   "name": "퓨쳐켐",
+   "market": "KOSDAQ",
+   "close": 6340,
+   "rate": 12.01,
+   "value": 779549765
+  },
+  {
+   "code": "066970",
+   "name": "엘앤에프",
+   "market": "KOSPI",
+   "close": 73700,
+   "rate": 12.01,
+   "value": 24859850950
+  },
+  {
+   "code": "318060",
+   "name": "그래피",
+   "market": "KOSDAQ",
+   "close": 9840,
+   "rate": 11.95,
+   "value": 597647025
+  },
+  {
+   "code": "396270",
+   "name": "넥스트칩",
+   "market": "KOSDAQ",
+   "close": 1406,
+   "rate": 11.94,
+   "value": 214042858
+  },
+  {
+   "code": "033240",
+   "name": "자화전자",
+   "market": "KOSPI",
+   "close": 14440,
+   "rate": 11.94,
+   "value": 1728120395
+  },
+  {
+   "code": "243840",
+   "name": "신흥에스이씨",
+   "market": "KOSDAQ",
+   "close": 3990,
+   "rate": 11.92,
+   "value": 1317880327
+  },
+  {
+   "code": "054210",
+   "name": "이랜텍",
+   "market": "KOSDAQ",
+   "close": 5070,
+   "rate": 11.92,
+   "value": 501320104
+  },
+  {
+   "code": "0053F0",
+   "name": "티앤이코리아",
+   "market": "KOSDAQ",
+   "close": 12980,
+   "rate": 11.9,
+   "value": 5800647955
+  },
+  {
+   "code": "042000",
+   "name": "카페24",
+   "market": "KOSDAQ",
+   "close": 14310,
+   "rate": 11.88,
+   "value": 2738235055
+  },
+  {
+   "code": "056730",
+   "name": "CNT85",
+   "market": "KOSDAQ",
+   "close": 528,
+   "rate": 11.86,
+   "value": 59799760
+  },
+  {
+   "code": "160980",
+   "name": "싸이맥스",
+   "market": "KOSDAQ",
+   "close": 18090,
+   "rate": 11.8,
+   "value": 1659800310
+  },
+  {
+   "code": "065350",
+   "name": "신성델타테크",
+   "market": "KOSDAQ",
+   "close": 32700,
+   "rate": 11.79,
+   "value": 5178307525
+  },
+  {
+   "code": "077500",
+   "name": "유니퀘스트",
+   "market": "KOSPI",
+   "close": 10450,
+   "rate": 11.76,
+   "value": 4209915530
+  },
+  {
+   "code": "006805",
+   "name": "미래에셋증권우",
+   "market": "KOSPI",
+   "close": 8460,
+   "rate": 11.76,
+   "value": 352633480
+  },
+  {
+   "code": "00680K",
+   "name": "미래에셋증권2우B",
+   "market": "KOSPI",
+   "close": 8100,
+   "rate": 11.72,
+   "value": 2776053165
+  },
+  {
+   "code": "058470",
+   "name": "리노공업",
+   "market": "KOSDAQ",
+   "close": 52200,
+   "rate": 11.66,
+   "value": 35785067450
+  },
+  {
+   "code": "450080",
+   "name": "에코프로머티",
+   "market": "KOSPI",
+   "close": 27900,
+   "rate": 11.6,
+   "value": 10264411475
+  },
+  {
+   "code": "045520",
+   "name": "크린앤사이언스",
+   "market": "KOSDAQ",
+   "close": 1685,
+   "rate": 11.59,
+   "value": 24526249
+  },
+  {
+   "code": "0004V0",
+   "name": "엔비알모션",
+   "market": "KOSDAQ",
+   "close": 4295,
+   "rate": 11.56,
+   "value": 2549175800
+  },
+  {
+   "code": "360070",
+   "name": "탑머티리얼",
+   "market": "KOSDAQ",
+   "close": 7160,
+   "rate": 11.53,
+   "value": 168668700
+  },
+  {
+   "code": "002020",
+   "name": "코오롱",
+   "market": "KOSPI",
+   "close": 20500,
+   "rate": 11.53,
+   "value": 666372665
+  },
+  {
+   "code": "107600",
+   "name": "새빗켐",
+   "market": "KOSDAQ",
+   "close": 9390,
+   "rate": 11.52,
+   "value": 157356020
+  },
+  {
+   "code": "011500",
+   "name": "한농화성",
+   "market": "KOSPI",
+   "close": 11720,
+   "rate": 11.51,
+   "value": 1235178750
+  },
+  {
+   "code": "382150",
+   "name": "온코크로스",
+   "market": "KOSDAQ",
+   "close": 3060,
+   "rate": 11.48,
+   "value": 127354095
+  },
+  {
+   "code": "388790",
+   "name": "라이콤",
+   "market": "KOSDAQ",
+   "close": 3205,
+   "rate": 11.48,
+   "value": 801168195
+  },
+  {
+   "code": "055490",
+   "name": "테이팩스",
+   "market": "KOSPI",
+   "close": 17680,
+   "rate": 11.48,
+   "value": 658381085
+  },
+  {
+   "code": "321260",
+   "name": "프로이천",
+   "market": "KOSDAQ",
+   "close": 1152,
+   "rate": 11.41,
+   "value": 295333177
+  },
+  {
+   "code": "023590",
+   "name": "다우기술",
+   "market": "KOSPI",
+   "close": 33200,
+   "rate": 11.41,
+   "value": 1729117275
+  },
+  {
+   "code": "115440",
+   "name": "우리넷",
+   "market": "KOSDAQ",
+   "close": 7550,
+   "rate": 11.36,
+   "value": 1450112715
+  },
+  {
+   "code": "064760",
+   "name": "티씨케이",
+   "market": "KOSDAQ",
+   "close": 175800,
+   "rate": 11.34,
+   "value": 9957974550
+  },
+  {
+   "code": "272290",
+   "name": "이녹스첨단소재",
+   "market": "KOSDAQ",
+   "close": 15420,
+   "rate": 11.34,
+   "value": 1700876835
+  },
+  {
+   "code": "486990",
+   "name": "노타",
+   "market": "KOSDAQ",
+   "close": 12890,
+   "rate": 11.31,
+   "value": 2349164700
+  },
+  {
+   "code": "314130",
+   "name": "지놈앤컴퍼니",
+   "market": "KOSDAQ",
+   "close": 2560,
+   "rate": 11.3,
+   "value": 1150617616
+  },
+  {
+   "code": "059120",
+   "name": "아진엑스텍",
+   "market": "KOSDAQ",
+   "close": 6800,
+   "rate": 11.29,
+   "value": 2995957750
+  },
+  {
+   "code": "140860",
+   "name": "파크시스템스",
+   "market": "KOSDAQ",
+   "close": 201000,
+   "rate": 11.17,
+   "value": 4570123200
+  },
+  {
+   "code": "217590",
+   "name": "티엠씨",
+   "market": "KOSPI",
+   "close": 8110,
+   "rate": 11.1,
+   "value": 2192625460
+  },
+  {
+   "code": "237690",
+   "name": "에스티팜",
+   "market": "KOSDAQ",
+   "close": 87400,
+   "rate": 11.05,
+   "value": 20965940100
+  },
+  {
+   "code": "067310",
+   "name": "하나마이크론",
+   "market": "KOSDAQ",
+   "close": 22650,
+   "rate": 11.03,
+   "value": 25029995600
+  },
+  {
+   "code": "101490",
+   "name": "에스앤에스텍",
+   "market": "KOSDAQ",
+   "close": 34900,
+   "rate": 10.97,
+   "value": 5113553025
+  },
+  {
+   "code": "025620",
+   "name": "차AI헬스케어",
+   "market": "KOSPI",
+   "close": 5380,
+   "rate": 10.93,
+   "value": 48609580
+  },
+  {
+   "code": "126700",
+   "name": "하이비젼시스템",
+   "market": "KOSDAQ",
+   "close": 7830,
+   "rate": 10.91,
+   "value": 332765260
+  },
+  {
+   "code": "092070",
+   "name": "디엔에프",
+   "market": "KOSDAQ",
+   "close": 10580,
+   "rate": 10.9,
+   "value": 471985335
+  },
+  {
+   "code": "166480",
+   "name": "코아스템켐온",
+   "market": "KOSDAQ",
+   "close": 1395,
+   "rate": 10.89,
+   "value": 229007964
+  },
+  {
+   "code": "490470",
+   "name": "세미파이브",
+   "market": "KOSDAQ",
+   "close": 11760,
+   "rate": 10.84,
+   "value": 4405946060
+  },
+  {
+   "code": "004800",
+   "name": "효성",
+   "market": "KOSPI",
+   "close": 123800,
+   "rate": 10.83,
+   "value": 2097437250
+  },
+  {
+   "code": "092190",
+   "name": "서울바이오시스",
+   "market": "KOSDAQ",
+   "close": 6240,
+   "rate": 10.83,
+   "value": 744165720
+  },
+  {
+   "code": "486510",
+   "name": "글로벌테크놀로지",
+   "market": "KOSDAQ",
+   "close": 4660,
+   "rate": 10.82,
+   "value": 1036194334
+  },
+  {
+   "code": "300080",
+   "name": "플리토",
+   "market": "KOSDAQ",
+   "close": 7380,
+   "rate": 10.81,
+   "value": 603861870
+  },
+  {
+   "code": "382900",
+   "name": "범한퓨얼셀",
+   "market": "KOSDAQ",
+   "close": 14670,
+   "rate": 10.8,
+   "value": 861593900
+  },
+  {
+   "code": "067630",
+   "name": "HLB생명과학",
+   "market": "KOSDAQ",
+   "close": 2570,
+   "rate": 10.78,
+   "value": 1287864498
+  },
+  {
+   "code": "049080",
+   "name": "기가레인",
+   "market": "KOSDAQ",
+   "close": 5500,
+   "rate": 10.78,
+   "value": 438279635
+  },
+  {
+   "code": "046120",
+   "name": "오르비텍",
+   "market": "KOSDAQ",
+   "close": 2880,
+   "rate": 10.77,
+   "value": 1027063808
+  },
+  {
+   "code": "002710",
+   "name": "TCC스틸",
+   "market": "KOSPI",
+   "close": 9060,
+   "rate": 10.76,
+   "value": 1198902490
+  },
+  {
+   "code": "060280",
+   "name": "큐렉소",
+   "market": "KOSDAQ",
+   "close": 7430,
+   "rate": 10.73,
+   "value": 2919871855
+  },
+  {
+   "code": "457550",
+   "name": "우진엔텍",
+   "market": "KOSDAQ",
+   "close": 6320,
+   "rate": 10.68,
+   "value": 331019685
+  },
+  {
+   "code": "027360",
+   "name": "아주IB투자",
+   "market": "KOSDAQ",
+   "close": 2855,
+   "rate": 10.66,
+   "value": 16945171573
+  },
+  {
+   "code": "037030",
+   "name": "파워넷",
+   "market": "KOSDAQ",
+   "close": 2750,
+   "rate": 10.66,
+   "value": 449588682
+  },
+  {
+   "code": "183300",
+   "name": "코미코",
+   "market": "KOSDAQ",
+   "close": 15670,
+   "rate": 10.66,
+   "value": 6278601790
+  },
+  {
+   "code": "054090",
+   "name": "삼진엘앤디",
+   "market": "KOSDAQ",
+   "close": 624,
+   "rate": 10.64,
+   "value": 152380347
+  },
+  {
+   "code": "112040",
+   "name": "위메이드",
+   "market": "KOSDAQ",
+   "close": 15640,
+   "rate": 10.61,
+   "value": 3646309545
+  },
+  {
+   "code": "378800",
+   "name": "샤페론",
+   "market": "KOSDAQ",
+   "close": 2295,
+   "rate": 10.6,
+   "value": 97773532
+  },
+  {
+   "code": "489790",
+   "name": "한화비전",
+   "market": "KOSPI",
+   "close": 36000,
+   "rate": 10.6,
+   "value": 10509757450
+  },
+  {
+   "code": "034730",
+   "name": "SK",
+   "market": "KOSPI",
+   "close": 475500,
+   "rate": 10.58,
+   "value": 49155401250
+  },
+  {
+   "code": "000210",
+   "name": "DL",
+   "market": "KOSPI",
+   "close": 43950,
+   "rate": 10.57,
+   "value": 5478236675
+  },
+  {
+   "code": "237750",
+   "name": "피앤씨테크",
+   "market": "KOSDAQ",
+   "close": 3245,
+   "rate": 10.56,
+   "value": 125695171
+  },
+  {
+   "code": "0017J0",
+   "name": "세미티에스",
+   "market": "KOSDAQ",
+   "close": 1900,
+   "rate": 10.53,
+   "value": 357379386
+  },
+  {
+   "code": "378340",
+   "name": "필에너지",
+   "market": "KOSDAQ",
+   "close": 9360,
+   "rate": 10.51,
+   "value": 224065720
+  },
+  {
+   "code": "148780",
+   "name": "비큐AI",
+   "market": "KOSDAQ",
+   "close": 3155,
+   "rate": 10.51,
+   "value": 126134517
+  },
+  {
+   "code": "204270",
+   "name": "제이앤티씨",
+   "market": "KOSDAQ",
+   "close": 16240,
+   "rate": 10.48,
+   "value": 4865718115
+  },
+  {
+   "code": "445090",
+   "name": "에이직랜드",
+   "market": "KOSDAQ",
+   "close": 14230,
+   "rate": 10.48,
+   "value": 432424230
+  },
+  {
+   "code": "161580",
+   "name": "필옵틱스",
+   "market": "KOSDAQ",
+   "close": 24800,
+   "rate": 10.47,
+   "value": 2848241650
+  },
+  {
+   "code": "0161M0",
+   "name": "네오사피엔스",
+   "market": "KOSDAQ",
+   "close": 4805,
+   "rate": 10.46,
+   "value": 848374272
+  },
+  {
+   "code": "003160",
+   "name": "디아이",
+   "market": "KOSPI",
+   "close": 24300,
+   "rate": 10.45,
+   "value": 13860083475
+  },
+  {
+   "code": "331740",
+   "name": "아우토크립트",
+   "market": "KOSDAQ",
+   "close": 5020,
+   "rate": 10.45,
+   "value": 120245260
+  },
+  {
+   "code": "267320",
+   "name": "나인테크",
+   "market": "KOSDAQ",
+   "close": 1969,
+   "rate": 10.43,
+   "value": 839063275
+  },
+  {
+   "code": "075580",
+   "name": "세진중공업",
+   "market": "KOSPI",
+   "close": 6370,
+   "rate": 10.4,
+   "value": 735393090
+  },
+  {
+   "code": "281820",
+   "name": "케이씨텍",
+   "market": "KOSPI",
+   "close": 82800,
+   "rate": 10.4,
+   "value": 23703804750
+  },
+  {
+   "code": "468670",
+   "name": "브릴스",
+   "market": "KOSDAQ",
+   "close": 10930,
+   "rate": 10.4,
+   "value": 5733837785
+  },
+  {
+   "code": "166090",
+   "name": "하나머티리얼즈",
+   "market": "KOSDAQ",
+   "close": 42550,
+   "rate": 10.38,
+   "value": 4712799400
+  },
+  {
+   "code": "475150",
+   "name": "SK이터닉스",
+   "market": "KOSPI",
+   "close": 30300,
+   "rate": 10.38,
+   "value": 13188394700
+  },
+  {
+   "code": "131400",
+   "name": "이브이첨단소재",
+   "market": "KOSDAQ",
+   "close": 6380,
+   "rate": 10.38,
+   "value": 130255885
+  },
+  {
+   "code": "389680",
+   "name": "유디엠텍",
+   "market": "KOSDAQ",
+   "close": 3090,
+   "rate": 10.36,
+   "value": 171250385
+  },
+  {
+   "code": "218410",
+   "name": "RFHIC",
+   "market": "KOSDAQ",
+   "close": 66200,
+   "rate": 10.33,
+   "value": 77459098500
+  },
+  {
+   "code": "282880",
+   "name": "코윈로보틱스",
+   "market": "KOSDAQ",
+   "close": 9090,
+   "rate": 10.32,
+   "value": 421907860
+  },
+  {
+   "code": "402490",
+   "name": "그린리소스",
+   "market": "KOSDAQ",
+   "close": 4330,
+   "rate": 10.32,
+   "value": 343811103
+  },
+  {
+   "code": "195870",
+   "name": "해성디에스",
+   "market": "KOSPI",
+   "close": 43300,
+   "rate": 10.32,
+   "value": 8742382675
+  },
+  {
+   "code": "459510",
+   "name": "나우로보틱스",
+   "market": "KOSDAQ",
+   "close": 12520,
+   "rate": 10.31,
+   "value": 2587255165
+  },
+  {
+   "code": "074600",
+   "name": "원익QnC",
+   "market": "KOSDAQ",
+   "close": 25750,
+   "rate": 10.28,
+   "value": 5995446200
+  },
+  {
+   "code": "012200",
+   "name": "계양전기",
+   "market": "KOSPI",
+   "close": 2695,
+   "rate": 10.22,
+   "value": 2870306223
+  },
+  {
+   "code": "411080",
+   "name": "샌즈랩",
+   "market": "KOSDAQ",
+   "close": 6160,
+   "rate": 10.2,
+   "value": 11712761465
+  },
+  {
+   "code": "327260",
+   "name": "RF머트리얼즈",
+   "market": "KOSDAQ",
+   "close": 30300,
+   "rate": 10.18,
+   "value": 19993578250
+  },
+  {
+   "code": "000880",
+   "name": "한화",
+   "market": "KOSPI",
+   "close": 72500,
+   "rate": 10.18,
+   "value": 10943965850
+  },
+  {
+   "code": "0015S0",
+   "name": "페스카로",
+   "market": "KOSDAQ",
+   "close": 5970,
+   "rate": 10.15,
+   "value": 288337530
+  },
+  {
+   "code": "469480",
+   "name": "IBKS제24호스팩",
+   "market": "KOSDAQ",
+   "close": 2715,
+   "rate": 10.14,
+   "value": 94444166
+  },
+  {
+   "code": "377480",
+   "name": "마음AI",
+   "market": "KOSDAQ",
+   "close": 8480,
+   "rate": 10.13,
+   "value": 486166570
+  },
+  {
+   "code": "357780",
+   "name": "솔브레인",
+   "market": "KOSDAQ",
+   "close": 266500,
+   "rate": 10.12,
+   "value": 7680058250
+  },
+  {
+   "code": "085620",
+   "name": "미래에셋생명",
+   "market": "KOSPI",
+   "close": 17650,
+   "rate": 10.11,
+   "value": 1723155695
+  },
+  {
+   "code": "032820",
+   "name": "우리기술",
+   "market": "KOSDAQ",
+   "close": 8730,
+   "rate": 10.09,
+   "value": 17460326100
+  },
+  {
+   "code": "086670",
+   "name": "비엠티",
+   "market": "KOSDAQ",
+   "close": 15630,
+   "rate": 10.07,
+   "value": 1558383300
+  },
+  {
+   "code": "090080",
+   "name": "평화산업",
+   "market": "KOSPI",
+   "close": 700,
+   "rate": 10.06,
+   "value": 91443316
+  },
+  {
+   "code": "471820",
+   "name": "셀로맥스사이언스",
+   "market": "KOSDAQ",
+   "close": 3540,
+   "rate": -10.38,
+   "value": 903612769
+  },
+  {
+   "code": "042110",
+   "name": "에스씨디",
+   "market": "KOSDAQ",
+   "close": 856,
+   "rate": -12.11,
+   "value": 1494424012
+  }
+ ],
+ "top_value_50": [
+  {
+   "code": "000660",
+   "name": "SK하이닉스",
+   "market": "KOSPI",
+   "close": 1106000,
+   "rate": 5.03,
+   "value": 2794029827000
+  },
+  {
+   "code": "005930",
+   "name": "삼성전자",
+   "market": "KOSPI",
+   "close": 178500,
+   "rate": 4.2,
+   "value": 2107412906800
+  },
+  {
+   "code": "009150",
+   "name": "삼성전기",
+   "market": "KOSPI",
+   "close": 819000,
+   "rate": 4.46,
+   "value": 664418486500
+  },
+  {
+   "code": "005935",
+   "name": "삼성전자우",
+   "market": "KOSPI",
+   "close": 144500,
+   "rate": 5.47,
+   "value": 425975632350
+  },
+  {
+   "code": "036930",
+   "name": "주성엔지니어링",
+   "market": "KOSDAQ",
+   "close": 156100,
+   "rate": 13.78,
+   "value": 301783655750
+  },
+  {
+   "code": "402340",
+   "name": "SK스퀘어",
+   "market": "KOSPI",
+   "close": 685000,
+   "rate": 5.06,
+   "value": 247475380500
+  },
+  {
+   "code": "006400",
+   "name": "삼성SDI",
+   "market": "KOSPI",
+   "close": 452000,
+   "rate": 8.13,
+   "value": 234926867500
+  },
+  {
+   "code": "053800",
+   "name": "안랩",
+   "market": "KOSDAQ",
+   "close": 173500,
+   "rate": 5.47,
+   "value": 232277105700
+  },
+  {
+   "code": "278470",
+   "name": "에이피알",
+   "market": "KOSPI",
+   "close": 300500,
+   "rate": 0.67,
+   "value": 218637288000
+  },
+  {
+   "code": "277810",
+   "name": "레인보우로보틱스",
+   "market": "KOSDAQ",
+   "close": 529000,
+   "rate": 13.28,
+   "value": 207108321000
+  },
+  {
+   "code": "108490",
+   "name": "로보티즈",
+   "market": "KOSDAQ",
+   "close": 302000,
+   "rate": 7.66,
+   "value": 152602935500
+  },
+  {
+   "code": "068270",
+   "name": "셀트리온",
+   "market": "KOSPI",
+   "close": 221500,
+   "rate": 2.78,
+   "value": 133736806750
+  },
+  {
+   "code": "222800",
+   "name": "심텍",
+   "market": "KOSDAQ",
+   "close": 106300,
+   "rate": 3.61,
+   "value": 125229638050
+  },
+  {
+   "code": "196170",
+   "name": "알테오젠",
+   "market": "KOSDAQ",
+   "close": 186500,
+   "rate": 9.51,
+   "value": 123943580350
+  },
+  {
+   "code": "066570",
+   "name": "LG전자",
+   "market": "KOSPI",
+   "close": 144500,
+   "rate": 6.88,
+   "value": 118173597700
+  },
+  {
+   "code": "100790",
+   "name": "미래에셋벤처투자",
+   "market": "KOSDAQ",
+   "close": 19730,
+   "rate": 5.11,
+   "value": 116967306500
+  },
+  {
+   "code": "090710",
+   "name": "휴림로봇",
+   "market": "KOSDAQ",
+   "close": 7270,
+   "rate": 6.91,
+   "value": 102484890485
+  },
+  {
+   "code": "084670",
+   "name": "동양고속",
+   "market": "KOSPI",
+   "close": 36000,
+   "rate": 7.78,
+   "value": 101854229275
+  },
+  {
+   "code": "263860",
+   "name": "지니언스",
+   "market": "KOSDAQ",
+   "close": 40700,
+   "rate": 0.87,
+   "value": 97030771550
+  },
+  {
+   "code": "471800",
+   "name": "에이엘로봇",
+   "market": "KOSDAQ",
+   "close": 11330,
+   "rate": 23.69,
+   "value": 94122739790
+  },
+  {
+   "code": "042700",
+   "name": "한미반도체",
+   "market": "KOSPI",
+   "close": 160700,
+   "rate": 8.8,
+   "value": 93419347850
+  },
+  {
+   "code": "005380",
+   "name": "현대차",
+   "market": "KOSPI",
+   "close": 268500,
+   "rate": 3.67,
+   "value": 92615151000
+  },
+  {
+   "code": "030530",
+   "name": "원익홀딩스",
+   "market": "KOSDAQ",
+   "close": 28750,
+   "rate": 4.74,
+   "value": 92455059375
+  },
+  {
+   "code": "079550",
+   "name": "LIG디펜스앤에어로스페이스",
+   "market": "KOSPI",
+   "close": 418000,
+   "rate": 7.18,
+   "value": 90668179250
+  },
+  {
+   "code": "042510",
+   "name": "라온시큐어",
+   "market": "KOSDAQ",
+   "close": 18820,
+   "rate": 20.03,
+   "value": 89884972215
+  },
+  {
+   "code": "012450",
+   "name": "한화에어로스페이스",
+   "market": "KOSPI",
+   "close": 661000,
+   "rate": 5.42,
+   "value": 87413349500
+  },
+  {
+   "code": "403870",
+   "name": "HPSP",
+   "market": "KOSDAQ",
+   "close": 40800,
+   "rate": 8.51,
+   "value": 82193990975
+  },
+  {
+   "code": "086520",
+   "name": "에코프로",
+   "market": "KOSDAQ",
+   "close": 73000,
+   "rate": 14.06,
+   "value": 79921987750
+  },
+  {
+   "code": "028050",
+   "name": "삼성E&A",
+   "market": "KOSPI",
+   "close": 58400,
+   "rate": 2.82,
+   "value": 79447363600
+  },
+  {
+   "code": "034020",
+   "name": "두산에너빌리티",
+   "market": "KOSPI",
+   "close": 43800,
+   "rate": 8.15,
+   "value": 79418976575
+  },
+  {
+   "code": "347700",
+   "name": "스피어",
+   "market": "KOSDAQ",
+   "close": 24250,
+   "rate": 6.83,
+   "value": 78546539325
+  },
+  {
+   "code": "271160",
+   "name": "하나에어로",
+   "market": "KOSDAQ",
+   "close": 5460,
+   "rate": 5.0,
+   "value": 78397388190
+  },
+  {
+   "code": "218410",
+   "name": "RFHIC",
+   "market": "KOSDAQ",
+   "close": 66200,
+   "rate": 10.33,
+   "value": 77459098500
+  },
+  {
+   "code": "307950",
+   "name": "현대오토에버",
+   "market": "KOSPI",
+   "close": 375500,
+   "rate": 7.59,
+   "value": 77171152250
+  },
+  {
+   "code": "105560",
+   "name": "KB금융",
+   "market": "KOSPI",
+   "close": 145000,
+   "rate": -0.21,
+   "value": 76028929500
+  },
+  {
+   "code": "226950",
+   "name": "올릭스",
+   "market": "KOSDAQ",
+   "close": 107900,
+   "rate": 17.79,
+   "value": 73527484900
+  },
+  {
+   "code": "373220",
+   "name": "LG에너지솔루션",
+   "market": "KOSPI",
+   "close": 315500,
+   "rate": 4.47,
+   "value": 72853616750
+  },
+  {
+   "code": "353200",
+   "name": "대덕전자",
+   "market": "KOSPI",
+   "close": 72700,
+   "rate": 4.01,
+   "value": 71420299200
+  },
+  {
+   "code": "347850",
+   "name": "디앤디파마텍",
+   "market": "KOSDAQ",
+   "close": 42150,
+   "rate": 15.64,
+   "value": 71079939400
+  },
+  {
+   "code": "232680",
+   "name": "라온로보틱스",
+   "market": "KOSDAQ",
+   "close": 15230,
+   "rate": 21.26,
+   "value": 69131522630
+  },
+  {
+   "code": "466100",
+   "name": "클로봇",
+   "market": "KOSDAQ",
+   "close": 23650,
+   "rate": 29.87,
+   "value": 67929686440
+  },
+  {
+   "code": "326030",
+   "name": "SK바이오팜",
+   "market": "KOSPI",
+   "close": 97700,
+   "rate": 7.96,
+   "value": 67810499350
+  },
+  {
+   "code": "180640",
+   "name": "한진칼",
+   "market": "KOSPI",
+   "close": 252000,
+   "rate": 4.35,
+   "value": 66465836250
+  },
+  {
+   "code": "319400",
+   "name": "현대무벡스",
+   "market": "KOSDAQ",
+   "close": 19460,
+   "rate": 17.09,
+   "value": 65282680160
+  },
+  {
+   "code": "086790",
+   "name": "하나금융지주",
+   "market": "KOSPI",
+   "close": 118250,
+   "rate": -0.8,
+   "value": 64981523450
+  },
+  {
+   "code": "012330",
+   "name": "현대모비스",
+   "market": "KOSPI",
+   "close": 338500,
+   "rate": 2.73,
+   "value": 64718079000
+  },
+  {
+   "code": "192820",
+   "name": "코스맥스",
+   "market": "KOSPI",
+   "close": 313500,
+   "rate": -6.84,
+   "value": 64337898000
+  },
+  {
+   "code": "298380",
+   "name": "에이비엘바이오",
+   "market": "KOSDAQ",
+   "close": 46750,
+   "rate": 26.52,
+   "value": 63277465900
+  },
+  {
+   "code": "007810",
+   "name": "코리아써키트",
+   "market": "KOSPI",
+   "close": 75900,
+   "rate": 2.43,
+   "value": 61402555150
+  },
+  {
+   "code": "035420",
+   "name": "NAVER",
+   "market": "KOSPI",
+   "close": 163200,
+   "rate": 1.87,
+   "value": 61021341400
+  }
+ ],
+ "investors": {},
+ "net_buy_top10": {
+  "KOSPI": {},
+  "KOSDAQ": {}
+ },
+ "signals": [
+  {
+   "code": "005930",
+   "name": "삼성전자",
+   "market": "KOSPI",
+   "close": 178500,
+   "rate": 4.2,
+   "value": 2107412906800,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "000660",
+   "name": "SK하이닉스",
+   "market": "KOSPI",
+   "close": 1106000,
+   "rate": 5.03,
+   "value": 2794029827000,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "005935",
+   "name": "삼성전자우",
+   "market": "KOSPI",
+   "close": 144500,
+   "rate": 5.47,
+   "value": 425975632350,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "402340",
+   "name": "SK스퀘어",
+   "market": "KOSPI",
+   "close": 685000,
+   "rate": 5.06,
+   "value": 247475380500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "373220",
+   "name": "LG에너지솔루션",
+   "market": "KOSPI",
+   "close": 315500,
+   "rate": 4.47,
+   "value": 72853616750,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "009150",
+   "name": "삼성전기",
+   "market": "KOSPI",
+   "close": 819000,
+   "rate": 4.46,
+   "value": 664418486500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "005380",
+   "name": "현대차",
+   "market": "KOSPI",
+   "close": 268500,
+   "rate": 3.67,
+   "value": 92615151000,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "105560",
+   "name": "KB금융",
+   "market": "KOSPI",
+   "close": 145000,
+   "rate": -0.21,
+   "value": 76028929500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "068270",
+   "name": "셀트리온",
+   "market": "KOSPI",
+   "close": 221500,
+   "rate": 2.78,
+   "value": 133736806750,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "006400",
+   "name": "삼성SDI",
+   "market": "KOSPI",
+   "close": 452000,
+   "rate": 8.13,
+   "value": 234926867500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "034730",
+   "name": "SK",
+   "market": "KOSPI",
+   "close": 475500,
+   "rate": 10.58,
+   "value": 49155401250,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "012450",
+   "name": "한화에어로스페이스",
+   "market": "KOSPI",
+   "close": 661000,
+   "rate": 5.42,
+   "value": 87413349500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "086790",
+   "name": "하나금융지주",
+   "market": "KOSPI",
+   "close": 118250,
+   "rate": -0.8,
+   "value": 64981523450,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "012330",
+   "name": "현대모비스",
+   "market": "KOSPI",
+   "close": 338500,
+   "rate": 2.73,
+   "value": 64718079000,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "034020",
+   "name": "두산에너빌리티",
+   "market": "KOSPI",
+   "close": 43800,
+   "rate": 8.15,
+   "value": 79418976575,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "035420",
+   "name": "NAVER",
+   "market": "KOSPI",
+   "close": 163200,
+   "rate": 1.87,
+   "value": 61021341400,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "066570",
+   "name": "LG전자",
+   "market": "KOSPI",
+   "close": 144500,
+   "rate": 6.88,
+   "value": 118173597700,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "180640",
+   "name": "한진칼",
+   "market": "KOSPI",
+   "close": 252000,
+   "rate": 4.35,
+   "value": 66465836250,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "042700",
+   "name": "한미반도체",
+   "market": "KOSPI",
+   "close": 160700,
+   "rate": 8.8,
+   "value": 93419347850,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "006800",
+   "name": "미래에셋증권",
+   "market": "KOSPI",
+   "close": 23150,
+   "rate": 15.87,
+   "value": 58306574000,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "028050",
+   "name": "삼성E&A",
+   "market": "KOSPI",
+   "close": 58400,
+   "rate": 2.82,
+   "value": 79447363600,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "278470",
+   "name": "에이피알",
+   "market": "KOSPI",
+   "close": 300500,
+   "rate": 0.67,
+   "value": 218637288000,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "272210",
+   "name": "한화시스템",
+   "market": "KOSPI",
+   "close": 55700,
+   "rate": 13.56,
+   "value": 45363050350,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "307950",
+   "name": "현대오토에버",
+   "market": "KOSPI",
+   "close": 375500,
+   "rate": 7.59,
+   "value": 77171152250,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "079550",
+   "name": "LIG디펜스앤에어로스페이스",
+   "market": "KOSPI",
+   "close": 418000,
+   "rate": 7.18,
+   "value": 90668179250,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "071050",
+   "name": "한국금융지주",
+   "market": "KOSPI",
+   "close": 142900,
+   "rate": 13.41,
+   "value": 31674414200,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "326030",
+   "name": "SK바이오팜",
+   "market": "KOSPI",
+   "close": 97700,
+   "rate": 7.96,
+   "value": 67810499350,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "039490",
+   "name": "키움증권",
+   "market": "KOSPI",
+   "close": 234000,
+   "rate": 14.71,
+   "value": 59589875500,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "000880",
+   "name": "한화",
+   "market": "KOSPI",
+   "close": 72500,
+   "rate": 10.18,
+   "value": 10943965850,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "353200",
+   "name": "대덕전자",
+   "market": "KOSPI",
+   "close": 72700,
+   "rate": 4.01,
+   "value": 71420299200,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "192820",
+   "name": "코스맥스",
+   "market": "KOSPI",
+   "close": 313500,
+   "rate": -6.84,
+   "value": 64337898000,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "066970",
+   "name": "엘앤에프",
+   "market": "KOSPI",
+   "close": 73700,
+   "rate": 12.01,
+   "value": 24859850950,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "085620",
+   "name": "미래에셋생명",
+   "market": "KOSPI",
+   "close": 17650,
+   "rate": 10.11,
+   "value": 1723155695,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "001720",
+   "name": "신영증권",
+   "market": "KOSPI",
+   "close": 127800,
+   "rate": 13.7,
+   "value": 1928424350,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "004800",
+   "name": "효성",
+   "market": "KOSPI",
+   "close": 123800,
+   "rate": 10.83,
+   "value": 2097437250,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "450080",
+   "name": "에코프로머티",
+   "market": "KOSPI",
+   "close": 27900,
+   "rate": 11.6,
+   "value": 10264411475,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "181710",
+   "name": "NHN",
+   "market": "KOSPI",
+   "close": 60500,
+   "rate": 15.9,
+   "value": 36281556450,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "007810",
+   "name": "코리아써키트",
+   "market": "KOSPI",
+   "close": 75900,
+   "rate": 2.43,
+   "value": 61402555150,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "489790",
+   "name": "한화비전",
+   "market": "KOSPI",
+   "close": 36000,
+   "rate": 10.6,
+   "value": 10509757450,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "336260",
+   "name": "두산퓨얼셀",
+   "market": "KOSPI",
+   "close": 25100,
+   "rate": 12.05,
+   "value": 12210207550,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "281820",
+   "name": "케이씨텍",
+   "market": "KOSPI",
+   "close": 82800,
+   "rate": 10.4,
+   "value": 23703804750,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "023590",
+   "name": "다우기술",
+   "market": "KOSPI",
+   "close": 33200,
+   "rate": 11.41,
+   "value": 1729117275,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "012630",
+   "name": "HDC",
+   "market": "KOSPI",
+   "close": 21250,
+   "rate": 12.55,
+   "value": 1686782265,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "071970",
+   "name": "HD현대마린엔진",
+   "market": "KOSPI",
+   "close": 34400,
+   "rate": 12.23,
+   "value": 7082930900,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "475150",
+   "name": "SK이터닉스",
+   "market": "KOSPI",
+   "close": 30300,
+   "rate": 10.38,
+   "value": 13188394700,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "00680K",
+   "name": "미래에셋증권2우B",
+   "market": "KOSPI",
+   "close": 8100,
+   "rate": 11.72,
+   "value": 2776053165,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "093370",
+   "name": "후성",
+   "market": "KOSPI",
+   "close": 8860,
+   "rate": 12.72,
+   "value": 16419319225,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "000210",
+   "name": "DL",
+   "market": "KOSPI",
+   "close": 43950,
+   "rate": 10.57,
+   "value": 5478236675,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "322000",
+   "name": "HD현대에너지솔루션",
+   "market": "KOSPI",
+   "close": 76300,
+   "rate": 12.7,
+   "value": 9412327000,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "195870",
+   "name": "해성디에스",
+   "market": "KOSPI",
+   "close": 43300,
+   "rate": 10.32,
+   "value": 8742382675,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "003160",
+   "name": "디아이",
+   "market": "KOSPI",
+   "close": 24300,
+   "rate": 10.45,
+   "value": 13860083475,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "006110",
+   "name": "삼아알미늄",
+   "market": "KOSPI",
+   "close": 43100,
+   "rate": 17.12,
+   "value": 18371876675,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "077970",
+   "name": "STX엔진",
+   "market": "KOSPI",
+   "close": 14400,
+   "rate": 12.76,
+   "value": 2131628020,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "075580",
+   "name": "세진중공업",
+   "market": "KOSPI",
+   "close": 6370,
+   "rate": 10.4,
+   "value": 735393090,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0120G0",
+   "name": "삼양바이오팜",
+   "market": "KOSPI",
+   "close": 46550,
+   "rate": 14.37,
+   "value": 2104366750,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "005420",
+   "name": "코스모화학",
+   "market": "KOSPI",
+   "close": 8280,
+   "rate": 13.11,
+   "value": 1032709305,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "033240",
+   "name": "자화전자",
+   "market": "KOSPI",
+   "close": 14440,
+   "rate": 11.94,
+   "value": 1728120395,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "004710",
+   "name": "한솔테크닉스",
+   "market": "KOSPI",
+   "close": 5550,
+   "rate": 13.27,
+   "value": 3823646987,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "002020",
+   "name": "코오롱",
+   "market": "KOSPI",
+   "close": 20500,
+   "rate": 11.53,
+   "value": 666372665,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "317400",
+   "name": "자이에스앤디",
+   "market": "KOSPI",
+   "close": 6370,
+   "rate": 13.95,
+   "value": 5722954750,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "002710",
+   "name": "TCC스틸",
+   "market": "KOSPI",
+   "close": 9060,
+   "rate": 10.76,
+   "value": 1198902490,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "077500",
+   "name": "유니퀘스트",
+   "market": "KOSPI",
+   "close": 10450,
+   "rate": 11.76,
+   "value": 4209915530,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "475560",
+   "name": "더본코리아",
+   "market": "KOSPI",
+   "close": 14580,
+   "rate": 14.53,
+   "value": 3750549085,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "217590",
+   "name": "티엠씨",
+   "market": "KOSPI",
+   "close": 8110,
+   "rate": 11.1,
+   "value": 2192625460,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "009470",
+   "name": "삼화전기",
+   "market": "KOSPI",
+   "close": 28800,
+   "rate": 25.76,
+   "value": 7985376075,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "011500",
+   "name": "한농화성",
+   "market": "KOSPI",
+   "close": 11720,
+   "rate": 11.51,
+   "value": 1235178750,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "006805",
+   "name": "미래에셋증권우",
+   "market": "KOSPI",
+   "close": 8460,
+   "rate": 11.76,
+   "value": 352633480,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "084670",
+   "name": "동양고속",
+   "market": "KOSPI",
+   "close": 36000,
+   "rate": 7.78,
+   "value": 101854229275,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "025620",
+   "name": "차AI헬스케어",
+   "market": "KOSPI",
+   "close": 5380,
+   "rate": 10.93,
+   "value": 48609580,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "012200",
+   "name": "계양전기",
+   "market": "KOSPI",
+   "close": 2695,
+   "rate": 10.22,
+   "value": 2870306223,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "055490",
+   "name": "테이팩스",
+   "market": "KOSPI",
+   "close": 17680,
+   "rate": 11.48,
+   "value": 658381085,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "003010",
+   "name": "혜인",
+   "market": "KOSPI",
+   "close": 6560,
+   "rate": 15.09,
+   "value": 7271291165,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "090080",
+   "name": "평화산업",
+   "market": "KOSPI",
+   "close": 700,
+   "rate": 10.06,
+   "value": 91443316,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "021050",
+   "name": "서원",
+   "market": "KOSPI",
+   "close": 748,
+   "rate": 13.16,
+   "value": 800910169,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "012160",
+   "name": "영흥",
+   "market": "KOSPI",
+   "close": 1920,
+   "rate": 26.65,
+   "value": 950470452,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "014285",
+   "name": "금강공업우",
+   "market": "KOSPI",
+   "close": 5380,
+   "rate": 14.47,
+   "value": 14494405,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "196170",
+   "name": "알테오젠",
+   "market": "KOSDAQ",
+   "close": 186500,
+   "rate": 9.51,
+   "value": 123943580350,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "277810",
+   "name": "레인보우로보틱스",
+   "market": "KOSDAQ",
+   "close": 529000,
+   "rate": 13.28,
+   "value": 207108321000,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "247540",
+   "name": "에코프로비엠",
+   "market": "KOSDAQ",
+   "close": 92100,
+   "rate": 13.56,
+   "value": 47603419550,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "086520",
+   "name": "에코프로",
+   "market": "KOSDAQ",
+   "close": 73000,
+   "rate": 14.06,
+   "value": 79921987750,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "036930",
+   "name": "주성엔지니어링",
+   "market": "KOSDAQ",
+   "close": 156100,
+   "rate": 13.78,
+   "value": 301783655750,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "000250",
+   "name": "삼천당제약",
+   "market": "KOSDAQ",
+   "close": 190700,
+   "rate": 14.6,
+   "value": 39114221600,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "108490",
+   "name": "로보티즈",
+   "market": "KOSDAQ",
+   "close": 302000,
+   "rate": 7.66,
+   "value": 152602935500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "222800",
+   "name": "심텍",
+   "market": "KOSDAQ",
+   "close": 106300,
+   "rate": 3.61,
+   "value": 125229638050,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "058470",
+   "name": "리노공업",
+   "market": "KOSDAQ",
+   "close": 52200,
+   "rate": 11.66,
+   "value": 35785067450,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "403870",
+   "name": "HPSP",
+   "market": "KOSDAQ",
+   "close": 40800,
+   "rate": 8.51,
+   "value": 82193990975,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "031980",
+   "name": "피에스케이홀딩스",
+   "market": "KOSDAQ",
+   "close": 133500,
+   "rate": 13.91,
+   "value": 22628830200,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "298380",
+   "name": "에이비엘바이오",
+   "market": "KOSDAQ",
+   "close": 46750,
+   "rate": 26.52,
+   "value": 63277465900,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "141080",
+   "name": "리가켐바이오",
+   "market": "KOSDAQ",
+   "close": 68800,
+   "rate": 21.34,
+   "value": 48535176450,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "226950",
+   "name": "올릭스",
+   "market": "KOSDAQ",
+   "close": 107900,
+   "rate": 17.79,
+   "value": 73527484900,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "087010",
+   "name": "펩트론",
+   "market": "KOSDAQ",
+   "close": 97900,
+   "rate": 16.13,
+   "value": 28038518350,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "030530",
+   "name": "원익홀딩스",
+   "market": "KOSDAQ",
+   "close": 28750,
+   "rate": 4.74,
+   "value": 92455059375,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "319400",
+   "name": "현대무벡스",
+   "market": "KOSDAQ",
+   "close": 19460,
+   "rate": 17.09,
+   "value": 65282680160,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "178320",
+   "name": "서진시스템",
+   "market": "KOSDAQ",
+   "close": 33600,
+   "rate": 21.08,
+   "value": 49075412275,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "357780",
+   "name": "솔브레인",
+   "market": "KOSDAQ",
+   "close": 266500,
+   "rate": 10.12,
+   "value": 7680058250,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "064760",
+   "name": "티씨케이",
+   "market": "KOSDAQ",
+   "close": 175800,
+   "rate": 11.34,
+   "value": 9957974550,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "347850",
+   "name": "디앤디파마텍",
+   "market": "KOSDAQ",
+   "close": 42150,
+   "rate": 15.64,
+   "value": 71079939400,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "053800",
+   "name": "안랩",
+   "market": "KOSDAQ",
+   "close": 173500,
+   "rate": 5.47,
+   "value": 232277105700,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "237690",
+   "name": "에스티팜",
+   "market": "KOSDAQ",
+   "close": 87400,
+   "rate": 11.05,
+   "value": 20965940100,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "080220",
+   "name": "제주반도체",
+   "market": "KOSDAQ",
+   "close": 52000,
+   "rate": 12.19,
+   "value": 47534639975,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "218410",
+   "name": "RFHIC",
+   "market": "KOSDAQ",
+   "close": 66200,
+   "rate": 10.33,
+   "value": 77459098500,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "323280",
+   "name": "태성",
+   "market": "KOSDAQ",
+   "close": 51600,
+   "rate": 17.27,
+   "value": 24662517800,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "950260",
+   "name": "인제니아테라퓨틱스(Reg.S)",
+   "market": "KOSDAQ",
+   "close": 31250,
+   "rate": 13.84,
+   "value": 28714767425,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "032820",
+   "name": "우리기술",
+   "market": "KOSDAQ",
+   "close": 8730,
+   "rate": 10.09,
+   "value": 17460326100,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "067310",
+   "name": "하나마이크론",
+   "market": "KOSDAQ",
+   "close": 22650,
+   "rate": 11.03,
+   "value": 25029995600,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "140860",
+   "name": "파크시스템스",
+   "market": "KOSDAQ",
+   "close": 201000,
+   "rate": 11.17,
+   "value": 4570123200,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "347700",
+   "name": "스피어",
+   "market": "KOSDAQ",
+   "close": 24250,
+   "rate": 6.83,
+   "value": 78546539325,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "131970",
+   "name": "두산테스나",
+   "market": "KOSDAQ",
+   "close": 64000,
+   "rate": 12.28,
+   "value": 16281438700,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0009K0",
+   "name": "에임드바이오",
+   "market": "KOSDAQ",
+   "close": 18870,
+   "rate": 19.66,
+   "value": 11999094500,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "491000",
+   "name": "리브스메드",
+   "market": "KOSDAQ",
+   "close": 48650,
+   "rate": 12.49,
+   "value": 24408667050,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "083650",
+   "name": "비에이치아이",
+   "market": "KOSDAQ",
+   "close": 36650,
+   "rate": 12.08,
+   "value": 7991026975,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "032500",
+   "name": "케이엠더블유",
+   "market": "KOSDAQ",
+   "close": 25850,
+   "rate": 22.51,
+   "value": 27040793550,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "100790",
+   "name": "미래에셋벤처투자",
+   "market": "KOSDAQ",
+   "close": 19730,
+   "rate": 5.11,
+   "value": 116967306500,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "056190",
+   "name": "SFA",
+   "market": "KOSDAQ",
+   "close": 27200,
+   "rate": 13.33,
+   "value": 4336882650,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "204270",
+   "name": "제이앤티씨",
+   "market": "KOSDAQ",
+   "close": 16240,
+   "rate": 10.48,
+   "value": 4865718115,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "099320",
+   "name": "쎄트렉아이",
+   "market": "KOSDAQ",
+   "close": 82800,
+   "rate": 14.52,
+   "value": 12626108500,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "065350",
+   "name": "신성델타테크",
+   "market": "KOSDAQ",
+   "close": 32700,
+   "rate": 11.79,
+   "value": 5178307525,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "090710",
+   "name": "휴림로봇",
+   "market": "KOSDAQ",
+   "close": 7270,
+   "rate": 6.91,
+   "value": 102484890485,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "166090",
+   "name": "하나머티리얼즈",
+   "market": "KOSDAQ",
+   "close": 42550,
+   "rate": 10.38,
+   "value": 4712799400,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "456160",
+   "name": "지투지바이오",
+   "market": "KOSDAQ",
+   "close": 50300,
+   "rate": 14.84,
+   "value": 25822438050,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "183300",
+   "name": "코미코",
+   "market": "KOSDAQ",
+   "close": 15670,
+   "rate": 10.66,
+   "value": 6278601790,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "281740",
+   "name": "레이크머티리얼즈",
+   "market": "KOSDAQ",
+   "close": 12220,
+   "rate": 19.69,
+   "value": 18563793120,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "445680",
+   "name": "큐리옥스바이오시스템즈",
+   "market": "KOSDAQ",
+   "close": 46200,
+   "rate": 13.93,
+   "value": 9226433450,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "085660",
+   "name": "차바이오텍",
+   "market": "KOSDAQ",
+   "close": 8290,
+   "rate": 13.25,
+   "value": 4019849335,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "101490",
+   "name": "에스앤에스텍",
+   "market": "KOSDAQ",
+   "close": 34900,
+   "rate": 10.97,
+   "value": 5113553025,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "466100",
+   "name": "클로봇",
+   "market": "KOSDAQ",
+   "close": 23650,
+   "rate": 29.87,
+   "value": 67929686440,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "048410",
+   "name": "현대바이오",
+   "market": "KOSDAQ",
+   "close": 7060,
+   "rate": 15.74,
+   "value": 14047713855,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "074600",
+   "name": "원익QnC",
+   "market": "KOSDAQ",
+   "close": 25750,
+   "rate": 10.28,
+   "value": 5995446200,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "127120",
+   "name": "제이에스링크",
+   "market": "KOSDAQ",
+   "close": 17250,
+   "rate": 15.38,
+   "value": 4207125570,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "358570",
+   "name": "지아이이노베이션",
+   "market": "KOSDAQ",
+   "close": 9600,
+   "rate": 12.54,
+   "value": 14356926055,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "024850",
+   "name": "HLB이노베이션",
+   "market": "KOSDAQ",
+   "close": 17780,
+   "rate": 14.12,
+   "value": 6456488400,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "137400",
+   "name": "피엔티",
+   "market": "KOSDAQ",
+   "close": 25450,
+   "rate": 13.11,
+   "value": 3482592075,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "189300",
+   "name": "인텔리안테크",
+   "market": "KOSDAQ",
+   "close": 55600,
+   "rate": 20.61,
+   "value": 9954201375,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "115180",
+   "name": "큐리언트",
+   "market": "KOSDAQ",
+   "close": 15730,
+   "rate": 30.0,
+   "value": 7547651440,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "161580",
+   "name": "필옵틱스",
+   "market": "KOSDAQ",
+   "close": 24800,
+   "rate": 10.47,
+   "value": 2848241650,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "050890",
+   "name": "쏠리드",
+   "market": "KOSDAQ",
+   "close": 9340,
+   "rate": 15.02,
+   "value": 22524468240,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "222080",
+   "name": "SFA넥셀",
+   "market": "KOSDAQ",
+   "close": 7250,
+   "rate": 16.56,
+   "value": 5554004305,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "476060",
+   "name": "온코닉테라퓨틱스",
+   "market": "KOSDAQ",
+   "close": 12040,
+   "rate": 12.95,
+   "value": 6159294565,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "327260",
+   "name": "RF머트리얼즈",
+   "market": "KOSDAQ",
+   "close": 30300,
+   "rate": 10.18,
+   "value": 19993578250,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "112040",
+   "name": "위메이드",
+   "market": "KOSDAQ",
+   "close": 15640,
+   "rate": 10.61,
+   "value": 3646309545,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "036810",
+   "name": "에프에스티",
+   "market": "KOSDAQ",
+   "close": 24000,
+   "rate": 16.22,
+   "value": 3203898775,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "174900",
+   "name": "앱클론",
+   "market": "KOSDAQ",
+   "close": 24850,
+   "rate": 24.25,
+   "value": 10738769400,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "124500",
+   "name": "아이티센글로벌",
+   "market": "KOSDAQ",
+   "close": 20600,
+   "rate": 17.45,
+   "value": 5465674270,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "082270",
+   "name": "젬백스",
+   "market": "KOSDAQ",
+   "close": 9900,
+   "rate": 14.19,
+   "value": 3065494820,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "052020",
+   "name": "에스티큐브",
+   "market": "KOSDAQ",
+   "close": 6330,
+   "rate": 13.44,
+   "value": 1528559470,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "397030",
+   "name": "에이프릴바이오",
+   "market": "KOSDAQ",
+   "close": 15480,
+   "rate": 15.52,
+   "value": 6412109165,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "094170",
+   "name": "동운아나텍",
+   "market": "KOSDAQ",
+   "close": 20850,
+   "rate": 14.75,
+   "value": 3566041680,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "033640",
+   "name": "네패스",
+   "market": "KOSDAQ",
+   "close": 17850,
+   "rate": 12.19,
+   "value": 3202903805,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "490470",
+   "name": "세미파이브",
+   "market": "KOSDAQ",
+   "close": 11760,
+   "rate": 10.84,
+   "value": 4405946060,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "348340",
+   "name": "뉴로메카",
+   "market": "KOSDAQ",
+   "close": 16960,
+   "rate": 13.44,
+   "value": 8510208865,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "056080",
+   "name": "유진로봇",
+   "market": "KOSDAQ",
+   "close": 10040,
+   "rate": 14.09,
+   "value": 30391969545,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "263860",
+   "name": "지니언스",
+   "market": "KOSDAQ",
+   "close": 40700,
+   "rate": 0.87,
+   "value": 97030771550,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "278280",
+   "name": "천보",
+   "market": "KOSDAQ",
+   "close": 30050,
+   "rate": 12.13,
+   "value": 1121645375,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "388210",
+   "name": "씨엠티엑스",
+   "market": "KOSDAQ",
+   "close": 38100,
+   "rate": 12.72,
+   "value": 3655312450,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "042000",
+   "name": "카페24",
+   "market": "KOSDAQ",
+   "close": 14310,
+   "rate": 11.88,
+   "value": 2738235055,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "027360",
+   "name": "아주IB투자",
+   "market": "KOSDAQ",
+   "close": 2855,
+   "rate": 10.66,
+   "value": 16945171573,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "475830",
+   "name": "오름테라퓨틱",
+   "market": "KOSDAQ",
+   "close": 15780,
+   "rate": 20.92,
+   "value": 5238706285,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "073490",
+   "name": "LIG아큐버",
+   "market": "KOSDAQ",
+   "close": 45100,
+   "rate": 14.47,
+   "value": 25883940025,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "170920",
+   "name": "엘티씨",
+   "market": "KOSDAQ",
+   "close": 32150,
+   "rate": 16.91,
+   "value": 11013677425,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "079370",
+   "name": "제우스",
+   "market": "KOSDAQ",
+   "close": 10460,
+   "rate": 15.45,
+   "value": 3806858595,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "475960",
+   "name": "토모큐브",
+   "market": "KOSDAQ",
+   "close": 23350,
+   "rate": 14.46,
+   "value": 1357731750,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "067630",
+   "name": "HLB생명과학",
+   "market": "KOSDAQ",
+   "close": 2570,
+   "rate": 10.78,
+   "value": 1287864498,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "272290",
+   "name": "이녹스첨단소재",
+   "market": "KOSDAQ",
+   "close": 15420,
+   "rate": 11.34,
+   "value": 1700876835,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "060280",
+   "name": "큐렉소",
+   "market": "KOSDAQ",
+   "close": 7430,
+   "rate": 10.73,
+   "value": 2919871855,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "138080",
+   "name": "오이솔루션",
+   "market": "KOSDAQ",
+   "close": 24400,
+   "rate": 15.91,
+   "value": 6907833525,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "092190",
+   "name": "서울바이오시스",
+   "market": "KOSDAQ",
+   "close": 6240,
+   "rate": 10.83,
+   "value": 744165720,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "486990",
+   "name": "노타",
+   "market": "KOSDAQ",
+   "close": 12890,
+   "rate": 11.31,
+   "value": 2349164700,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "053030",
+   "name": "바이넥스",
+   "market": "KOSDAQ",
+   "close": 7780,
+   "rate": 12.59,
+   "value": 4962006285,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "091580",
+   "name": "상신이디피",
+   "market": "KOSDAQ",
+   "close": 19060,
+   "rate": 16.86,
+   "value": 9834933415,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "348210",
+   "name": "넥스틴",
+   "market": "KOSDAQ",
+   "close": 23750,
+   "rate": 15.85,
+   "value": 1761090375,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "354320",
+   "name": "알멕",
+   "market": "KOSDAQ",
+   "close": 38150,
+   "rate": 13.37,
+   "value": 8444265625,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "340450",
+   "name": "지씨지놈",
+   "market": "KOSDAQ",
+   "close": 10140,
+   "rate": 25.5,
+   "value": 20541563365,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "493280",
+   "name": "아이엠바이오로직스",
+   "market": "KOSDAQ",
+   "close": 16120,
+   "rate": 15.56,
+   "value": 4833116300,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "348370",
+   "name": "엔켐",
+   "market": "KOSDAQ",
+   "close": 10630,
+   "rate": 26.85,
+   "value": 10663450040,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "477850",
+   "name": "마키나락스",
+   "market": "KOSDAQ",
+   "close": 12190,
+   "rate": 14.89,
+   "value": 3762250060,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "042510",
+   "name": "라온시큐어",
+   "market": "KOSDAQ",
+   "close": 18820,
+   "rate": 20.03,
+   "value": 89884972215,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "287840",
+   "name": "인투셀",
+   "market": "KOSDAQ",
+   "close": 13700,
+   "rate": 15.71,
+   "value": 624553030,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "378340",
+   "name": "필에너지",
+   "market": "KOSDAQ",
+   "close": 9360,
+   "rate": 10.51,
+   "value": 224065720,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "232680",
+   "name": "라온로보틱스",
+   "market": "KOSDAQ",
+   "close": 15230,
+   "rate": 21.26,
+   "value": 69131522630,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "160980",
+   "name": "싸이맥스",
+   "market": "KOSDAQ",
+   "close": 18090,
+   "rate": 11.8,
+   "value": 1659800310,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "220100",
+   "name": "퓨쳐켐",
+   "market": "KOSDAQ",
+   "close": 6340,
+   "rate": 12.01,
+   "value": 779549765,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "439960",
+   "name": "코스모로보틱스",
+   "market": "KOSDAQ",
+   "close": 5720,
+   "rate": 30.0,
+   "value": 35136590874,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "308430",
+   "name": "셀비온",
+   "market": "KOSDAQ",
+   "close": 14200,
+   "rate": 14.89,
+   "value": 2064238765,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "272110",
+   "name": "케이엔제이",
+   "market": "KOSDAQ",
+   "close": 22500,
+   "rate": 12.95,
+   "value": 2031646920,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "493410",
+   "name": "넥스아이",
+   "market": "KOSDAQ",
+   "close": 3925,
+   "rate": 18.58,
+   "value": 10944745937,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0147B0",
+   "name": "래블업",
+   "market": "KOSDAQ",
+   "close": 12350,
+   "rate": 24.75,
+   "value": 10861750240,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "102940",
+   "name": "코오롱생명과학",
+   "market": "KOSDAQ",
+   "close": 13320,
+   "rate": 12.12,
+   "value": 1541982405,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "317330",
+   "name": "덕산테코피아",
+   "market": "KOSDAQ",
+   "close": 8440,
+   "rate": 13.44,
+   "value": 348282865,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "365270",
+   "name": "큐라클",
+   "market": "KOSDAQ",
+   "close": 7750,
+   "rate": 15.5,
+   "value": 653199080,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "307180",
+   "name": "아이엘",
+   "market": "KOSDAQ",
+   "close": 4280,
+   "rate": 12.04,
+   "value": 4124472874,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "459510",
+   "name": "나우로보틱스",
+   "market": "KOSDAQ",
+   "close": 12520,
+   "rate": 10.31,
+   "value": 2587255165,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "112290",
+   "name": "와이씨켐",
+   "market": "KOSDAQ",
+   "close": 7780,
+   "rate": 14.24,
+   "value": 719739530,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "445090",
+   "name": "에이직랜드",
+   "market": "KOSDAQ",
+   "close": 14230,
+   "rate": 10.48,
+   "value": 432424230,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "419530",
+   "name": "SAMG엔터",
+   "market": "KOSDAQ",
+   "close": 15200,
+   "rate": 22.09,
+   "value": 5472329255,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "086670",
+   "name": "비엠티",
+   "market": "KOSDAQ",
+   "close": 15630,
+   "rate": 10.07,
+   "value": 1558383300,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "243840",
+   "name": "신흥에스이씨",
+   "market": "KOSDAQ",
+   "close": 3990,
+   "rate": 11.92,
+   "value": 1317880327,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0053F0",
+   "name": "티앤이코리아",
+   "market": "KOSDAQ",
+   "close": 12980,
+   "rate": 11.9,
+   "value": 5800647955,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "084850",
+   "name": "아이티엠반도체",
+   "market": "KOSDAQ",
+   "close": 6360,
+   "rate": 14.39,
+   "value": 2578345970,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "230240",
+   "name": "에치에프알",
+   "market": "KOSDAQ",
+   "close": 10770,
+   "rate": 17.19,
+   "value": 3747143755,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "484810",
+   "name": "티엑스알로보틱스",
+   "market": "KOSDAQ",
+   "close": 9180,
+   "rate": 12.22,
+   "value": 4041413225,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "338840",
+   "name": "와이바이오로직스",
+   "market": "KOSDAQ",
+   "close": 9060,
+   "rate": 17.97,
+   "value": 1047513965,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "386380",
+   "name": "스카이랩스",
+   "market": "KOSDAQ",
+   "close": 7390,
+   "rate": 16.38,
+   "value": 2791319035,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "314130",
+   "name": "지놈앤컴퍼니",
+   "market": "KOSDAQ",
+   "close": 2560,
+   "rate": 11.3,
+   "value": 1150617616,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "471800",
+   "name": "에이엘로봇",
+   "market": "KOSDAQ",
+   "close": 11330,
+   "rate": 23.69,
+   "value": 94122739790,
+   "selected_by": [
+    "top_value_50",
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "129920",
+   "name": "대성하이텍",
+   "market": "KOSDAQ",
+   "close": 7950,
+   "rate": 29.9,
+   "value": 18777785905,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "138360",
+   "name": "앤로보틱스",
+   "market": "KOSDAQ",
+   "close": 1483,
+   "rate": 29.97,
+   "value": 26846834502,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "061970",
+   "name": "LB세미콘",
+   "market": "KOSDAQ",
+   "close": 1835,
+   "rate": 17.55,
+   "value": 5125209181,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "382900",
+   "name": "범한퓨얼셀",
+   "market": "KOSDAQ",
+   "close": 14670,
+   "rate": 10.8,
+   "value": 861593900,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "054210",
+   "name": "이랜텍",
+   "market": "KOSDAQ",
+   "close": 5070,
+   "rate": 11.92,
+   "value": 501320104,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "158430",
+   "name": "아톤",
+   "market": "KOSDAQ",
+   "close": 5210,
+   "rate": 21.87,
+   "value": 27657432174,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "141000",
+   "name": "비아트론",
+   "market": "KOSDAQ",
+   "close": 10430,
+   "rate": 14.99,
+   "value": 4114123465,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "274090",
+   "name": "켄코아에어로스페이스",
+   "market": "KOSDAQ",
+   "close": 9150,
+   "rate": 12.68,
+   "value": 3404073730,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "059120",
+   "name": "아진엑스텍",
+   "market": "KOSDAQ",
+   "close": 6800,
+   "rate": 11.29,
+   "value": 2995957750,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "468670",
+   "name": "브릴스",
+   "market": "KOSDAQ",
+   "close": 10930,
+   "rate": 10.4,
+   "value": 5733837785,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "092070",
+   "name": "디엔에프",
+   "market": "KOSDAQ",
+   "close": 10580,
+   "rate": 10.9,
+   "value": 471985335,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "300080",
+   "name": "플리토",
+   "market": "KOSDAQ",
+   "close": 7380,
+   "rate": 10.81,
+   "value": 603861870,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0082N0",
+   "name": "카나프테라퓨틱스",
+   "market": "KOSDAQ",
+   "close": 9150,
+   "rate": 21.51,
+   "value": 1667491240,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "156100",
+   "name": "엘앤케이바이오",
+   "market": "KOSDAQ",
+   "close": 5380,
+   "rate": 14.59,
+   "value": 3292147165,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "432720",
+   "name": "퀄리타스반도체",
+   "market": "KOSDAQ",
+   "close": 8420,
+   "rate": 13.63,
+   "value": 586878195,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "126700",
+   "name": "하이비젼시스템",
+   "market": "KOSDAQ",
+   "close": 7830,
+   "rate": 10.91,
+   "value": 332765260,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "267320",
+   "name": "나인테크",
+   "market": "KOSDAQ",
+   "close": 1969,
+   "rate": 10.43,
+   "value": 839063275,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "318060",
+   "name": "그래피",
+   "market": "KOSDAQ",
+   "close": 9840,
+   "rate": 11.95,
+   "value": 597647025,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "140670",
+   "name": "알에스오토메이션",
+   "market": "KOSDAQ",
+   "close": 8280,
+   "rate": 12.81,
+   "value": 831573275,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "282880",
+   "name": "코윈로보틱스",
+   "market": "KOSDAQ",
+   "close": 9090,
+   "rate": 10.32,
+   "value": 421907860,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "381620",
+   "name": "제닉스로보틱스",
+   "market": "KOSDAQ",
+   "close": 8020,
+   "rate": 29.98,
+   "value": 17709431705,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "474610",
+   "name": "RF시스템즈",
+   "market": "KOSDAQ",
+   "close": 7030,
+   "rate": 13.39,
+   "value": 487142570,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "388790",
+   "name": "라이콤",
+   "market": "KOSDAQ",
+   "close": 3205,
+   "rate": 11.48,
+   "value": 801168195,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "046120",
+   "name": "오르비텍",
+   "market": "KOSDAQ",
+   "close": 2880,
+   "rate": 10.77,
+   "value": 1027063808,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "271160",
+   "name": "하나에어로",
+   "market": "KOSDAQ",
+   "close": 5460,
+   "rate": 5.0,
+   "value": 78397388190,
+   "selected_by": [
+    "top_value_50"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "411080",
+   "name": "샌즈랩",
+   "market": "KOSDAQ",
+   "close": 6160,
+   "rate": 10.2,
+   "value": 11712761465,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "486510",
+   "name": "글로벌테크놀로지",
+   "market": "KOSDAQ",
+   "close": 4660,
+   "rate": 10.82,
+   "value": 1036194334,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "474650",
+   "name": "링크솔루션",
+   "market": "KOSDAQ",
+   "close": 15450,
+   "rate": 12.53,
+   "value": 496756930,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "226590",
+   "name": "엠디바이스",
+   "market": "KOSDAQ",
+   "close": 8290,
+   "rate": 18.6,
+   "value": 604622975,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "371950",
+   "name": "풍원정밀",
+   "market": "KOSDAQ",
+   "close": 3120,
+   "rate": 12.23,
+   "value": 188058841,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "047560",
+   "name": "이스트소프트",
+   "market": "KOSDAQ",
+   "close": 7030,
+   "rate": 20.17,
+   "value": 2367161310,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "355150",
+   "name": "코스텍시스",
+   "market": "KOSDAQ",
+   "close": 10480,
+   "rate": 14.66,
+   "value": 820462105,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "299030",
+   "name": "하나기술",
+   "market": "KOSDAQ",
+   "close": 10200,
+   "rate": 12.83,
+   "value": 444908660,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "115440",
+   "name": "우리넷",
+   "market": "KOSDAQ",
+   "close": 7550,
+   "rate": 11.36,
+   "value": 1450112715,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "153890",
+   "name": "져스텍",
+   "market": "KOSDAQ",
+   "close": 6160,
+   "rate": 13.03,
+   "value": 477421165,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "092040",
+   "name": "아미코젠",
+   "market": "KOSDAQ",
+   "close": 1052,
+   "rate": 15.6,
+   "value": 1103285211,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "166480",
+   "name": "코아스템켐온",
+   "market": "KOSDAQ",
+   "close": 1395,
+   "rate": 10.89,
+   "value": 229007964,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "402490",
+   "name": "그린리소스",
+   "market": "KOSDAQ",
+   "close": 4330,
+   "rate": 10.32,
+   "value": 343811103,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "432470",
+   "name": "케이엔에스",
+   "market": "KOSDAQ",
+   "close": 8210,
+   "rate": 13.71,
+   "value": 609431290,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "037030",
+   "name": "파워넷",
+   "market": "KOSDAQ",
+   "close": 2750,
+   "rate": 10.66,
+   "value": 449588682,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "389020",
+   "name": "자람테크놀로지",
+   "market": "KOSDAQ",
+   "close": 10070,
+   "rate": 12.64,
+   "value": 631428290,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "007820",
+   "name": "엠엑스로보틱스",
+   "market": "KOSDAQ",
+   "close": 2975,
+   "rate": 12.69,
+   "value": 308126061,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "357880",
+   "name": "SKAI",
+   "market": "KOSDAQ",
+   "close": 1215,
+   "rate": 14.08,
+   "value": 1464023693,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "439270",
+   "name": "크리에이츠",
+   "market": "KOSDAQ",
+   "close": 4920,
+   "rate": 15.63,
+   "value": 656104687,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "088280",
+   "name": "쏘닉스",
+   "market": "KOSDAQ",
+   "close": 3645,
+   "rate": 29.95,
+   "value": 1407864029,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "331920",
+   "name": "셀레믹스",
+   "market": "KOSDAQ",
+   "close": 5600,
+   "rate": 18.02,
+   "value": 657686340,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "377480",
+   "name": "마음AI",
+   "market": "KOSDAQ",
+   "close": 8480,
+   "rate": 10.13,
+   "value": 486166570,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "417030",
+   "name": "니어스랩",
+   "market": "KOSDAQ",
+   "close": 10300,
+   "rate": 16.78,
+   "value": 1586554355,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0161M0",
+   "name": "네오사피엔스",
+   "market": "KOSDAQ",
+   "close": 4805,
+   "rate": 10.46,
+   "value": 848374272,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0015S0",
+   "name": "페스카로",
+   "market": "KOSDAQ",
+   "close": 5970,
+   "rate": 10.15,
+   "value": 288337530,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "457550",
+   "name": "우진엔텍",
+   "market": "KOSDAQ",
+   "close": 6320,
+   "rate": 10.68,
+   "value": 331019685,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "360070",
+   "name": "탑머티리얼",
+   "market": "KOSDAQ",
+   "close": 7160,
+   "rate": 11.53,
+   "value": 168668700,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0017J0",
+   "name": "세미티에스",
+   "market": "KOSDAQ",
+   "close": 1900,
+   "rate": 10.53,
+   "value": 357379386,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "389030",
+   "name": "지니너스",
+   "market": "KOSDAQ",
+   "close": 1403,
+   "rate": 21.05,
+   "value": 1060532695,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "107600",
+   "name": "새빗켐",
+   "market": "KOSDAQ",
+   "close": 9390,
+   "rate": 11.52,
+   "value": 157356020,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "097800",
+   "name": "윈팩",
+   "market": "KOSDAQ",
+   "close": 1935,
+   "rate": 14.77,
+   "value": 161389919,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "051980",
+   "name": "중앙첨단소재",
+   "market": "KOSDAQ",
+   "close": 4555,
+   "rate": 15.03,
+   "value": 630225810,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "317830",
+   "name": "에스피시스템스",
+   "market": "KOSDAQ",
+   "close": 4580,
+   "rate": 29.93,
+   "value": 2813287240,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "076610",
+   "name": "해성옵틱스",
+   "market": "KOSDAQ",
+   "close": 810,
+   "rate": 17.22,
+   "value": 804796457,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "331740",
+   "name": "아우토크립트",
+   "market": "KOSDAQ",
+   "close": 5020,
+   "rate": 10.45,
+   "value": 120245260,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "456070",
+   "name": "이엔셀",
+   "market": "KOSDAQ",
+   "close": 4395,
+   "rate": 14.75,
+   "value": 409339155,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "347860",
+   "name": "알체라",
+   "market": "KOSDAQ",
+   "close": 1129,
+   "rate": 12.9,
+   "value": 243163046,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "394420",
+   "name": "리센스메디컬",
+   "market": "KOSDAQ",
+   "close": 4320,
+   "rate": 14.89,
+   "value": 254966485,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "0004V0",
+   "name": "엔비알모션",
+   "market": "KOSDAQ",
+   "close": 4295,
+   "rate": 11.56,
+   "value": 2549175800,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "059270",
+   "name": "해성에어로보틱스",
+   "market": "KOSDAQ",
+   "close": 4210,
+   "rate": 13.17,
+   "value": 434619341,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "049080",
+   "name": "기가레인",
+   "market": "KOSDAQ",
+   "close": 5500,
+   "rate": 10.78,
+   "value": 438279635,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "396270",
+   "name": "넥스트칩",
+   "market": "KOSDAQ",
+   "close": 1406,
+   "rate": 11.94,
+   "value": 214042858,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "131400",
+   "name": "이브이첨단소재",
+   "market": "KOSDAQ",
+   "close": 6380,
+   "rate": 10.38,
+   "value": 130255885,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "191410",
+   "name": "육일씨엔에쓰",
+   "market": "KOSDAQ",
+   "close": 2885,
+   "rate": 17.52,
+   "value": 1295962389,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "078590",
+   "name": "휴림에이텍",
+   "market": "KOSDAQ",
+   "close": 4405,
+   "rate": 29.94,
+   "value": 23525900374,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "042110",
+   "name": "에스씨디",
+   "market": "KOSDAQ",
+   "close": 856,
+   "rate": -12.11,
+   "value": 1494424012,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "471820",
+   "name": "셀로맥스사이언스",
+   "market": "KOSDAQ",
+   "close": 3540,
+   "rate": -10.38,
+   "value": 903612769,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "382150",
+   "name": "온코크로스",
+   "market": "KOSDAQ",
+   "close": 3060,
+   "rate": 11.48,
+   "value": 127354095,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "424960",
+   "name": "스마트레이더시스템",
+   "market": "KOSDAQ",
+   "close": 2375,
+   "rate": 18.75,
+   "value": 1181110074,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "424980",
+   "name": "마이크로투나노",
+   "market": "KOSDAQ",
+   "close": 6290,
+   "rate": 13.13,
+   "value": 129037530,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "487400",
+   "name": "케이앤에스아이앤씨",
+   "market": "KOSDAQ",
+   "close": 3615,
+   "rate": 22.34,
+   "value": 749712628,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "212710",
+   "name": "아이에스티이",
+   "market": "KOSDAQ",
+   "close": 3720,
+   "rate": 20.98,
+   "value": 417183534,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "317690",
+   "name": "퀀타매트릭스",
+   "market": "KOSDAQ",
+   "close": 1718,
+   "rate": 15.38,
+   "value": 210046038,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "321260",
+   "name": "프로이천",
+   "market": "KOSDAQ",
+   "close": 1152,
+   "rate": 11.41,
+   "value": 295333177,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "153460",
+   "name": "네이블",
+   "market": "KOSDAQ",
+   "close": 4690,
+   "rate": 13.01,
+   "value": 36873287,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "208640",
+   "name": "썸에이지",
+   "market": "KOSDAQ",
+   "close": 1970,
+   "rate": 23.9,
+   "value": 1376200672,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "389680",
+   "name": "유디엠텍",
+   "market": "KOSDAQ",
+   "close": 3090,
+   "rate": 10.36,
+   "value": 171250385,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "365590",
+   "name": "하이딥",
+   "market": "KOSDAQ",
+   "close": 1349,
+   "rate": 12.14,
+   "value": 137364537,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "378800",
+   "name": "샤페론",
+   "market": "KOSDAQ",
+   "close": 2295,
+   "rate": 10.6,
+   "value": 97773532,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "237750",
+   "name": "피앤씨테크",
+   "market": "KOSDAQ",
+   "close": 3245,
+   "rate": 10.56,
+   "value": 125695171,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "148780",
+   "name": "비큐AI",
+   "market": "KOSDAQ",
+   "close": 3155,
+   "rate": 10.51,
+   "value": 126134517,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "054090",
+   "name": "삼진엘앤디",
+   "market": "KOSDAQ",
+   "close": 624,
+   "rate": 10.64,
+   "value": 152380347,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "355390",
+   "name": "크라우드웍스",
+   "market": "KOSDAQ",
+   "close": 760,
+   "rate": 29.91,
+   "value": 7282258599,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "026910",
+   "name": "광진실업",
+   "market": "KOSDAQ",
+   "close": 1438,
+   "rate": 20.94,
+   "value": 423431854,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "354200",
+   "name": "엔젠바이오",
+   "market": "KOSDAQ",
+   "close": 730,
+   "rate": 13.0,
+   "value": 358551923,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "115610",
+   "name": "이미지스",
+   "market": "KOSDAQ",
+   "close": 982,
+   "rate": 19.9,
+   "value": 94866276,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "469480",
+   "name": "IBKS제24호스팩",
+   "market": "KOSDAQ",
+   "close": 2715,
+   "rate": 10.14,
+   "value": 94444166,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "045520",
+   "name": "크린앤사이언스",
+   "market": "KOSDAQ",
+   "close": 1685,
+   "rate": 11.59,
+   "value": 24526249,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "001000",
+   "name": "신라섬유",
+   "market": "KOSDAQ",
+   "close": 1903,
+   "rate": 16.75,
+   "value": 100151654,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "070300",
+   "name": "퀀텀레일",
+   "market": "KOSDAQ",
+   "close": 235,
+   "rate": 29.83,
+   "value": 1252503618,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "056730",
+   "name": "CNT85",
+   "market": "KOSDAQ",
+   "close": 528,
+   "rate": 11.86,
+   "value": 59799760,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "code": "224060",
+   "name": "더코디",
+   "market": "KOSDAQ",
+   "close": 1431,
+   "rate": 29.97,
+   "value": 377982160,
+   "selected_by": [
+    "movers_10pct"
+   ],
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  }
+ ],
+ "summary": {
+  "candidates": 301,
+  "box_breakout": [],
+  "golden_cross": [],
+  "bollinger_break": [],
+  "long_resistance_break": [],
+  "long_resistance_try": [],
+  "first_limit_up": [],
+  "repeat_limit_up": [],
+  "signal_errors": 301
+ },
+ "errors": [
+  {
+   "where": "전 종목 당일 시세(pykrx)",
+   "error": "KeyError: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\""
+  },
+  {
+   "where": "투자자별 순매수(KOSPI)",
+   "error": "RuntimeError: 빈 데이터 (KRX 로그인 필요 가능)"
+  },
+  {
+   "where": "투자자별 순매수(KOSDAQ)",
+   "error": "RuntimeError: 빈 데이터 (KRX 로그인 필요 가능)"
+  },
+  {
+   "where": "순매수 상위(KOSPI 외국인)",
+   "error": "RuntimeError: 빈 데이터 (KRX 로그인 필요 가능)"
+  },
+  {
+   "where": "순매수 상위(KOSPI 기관)",
+   "error": "RuntimeError: 빈 데이터 (KRX 로그인 필요 가능)"
+  },
+  {
+   "where": "순매수 상위(KOSDAQ 외국인)",
+   "error": "RuntimeError: 빈 데이터 (KRX 로그인 필요 가능)"
+  },
+  {
+   "where": "순매수 상위(KOSDAQ 기관)",
+   "error": "RuntimeError: 빈 데이터 (KRX 로그인 필요 가능)"
+  },
+  {
+   "where": "일봉·신호(005930 삼성전자)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(000660 SK하이닉스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(005935 삼성전자우)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(402340 SK스퀘어)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(373220 LG에너지솔루션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(009150 삼성전기)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(005380 현대차)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(105560 KB금융)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(068270 셀트리온)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(006400 삼성SDI)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(034730 SK)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(012450 한화에어로스페이스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(086790 하나금융지주)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(012330 현대모비스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(034020 두산에너빌리티)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(035420 NAVER)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(066570 LG전자)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(180640 한진칼)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(042700 한미반도체)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(006800 미래에셋증권)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(028050 삼성E&A)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(278470 에이피알)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(272210 한화시스템)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(307950 현대오토에버)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(079550 LIG디펜스앤에어로스페이스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(071050 한국금융지주)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(326030 SK바이오팜)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(039490 키움증권)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(000880 한화)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(353200 대덕전자)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(192820 코스맥스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(066970 엘앤에프)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(085620 미래에셋생명)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(001720 신영증권)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(004800 효성)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(450080 에코프로머티)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(181710 NHN)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(007810 코리아써키트)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(489790 한화비전)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(336260 두산퓨얼셀)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(281820 케이씨텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(023590 다우기술)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(012630 HDC)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(071970 HD현대마린엔진)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(475150 SK이터닉스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(00680K 미래에셋증권2우B)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(093370 후성)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(000210 DL)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(322000 HD현대에너지솔루션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(195870 해성디에스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(003160 디아이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(006110 삼아알미늄)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(077970 STX엔진)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(075580 세진중공업)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0120G0 삼양바이오팜)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(005420 코스모화학)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(033240 자화전자)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(004710 한솔테크닉스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(002020 코오롱)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(317400 자이에스앤디)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(002710 TCC스틸)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(077500 유니퀘스트)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(475560 더본코리아)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(217590 티엠씨)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(009470 삼화전기)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(011500 한농화성)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(006805 미래에셋증권우)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(084670 동양고속)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(025620 차AI헬스케어)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(012200 계양전기)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(055490 테이팩스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(003010 혜인)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(090080 평화산업)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(021050 서원)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(012160 영흥)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(014285 금강공업우)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(196170 알테오젠)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(277810 레인보우로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(247540 에코프로비엠)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(086520 에코프로)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(036930 주성엔지니어링)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(000250 삼천당제약)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(108490 로보티즈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(222800 심텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(058470 리노공업)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(403870 HPSP)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(031980 피에스케이홀딩스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(298380 에이비엘바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(141080 리가켐바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(226950 올릭스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(087010 펩트론)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(030530 원익홀딩스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(319400 현대무벡스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(178320 서진시스템)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(357780 솔브레인)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(064760 티씨케이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(347850 디앤디파마텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(053800 안랩)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(237690 에스티팜)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(080220 제주반도체)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(218410 RFHIC)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(323280 태성)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(950260 인제니아테라퓨틱스(Reg.S))",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(032820 우리기술)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(067310 하나마이크론)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(140860 파크시스템스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(347700 스피어)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(131970 두산테스나)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0009K0 에임드바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(491000 리브스메드)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(083650 비에이치아이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(032500 케이엠더블유)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(100790 미래에셋벤처투자)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(056190 SFA)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(204270 제이앤티씨)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(099320 쎄트렉아이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(065350 신성델타테크)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(090710 휴림로봇)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(166090 하나머티리얼즈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(456160 지투지바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(183300 코미코)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(281740 레이크머티리얼즈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(445680 큐리옥스바이오시스템즈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(085660 차바이오텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(101490 에스앤에스텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(466100 클로봇)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(048410 현대바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(074600 원익QnC)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(127120 제이에스링크)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(358570 지아이이노베이션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(024850 HLB이노베이션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(137400 피엔티)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(189300 인텔리안테크)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(115180 큐리언트)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(161580 필옵틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(050890 쏠리드)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(222080 SFA넥셀)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(476060 온코닉테라퓨틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(327260 RF머트리얼즈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(112040 위메이드)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(036810 에프에스티)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(174900 앱클론)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(124500 아이티센글로벌)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(082270 젬백스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(052020 에스티큐브)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(397030 에이프릴바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(094170 동운아나텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(033640 네패스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(490470 세미파이브)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(348340 뉴로메카)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(056080 유진로봇)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(263860 지니언스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(278280 천보)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(388210 씨엠티엑스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(042000 카페24)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(027360 아주IB투자)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(475830 오름테라퓨틱)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(073490 LIG아큐버)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(170920 엘티씨)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(079370 제우스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(475960 토모큐브)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(067630 HLB생명과학)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(272290 이녹스첨단소재)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(060280 큐렉소)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(138080 오이솔루션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(092190 서울바이오시스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(486990 노타)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(053030 바이넥스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(091580 상신이디피)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(348210 넥스틴)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(354320 알멕)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(340450 지씨지놈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(493280 아이엠바이오로직스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(348370 엔켐)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(477850 마키나락스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(042510 라온시큐어)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(287840 인투셀)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(378340 필에너지)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(232680 라온로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(160980 싸이맥스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(220100 퓨쳐켐)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(439960 코스모로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(308430 셀비온)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(272110 케이엔제이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(493410 넥스아이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0147B0 래블업)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(102940 코오롱생명과학)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(317330 덕산테코피아)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(365270 큐라클)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(307180 아이엘)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(459510 나우로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(112290 와이씨켐)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(445090 에이직랜드)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(419530 SAMG엔터)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(086670 비엠티)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(243840 신흥에스이씨)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0053F0 티앤이코리아)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(084850 아이티엠반도체)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(230240 에치에프알)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(484810 티엑스알로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(338840 와이바이오로직스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(386380 스카이랩스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(314130 지놈앤컴퍼니)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(471800 에이엘로봇)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(129920 대성하이텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(138360 앤로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(061970 LB세미콘)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(382900 범한퓨얼셀)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(054210 이랜텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(158430 아톤)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(141000 비아트론)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(274090 켄코아에어로스페이스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(059120 아진엑스텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(468670 브릴스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(092070 디엔에프)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(300080 플리토)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0082N0 카나프테라퓨틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(156100 엘앤케이바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(432720 퀄리타스반도체)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(126700 하이비젼시스템)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(267320 나인테크)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(318060 그래피)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(140670 알에스오토메이션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(282880 코윈로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(381620 제닉스로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(474610 RF시스템즈)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(388790 라이콤)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(046120 오르비텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(271160 하나에어로)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(411080 샌즈랩)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(486510 글로벌테크놀로지)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(474650 링크솔루션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(226590 엠디바이스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(371950 풍원정밀)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(047560 이스트소프트)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(355150 코스텍시스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(299030 하나기술)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(115440 우리넷)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(153890 져스텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(092040 아미코젠)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(166480 코아스템켐온)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(402490 그린리소스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(432470 케이엔에스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(037030 파워넷)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(389020 자람테크놀로지)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(007820 엠엑스로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(357880 SKAI)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(439270 크리에이츠)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(088280 쏘닉스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(331920 셀레믹스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(377480 마음AI)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(417030 니어스랩)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0161M0 네오사피엔스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0015S0 페스카로)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(457550 우진엔텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(360070 탑머티리얼)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0017J0 세미티에스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(389030 지니너스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(107600 새빗켐)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(097800 윈팩)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(051980 중앙첨단소재)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(317830 에스피시스템스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(076610 해성옵틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(331740 아우토크립트)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(456070 이엔셀)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(347860 알체라)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(394420 리센스메디컬)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(0004V0 엔비알모션)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(059270 해성에어로보틱스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(049080 기가레인)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(396270 넥스트칩)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(131400 이브이첨단소재)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(191410 육일씨엔에쓰)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(078590 휴림에이텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(042110 에스씨디)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(471820 셀로맥스사이언스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(382150 온코크로스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(424960 스마트레이더시스템)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(424980 마이크로투나노)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(487400 케이앤에스아이앤씨)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(212710 아이에스티이)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(317690 퀀타매트릭스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(321260 프로이천)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(153460 네이블)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(208640 썸에이지)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(389680 유디엠텍)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(365590 하이딥)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(378800 샤페론)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(237750 피앤씨테크)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(148780 비큐AI)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(054090 삼진엘앤디)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(355390 크라우드웍스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(026910 광진실업)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(354200 엔젠바이오)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(115610 이미지스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(469480 IBKS제24호스팩)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(045520 크린앤사이언스)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(001000 신라섬유)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(070300 퀀텀레일)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(056730 CNT85)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  },
+  {
+   "where": "일봉·신호(224060 더코디)",
+   "error": "RuntimeError: FDR: RuntimeError: 일봉 마지막 날짜가 2026-11-27 (오늘 데이터 없음)"
+  }
+ ]
+}
